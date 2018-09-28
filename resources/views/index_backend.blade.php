@@ -75,7 +75,17 @@
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
     <script src="{{asset('matrix-admin-bt4/dist/js/pages/chart/chart-page-init.js')}}"></script>
-
+    <script type="text/javascript">
+        function document.onkeydown() 
+    { 
+        if ( event.keyCode==17) //17 is ascii code for ctrl
+        { 
+            event.keyCode = 0; 
+            event.cancelBubble = true; 
+            return false; 
+        } 
+    }
+    </script>
 </body>
 
 </html>
