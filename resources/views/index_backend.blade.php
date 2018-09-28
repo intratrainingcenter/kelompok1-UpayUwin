@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
-
+<html oncontextmenu="return false" dir="ltr" lang="en">
+    {{-- oncontextmenu="return false" for disable inspect element with mouse --}}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,8 @@
     @yield('css')
 </head>
 
-<body>
+<body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
+   {{-- oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;" for disable inspect element with mouse --}}
    
     <div class="preloader">
         <div class="lds-ripple">
