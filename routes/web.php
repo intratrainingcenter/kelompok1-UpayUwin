@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/pay','PaymentController@payWithpaypal');
+Route::get('/backend/login',function(){
+	return view('backend.User.login');
+});
