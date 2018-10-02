@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return redirect()->route('dashboard.index');
 });
+Route::get('UpayUwin', function(){
+    return view('index_frontend');
+});
 Route::get('/pay','PaymentController@payWithpaypal');
 
 
