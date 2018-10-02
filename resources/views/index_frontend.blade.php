@@ -1,341 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-		
-		<title>Ecommerce Video Game | Cart</title>
+<head>
+<title>Categories</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Sublime project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/styles/bootstrap4/bootstrap.min.css">
+<link href="{{asset('frontend')}}/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/styles/categories.css">
+<link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/styles/categories_responsive.css">
+</head>
+<body>
 
-		<!-- Loading third party fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|" rel="stylesheet" type="text/css">
-		<link href="{{asset('template/frontend')}}/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-		<link href="{{asset('template/frontend')}}/fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
+<div class="super_container">
 
-		<!-- Loading main css file -->
-		<link rel="stylesheet" href="{{asset('template/frontend')}}/style.css">
-		
-		<!--[if lt IE 9]>
-		<script src="js/ie-support/html5.js"></script>
-		<script src="js/ie-support/respond.js"></script>
-		<![endif]-->
+	<!-- Header -->
+	@include('frontend.header')
+	
+	<!-- Home -->
 
-	</head>
-
-
-	<body class="slider-collapse">
-		
-		<div id="site-content">
-			<div class="site-header">
-				<div class="container">
-					<a href="index.html" id="branding">
-						<img src="{{asset('template/frontend')}}/images/logo.png" alt="" class="logo">
-						<div class="logo-text">
-							<h1 class="site-title">Company name</h1>
-							<small class="site-description">Tagline goes here</small>
-						</div>
-					</a> <!-- #branding -->
-
-					<div class="right-section pull-right">
-						<a href="cart.html" class="cart"><i class="icon-cart"></i> 0 items in cart</a>
-						<a href="#" class="login-button">Login/Register</a>
-					</div> <!-- .right-section -->
-
-					<div class="main-navigation">
-						<button class="toggle-menu"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
-							<li class="menu-item"><a href="products.html">Accessories</a></li>
-							<li class="menu-item"><a href="products.html">Promotions</a></li>
-							<li class="menu-item"><a href="products.html">PC</a></li>
-							<li class="menu-item"><a href="products.html">Playstation</a></li>
-							<li class="menu-item"><a href="products.html">Xbox</a></li>
-							<li class="menu-item"><a href="products.html">Wii</a></li>
-						</ul> <!-- .menu -->
-						<div class="search-form">
-							<label><img src="images/icon-search.png"></label>
-							<input type="text" placeholder="Search...">
-						</div> <!-- .search-form -->
-
-						<div class="mobile-navigation"></div> <!-- .mobile-navigation -->
-					</div> <!-- .main-navigation -->
-				</div> <!-- .container -->
-			</div> <!-- .site-header -->
-
-			<div class="home-slider">
-				<ul class="slides">
-					<li data-bg-image="{{asset('template/frontend')}}/dummy/slide-1.jpg">
-						<div class="container">
-							<div class="slide-content">
-								<h2 class="slide-title">Kill Zone 3</h2>
-								<small class="slide-subtitle">$190.00</small>
-								
-								<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-								
-								<a href="cart.html" class="button">Add to cart</a>
-							</div>
-
-							<img src="{{asset('template/frontend')}}/dummy/game-cover-1.jpg" class="slide-image">
-						</div>
-					</li>
-					<li data-bg-image="{{asset('template/frontend')}}/dummy/slide-2.jpg">
-						<div class="container">
-							<div class="slide-content">
-								<h2 class="slide-title">Kill Zone 3</h2>
-								<small class="slide-subtitle">$190.00</small>
-								
-								<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-								
-								<a href="cart.html" class="button">Add to cart</a>
-							</div>
-
-							<img src="{{asset('template/frontend')}}/dummy/game-cover-2.jpg" class="slide-image">
-						</div>
-					</li>
-					<li data-bg-image="{{asset('template/frontend')}}/dummy/slide-3.jpg">
-						<div class="container">
-							<div class="slide-content">
-								<h2 class="slide-title">Kill Zone 3</h2>
-								<small class="slide-subtitle">$190.00</small>
-								
-								<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-								
-								<a href="cart.html" class="button">Add to cart</a>
-							</div>
-
-							<img src="{{asset('template/frontend')}}/dummy/game-cover-3.jpg" class="slide-image">
-						</div>
-					</li>
-				</ul> <!-- .slides -->
-			</div> <!-- .home-slider -->
-
-			<main class="main-content">
-				<div class="container">
-					<div class="page">
-						<section>
-							<header>
-								<h2 class="section-title">New Products</h2>
-								<a href="#" class="all">Show All</a>
-							</header>
-
-							<div class="product-list">
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-1.jpg" alt="Game 1"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-2.jpg" alt="Game 2"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-3.jpg" alt="Game 3"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Need for Speed rivals</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-4.jpg" alt="Game 4"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Big game hunter</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-
-							</div> <!-- .product-list -->
-
-						</section>
-
-						<section>
-							<header>
-								<h2 class="section-title">promotion</h2>
-								<a href="#" class="all">Show All</a>
-							</header>
-
-							<div class="product-list">
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-5.jpg" alt="Game 1"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Watch Dogs</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-6.jpg" alt="Game 2"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Mortal Kombat X</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-7.jpg" alt="Game 3"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Metal Gear Solid V</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-8.jpg" alt="Game 4"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Nascar '14</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-							</div> <!-- .product-list -->
-
-						</section>
-					</div>
-				</div> <!-- .container -->
-			</main> <!-- .main-content -->
-
-			<div class="site-footer">
+	<div class="home">
+		<div class="home_container">
+			<div class="home_background" style="background-image:url({{asset('frontend')}}/images/codex.jpg)"></div>
+			<div class="home_content_container">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title">Information</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Site map</a></li>
-									<li><a href="#">About us</a></li>
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Contact</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title">Consumer Service</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Secure</a></li>
-									<li><a href="#">Shipping &amp; Returns</a></li>
-									<li><a href="#">Shipping</a></li>
-									<li><a href="#">Orders &amp; Returns</a></li>
-									<li><a href="#">Group Sales</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title">My Account</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Login/Register</a></li>
-									<li><a href="#">Settings</a></li>
-									<li><a href="#">Cart</a></li>
-									<li><a href="#">Order Tracking</a></li>
-									<li><a href="#">Logout</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-6">
-							<div class="widget">
-								<h3 class="widget-title">Join our newsletter</h3>
-								<form action="#" class="newsletter-form">
-									<input type="text" placeholder="Enter your email...">
-									<input type="submit" value="Subsribe">
-								</form>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-					</div><!-- .row -->
-
-					<div class="colophon">
-						<div class="copy">Copyright 2014 Company name. Designed by Themezy. All rights reserved.</div>
-						<div class="social-links square">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-google-plus"></i></a>
-							<a href="#"><i class="fa fa-pinterest"></i></a>
-						</div> <!-- .social-links -->
-					</div> <!-- .colophon -->
-				</div> <!-- .container -->
-			</div> <!-- .site-footer -->
+						<div class="col">
+							<div class="home_content">
+								<div class="home_title">Smart Phones<span>.</span></div>
+								<div class="home_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</p></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
 
-		<div class="overlay"></div>
+	<!-- Products -->
 
-		<div class="auth-popup popup">
-			<a href="#" class="close"><i class="fa fa-times"></i></a>
+	<div class="products">
+		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
-					<h2 class="section-title">Login</h2>
-					<form action="#">
-						<input type="text" placeholder="Username...">
-						<input type="password" placeholder="Password...">
-						<input type="submit" value="Login">
-					</form>
-				</div> <!-- .column -->
-				<div class="col-md-6">
-					<h2 class="section-title">Create an account</h2>
-					<form action="#">
-						<input type="text" placeholder="Username...">
-						<input type="text" placeholder="Email address...">
-						<input type="submit" value="register">
-					</form>
-				</div> <!-- .column -->
-			</div> <!-- .row -->
-		</div> <!-- .auth-popup -->
+				<div class="col">
+					
+					<!-- Product Sorting -->
+					<div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start">
+						<div class="results">Showing <span>12</span> results</div>
+						<div class="sorting_container ml-md-auto">
+							<div class="sorting">
+								<ul class="item_sorting">
+									<li>
+										<span class="sorting_text">Sort by</span>
+										<i class="fa fa-chevron-down" aria-hidden="true"></i>
+										<ul>
+											<li class="product_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default</span></li>
+											<li class="product_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
+											<li class="product_sorting_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Name</span></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					
+					<div class="product_grid">
 
-		<script src="{{asset('template/frontend')}}/js/jquery-1.11.1.min.js"></script>
-		<script src="{{asset('template/frontend')}}/js/plugins.js"></script>
-		<script src="{{asset('template/frontend')}}/js/app.js"></script>
-		
-	</body>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						<!-- Product -->
+						<div class="product">
+							<div class="product_image"><img src="{{asset('frontend')}}/images/GPC.jpeg" alt=""></div>
+							<div class="product_extra product_new"><a href="categories.html">New</a></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">Smart Phone</a></div>
+								<div class="product_price">$670</div>
+							</div>
+						</div>
+						
 
+					</div>
+					<div class="product_pagination">
+						<ul>
+							<li class="active"><a href="#">01.</a></li>
+							<li><a href="#">02.</a></li>
+							<li><a href="#">03.</a></li>
+						</ul>
+					</div>
+						
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Icon Boxes -->
+
+	<div class="icon_boxes">
+		<div class="container">
+			<div class="row icon_box_row">
+				
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src="{{asset('frontend')}}/images/icon_1.svg" alt=""></div>
+						<div class="icon_box_title">Free Shipping Worldwide</div>
+						<div class="icon_box_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src="{{asset('frontend')}}/images/icon_2.svg" alt=""></div>
+						<div class="icon_box_title">Free Returns</div>
+						<div class="icon_box_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Icon Box -->
+				<div class="col-lg-4 icon_box_col">
+					<div class="icon_box">
+						<div class="icon_box_image"><img src="{{asset('frontend')}}/images/icon_3.svg" alt=""></div>
+						<div class="icon_box_title">24h Fast Support</div>
+						<div class="icon_box_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Newsletter -->
+
+	<div class="newsletter">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="newsletter_border"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="newsletter_content text-center">
+						<div class="newsletter_title">Subscribe to our newsletter</div>
+						<div class="newsletter_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros</p></div>
+						<div class="newsletter_form_container">
+							<form action="#" id="newsletter_form" class="newsletter_form">
+								<input type="email" class="newsletter_input" required="required">
+								<button class="newsletter_button trans_200"><span>Subscribe</span></button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	@include('frontend.footer')
+</div>
+
+<script src="{{asset('frontend')}}/js/jquery-3.2.1.min.js"></script>
+<script src="{{asset('frontend')}}/styles/bootstrap4/popper.js"></script>
+<script src="{{asset('frontend')}}/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="{{asset('frontend')}}/plugins/greensock/TweenMax.min.js"></script>
+<script src="{{asset('frontend')}}/plugins/greensock/TimelineMax.min.js"></script>
+<script src="{{asset('frontend')}}/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="{{asset('frontend')}}/plugins/greensock/animation.gsap.min.js"></script>
+<script src="{{asset('frontend')}}/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="{{asset('frontend')}}/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="{{asset('frontend')}}/plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="{{asset('frontend')}}/plugins/easing/easing.js"></script>
+<script src="{{asset('frontend')}}/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="{{asset('frontend')}}/js/categories.js"></script>
+</body>
 </html>
