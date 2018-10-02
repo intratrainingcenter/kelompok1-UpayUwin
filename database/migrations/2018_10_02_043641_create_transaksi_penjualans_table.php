@@ -15,9 +15,8 @@ class CreateTransaksiPenjualansTable extends Migration
     {
         Schema::create('transaksi_penjualans', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_transaksi');
             $table->integer('id_user');
-            $table->integer('tanggal_transaksi');
+            $table->date('tanggal_transaksi');
             $table->string('kode_voucher');
             $table->integer('jumlah');
             $table->integer('total');
