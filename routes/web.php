@@ -23,9 +23,7 @@ Route::prefix('backend')->group(function () {
 	//Route Dashboard
 	Route::resource('dashboard','backend\DashboardController');
 	//Route User
-	Route::prefix('User')->group(function () {
-
-	});
+	Route::resource('User','backend\UserController');
 });
 
 
