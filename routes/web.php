@@ -12,7 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master_backend.content');
+});
+Route::get('UpayUwin', function(){
+    return view('index_frontend');
 });
 
 Route::get('/pay','PaymentController@payWithpaypal');
+Route::get('/backend/login',function(){
+	return view('backend.User.login');
+});
