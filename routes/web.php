@@ -12,10 +12,29 @@
 */
 
 Route::get('/', function () {
-    return view('master_backend.content');
+    return redirect()->route('dashboard.index');
+});
+Route::get('/pay','PaymentController@payWithpaypal');
+
+
+//Route Untuk Backend
+Route::prefix('backend')->group(function () { 
+	
+	//Route Dashboard
+	Route::resource('dashboard','backend\DashboardController');
+	//Route User
+	Route::prefix('User')->group(function () {
+
+	});
 });
 
-Route::get('/pay','PaymentController@payWithpaypal');
-Route::get('/backend/login',function(){
-	return view('backend.User.login');
+
+
+
+//Route Untuk Frontend
+Route::prefix('frontend')->group(function () {
+	//Route wallet
+	Route::prefix('wallet')->group(function () {
+	});
+    
 });
