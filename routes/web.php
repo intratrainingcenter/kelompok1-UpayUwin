@@ -18,7 +18,11 @@ Route::get('UpayUwin', function(){
     return view('index_frontend');
 });
 Route::get('UpayUwin/cart', function(){
-    return view('master_frontend.cart');
+    return view('frontend.cart');
+});
+
+Route::get('UpayUwin/product', function(){
+    return view('frontend.product');
 });
 
 Route::get('/pay','PaymentController@payWithpaypal');
