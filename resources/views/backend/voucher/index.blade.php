@@ -16,10 +16,10 @@
                     </div>
                 </div>
             </div>
-           
             <div class="container-fluid">
-                 <a type="button" href="{{route('voucher.create')}}" class="btn btn-success add-voucher"><i class="fas fa-credit-card"></i> Add Voucher</a>
-            
+             <div class="card">     
+               <div class="card-body"> 
+                 <button type="button" class="btn btn-outline-info add-button" data-toggle="modal" data-target="#Modal2"><i class="fas fa-credit-card"></i> Add Voucher</button>
                 <table class="table">
                     <thead>
                         <tr>
@@ -33,19 +33,24 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($data as $number => $data)
                         <tr>
-                            <td>2017120088</td>
-                            <td>Garena</td>
-                            <td>game</td>
-                            <td>50.000</td>
-                            <td>5 tahun</td>
-                            <td>hangus</td>
+                            <td>{{$data->kode_voucher}}</td>
+                            <td>{{$data->nama_voucher}}</td>
+                            <td>{{$data->kode_kategori}}</td>
+                            <td>{{$data->harga_voucher}}</td>
+                            <td>{{$data->masa_aktif}}</td>
+                            <td>{{$data->status}}</td>
                             <td>
-                                <button type="button" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="btn btn-outline-warning"><i class="fas fa-pencil-alt"></i></button>
+                                <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
+          </div>
+        </div>
+        @include('backend.voucher.add')
 @endsection
