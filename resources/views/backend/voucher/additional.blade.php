@@ -1,26 +1,26 @@
 @section ('css')
-	{{-- your css here --}}
 	<style>
-		.add-voucher{
+		.labels{
+			margin-top: 8px;
+		}
+		.add-button{
 			margin-bottom: 10px;
-		}
-		.line{
-			margin-top: 30px;
-		}
-		.row{
-			padding-bottom: 15px;
-		}
-		.submit{
-			position: absolute;
-    		right: 0px;
 		}
 	</style>
 @endsection
 
 @section ('js')
-	{{-- your js here --}}
 	<script>
-		
+		$(document).ready(function() {
+			$('#add_parent').hide();
+
+			$('.add-voucher').click(function(event) {
+				$('#add_parent').show();
+			});
+			$('#close').click(function(event) {
+				$('#add_parent').hide();
+			});
+		});
 	</script>
 @endsection
 

@@ -15,7 +15,8 @@ class VoucherController extends Controller
      */
     public function index()
     {
-        return view('backend.voucher.index');
+        $data = voucher_game::all();
+        return view('backend.voucher.index',['data'=>$data]);
     }
 
     /**
@@ -25,7 +26,7 @@ class VoucherController extends Controller
      */
     public function create()
     {
-        return view('backend.voucher.add');
+       
     }
 
     /**
