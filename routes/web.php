@@ -21,14 +21,16 @@ Route::get('/pay','PaymentController@payWithpaypal');
 
 
 //Route Untuk Backend
-Route::prefix('backend')->group(function () { 
-	
+Route::prefix('backend')->group(function () {
+
 	//Route Dashboard
 	Route::resource('dashboard','backend\DashboardController');
 	//Route User
 	Route::prefix('User')->group(function () {
 
 	});
+  //Route setting
+  Route::resource('setting','backend\SettingController');
 });
 
 
@@ -39,5 +41,5 @@ Route::prefix('frontend')->group(function () {
 	//Route wallet
 	Route::prefix('wallet')->group(function () {
 	});
-    
+
 });
