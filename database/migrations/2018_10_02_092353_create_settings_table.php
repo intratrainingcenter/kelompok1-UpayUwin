@@ -17,7 +17,8 @@ class CreateSettingsTable extends Migration
             $table->increments('id');
             $table->string('nama_ecommerce');
             $table->string('alamat');
-            $table->string('logo');
+            $table->integer('telp');
+            $table->string('logo')->fillable();
             $table->timestamps();
         });
     }

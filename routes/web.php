@@ -30,8 +30,8 @@ Route::get('/backend/login',function(){
 	return view('backend.User.login');
 });
 //Route Untuk Backend
-Route::prefix('backend')->group(function () { 
-	
+Route::prefix('backend')->group(function () {
+
 	//Route Dashboard
 	Route::resource('dashboard','backend\DashboardController');
 	//Route Dashboard
@@ -40,6 +40,8 @@ Route::prefix('backend')->group(function () {
 	Route::prefix('User')->group(function () {
 
 	});
+  //Route setting
+  Route::resource('setting','backend\SettingController');
 });
 
 
@@ -50,5 +52,5 @@ Route::prefix('frontend')->group(function () {
 	//Route wallet
 	Route::prefix('wallet')->group(function () {
 	});
-    
+
 });
