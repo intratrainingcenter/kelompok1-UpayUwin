@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 Route::get('UpayUwin', function(){
     return view('index_frontend');
-});
+})->middleware('checkLogin');
+
 Route::get('UpayUwin/cart', function(){
     return view('frontend.cart');
 });
