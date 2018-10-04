@@ -22,6 +22,10 @@ Route::get('UpayUwin/cart', function(){
     return view('frontend.cart');
 });
 
+// Authentication Routes...
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
 Route::get('UpayUwin/product', function(){
     return view('frontend.product');
 });

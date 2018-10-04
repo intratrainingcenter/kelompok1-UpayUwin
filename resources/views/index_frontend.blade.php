@@ -1511,14 +1511,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <img src="{{asset('FrontEnd1')}}/images/p3.png" class="img-fluid" alt="login_image" />
                         </div>
                         <div class="col-md-6">
-                            <form action="#" method="post">
+                            <form action="{{ route('login') }}" method="POST">
+                                @csrf
                                 <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Your Name</label>
-                                    <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name" required="">
+                                    <label for="recipient-name" class="col-form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="" name="email" required="">
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder=" " name="Password" required="">
+                                    <input type="password" class="form-control" placeholder=" " name="password" required="">
                                 </div>
                                 <div class="right-w3l">
                                     <input type="submit" class="form-control" value="Login">
