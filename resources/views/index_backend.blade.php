@@ -41,8 +41,8 @@
         </div>
     </div>
 
-    @yield('js')
     @include('master_backend.js_index_backend')
+    @yield('js')
 </body>
 
 </html>
