@@ -15,14 +15,17 @@ Route::get('/', function () {
     return redirect()->route('dashboard.index');
 });
 Route::get('UpayUwin', function(){
-    return view('index_frontend');
+    return view('frontend.index');
 });
 Route::get('UpayUwin/cart', function(){
     return view('frontend.cart');
 });
-
 Route::get('UpayUwin/product', function(){
     return view('frontend.product');
+});
+
+Route::get('UpayUwin/payment', function(){
+    return view('frontend.payment');
 });
 
 Route::get('/pay','PaymentController@payWithpaypal');
