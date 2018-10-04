@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('gmail')->unique();
             $table->string('password');
             $table->integer('saldo')->nullable();
-            $table->enum('status',['user','admin'])
+            $table->enum('status',['user','admin']);
             $table->timestamps();
         });
     }
