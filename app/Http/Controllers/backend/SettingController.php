@@ -16,7 +16,7 @@ class SettingController extends Controller
     public function index()
     {
         $data = setting::first();
-
+        // dd($data);
         return view('backend.setting.index',compact('data'));
     }
 
@@ -27,7 +27,7 @@ class SettingController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.setting.setup');
     }
 
     /**
@@ -38,7 +38,7 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

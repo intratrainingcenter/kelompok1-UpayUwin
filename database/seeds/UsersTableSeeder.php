@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-            'nama_user' => 'user',
+            'name' => 'user',
             'email' => 'user@gmail.com',
             'password' => '81dc9bdb52d04dc20036dbd8313ed055',
             'saldo' => '0',
@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
             'status' => 'logout',
             ],
             [
-            'nama_user' => 'admin',
+            'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => '81dc9bdb52d04dc20036dbd8313ed055',
             'saldo' => '0',
