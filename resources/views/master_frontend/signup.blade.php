@@ -13,7 +13,8 @@
                             <img src="{{asset('FrontEnd1')}}/images/p3.png" class="img-fluid" alt="login_image" />
                         </div>
                         <div class="col-md-6">
-                            <form action="#" method="post">
+                            <form action="{{url('signup')}}" method="post">
+                            @csrf
                                 <div class="form-group">
                                     <label for="recipient-name1" class="col-form-label">Your Name</label>
                                     <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name1" required="">

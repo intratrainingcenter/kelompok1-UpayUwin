@@ -11,8 +11,12 @@
 |
 */
 
+Route::resource('signup','frontend\signupcontroller');
 Route::get('/', function () {
     return redirect()->route('dashboard.index');
+});
+Route::get('UpayUwin/User', function(){
+	return view('frontend.user');
 });
 Route::get('UpayUwin', function(){
     return view('frontend.index');
