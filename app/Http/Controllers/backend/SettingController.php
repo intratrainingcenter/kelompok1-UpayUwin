@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\backend;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\setting;
@@ -72,13 +73,18 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
+      // dd($request->all());
       $update = setting::find($id);
-      $update->nama_ecommerce = $request->nama_ecommerce;
-      $update->alamat = $request->alamat;
-      $update->telp = $request->telp;
+      $file = $request->file('logo');
+      $fileName   = $file->getClientOriginalName();
+      $request->file('logo')->move('backend/img', $fileName);
+      $update->logo = $fileName;
+      $update->nama_ecommerce = $request->name_ecommerce;
+      $update->alamat = $request->address;
+      $update->telp = $request->phone;
       $update->save();
 
-      return redirect()->route('setting.index');
+      return redirect()->route('setting2.index');
     }
 
     /**

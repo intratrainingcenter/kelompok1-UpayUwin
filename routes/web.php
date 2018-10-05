@@ -47,6 +47,8 @@ Route::get('/backend/login',function(){
 Route::prefix('backend')->middleware('user')->group(function () {
 
 	//Route Dashboard
+
+
 	Route::resource('dashboard','backend\DashboardController');
 	//Route Voucher
 	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
@@ -56,9 +58,10 @@ Route::prefix('backend')->middleware('user')->group(function () {
 
 	});
   //Route setting
-  Route::resource('setting','backend\SettingController');
-});
+  Route::resource('setting2','backend\SettingController');
 
+
+});
 
 
 
