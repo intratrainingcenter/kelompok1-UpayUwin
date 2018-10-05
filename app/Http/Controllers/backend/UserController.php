@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class UserController extends Controller
 {
@@ -14,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('backend.User.login');
+        $data = User::all();
+        return view ('backend.User.index',compact('data'));
     }
 
     /**
@@ -35,7 +37,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $insert = new User;
+        $insert->name = $request->name;
+        $insert->email = $request->email;
+        $insert->password = $request->password;
+        $insert->level = $request->level;
+        $insert->save();
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -69,7 +78,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update = User::find($id);
+        $update->name = $request->name;
+        $update->emali = $request->email;
+        $update->password = $request->password;
+        $update->save();
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -80,6 +95,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $data = User::find($id);
+      $data->delete();
+
+      return redirect()->route('user.index');
     }
 }
