@@ -17,9 +17,11 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->integer('id_user');
             $table->string('nama_user');
-            $table->string('gmail')->unique();
+            $table->string('email')->unique();
             $table->string('password');
             $table->string('status');
+            $table->integer('saldo')->nullable();
+            $table->enum('level',['user','admin']);
             $table->timestamps();
         });
     }

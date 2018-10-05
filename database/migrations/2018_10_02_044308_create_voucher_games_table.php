@@ -17,10 +17,10 @@ class CreateVoucherGamesTable extends Migration
             $table->increments('id');
             $table->string('kode_voucher');
             $table->string('nama_voucher');
-            $table->integer('kode_kategori');
+            $table->string('kode_kategori');
             $table->integer('harga_voucher');
-            $table->string('masa_aktif');
-            $table->string('status');
+            $table->date('masa_aktif');
+            $table->enum('status',['Aktif','Pasif']);
             $table->timestamps();
         });
     }

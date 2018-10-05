@@ -25,6 +25,8 @@ Route::prefix('backend')->group(function () {
 	
 	//Route Dashboard
 	Route::resource('dashboard','backend\DashboardController');
+	//Route Dashboard
+	Route::resource('voucher','backend\VoucherController');
 	//Route User
 	Route::prefix('User')->group(function () {
 
