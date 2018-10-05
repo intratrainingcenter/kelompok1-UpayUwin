@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Validation\ValidationException;
 use App\User;
+use Crypt;
 use Closure;
 
 class checkLogin
@@ -22,22 +22,26 @@ class checkLogin
         $email = $request->email;
         $password = $request->password;
 
-        $data = user::where('email',$email)->first();
+        $check = User::where('email',$email)->exists();
+        $data = User::where('email',$email)->first();
 
-        if(!is_null($data)){
+        if($check == true){
             if(Hash::check($password, $data->password)){
                 if($data->status == 'logout'){
                     $data->status = 'login';
                     $data->save();
                     return $next($request);
                 }else{
-                    return back()->with('block', 'Email Dsudah digunakan');
+                    dd('1', $data);
+                    // return back()->with('block', 'Email Dsudah digunakan');
                 }
             }else{
-                return back()->with('password', 'Password Salah');
+                dd('2');
+                // return back()->with('password', 'Password Salah');
             }
         }else{
-            return back()->with('email', 'Email Salah');
+            dd('3');
+            // return back()->with('email', 'Email Salah');
         }
     }
 }

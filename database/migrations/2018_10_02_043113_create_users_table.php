@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('status');
             $table->integer('saldo')->nullable();
             $table->enum('level',['user','admin']);
             $table->enum('status',['login','logout']);

@@ -19,7 +19,7 @@ Route::get('UpayUwin/User', function(){
 	return view('frontend.user');
 });
 Route::get('UpayUwin', function(){
-    return view('index_frontend');
+    return view('frontend.index');
 })->name('awal');
 
 Route::get('UpayUwin/cart', function(){
