@@ -24,15 +24,18 @@ Route::get('/pay','PaymentController@payWithpaypal');
 Route::prefix('backend')->group(function () {
 
 	//Route Dashboard
+
+
 	Route::resource('dashboard','backend\DashboardController');
 	//Route User
 	Route::prefix('User')->group(function () {
 
 	});
   //Route setting
-  Route::resource('setting','backend\SettingController');
-});
+  Route::resource('setting2','backend\SettingController');
 
+
+});
 
 
 
