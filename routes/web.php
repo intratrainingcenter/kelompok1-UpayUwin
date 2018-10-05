@@ -44,9 +44,7 @@ Route::prefix('backend')->group(function () {
 	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
 	Route::resource('voucher','backend\VoucherController');
 	//Route User
-	Route::prefix('User')->group(function () {
-
-	});
+  Route::resource('user','backend\UserController');
   //Route setting
   Route::resource('setting','backend\SettingController');
 });
