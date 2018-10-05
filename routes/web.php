@@ -31,6 +31,7 @@ Route::get('UpayUwin/product', function(){
 });
 
 Route::get('/pay','PaymentController@payWithpaypal');
+
 Route::get('/backend/login',function(){
 	return view('backend.User.login');
 });
@@ -59,3 +60,7 @@ Route::prefix('frontend')->group(function () {
 	});
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
