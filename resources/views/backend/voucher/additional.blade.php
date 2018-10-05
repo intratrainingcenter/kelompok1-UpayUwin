@@ -12,13 +12,38 @@
 @section ('js')
 	<script>
 		$(document).ready(function() {
-			$('#add_parent').hide();
-
-			$('.add-voucher').click(function(event) {
-				$('#add_parent').show();
+			var save = true;
+			$('#label_danger').hide();
+			var data = $.parseJSON($.ajax({
+				url: '{{Route('cek.kode')}}',
+				type: 'GET',
+    			dataType: 'json',
+    			 async: false
+			}).responseText);
+			
+		// checking the voucher code if it has same value
+		$('#code').keyup(function(event) {
+				
+			$.each(data, function(index, val) {
+					
+					if($('#code').val() == val.kode_voucher){
+						save = false;
+						$('#label_danger').show();
+						$('#code').addClass('is-invalid');
+						return false; 
+					}else{
+						save = true;
+						$('#label_danger').hide();
+						$('#code').removeClass('is-invalid');
+					}
+					
+				}); 
 			});
-			$('#close').click(function(event) {
-				$('#add_parent').hide();
+			$(document).on('submit','#form_add',function(){
+				if (save == false) {
+					event.preventDefault();
+         			toastr.error('Tidak dapat melanjutkan kode voucher sudah ada.', 'Danger!');
+				}
 			});
 		});
 	</script>
