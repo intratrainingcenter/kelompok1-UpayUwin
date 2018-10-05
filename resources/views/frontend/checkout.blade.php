@@ -1,7 +1,6 @@
 @extends('index_frontend')
 @section('content')
-
-	<!-- inner banner -->
+    <!-- inner banner -->
 	<div class="ibanner_w3 pt-sm-5 pt-3">
 		<h4 class="head_agileinfo text-center text-capitalize text-center pt-5">
 			<span>f</span>ashion
@@ -47,7 +46,7 @@
                                 <td class="invert">1</td>
                                 <td class="invert-image">
                                     <a href="single_product.html">
-                                        <img src="{{asset('FrontEnd1')}}/images/pm1.jpg" alt=" " class="img-responsive">
+                                        <img src="images/pm1.jpg" alt=" " class="img-responsive">
                                     </a>
                                 </td>
                                 <td class="invert">
@@ -75,7 +74,7 @@
                                 <td class="invert">2</td>
                                 <td class="invert-image">
                                     <a href="single_product.html">
-                                        <img src="{{asset('FrontEnd1')}}/images/pf1.jpg" alt=" " class="img-responsive">
+                                        <img src="images/pf1.jpg" alt=" " class="img-responsive">
                                     </a>
                                 </td>
                                 <td class="invert">
@@ -103,7 +102,7 @@
                                 <td class="invert">3</td>
                                 <td class="invert-image">
                                     <a href="single_product.html">
-                                        <img src="{{asset('FrontEnd1')}}/images/pb3.jpg" alt=" " class="img-responsive">
+                                        <img src="images/pb3.jpg" alt=" " class="img-responsive">
                                     </a>
                                 </td>
                                 <td class="invert">
@@ -201,136 +200,4 @@
             </div>
         </div>
     </section>
-    <!-- js -->
-    <script src="{{asset('FrontEnd1')}}/js/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!-- smooth dropdown -->
-    <script>
-        $(document).ready(function () {
-            $('ul li.dropdown').hover(function () {
-                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-            }, function () {
-                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
-            });
-        });
-    </script>
-    <!-- //smooth dropdown -->
-    <!-- script for password match -->
-    <script>
-        window.onload = function () {
-            document.getElementById("password1").onchange = validatePassword;
-            document.getElementById("password2").onchange = validatePassword;
-        }
-
-        function validatePassword() {
-            var pass2 = document.getElementById("password2").value;
-            var pass1 = document.getElementById("password1").value;
-            if (pass1 != pass2)
-                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-            else
-                document.getElementById("password2").setCustomValidity('');
-            //empty string means no validation error
-        }
-    </script>
-    <!-- script for password match -->
-    <!-- cart-js -->
-    <script src="{{asset('FrontEnd1')}}/js/minicart.js"></script>
-    <script>
-        hub.render();
-
-        hub.cart.on('new_checkout', function (evt) {
-            var items, len, i;
-
-            if (this.subtotal() > 0) {
-                items = this.items();
-
-                for (i = 0, len = items.length; i < len; i++) {}
-            }
-        });
-    </script>
-    <!-- //cart-js -->
-    <!--quantity-->
-    <script>
-        $('.value-plus').on('click', function () {
-            var divUpd = $(this).parent().find('.value'),
-                newVal = parseInt(divUpd.text(), 10) + 1;
-            divUpd.text(newVal);
-        });
-
-        $('.value-minus').on('click', function () {
-            var divUpd = $(this).parent().find('.value'),
-                newVal = parseInt(divUpd.text(), 10) - 1;
-            if (newVal >= 1) divUpd.text(newVal);
-        });
-    </script>
-    <!--quantity-->
-    <!-- FadeOut-Script -->
-    <script>
-        $(document).ready(function (c) {
-            $('.close1').on('click', function (c) {
-                $('.rem1').fadeOut('slow', function (c) {
-                    $('.rem1').remove();
-                });
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function (c) {
-            $('.close2').on('click', function (c) {
-                $('.rem2').fadeOut('slow', function (c) {
-                    $('.rem2').remove();
-                });
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function (c) {
-            $('.close3').on('click', function (c) {
-                $('.rem3').fadeOut('slow', function (c) {
-                    $('.rem3').remove();
-                });
-            });
-        });
-    </script>
-    <!--// FadeOut-Script -->
-
-    <!-- start-smooth-scrolling -->
-    <script src="{{asset('FrontEnd1')}}/js/move-top.js"></script>
-    <script src="{{asset('FrontEnd1')}}/js/easing.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script>
-    <!-- //end-smooth-scrolling -->
-    <!-- smooth-scrolling-of-move-up -->
-    <script>
-        $(document).ready(function () {
-            /*
-            var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear' 
-            };
-            */
-
-            $().UItoTop({
-                easingType: 'easeOutQuart'
-            });
-
-        });
-    </script>
-    <script src="{{asset('FrontEnd1')}}/js/SmoothScroll.min.js"></script>
-    <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{asset('FrontEnd1')}}/js/bootstrap.js"></script>
 @endsection
