@@ -14,9 +14,10 @@
 Route::get('/', function () {
     return redirect()->route('dashboard.index');
 });
+
 Route::get('UpayUwin', function(){
     return view('index_frontend');
-})->middleware('checkLogin');
+})->name('awal');
 
 Route::get('UpayUwin/cart', function(){
     return view('frontend.cart');
@@ -36,7 +37,7 @@ Route::get('/backend/login',function(){
 	return view('backend.User.login');
 });
 //Route Untuk Backend
-Route::prefix('backend')->group(function () {
+Route::prefix('backend')->middleware('user')->group(function () {
 
 	//Route Dashboard
 	Route::resource('dashboard','backend\DashboardController');

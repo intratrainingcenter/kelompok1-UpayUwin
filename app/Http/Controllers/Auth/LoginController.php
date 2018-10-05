@@ -39,75 +39,17 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('checkLogin')->only('login');
         $this->middleware('guest')->except('logout');
-    }
-
-    function login(request $request)
-    {
-        $rules = array(
-            'email' => 'required|email',
-            'password' => 'required|min:4'
-        );
-
-        $validator = Validator::make(Input::all(), $rules);
-
-        if ($validator->fails()) {
-            return redirect()->route('dashboard.index')->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
-
-            $credentials = [
-                'email' => Input::get('email'),
-                'password' => Hash::make($request->password),
-            ];
-            
-            dd(Auth::attempt($credentials));
-
-            if (Auth::attempt($userdata)) {
-                dd('sukses', $request->all());
-                // validation successful
-                // do whatever you want on success
-
-            } else {
-                dd('gagal auth', $request->all());
-
-                    // validation not successful, send back to form
-
-                // return redirect()->route('dashboard.index');
-            }
-        }
     }
 
     public function logout(Request $request)
     {
-      // dd($request->name);
-        $ids = auth::user()->lock;
-        if ($ids == 'login') {
-        // dd('salah');
-            $data = User::where('id', auth::user()->id)->first();
-            $data->lock = 'logout';
-            $data->save();
+        $this->guard()->logout();
 
-        // dd(auth::user()->name);
-        // dd($data);
-            $this->guard()->logout();
+        $request->session()->invalidate();
 
-            $request->session()->flush();
+        return $this->loggedOut($request) ? : redirect('/');
+    } 
 
-            $request->session()->regenerate();
-
-            return redirect('/login')
-                ->withSuccess('Terimakasih, selamat datang kembali!');
-        } else {
-
-            $this->guard()->logout();
-
-            $request->session()->flush();
-
-            $request->session()->regenerate();
-
-            return redirect('/login')
-                ->withSuccess('Terimakasih, selamat datang kembali!');
-        }
-    }
 }
