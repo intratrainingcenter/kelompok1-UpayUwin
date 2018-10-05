@@ -11,10 +11,13 @@
 |
 */
 
+Route::resource('signup','frontend\signupcontroller');
 Route::get('/', function () {
     return redirect()->route('dashboard.index');
 });
-
+Route::get('UpayUwin/User', function(){
+	return view('frontend.user');
+});
 Route::get('UpayUwin', function(){
     return view('index_frontend');
 })->name('awal');
@@ -29,6 +32,10 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('UpayUwin/product', function(){
     return view('frontend.product');
+});
+
+Route::get('UpayUwin/payment', function(){
+    return view('frontend.payment');
 });
 
 Route::get('/pay','PaymentController@payWithpaypal');
