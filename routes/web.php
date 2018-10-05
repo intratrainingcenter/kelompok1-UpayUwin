@@ -41,7 +41,8 @@ Route::prefix('backend')->middleware('user')->group(function () {
 
 	//Route Dashboard
 	Route::resource('dashboard','backend\DashboardController');
-	//Route Dashboard
+	//Route Voucher
+	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
 	Route::resource('voucher','backend\VoucherController');
 	//Route User
 	Route::prefix('User')->group(function () {
