@@ -46,7 +46,7 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        dd($request->all());
+        dd('asda');
         $status = auth::User()->status;
         if($status == 'login'){
             $data = User::where('id', auth::user()->id)->first();

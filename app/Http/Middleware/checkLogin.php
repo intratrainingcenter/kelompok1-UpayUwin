@@ -32,16 +32,13 @@ class checkLogin
                     $data->save();
                     return $next($request);
                 }else{
-                    dd('1', $data);
-                    // return back()->with('block', 'Email Dsudah digunakan');
+                    return back()->with('block', 'Email Dsudah digunakan');
                 }
             }else{
-                dd('2');
-                // return back()->with('password', 'Password Salah');
+                return back()->with('password', 'Password Salah');
             }
         }else{
-            dd('3');
-            // return back()->with('email', 'Email Salah');
+            return back()->with('email', 'Email Salah');
         }
     }
 }
