@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
+use App\User;
 use Input;
 class LoginController extends Controller
 {
@@ -39,17 +40,34 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('checkLogin')->only('login');
+        $this->middleware('checkLogin', ['only' => 'login']);
         $this->middleware('guest')->except('logout');
     }
 
     public function logout(Request $request)
     {
-        $this->guard()->logout();
+        dd($request->all());
+        $status = auth::User()->status;
+        if($status == 'login'){
+            $data = User::where('id', auth::user()->id)->first();
+            $data->status = 'logout' ; 
+            $data->save();
 
-        $request->session()->invalidate();
+            $this->guard()->logout();
+            $request->session()->flush();
+            $request->session()->regenerate();
 
-        return $this->loggedOut($request) ? : redirect('/');
+            return redirect()->route('awal');
+        }else{
+
+            $this->guard()->logout();
+            $request->session()->flush();
+            $request->session()->regenerate();
+
+            return redirect('')->route('awal');
+        }
+
+
     } 
 
 }
