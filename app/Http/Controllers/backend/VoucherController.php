@@ -57,7 +57,7 @@ class VoucherController extends Controller
      */
     public function show($id)
     {
-        //
+    
     }
 
     /**
@@ -80,7 +80,16 @@ class VoucherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = voucher_game::find($id);
+        $data->kode_voucher=$request->code_voucher;
+        $data->nama_voucher=$request->name_voucher;
+        $data->kode_kategori=$request->category;
+        $data->harga_voucher=$request->price;
+        $data->masa_aktif=$request->active_period;
+        $data->status=$request->status;
+        $data->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -91,6 +100,13 @@ class VoucherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = voucher_game::find($id);
+        $data->delete();
+        return redirect()->back();
+    }
+    public function cek_kode()
+    {
+        $data = voucher_game::all('kode_voucher');
+        return Response()->json($data);
     }
 }
