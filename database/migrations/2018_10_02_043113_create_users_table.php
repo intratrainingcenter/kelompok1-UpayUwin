@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('saldo')->nullable();
             $table->enum('level',['user','admin']);
             $table->enum('status',['login','logout']);
+            $table->string('remember_token')->nullable();
             $table->timestamps();
         });
     }

@@ -40,34 +40,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('checkLogin');
         $this->middleware('guest')->except('logout');
     }
-
-    public function logout(Request $request)
-    {
-        dd('asda');
-        $status = auth::User()->status;
-        if($status == 'login'){
-            $data = User::where('id', auth::user()->id)->first();
-            $data->status = 'logout' ; 
-            $data->save();
-
-            $this->guard()->logout();
-            $request->session()->flush();
-            $request->session()->regenerate();
-
-            return redirect()->route('awal');
-        }else{
-
-            $this->guard()->logout();
-            $request->session()->flush();
-            $request->session()->regenerate();
-
-            return redirect('')->route('awal');
-        }
-
-
-    } 
 
 }
