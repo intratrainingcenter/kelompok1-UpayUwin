@@ -17,10 +17,10 @@ class user
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if($user->status == 'login'){
+        if ($user->level == 'user' ) {
             return $next($request);
-        }else{
-            return redirect()->route('awal');
+        } else {
+            return redirect()->route('formlogin');
         }
     }
 }
