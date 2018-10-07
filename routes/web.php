@@ -53,7 +53,8 @@ Route::prefix('backend')->middleware('user')->group(function () {
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
 
-
+  	//Route setting
+  	Route::resource('setting','backend\SettingController');
 });
 
 

@@ -16,8 +16,6 @@
 </head>
 
 <body >
-   {{-- oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;" for disable inspect element with mouse --}}
-
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
