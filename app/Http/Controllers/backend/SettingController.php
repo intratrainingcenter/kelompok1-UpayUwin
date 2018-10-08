@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\setting;
+use Image;
 
 class SettingController extends Controller
 {
@@ -38,7 +39,23 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $this->validate($request, array(
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+        ));
+
+        $setting = new setting;
+        $setting->nama_ecommerce = $request->web_name;
+        $setting->alamat = $request->company_address;
+        $setting->telp = $request->phone_number;
+        if($request->hasFile('image')){
+          $image = $request->file('image');
+          $filename = time() . '.' . $image->getClientOriginalExtension();
+          $image->move(public_path('/img'),$filename);
+          $setting->logo = $filename;
+          $setting->save();
+        };
+
+        return redirect()->route('dashboard.index');
     }
 
     /**
