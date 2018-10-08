@@ -32,4 +32,3 @@
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/quill/dist/quill.min.js')}}"></script>
     {{-- toastr --}}
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/toastr/build/toastr.min.js')}}"></script>
-
