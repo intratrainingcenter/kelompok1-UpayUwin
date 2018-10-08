@@ -67,16 +67,16 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        $email  = Auth::user()->email;
-        $data   = User::where('email', $email)->first();
+        $data   = User::where('email', Auth::user()->email)->first();
         $data->status = 'logout';
         $data->save();
         
-        if($data->save()){
+        if (Auth::user()->level == 'admin') {
             Auth::logout();
-            return view('backend/User/login');
-        }else{
-            return redirect()->route('dashboard.index');
+            return redirect('/');
+        } else {
+            Auth::logout();
+            return redirect('/UpayUwin');
         }
 
     }
