@@ -58,7 +58,8 @@ Route::prefix('backend')->group(function () {
   //Route setting
   Route::resource('setting2','backend\SettingController');
 
-
+  	//Route setting
+  	Route::resource('setting','backend\SettingController');
 });
 
 
