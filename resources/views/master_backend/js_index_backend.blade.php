@@ -10,8 +10,6 @@
     <script src="{{asset('template/backend/matrix-admin-bt4/dist/js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{asset('template/backend/matrix-admin-bt4/dist/js/custom.min.js')}}"></script>
-    <!--This page JavaScript -->
-    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
     <!-- Charts js Files -->
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot/excanvas.js')}}"></script>
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot/jquery.flot.js')}}"></script>
@@ -21,14 +19,17 @@
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
     <script src="{{asset('matrix-admin-bt4/dist/js/pages/chart/chart-page-init.js')}}"></script>
-{{--     <script type="text/javascript">
-        function document.onkeydown() 
-    { 
-        if ( event.keyCode==17) //17 is ascii code for ctrl
-        { 
-            event.keyCode = 0; 
-            event.cancelBubble = true; 
-            return false; 
-        } 
-    }
-    </script> --}}
+    {{-- form --}}
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/dist/js/pages/mask/mask.init.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/select2/dist/js/select2.full.min.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/select2/dist/js/select2.min.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/jquery-asColor/dist/jquery-asColor.min.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/jquery-asGradient/dist/jquery-asGradient.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/jquery-minicolors/jquery.minicolors.min.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/quill/dist/quill.min.js')}}"></script>
+    {{-- toastr --}}
+    <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/toastr/build/toastr.min.js')}}"></script>
+

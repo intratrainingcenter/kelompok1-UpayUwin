@@ -11,30 +11,50 @@
 |
 */
 
+Route::resource('signup','frontend\signupcontroller');
 Route::get('/', function () {
     return redirect()->route('dashboard.index');
 });
-Route::get('UpayUwin', function(){
-    return view('index_frontend');
+
+Route::get('UpayUwin/User', function(){
+	return view('frontend.user');
 });
+
+Route::get('UpayUwin', function(){
+    return view('frontend.index');
+})->name('awal');
+
+Route::get('UpayUwin/cart', function(){
+    return view('frontend.cart');
+});
+
+Route::get('UpayUwin/product', function(){
+    return view('frontend.product');
+});
+
+Route::get('UpayUwin/payment', function(){
+    return view('frontend.payment');
+});
+
 Route::get('/pay','PaymentController@payWithpaypal');
 
-
+Route::get('/backend/login',function(){
+	return view('backend.User.login');
+});
 //Route Untuk Backend
-Route::prefix('backend')->group(function () {
-
-	//Route Dashboard
-
+Route::prefix('backend')->middleware('user')->group(function () {
 
 	Route::resource('dashboard','backend\DashboardController');
+	//Route Voucher
+	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
+	Route::resource('voucher','backend\VoucherController');
 	//Route User
-	Route::prefix('User')->group(function () {
+	Route::resource('user','backend\UserController');
+	//Route setting
+	Route::resource('setting2','backend\SettingController');
 
-	});
-  //Route setting
-  Route::resource('setting2','backend\SettingController');
-
-
+  	//Route setting
+  	Route::resource('setting','backend\SettingController');
 });
 
 
@@ -46,3 +66,7 @@ Route::prefix('frontend')->group(function () {
 	});
 
 });
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/formLogin', 'Auth\LoginController@showLoginForm')->name('formLogin');

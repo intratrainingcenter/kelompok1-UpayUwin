@@ -1,341 +1,241 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+<html lang="zxx">
+<head>
+    <title>Fashion Hub Ecommerce Category Bootstrap Responsive Website Template| Home :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Fashion Hub Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+        <!-- Custom Theme files -->
+		<link href="{{asset('FrontEnd1')}}/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+		<link rel="stylesheet" href="{{asset('FrontEnd1')}}/css/owl.carousel.min.css">
+    	<!-- Owl-Carousel-CSS -->
+		<!-- shop css -->
+		<link href="{{asset('FrontEnd1')}}/css/shop.css" type="text/css" rel="stylesheet" media="all">
+		<link href="{{asset('FrontEnd1')}}/css/checkout.css" type="text/css" rel="stylesheet" media="all">
+		<link href="{{asset('FrontEnd1')}}/css/style.css" type="text/css" rel="stylesheet" media="all">
+		<!-- font-awesome icons -->
+		<link href="{{asset('FrontEnd1')}}/css/fontawesome-all.min.css" rel="stylesheet">
+		<!-- //Custom Theme files -->
+		<!-- easy-responsive-tabs css -->
+		<link rel="stylesheet" href="{{asset('FrontEnd1')}}/css/easy-responsive-tabs.css" type="text/css" media="all" />
+		<!-- online-fonts -->
+		<link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
+		<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+		<!-- //online-fonts -->
+	
+</head>
+<body>
+	<!-- header -->
+    @include('master_frontend.header')
 		
-		<title>Ecommerce Video Game | Cart</title>
-
-		<!-- Loading third party fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|" rel="stylesheet" type="text/css">
-		<link href="{{asset('template/frontend')}}/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-		<link href="{{asset('template/frontend')}}/fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
-
-		<!-- Loading main css file -->
-		<link rel="stylesheet" href="{{asset('template/frontend')}}/style.css">
+    <!-- product tabs -->
+    @yield('content')
+    <!-- //product tabs -->
 		
-		<!--[if lt IE 9]>
-		<script src="js/ie-support/html5.js"></script>
-		<script src="js/ie-support/respond.js"></script>
-		<![endif]-->
+    <!-- footer -->
+    @include('master_frontend.footer')
+    <!-- //footer -->
+		<!-- sign up Modal -->
+			@include('master_frontend.signup')
+		<!-- //signup modal -->
+    <!-- signin Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModal1" aria-hidden="true">
+        <div class="agilemodal-dialog modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body  pt-3 pb-5 px-sm-5">
+                    <div class="row">
+                        <div class="col-md-6 align-self-center">
+                            <img src="{{asset('FrontEnd1')}}/images/p3.png" class="img-fluid" alt="login_image" />
+                        </div>
+                        <div class="col-md-6">
+                            <form action="{{ route('login') }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="" name="email" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Password</label>
+                                    <input type="password" class="form-control" placeholder=" " name="password" required="">
+                                </div>
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control" value="Login">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- signin Modal -->
+    <!-- js -->
+    <script src="{{asset('FrontEnd1')}}/js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- script for show signin and signup modal -->
+    <script>
+        $(document).ready(function () {
+            $("#myModal_btn").modal();
+        });
+    </script>
+    <!-- //script for show signin and signup modal -->
+    <!-- smooth dropdown -->
+    <script>
+        $(document).ready(function () {
+            $('ul li.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+            });
+        });
+    </script>
+    <!-- //smooth dropdown -->
+    <!-- script for password match -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
 
-	</head>
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- script for password match -->
+    <!-- Banner Responsiveslides -->
+    <script src="{{asset('FrontEnd1')}}/js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider3").responsiveSlides({
+                auto: false,
+                pager: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
 
+        });
+    </script>
+    <!-- // Banner Responsiveslides -->
+    <!-- Product slider Owl-Carousel-JavaScript -->
+    <script src="{{asset('FrontEnd1')}}/js/owl.carousel.js"></script>
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 4,
+            loop: false,
+            margin: 10,
+            autoplay: false,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: false,
+            responsive: {
+                320: {
+                    items: 1,
+                },
+                568: {
+                    items: 2,
+                },
+                991: {
+                    items: 3,
+                },
+                1050: {
+                    items: 4
+                }
+            }
+        });
+    </script>
+    <!-- //Product slider Owl-Carousel-JavaScript -->
+    <!-- cart-js -->
+    <script src="{{asset('FrontEnd1')}}/js/minicart.js">
+    </script>
+    <script>
+        hub.render();
 
-	<body class="slider-collapse">
-		
-		<div id="site-content">
-			<div class="site-header">
-				<div class="container">
-					<a href="index.html" id="branding">
-						<img src="{{asset('template/frontend')}}/images/logo.png" alt="" class="logo">
-						<div class="logo-text">
-							<h1 class="site-title">Company name</h1>
-							<small class="site-description">Tagline goes here</small>
-						</div>
-					</a> <!-- #branding -->
+        hub.cart.on('new_checkout', function (evt) {
+            var items, len, i;
 
-					<div class="right-section pull-right">
-						<a href="cart.html" class="cart"><i class="icon-cart"></i> 0 items in cart</a>
-						<a href="#" class="login-button">Login/Register</a>
-					</div> <!-- .right-section -->
+            if (this.subtotal() > 0) {
+                items = this.items();
 
-					<div class="main-navigation">
-						<button class="toggle-menu"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
-							<li class="menu-item"><a href="products.html">Accessories</a></li>
-							<li class="menu-item"><a href="products.html">Promotions</a></li>
-							<li class="menu-item"><a href="products.html">PC</a></li>
-							<li class="menu-item"><a href="products.html">Playstation</a></li>
-							<li class="menu-item"><a href="products.html">Xbox</a></li>
-							<li class="menu-item"><a href="products.html">Wii</a></li>
-						</ul> <!-- .menu -->
-						<div class="search-form">
-							<label><img src="images/icon-search.png"></label>
-							<input type="text" placeholder="Search...">
-						</div> <!-- .search-form -->
+                for (i = 0, len = items.length; i < len; i++) {}
+            }
+        });
+    </script>
+    <!-- //cart-js -->
+    <!-- start-smooth-scrolling -->
+    <script src="{{asset('FrontEnd1')}}/js/move-top.js"></script>
+    <script src="{{asset('FrontEnd1')}}/js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
 
-						<div class="mobile-navigation"></div> <!-- .mobile-navigation -->
-					</div> <!-- .main-navigation -->
-				</div> <!-- .container -->
-			</div> <!-- .site-header -->
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
 
-			<div class="home-slider">
-				<ul class="slides">
-					<li data-bg-image="{{asset('template/frontend')}}/dummy/slide-1.jpg">
-						<div class="container">
-							<div class="slide-content">
-								<h2 class="slide-title">Kill Zone 3</h2>
-								<small class="slide-subtitle">$190.00</small>
-								
-								<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-								
-								<a href="cart.html" class="button">Add to cart</a>
-							</div>
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
 
-							<img src="{{asset('template/frontend')}}/dummy/game-cover-1.jpg" class="slide-image">
-						</div>
-					</li>
-					<li data-bg-image="{{asset('template/frontend')}}/dummy/slide-2.jpg">
-						<div class="container">
-							<div class="slide-content">
-								<h2 class="slide-title">Kill Zone 3</h2>
-								<small class="slide-subtitle">$190.00</small>
-								
-								<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-								
-								<a href="cart.html" class="button">Add to cart</a>
-							</div>
-
-							<img src="{{asset('template/frontend')}}/dummy/game-cover-2.jpg" class="slide-image">
-						</div>
-					</li>
-					<li data-bg-image="{{asset('template/frontend')}}/dummy/slide-3.jpg">
-						<div class="container">
-							<div class="slide-content">
-								<h2 class="slide-title">Kill Zone 3</h2>
-								<small class="slide-subtitle">$190.00</small>
-								
-								<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-								
-								<a href="cart.html" class="button">Add to cart</a>
-							</div>
-
-							<img src="{{asset('template/frontend')}}/dummy/game-cover-3.jpg" class="slide-image">
-						</div>
-					</li>
-				</ul> <!-- .slides -->
-			</div> <!-- .home-slider -->
-
-			<main class="main-content">
-				<div class="container">
-					<div class="page">
-						<section>
-							<header>
-								<h2 class="section-title">New Products</h2>
-								<a href="#" class="all">Show All</a>
-							</header>
-
-							<div class="product-list">
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-1.jpg" alt="Game 1"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-2.jpg" alt="Game 2"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-3.jpg" alt="Game 3"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Need for Speed rivals</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-4.jpg" alt="Game 4"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Big game hunter</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-
-							</div> <!-- .product-list -->
-
-						</section>
-
-						<section>
-							<header>
-								<h2 class="section-title">promotion</h2>
-								<a href="#" class="all">Show All</a>
-							</header>
-
-							<div class="product-list">
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-5.jpg" alt="Game 1"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Watch Dogs</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-6.jpg" alt="Game 2"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Mortal Kombat X</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-7.jpg" alt="Game 3"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Metal Gear Solid V</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-								
-								<div class="product">
-									<div class="inner-product">
-										<div class="figure-image">
-											<a href="single.html"><img src="{{asset('template/frontend')}}/dummy/game-8.jpg" alt="Game 4"></a>
-										</div>
-										<h3 class="product-title"><a href="#">Nascar '14</a></h3>
-										<small class="price">$19.00</small>
-										<p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-										<a href="cart.html" class="button">Add to cart</a>
-										<a href="#" class="button muted">Read Details</a>
-									</div>
-								</div> <!-- .product -->
-								
-							</div> <!-- .product-list -->
-
-						</section>
-					</div>
-				</div> <!-- .container -->
-			</main> <!-- .main-content -->
-
-			<div class="site-footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title">Information</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Site map</a></li>
-									<li><a href="#">About us</a></li>
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Contact</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title">Consumer Service</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Secure</a></li>
-									<li><a href="#">Shipping &amp; Returns</a></li>
-									<li><a href="#">Shipping</a></li>
-									<li><a href="#">Orders &amp; Returns</a></li>
-									<li><a href="#">Group Sales</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-2">
-							<div class="widget">
-								<h3 class="widget-title">My Account</h3>
-								<ul class="no-bullet">
-									<li><a href="#">Login/Register</a></li>
-									<li><a href="#">Settings</a></li>
-									<li><a href="#">Cart</a></li>
-									<li><a href="#">Order Tracking</a></li>
-									<li><a href="#">Logout</a></li>
-								</ul>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-						<div class="col-md-6">
-							<div class="widget">
-								<h3 class="widget-title">Join our newsletter</h3>
-								<form action="#" class="newsletter-form">
-									<input type="text" placeholder="Enter your email...">
-									<input type="submit" value="Subsribe">
-								</form>
-							</div> <!-- .widget -->
-						</div> <!-- column -->
-					</div><!-- .row -->
-
-					<div class="colophon">
-						<div class="copy">Copyright 2014 Company name. Designed by Themezy. All rights reserved.</div>
-						<div class="social-links square">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-google-plus"></i></a>
-							<a href="#"><i class="fa fa-pinterest"></i></a>
-						</div> <!-- .social-links -->
-					</div> <!-- .colophon -->
-				</div> <!-- .container -->
-			</div> <!-- .site-footer -->
-		</div>
-
-		<div class="overlay"></div>
-
-		<div class="auth-popup popup">
-			<a href="#" class="close"><i class="fa fa-times"></i></a>
-			<div class="row">
-				<div class="col-md-6">
-					<h2 class="section-title">Login</h2>
-					<form action="#">
-						<input type="text" placeholder="Username...">
-						<input type="password" placeholder="Password...">
-						<input type="submit" value="Login">
-					</form>
-				</div> <!-- .column -->
-				<div class="col-md-6">
-					<h2 class="section-title">Create an account</h2>
-					<form action="#">
-						<input type="text" placeholder="Username...">
-						<input type="text" placeholder="Email address...">
-						<input type="submit" value="register">
-					</form>
-				</div> <!-- .column -->
-			</div> <!-- .row -->
-		</div> <!-- .auth-popup -->
-
-		<script src="{{asset('template/frontend')}}/js/jquery-1.11.1.min.js"></script>
-		<script src="{{asset('template/frontend')}}/js/plugins.js"></script>
-		<script src="{{asset('template/frontend')}}/js/app.js"></script>
-		
-	</body>
+        });
+    </script>
+    <script src="{{asset('FrontEnd1')}}/js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{asset('FrontEnd1')}}/js/bootstrap.js"></script>
+</body>
 
 </html>
