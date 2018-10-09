@@ -19,12 +19,6 @@ class checkLogin
      */
     public function handle($request, Closure $next)
     {
-        $email = $request->email;
-        $password = $request->password;
-
-        $check = User::where('email',$email)->exists();
-        $data = User::where('email',$email)->first();
-
         if($check == true){
             if(Hash::check($password, $data->password)){
                 if($data->status == 'logout'){

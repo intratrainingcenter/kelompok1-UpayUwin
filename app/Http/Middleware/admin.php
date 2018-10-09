@@ -2,10 +2,9 @@
 
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
-
 use Closure;
 
-class user
+class admin
 {
     /**
      * Handle an incoming request.
@@ -16,11 +15,14 @@ class user
      */
     public function handle($request, Closure $next)
     {
-        $user = Auth::user();
-        if ($user->level == 'user' ) {
-            return $next($request);
-        } else {
-            return redirect()->route('formlogin');
+        if (Auth::check()) {
+            if (Auth::user()->level == 'admin') {
+                return $next($request);
+            }        
+            return redirect('/');
         }
+        return redirect()->route('formLogin');
+        
+
     }
 }

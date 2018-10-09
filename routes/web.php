@@ -42,7 +42,7 @@ Route::get('/backend/login',function(){
 	return view('backend.User.login');
 });
 //Route Untuk Backend
-Route::prefix('backend')->middleware('user')->group(function () {
+Route::prefix('backend')->middleware('admin')->group(function () {
 
 	Route::resource('dashboard','backend\DashboardController');
 	//Route Voucher
