@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="sub-w3l">
                                     <div class="sub-agile">
-                                        <input type="checkbox" id="brand2" value="">
+                                        <input type="checkbox" id="brand2" value="" required>
                                         <label for="brand2" class="mb-3">
                                             <span></span>I Accept to the Terms & Conditions</label>
                                     </div>
