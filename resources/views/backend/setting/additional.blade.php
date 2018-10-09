@@ -5,6 +5,5 @@
 
 @section('js')
 	{{-- your js here --}}
-	<script type="text/javascript" src="{{asset('backend/js/jquery.uploadPreview.js')}}"></script>
 	<script type="text/javascript" src="{{asset('backend/js/previewimagesetting.js')}}"></script>
 @endsection

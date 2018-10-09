@@ -52,7 +52,7 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	Route::resource('user','backend\UserController');
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
-
+  Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
   	//Route setting
   	Route::resource('setting','backend\SettingController');
 });

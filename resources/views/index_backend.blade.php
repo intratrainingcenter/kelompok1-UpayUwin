@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="address" id="address" content="">
+    <meta name="phone" id="phone" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('template/backend/matrix-admin-bt4/assets/images/favicon.png')}}">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="">
+    <title class="tittle"></title>
     @include('master_backend.css_index_backend')
     @yield('css')
 </head>
@@ -41,6 +41,26 @@
 
     @include('master_backend.js_index_backend')
     @yield('js')
+  <script type="text/javascript">
+  $(document).ready(function () {
+    $.ajax({
+      type: 'GET',
+      url: '{{ URL::route("settingweb") }}',
+      data: {
+        _method: 'GET'
+      },
+    }).done(function (data) {
+      console.log(data);
+      $(".tittle").text(data.tittle);
+      $("meta[name='address']").attr("content", data.address);
+      $("meta[name='phone']").attr("content", data.phone);
+      $("#title").text(data.tittle);
+      $("link[rel=icon]").attr("href","{{asset('backend/img')}}/"+ data.logo);
+    }).fail(function (data) {
+      console.log(data);
+    })
+  });
+  </script>
 </body>
 
 </html>
