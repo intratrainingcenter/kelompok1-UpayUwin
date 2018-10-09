@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\setting;
+use Response;
 use Image;
 
 class SettingController extends Controller
@@ -113,5 +114,11 @@ class SettingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function setting_web()
+    {
+      $setting = setting::first();
+      return Response::json([ 'tittle' => $setting->nama_ecommerce, 'address' => $setting->alamat, 'phone' => $setting->telp,'logo' => $setting->logo,], 201);
     }
 }
