@@ -11,19 +11,8 @@
 |
 */
 
-Route::resource('signup','frontend\signupcontroller');
 Route::get('/', function () {
     return redirect()->route('dashboard.index');
-});
-Route::get('UpayUwin/User', function(){
-	return view('frontend.user');
-});
-Route::get('UpayUwin', function(){
-    return view('frontend.index');
-})->name('awal');
-
-Route::get('UpayUwin/cart', function(){
-    return view('frontend.cart');
 });
 
 // Authentication Routes...
@@ -43,6 +32,7 @@ Route::get('/pay','PaymentController@payWithpaypal');
 Route::get('/backend/login',function(){
 	return view('backend.User.login');
 });
+
 //Route Untuk Backend
 Route::prefix('backend')->middleware('user')->group(function () {
 
@@ -59,15 +49,17 @@ Route::prefix('backend')->middleware('user')->group(function () {
   Route::resource('setting','backend\SettingController');
 });
 
-
-
-
 //Route Untuk Frontend
 Route::prefix('frontend')->group(function () {
 	//Route wallet
 	Route::prefix('wallet')->group(function () {
 	});
-
+	Route::post('signup','frontend\signupcontroller@store')->name('signup');
+	
+	Route::get('index', function(){
+		return view('frontend.index');
+	})->name('index');
+	
 });
 
 Auth::routes();

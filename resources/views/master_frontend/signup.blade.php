@@ -13,7 +13,7 @@
                             <img src="{{asset('FrontEnd1')}}/images/p3.png" class="img-fluid" alt="login_image" />
                         </div>
                         <div class="col-md-6">
-                            <form action="{{url('signup')}}" method="post">
+                            <form action="{{route('signup')}}" method="post">
                             @csrf
                                 <div class="form-group">
                                     <label for="recipient-name1" class="col-form-label">Your Name</label>
