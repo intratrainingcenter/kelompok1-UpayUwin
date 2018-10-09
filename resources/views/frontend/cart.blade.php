@@ -1,143 +1,336 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Cart</title>
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="description" content="Sublime project">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            @include('frontend.modules')
-    </head>
-<body>
+@extends('index_frontend')
+@section('content')
 
-<div class="super_container">
-	<!-- Header -->
-     @include('frontend.header')
-            <!-- Home -->
-                @include('frontend.home_container')
-	<!-- Cart Info -->
-	<div class="cart_info">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<!-- Column Titles -->
-					<div class="cart_info_columns clearfix">
-						<div class="cart_info_col cart_info_col_product">Product</div>
-						<div class="cart_info_col cart_info_col_price">Price</div>
-						<div class="cart_info_col cart_info_col_quantity">Quantity</div>
-						<div class="cart_info_col cart_info_col_total">Total</div>
-					</div>
-				</div>
-			</div>
-			<div class="row cart_items_row">
-				<div class="col">
-					<!-- Cart Item -->
-					<div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-						<!-- Name -->
-						<div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
-							<div class="cart_item_image">
-								<div><img src="{{asset('frontend')}}/images/cart_1.jpg" alt=""></div>
-							</div>
-							<div class="cart_item_name_container">
-								<div class="cart_item_name"><a href="#">Smart Phone Deluxe Edition</a></div>
-								<div class="cart_item_edit"><a href="#">Edit Product</a></div>
-							</div>
-						</div>
-						<!-- Price -->
-						<div class="cart_item_price">$790.90</div>
-						<!-- Quantity -->
-						<div class="cart_item_quantity">
-							<div class="product_quantity_container">
-								<div class="product_quantity clearfix">
-									<span>Qty</span>
-									<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-									<div class="quantity_buttons">
-										<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-										<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Total -->
-						<div class="cart_item_total">$790.90</div>
-					</div>
-				</div>
-			</div>
-			<div class="row row_cart_buttons">
-				<div class="col">
-					<div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
-						<div class="button continue_shopping_button"><a href="#">Continue shopping</a></div>
-						<div class="cart_buttons_right ml-lg-auto">
-							<div class="button clear_cart_button"><a href="#">Clear cart</a></div>
-							<div class="button update_cart_button"><a href="#">Update cart</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row row_extra">
-				<div class="col-lg-4">
-					<!-- Delivery -->
-					<div class="delivery">
-						<div class="section_title">Shipping method</div>
-						<div class="section_subtitle">Select the one you want</div>
-						<div class="delivery_options">
-							<label class="delivery_option clearfix">Next day delivery
-								<input type="radio" name="radio">
-								<span class="checkmark"></span>
-								<span class="delivery_price">$4.99</span>
-							</label>
-							<label class="delivery_option clearfix">Standard delivery
-								<input type="radio" name="radio">
-								<span class="checkmark"></span>
-								<span class="delivery_price">$1.99</span>
-							</label>
-							<label class="delivery_option clearfix">Personal pickup
-								<input type="radio" checked="checked" name="radio">
-								<span class="checkmark"></span>
-								<span class="delivery_price">Free</span>
-							</label>
-						</div>
-					</div>
-					<!-- Coupon Code -->
-					<div class="coupon">
-						<div class="section_title">Coupon code</div>
-						<div class="section_subtitle">Enter your coupon code</div>
-						<div class="coupon_form_container">
-							<form action="#" id="coupon_form" class="coupon_form">
-								<input type="text" class="coupon_input" required="required">
-								<button class="button coupon_button"><span>Apply</span></button>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 offset-lg-2">
-					<div class="cart_total">
-						<div class="section_title">Cart total</div>
-						<div class="section_subtitle">Final info</div>
-						<div class="cart_total_container">
-							<ul>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div class="cart_total_title">Subtotal</div>
-									<div class="cart_total_value ml-auto">$790.90</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div class="cart_total_title">Shipping</div>
-									<div class="cart_total_value ml-auto">Free</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div class="cart_total_title">Total</div>
-									<div class="cart_total_value ml-auto">$790.90</div>
-								</li>
-							</ul>
-						</div>
-						<div class="button checkout_button"><a href="#">Proceed to checkout</a></div>
-					</div>
-				</div>
-			</div>
-		</div>		
+	<!-- inner banner -->
+	<div class="ibanner_w3 pt-sm-5 pt-3">
+		<h4 class="head_agileinfo text-center text-capitalize text-center pt-5">
+			<span>f</span>ashion
+			<span>h</span>ub</h4>
 	</div>
-	<!-- Footer -->
-	@include('frontend.footer')
-</div>
-</body>
-</html>
+	<!-- //inner banner -->
+    <!-- breadcrumbs -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+        </ol>
+    </nav>
+    <!-- //breadcrumbs -->
+    <!--checkout-->
+    <section class="checkout_wthree py-sm-5 py-3">
+        <div class="container">
+            <div class="check_w3ls">
+                <div class="d-sm-flex justify-content-between mb-4">
+                    <h4>review your order
+                    </h4>
+                    <h4 class="mt-sm-0 mt-3">Your shopping cart contains:
+                        <span>3 Products</span>
+                    </h4>
+                </div>
+                <div class="checkout-right">
+                    <table class="timetable_sub">
+                        <thead>
+                            <tr>
+                                <th>SL No.</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Product Name</th>
+
+                                <th>Price</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rem1">
+                                <td class="invert">1</td>
+                                <td class="invert-image">
+                                    <a href="single_product.html">
+                                        <img src="{{asset('FrontEnd1')}}/images/pm1.jpg" alt=" " class="img-responsive">
+                                    </a>
+                                </td>
+                                <td class="invert">
+                                    <div class="quantity">
+                                        <div class="quantity-select">
+                                            <div class="entry value-minus">&nbsp;</div>
+                                            <div class="entry value">
+                                                <span>1</span>
+                                            </div>
+                                            <div class="entry value-plus active">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="invert">Solid Men's Black Shirt</td>
+
+                                <td class="invert">$20.00</td>
+                                <td class="invert">
+                                    <div class="rem">
+                                        <div class="close1"> </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr class="rem2">
+                                <td class="invert">2</td>
+                                <td class="invert-image">
+                                    <a href="single_product.html">
+                                        <img src="{{asset('FrontEnd1')}}/images/pf1.jpg" alt=" " class="img-responsive">
+                                    </a>
+                                </td>
+                                <td class="invert">
+                                    <div class="quantity">
+                                        <div class="quantity-select">
+                                            <div class="entry value-minus">&nbsp;</div>
+                                            <div class="entry value">
+                                                <span>1</span>
+                                            </div>
+                                            <div class="entry value-plus active">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="invert">Women's Light Blue Tunic</td>
+
+                                <td class="invert">$35.00</td>
+                                <td class="invert">
+                                    <div class="rem">
+                                        <div class="close2"> </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr class="rem3">
+                                <td class="invert">3</td>
+                                <td class="invert-image">
+                                    <a href="single_product.html">
+                                        <img src="{{asset('FrontEnd1')}}/images/pb3.jpg" alt=" " class="img-responsive">
+                                    </a>
+                                </td>
+                                <td class="invert">
+                                    <div class="quantity">
+                                        <div class="quantity-select">
+                                            <div class="entry value-minus">&nbsp;</div>
+                                            <div class="entry value">
+                                                <span>1</span>
+                                            </div>
+                                            <div class="entry value-plus active">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="invert">Boy's Casual Shirt & Trouser Set</td>
+
+                                <td class="invert">$23.00</td>
+                                <td class="invert">
+                                    <div class="rem">
+                                        <div class="close3"> </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row checkout-left mt-5">
+                    <div class="col-md-4 checkout-left-basket">
+                        <h4>Continue to basket</h4>
+                        <ul>
+                            <li>Solid Men's Black Shirt
+                                <i>-</i>
+                                <span>$20.00 </span>
+                            </li>
+                            <li>Women's Light Blue Tunic
+                                <i>-</i>
+                                <span>$35.00 </span>
+                            </li>
+                            <li>Boy's Casual Shirt & Trouser Set
+                                <i>-</i>
+                                <span>$23.00</span>
+                            </li>
+                            <li>Total
+                                <i>-</i>
+                                <span>$78.00</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 address_form">
+                        <h4>Billing Address</h4>
+                        <form action="payment.html" method="post" class="creditly-card-form shopf-sear-headinfo_form">
+                            <div class="creditly-wrapper wrapper">
+                                <div class="information-wrapper">
+                                    <div class="first-row form-group">
+                                        <div class="controls">
+                                            <label class="control-label">Full name: </label>
+                                            <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+                                        </div>
+                                        <div class="card_number_grids">
+                                            <div class="card_number_grid_left">
+                                                <div class="controls">
+                                                    <label class="control-label">Mobile number:</label>
+                                                    <input class="form-control" type="text" placeholder="Mobile number">
+                                                </div>
+                                            </div>
+                                            <div class="card_number_grid_right">
+                                                <div class="controls">
+                                                    <label class="control-label">Landmark: </label>
+                                                    <input class="form-control" type="text" placeholder="Landmark">
+                                                </div>
+                                            </div>
+                                            <div class="clear"> </div>
+                                        </div>
+                                        <div class="controls">
+                                            <label class="control-label">Town/City: </label>
+                                            <input class="form-control" type="text" placeholder="Town/City">
+                                        </div>
+                                        <div class="controls">
+                                            <label class="control-label">Address type: </label>
+                                            <select class="form-control option-fieldf">
+                                                <option>Office</option>
+                                                <option>Home</option>
+                                                <option>Commercial</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button class="submit check_out">place order</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- js -->
+    <script src="{{asset('FrontEnd1')}}/js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- smooth dropdown -->
+    <script>
+        $(document).ready(function () {
+            $('ul li.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+            });
+        });
+    </script>
+    <!-- //smooth dropdown -->
+    <!-- script for password match -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- script for password match -->
+    <!-- cart-js -->
+    <script src="{{asset('FrontEnd1')}}/js/minicart.js"></script>
+    <script>
+        hub.render();
+
+        hub.cart.on('new_checkout', function (evt) {
+            var items, len, i;
+
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) {}
+            }
+        });
+    </script>
+    <!-- //cart-js -->
+    <!--quantity-->
+    <script>
+        $('.value-plus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+                newVal = parseInt(divUpd.text(), 10) + 1;
+            divUpd.text(newVal);
+        });
+
+        $('.value-minus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+                newVal = parseInt(divUpd.text(), 10) - 1;
+            if (newVal >= 1) divUpd.text(newVal);
+        });
+    </script>
+    <!--quantity-->
+    <!-- FadeOut-Script -->
+    <script>
+        $(document).ready(function (c) {
+            $('.close1').on('click', function (c) {
+                $('.rem1').fadeOut('slow', function (c) {
+                    $('.rem1').remove();
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close2').on('click', function (c) {
+                $('.rem2').fadeOut('slow', function (c) {
+                    $('.rem2').remove();
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close3').on('click', function (c) {
+                $('.rem3').fadeOut('slow', function (c) {
+                    $('.rem3').remove();
+                });
+            });
+        });
+    </script>
+    <!--// FadeOut-Script -->
+
+    <!-- start-smooth-scrolling -->
+    <script src="{{asset('FrontEnd1')}}/js/move-top.js"></script>
+    <script src="{{asset('FrontEnd1')}}/js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="{{asset('FrontEnd1')}}/js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{asset('FrontEnd1')}}/js/bootstrap.js"></script>
+@endsection
