@@ -5,7 +5,7 @@
             <nav class="top_nav d-flex pt-3 pb-1">
                 <!-- logo -->
                 <h1>
-                    <a class="navbar-brand" href="index.html">fh
+                    <a class="navbar-brand tittle" href="index.html">
                     </a>
                 </h1>
                 <!-- //logo -->
