@@ -17,27 +17,27 @@
 
 <body >
    {{-- oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;" for disable inspect element with mouse --}}
-   
+
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
         </div>
     </div>
-   
+
     <div id="main-wrapper">
-       
+
         <header class="topbar" data-navbarbg="skin5">
             @include('master_backend.topnav_index')
         </header>
-    
+
         <aside class="left-sidebar" data-sidebarbg="skin5">
             @include('master_backend.sidebar')
         </aside>
-       
+
         <div class="page-wrapper">
              @yield('content')
-            @include('master_backend.footer')           
+            @include('master_backend.footer')
         </div>
     </div>
 

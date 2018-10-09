@@ -3,8 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Http\Request;
+use App\User;
+use Input;
 class LoginController extends Controller
 {
     /*
@@ -34,8 +40,34 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('checkLogin');
         $this->middleware('guest')->except('logout');
     }
 
-    
+    public function logout(Request $request)
+    {
+        dd('asda');
+        $status = auth::User()->status;
+        if($status == 'login'){
+            $data = User::where('id', auth::user()->id)->first();
+            $data->status = 'logout' ; 
+            $data->save();
+
+            $this->guard()->logout();
+            $request->session()->flush();
+            $request->session()->regenerate();
+
+            return redirect()->route('awal');
+        }else{
+
+            $this->guard()->logout();
+            $request->session()->flush();
+            $request->session()->regenerate();
+
+            return redirect('')->route('awal');
+        }
+
+
+    } 
+
 }

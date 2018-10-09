@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\frontend;
 
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\setting;
+use App\user;
 
-class SettingController extends Controller
+class signupcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,7 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $data = setting::first();
-
-        return view('backend.setting.index',compact('data'));
+        //
     }
 
     /**
@@ -39,7 +36,7 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -73,18 +70,7 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-      // dd($request->all());
-      $update = setting::find($id);
-      $file = $request->file('logo');
-      $fileName   = $file->getClientOriginalName();
-      $request->file('logo')->move('backend/img', $fileName);
-      $update->logo = $fileName;
-      $update->nama_ecommerce = $request->name_ecommerce;
-      $update->alamat = $request->address;
-      $update->telp = $request->phone;
-      $update->save();
-
-      return redirect()->route('setting2.index');
+        //
     }
 
     /**
