@@ -14,21 +14,29 @@
 Route::get('/', function () {
     return redirect()->route('dashboard.index');
 });
+
 Route::get('UpayUwin', function(){
-    return view('index_frontend');
+	return view('index_frontend');	
 });
+
+Route::get('/', function(){
+	return view('welcome');	
+});
+
 Route::get('/pay','PaymentController@payWithpaypal');
 
+Route::resource('category','categoryController');
 
 //Route Untuk Backend
 Route::prefix('backend')->group(function () { 
 	
 	//Route Dashboard
 	Route::resource('dashboard','backend\DashboardController');
-	//Route Dashboard
+	//Rsoute Dashboard
 	Route::resource('voucher','backend\VoucherController');
 	//Route User
 	Route::prefix('User')->group(function () {
+		
 
 	});
 });
