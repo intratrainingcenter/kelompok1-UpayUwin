@@ -19,7 +19,7 @@
             <div class="container-fluid">
              <div class="card">     
                <div class="card-body"> 
-                 <button type="button" class="btn btn-outline-info add-button" data-toggle="modal" data-target="#Modal2"><i class="fas fa-credit-card"></i> Add Voucher</button>
+                 <button type="button" class="btn btn-outline-info add-button" data-toggle="modal" data-target="#Modal-add"><i class="fas fa-credit-card"></i> Add Voucher</button>
                 <table class="table">
                     <thead>
                         <tr>
@@ -42,10 +42,12 @@
                             <td>{{$data->masa_aktif}}</td>
                             <td>{{$data->status}}</td>
                             <td>
-                                <button type="button" class="btn btn-outline-warning"><i class="fas fa-pencil-alt"></i></button>
-                                <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit{{$data->id}}"><i class="fas fa-pencil-alt"></i></button>
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Modal-delete{{$data->id}}"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
+                        @include('backend.voucher.edit')
+                        @include('backend.voucher.delete')
                         @endforeach
                     </tbody>
                 </table>
