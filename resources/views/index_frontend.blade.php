@@ -92,11 +92,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- signin Modal -->
     <!-- js -->
     <script src="{{asset('FrontEnd1')}}/js/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!-- script for show signin and signup modal -->
     <script>
         $(document).ready(function () {
-            $("#myModal_btn").modal();
+            <!-- $("#myModal_btn").modal(); -->
         });
     </script>
     <!-- //script for show signin and signup modal -->
@@ -132,7 +130,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Banner Responsiveslides -->
     <script src="{{asset('FrontEnd1')}}/js/responsiveslides.min.js"></script>
     <script>
-        // You can also use "$(window).load(function() {"
         $(function () {
             // Slideshow 4
             $("#slider3").responsiveSlides({

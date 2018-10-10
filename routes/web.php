@@ -20,17 +20,13 @@ Route::get('UpayUwin/User', function(){
 	return view('frontend.user');
 });
 
-Route::get('UpayUwin', function(){
-    return view('frontend.index');
-})->name('awal');
+Route::get('UpayUwin', 'frontend\productController@index');
 
 Route::get('UpayUwin/cart', function(){
     return view('frontend.cart');
 });
 
-Route::get('UpayUwin/product', function(){
-    return view('frontend.product');
-});
+// Route::get('UpayUwin/product', 'frontend\productController@index');
 
 Route::get('UpayUwin/payment', function(){
     return view('frontend.payment');
