@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\voucher_game;
+use Illuminate\Support\Facades\Storage;
 
 class VoucherController extends Controller
 {
@@ -36,7 +37,11 @@ class VoucherController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $this->validate($request, array(
+            'image' => 'image|mimes:jpeg,png,jpg|max:4048',
+        ));
+
         $data = new voucher_game;
         $data->kode_voucher = $request->code_voucher;
         $data->nama_voucher = $request->name_voucher;
@@ -44,8 +49,14 @@ class VoucherController extends Controller
         $data->harga_voucher = $request->price;
         $data->masa_aktif = $request->active_period;
         $data->status = $request->status;
-        $data->save();
 
+        if($request->hasFile('image')){
+          $image = $request->file('image');
+          $filename = time() . '.' . $image->getClientOriginalExtension();
+          $image->move(public_path('/img/voucher'),$filename);
+          $data->foto = $filename;
+          $data->save();
+        };
         return redirect()->route('voucher.index');
     }
 
@@ -79,7 +90,11 @@ class VoucherController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        $this->validate($request, array(
+            'image' => 'image|mimes:jpeg,png,jpg|max:4048',
+        ));
+        
         $data = voucher_game::find($id);
         $data->kode_voucher=$request->code_voucher;
         $data->nama_voucher=$request->name_voucher;
@@ -87,9 +102,22 @@ class VoucherController extends Controller
         $data->harga_voucher=$request->price;
         $data->masa_aktif=$request->active_period;
         $data->status=$request->status;
-        $data->save();
 
-        return redirect()->back();
+        if($request->hasFile('image')){
+            $file_path = public_path().'/img/voucher/'.$data->foto;
+            unlink($file_path);
+
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/img/voucher'),$filename);
+            $data->foto = $filename;
+            $data->save();
+            return redirect()->back();
+        }else{
+            $data->save();
+            return redirect()->back();
+        };
+
     }
 
     /**
@@ -101,6 +129,8 @@ class VoucherController extends Controller
     public function destroy($id)
     {
         $data = voucher_game::find($id);
+        $file_path = public_path().'/img/voucher/'.$data->foto;
+        unlink($file_path);
         $data->delete();
         return redirect()->back();
     }

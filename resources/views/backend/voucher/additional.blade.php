@@ -6,6 +6,20 @@
 		.add-button{
 			margin-bottom: 10px;
 		}
+		.closebtn {
+		    margin-left: 15px;
+		    font-weight: bold;
+		    float: right;
+		    font-size: 22px;
+		    line-height: 20px;
+		    cursor: pointer;
+		    transition: 0.3s;
+		}
+		.fotoAdd,.foto{
+			margin-top: 10px;
+			width: 100%;
+			height: 100%;
+		}
 	</style>
 @endsection
 
@@ -45,8 +59,17 @@
          			toastr.error('Tidak dapat melanjutkan kode voucher sudah ada.', 'Danger!');
 				}
 			});
+			//Display image on change input
+			$("#input_logo").change(function() {
+			  	readURL(this);
+			});
+			$(".input_logo").change(function() {
+				let key = $(this).attr('key');
+			  	readURL_edit(this,key);
+			});
 		});
 	</script>
+	@include('backend.voucher.more-js')
 @endsection
 
 							
