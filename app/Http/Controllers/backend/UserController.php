@@ -82,7 +82,7 @@ class UserController extends Controller
     {
         $update = User::find($id);
         $update->name = $request->name;
-        $update->emali = $request->email;
+        $update->email = $request->email;
         $update->password = $request->password;
         $update->save();
 

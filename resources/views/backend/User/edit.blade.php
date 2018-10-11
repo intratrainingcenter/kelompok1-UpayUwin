@@ -1,7 +1,7 @@
 <div class="modal fade" id="Modal-edit{{$data_user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none; aria-hidden="true" ">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form id="form_add" action="{{ route('user.update',['id'=>$data_user->id]) }}" method="put" accept-charset="utf-8">
+          <form id="form_add" action="{{ route('user.update',['id'=>$data_user->id]) }}" method="post" accept-charset="utf-8">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -32,7 +32,8 @@
 
                     <div class="">
                     <label class="labels">Password</label>
-                    <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password Here" required>
+                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('password') }}</strong>
