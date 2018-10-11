@@ -41,6 +41,8 @@ Route::get('/pay','PaymentController@payWithpaypal');
 Route::get('/backend/login',function(){
 	return view('backend.User.login');
 });
+
+
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
 
@@ -70,3 +72,6 @@ Route::prefix('frontend')->group(function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/formLogin', 'Auth\LoginController@showLoginForm')->name('formLogin');
+Route::get('registeradmin',function(){
+  return view('backend.User.register');
+})->name('register.admin');
