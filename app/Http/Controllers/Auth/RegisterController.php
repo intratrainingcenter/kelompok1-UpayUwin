@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/backend/dashboard';
 
     /**
      * Create a new controller instance.
@@ -67,6 +67,14 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'level' => 'admin',
+            'status' => 'login',
         ]);
+        $level = Auth::user()->level;
+        if ($level == 'admin') {
+            return redirect()->route('dashboard.index');
+        }else{
+            return redirect()->route('awal');
+        }
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\backend;
 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\input;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -40,7 +42,7 @@ class UserController extends Controller
         $insert = new User;
         $insert->name = $request->name;
         $insert->email = $request->email;
-        $insert->password = $request->password;
+        $insert->password = Hash::make($request['password']);
         $insert->level = $request->level;
         $insert->save();
 

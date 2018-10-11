@@ -37,6 +37,8 @@ Route::get('/pay','PaymentController@payWithpaypal');
 Route::get('/backend/login',function(){
 	return view('backend.User.login');
 });
+
+
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
 
@@ -47,8 +49,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	//Route User
 	Route::resource('user','backend\UserController');
 	//Route setting
-	Route::resource('setting2','backend\SettingController');
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
+	Route::resource('setting2','backend\SettingController');
   	//Route setting
   	Route::resource('setting','backend\SettingController');
 });
@@ -66,3 +68,6 @@ Route::prefix('frontend')->group(function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/formLogin', 'Auth\LoginController@showLoginForm')->name('formLogin');
+Route::get('registeradmin',function(){
+  return view('backend.User.register');
+})->name('register.admin');

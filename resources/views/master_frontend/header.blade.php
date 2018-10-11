@@ -1,59 +1,11 @@
 <!-- header -->
 <header>
-    <div class="container">
-        <!-- top nav -->
-        <nav class="top_nav d-flex pt-3 pb-1">
-            <!-- logo -->
-            <h1>
-                <a class="navbar-brand" href="index.html">fh
-                </a>
-            </h1>
-            <!-- //logo -->
-            <div class="w3ls_right_nav ml-auto d-flex">
-                <!-- search form -->
-                <form class="nav-search form-inline my-0 form-control" action="#" method="post">
-                    <select class="form-control input-lg" name="category">
-                        <option value="all">Search our store</option>
-                        <optgroup label="Mens">
-                            <option value="T-Shirts">T-Shirts</option>
-                            <option value="coats-jackets">Coats & Jackets</option>
-                            <option value="Shirts">Shirts</option>
-                            <option value="Suits & Blazers">Suits & Blazers</option>
-                            <option value="Jackets">Jackets</option>
-                            <option value="Sweat Shirts">Trousers</option>
-                        </optgroup>
-                        <optgroup label="Womens">
-                            <option value="Dresses">Dresses</option>
-                            <option value="T-shirts">T-shirts</option>
-                            <option value="skirts">Skirts</option>
-                            <option value="jeans">Jeans</option>
-                            <option value="Tunics">Tunics</option>
-                        </optgroup>
-                        <optgroup label="Girls">
-                            <option value="Dresses">Dresses</option>
-                            <option value="T-shirts">T-shirts</option>
-                            <option value="skirts">Skirts</option>
-                            <option value="jeans">Jeans</option>
-                            <option value="Tops">Tops</option>
-                        </optgroup>
-                        <optgroup label="Boys">
-                            <option value="T-Shirts">T-Shirts</option>
-                            <option value="coats-jackets">Coats & Jackets</option>
-                            <option value="Shirts">Shirts</option>
-                            <option value="Suits & Blazers">Suits & Blazers</option>
-                            <option value="Jackets">Jackets</option>
-                            <option value="Sweat Shirts">Sweat Shirts</option>
-                        </optgroup>
-                    </select>
-                    <input class="btn btn-outline-secondary  ml-3 my-sm-0" type="submit" value="Search">
-                </form>
-                <!-- search form -->
-                <div class="nav-icon d-flex">
-                    <!-- sigin and sign up -->
-                    @if (Auth::guest())
-                    <a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal"
-                        data-target="#myModal_btn">
-                        <i class="far fa-user"></i>
+        <div class="container">
+            <!-- top nav -->
+            <nav class="top_nav d-flex pt-3 pb-1">
+                <!-- logo -->
+                <h1>
+                    <a class="navbar-brand tittle" href="index.html">
                     </a>
                     @else
                     <a class="text-dark login_btn align-self-center mx-3" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -202,22 +154,21 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- //bottom nav -->
-    </div>
-    <!-- //header container -->
-</header>
-<!-- //header -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- //bottom nav -->
+        </div>
+        <!-- //header container -->
+    </header>
+    <!-- //header -->
