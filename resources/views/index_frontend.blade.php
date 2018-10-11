@@ -4,13 +4,13 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html lang="zxx">
+<html oncontextmenu="return false" lang="zxx">
 <head>
-    <title>Fashion Hub Ecommerce Category Bootstrap Responsive Website Template| Home :: w3layouts</title>
+    <title class="tittle"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="keywords" content="Fashion Hub Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <meta name="address" id="address" content="">
+    <meta name="phone" id="phone" content="">
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -37,16 +37,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
 		<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
 		<!-- //online-fonts -->
-	
+
 </head>
 <body>
 	<!-- header -->
     @include('master_frontend.header')
-		
+
     <!-- product tabs -->
     @yield('content')
     <!-- //product tabs -->
-		
+
     <!-- footer -->
     @include('master_frontend.footer')
     <!-- //footer -->
@@ -92,11 +92,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- signin Modal -->
     <!-- js -->
     <script src="{{asset('FrontEnd1')}}/js/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!-- script for show signin and signup modal -->
     <script>
         $(document).ready(function () {
-            $("#myModal_btn").modal();
+            <!-- $("#myModal_btn").modal(); -->
         });
     </script>
     <!-- //script for show signin and signup modal -->
@@ -132,7 +130,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Banner Responsiveslides -->
     <script src="{{asset('FrontEnd1')}}/js/responsiveslides.min.js"></script>
     <script>
-        // You can also use "$(window).load(function() {"
         $(function () {
             // Slideshow 4
             $("#slider3").responsiveSlides({
@@ -220,7 +217,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 containerID: 'toTop', // fading element id
                 containerHoverID: 'toTopHover', // fading element hover id
                 scrollSpeed: 1200,
-                easingType: 'linear' 
+                easingType: 'linear'
             };
             */
 
@@ -236,6 +233,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{asset('FrontEnd1')}}/js/bootstrap.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $.ajax({
+        type: 'GET',
+        url: '{{ URL::route("settingweb") }}',
+        data: {
+          _method: 'GET'
+        },
+      }).done(function (data) {
+        console.log("data");
+        $(".tittle").text(data.tittle);
+        $("meta[name='address']").attr("content", data.address);
+        $("meta[name='phone']").attr("content", data.phone);
+        $("link[rel=icon]").attr("href","{{asset('backend/img')}}/"+ data.logo);
+      }).fail(function (data) {
+        console.log(data);
+      })
+    });
+    </script>
 </body>
 
 </html>

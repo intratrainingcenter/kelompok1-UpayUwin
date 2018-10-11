@@ -10,14 +10,37 @@
             </div>
             <div class="modal-body">
                     @csrf()
+                    <div class="">
                     <label class="labels">Nama :</label>
-                    <input type="text" name="name" class="form-control" placeholder="Nama Here" required>
+                    <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Username" required>
+                    @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
+                    </div>
 
+                    <div class="">
                     <label class="labels">Email :</label>
-                    <input type="text" name="email" class="form-control" placeholder="Email Here" required>
+                    <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" required>
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                    </div>
+
+                    <div class="">
 
                     <label class="labels">Password</label>
-                    <input type="text" name="password" class="form-control" placeholder="Password Here" required>
+                    <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password Here" required>
+                    @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+
                     <input type="hidden" name="level" class="form-control" value="admin">
             </div>
             <div class="modal-footer">

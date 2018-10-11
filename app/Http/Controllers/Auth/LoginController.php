@@ -35,39 +35,50 @@ class LoginController extends Controller
 
     /**
      * Create a new controller instance.
-     *
+     *     
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('checkLogin');
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm()
+    {
+        return view('backend/User/login');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        $email = Auth::user()->email;
+        $level = Auth::user()->level;
+
+        $data = User::where('email', $email)->first();
+        $data->status = 'login';
+        $data->save();
+
+        if ($level == 'admin') {// do your margic here
+            return redirect()->route('dashboard.index');
+        }else{
+            return redirect()->route('awal');
+        }
+
     }
 
     public function logout(Request $request)
     {
-        dd('asda');
-        $status = auth::User()->status;
-        if($status == 'login'){
-            $data = User::where('id', auth::user()->id)->first();
-            $data->status = 'logout' ; 
-            $data->save();
-
-            $this->guard()->logout();
-            $request->session()->flush();
-            $request->session()->regenerate();
-
-            return redirect()->route('awal');
-        }else{
-
-            $this->guard()->logout();
-            $request->session()->flush();
-            $request->session()->regenerate();
-
-            return redirect('')->route('awal');
+        $data   = User::where('email', Auth::user()->email)->first();
+        $data->status = 'logout';
+        $data->save();
+        
+        if (Auth::user()->level == 'admin') {
+            Auth::logout();
+            return redirect('/');
+        } else {
+            Auth::logout();
+            return redirect('/UpayUwin');
         }
 
-
-    } 
+    }
 
 }
