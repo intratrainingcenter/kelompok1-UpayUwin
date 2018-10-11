@@ -1,7 +1,7 @@
 <div class="modal fade" id="Modal-edit{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none; aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form action="{{ route('voucher.update',$data->id) }}" method="post" accept-charset="utf-8">
+          <form action="{{ route('voucher.update',$data->id) }}" method="post" enctype="multipart/form-data" accept-charset="utf-8">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Edit Voucher</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -12,7 +12,7 @@
                     @csrf
                     @method('put')
                     <label class="labels">Kode Voucher :</label>  
-                    <input type="number" name="code_voucher" class="form-control" placeholder="Kode Voucher Here" value="{{$data->kode_voucher}}">
+                    <input type="text" name="code_voucher" class="form-control" placeholder="Kode Voucher Here" value="{{$data->kode_voucher}}">
                     
                     <label class="labels">Nama Voucher :</label>     
                     <input type="text" name="name_voucher" class="form-control" placeholder="Nama Voucher Here" value="{{$data->nama_voucher}}">
@@ -35,7 +35,16 @@
                             <option value="aktif" selected="">Aktif</option>
                             <option value="pasif">Pasif</option>
                         @endif
-                    </select>      
+                    </select>   
+                    <div class="row">
+                        <div class="col-md-3">  
+                            <img id="foto{{$data->id}}" class="foto" src="{{asset('img/voucher/'.$data->foto)}}" alt="">
+                        </div>  
+                         <div class="col-md-9">  
+                            <label class="labels">Foto :</label>
+                            <input key="{{$data->id}}" type="file" name="image" class="form-control input_logo">
+                        </div>  
+                    </div> 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>

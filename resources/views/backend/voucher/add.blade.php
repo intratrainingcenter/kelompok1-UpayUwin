@@ -1,7 +1,7 @@
 <div class="modal fade" id="Modal-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none; aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form id="form_add" action="{{ route('voucher.store') }}" method="post" accept-charset="utf-8">
+          <form id="form_add" action="{{ route('voucher.store') }}" method="post" enctype="multipart/form-data" accept-charset="utf-8">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add Voucher</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -11,7 +11,7 @@
             <div class="modal-body">
                     @csrf()
                     <label class="labels">Kode Voucher :</label>  
-                    <input type="number" id="code" name="code_voucher" class="form-control" placeholder="Kode Voucher Here" required>
+                    <input type="text" id="code" name="code_voucher" class="form-control" placeholder="Kode Voucher Here" required>
                     <div id="label_danger" class="invalid-feedback">
                         Kode Voucher Sudah Ada
                     </div>
@@ -33,6 +33,15 @@
                         <option value="aktif">Aktif</option>
                         <option value="pasif">Pasif</option>
                     </select>      
+                    <div class="row">
+                        <div class="col-md-3">  
+                            <img class="fotoAdd" src="{{asset('img/noimage.jpg')}}" alt="">
+                        </div>  
+                         <div class="col-md-9">  
+                            <label class="labels">Foto :</label>
+                            <input id="input_logo" type="file" name="image" class="form-control" required>
+                        </div>  
+                    </div> 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
@@ -42,4 +51,14 @@
         </div>
     </div>
 </div> 
+@if ($errors->any())
+ <div class="alert alert-danger" role="alert" style="margin-top: 20px;">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <h4 class="alert-heading">Something Wrong!</h4>
+      <hr>
+      @foreach($errors->all() as $error)
+        <p>{{ $error }}</p>
+      @endforeach
+</div>
+@endif
 

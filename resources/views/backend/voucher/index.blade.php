@@ -16,6 +16,7 @@
                     </div>
                 </div>
             </div>
+            @include('backend.voucher.add')
             <div class="container-fluid">
              <div class="card">     
                <div class="card-body"> 
@@ -54,5 +55,4 @@
             </div>
           </div>
         </div>
-        @include('backend.voucher.add')
 @endsection
