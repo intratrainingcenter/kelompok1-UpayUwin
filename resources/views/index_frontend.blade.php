@@ -56,6 +56,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- signin Modal -->
         @include('master_frontend.signin')
     <!-- signin Modal -->
+        <!-- user Modal -->
+			@include('master_frontend.detail')
+		<!-- //user modal -->
     <!-- js -->
     <script src="{{asset('FrontEnd1')}}/js/jquery-2.2.3.min.js"></script>
     <!-- //js -->

@@ -60,7 +60,12 @@ Route::prefix('frontend')->group(function () {
 		return view('frontend.index');
 	})->name('index');
 	
+	Route::get('user', function(){
+		return view('frontend.user');
+	})->name('user');
 });
-
+Route::get('cout', function(){
+	return view('frontend.cout');
+})->name('cout');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
