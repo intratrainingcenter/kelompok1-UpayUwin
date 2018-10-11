@@ -63,9 +63,11 @@ Route::prefix('frontend')->group(function () {
 	Route::get('user', function(){
 		return view('frontend.user');
 	})->name('user');
+
+	Route::get('topup', function(){
+		return view('frontend.topup');
+	})->name('topup');
 });
-Route::get('cout', function(){
-	return view('frontend.cout');
-})->name('cout');
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
