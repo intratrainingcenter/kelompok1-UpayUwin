@@ -272,7 +272,8 @@
                     <div class="cpy-right align-self-center">
                         <h2 class="agile_btxt">
                             <a href="index.html">
-                                <span class="tittle"></span></a>
+                                <span>f</span>ashion
+                                <span>h</span>ub</a>
                         </h2>
                         <p>© 2018 Fashion Hub. All rights reserved | Design by
                             <a href="http://w3layouts.com" class="text-secondary"> W3layouts.</a>

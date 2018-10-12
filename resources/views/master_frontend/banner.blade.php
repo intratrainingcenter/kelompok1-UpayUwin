@@ -4,7 +4,8 @@
                 <li class="banner">
                     <div class="container">
                         <h3 class="agile_btxt">
-                            <span class="tittle"></span>
+                            <span>f</span>ashion
+                            <span>h</span>ub
                         </h3>
                         <h4 class="w3_bbot">shop exclusive clothing</h4>
                         <div class="slider-info mt-sm-5">

@@ -18,10 +18,7 @@ class productController extends Controller
     public function index()
     {
         $categori = kategori::all();
-        $voucher = voucher_game::with('showCategori')->get();
-
-        // dd($categori,$voucher);
-        return view('frontend/product', compact('categori', 'voucher'));
+        return view('frontend/product', compact('categori'));
     }
 
     /**
@@ -53,7 +50,10 @@ class productController extends Controller
      */
     public function show($id)
     {
-        //
+        $categori = kategori::find($id);
+        $voucher = voucher_game::where('kode_kategori',$id)->get();
+
+        return view('frontend/detail_voucher', compact('voucher' , 'categori'));
     }
 
     /**

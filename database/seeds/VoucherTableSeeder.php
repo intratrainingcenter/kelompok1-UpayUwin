@@ -15,7 +15,7 @@ class VoucherTableSeeder extends Seeder
         DB::table('voucher_games')->insert([
             [
                 'kode_voucher' => 'ML1',
-                'nama_voucher' => 'Mobile Legend 200 Diamond',
+                'nama_voucher' => '200 Diamond',
                 'kode_kategori' => '1',
                 'harga_voucher' => 50000 ,
                 'masa_aktif' => Carbon::now()->addDays(30) ,
@@ -24,7 +24,7 @@ class VoucherTableSeeder extends Seeder
             ],
             [
                 'kode_voucher' => 'ML2',
-                'nama_voucher' => 'Mobile Legend 500 Diamond',
+                'nama_voucher' => '500 Diamond',
                 'kode_kategori' => '1',
                 'harga_voucher' => 100000,
                 'masa_aktif' => Carbon::now()->addDays(30),
@@ -32,7 +32,7 @@ class VoucherTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
             ],
             [
-                'kode_voucher' => 'PUBG',
+                'kode_voucher' => 'PUBG1',
                 'nama_voucher' => 'PUBG 200 UC',
                 'kode_kategori' => '2',
                 'harga_voucher' => 50000,
@@ -42,7 +42,7 @@ class VoucherTableSeeder extends Seeder
 
             ],
             [
-                'kode_voucher' => 'PUBG',
+                'kode_voucher' => 'PUBG2',
                 'nama_voucher' => 'PUBG 500 UC',
                 'kode_kategori' => '2',
                 'harga_voucher' => 100000,
