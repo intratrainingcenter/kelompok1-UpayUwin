@@ -31,6 +31,9 @@
                                 <div class="form-group">
                                     <div class="p-t-20">
                                         <button class="btn btn-success float-right" type="submit">Login</button>
+                                        <a href="{{ route('password.request') }}">
+                                          <button class="btn btn-success float-left" type="button" name="button">Forgot Password</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
