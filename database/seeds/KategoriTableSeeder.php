@@ -16,12 +16,12 @@ class KategoriTableSeeder extends Seeder
         DB::table('kategoris')->insert([
             [
                 'kode_kategori' => '1',
-                'nama_kategori' => 'Moba',
+                'nama_kategori' => 'Mobile Legends',
                 'created_at' => Carbon::now(),
             ],
             [
                 'kode_kategori' => '2',
-                'nama_kategori' => 'Battle Royal',
+                'nama_kategori' => 'PUBG',
                 'created_at' => Carbon::now(),
             ]
         ]);
