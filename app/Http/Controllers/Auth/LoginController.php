@@ -60,7 +60,7 @@ class LoginController extends Controller
         if ($level == 'admin') {// do your margic here
             return redirect()->route('dashboard.index');
         }else{
-            return redirect()->route('awal');
+            return redirect('/');
         }
 
     }
@@ -73,10 +73,10 @@ class LoginController extends Controller
         
         if (Auth::user()->level == 'admin') {
             Auth::logout();
-            return redirect('/');
+            return redirect('/backend/formLogin');
         } else {
             Auth::logout();
-            return redirect('/UpayUwin');
+            return redirect('/');
         }
 
     }
