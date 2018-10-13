@@ -1,12 +1,9 @@
 @extends('master_backend.js_index_backend')
 @extends('master_backend.css_index_backend')
-@extends('backend.User.additional')
+@extends('backend.User.additionallogin')
 <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
     <div class="auth-box bg-dark border-top border-secondary">
         <div id="loginform">
-            {{-- <div class="text-center p-t-20 p-b-20">
-                        <span class="db"><img src="{{asset('template/backend/matrix-admin-bt4/assets/images/logo.png')}}" alt="logo" /></span>
-                    </div> --}}
                     <!-- Form -->
                     <form class="form-horizontal m-t-20" action="{{route('login')}}" method="POST">
                         @csrf
@@ -31,14 +28,13 @@
                                 <div class="form-group">
                                     <div class="p-t-20">
                                         <button class="btn btn-success float-right" type="submit">Login</button>
-                                        <a href="{{ route('password.request') }}">
-                                          <button class="btn btn-success float-left" type="button" name="button">Forgot Password</button>
-                                        </a>
+                                        <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Forgot password?</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
+                @include('backend.User.forgotpassword')
             </div>
         </div>
