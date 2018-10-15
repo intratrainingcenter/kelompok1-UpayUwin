@@ -18,7 +18,11 @@
                     <input type="text" name="name_voucher" class="form-control" placeholder="Nama Voucher Here" value="{{$data->nama_voucher}}">
                      
                     <label class="labels">Kategori :</label>
-                    <input type="text" name="category" class="form-control" placeholder="Kategori Here" value="{{$data->kode_kategori}}">
+                     <select name="category" class="form-control" required>
+                        @foreach($category as $value)
+                            <option value="{{$value->kode_kategori}}">{{$value->nama_kategori}}</option>
+                        @endforeach
+                    </select>
                      
                     <label class="labels">Harga :</label> 
                     <input type="number" name="price" class="form-control" placeholder="Harga Here" value="{{$data->harga_voucher}}">
