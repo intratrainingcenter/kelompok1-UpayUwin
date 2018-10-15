@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\voucher_game;
+use App\kategori;
 use Illuminate\Support\Facades\Storage;
 
 class VoucherController extends Controller
@@ -17,7 +18,8 @@ class VoucherController extends Controller
     public function index()
     {
         $data = voucher_game::all();
-        return view('backend.voucher.index',['data'=>$data]);
+        $category = kategori::all();
+        return view('backend.voucher.index',['data'=>$data,'category'=>$category]);
     }
 
     /**
