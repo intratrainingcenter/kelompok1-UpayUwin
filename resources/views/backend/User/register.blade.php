@@ -1,6 +1,5 @@
 @extends('master_backend.js_index_backend')
 @extends('master_backend.css_index_backend')
-@extends('backend.User.additional')
 <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
     <div class="auth-box bg-dark border-top border-secondary">
         <div>
@@ -36,7 +35,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                             </div>
-                            <input type="password" class="form-control form-control-lg{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                            <input type="password" id="password1" class="form-control form-control-lg{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -47,9 +46,11 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                             </div>
-                            <input type="password" class="form-control form-control-lg" name="password_confirmation" placeholder=" Confirm Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                            <input type="password" id="password2" class="form-control form-control-lg" name="password_confirmation" placeholder=" Confirm Password" aria-label="Password" aria-describedby="basic-addon1" required>
+
                         </div>
-                            <input type="hidden" name="level" value="admin">
+                        <input type=button class="btn-sm btn-info" id="show" value="Show Password" onclick="ShowPassword()">
+                        <input type=button class="btn-sm btn-info" style="display:none" id="hide" value="Hide Password" onclick="HidePassword()">
                     </div>
                 </div>
                 <div class="row border-top border-secondary">
@@ -65,3 +66,4 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="{{asset('backend/js/showhidepasswordregister.js')}}"></script>

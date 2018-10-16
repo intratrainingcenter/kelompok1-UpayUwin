@@ -31,15 +31,21 @@
                     </div>
 
                     <div class="">
-
                     <label class="labels">Password</label>
-                    <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password Here" required>
+                    <input type="password" id="password1" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password Here" required>
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
-                  </div>
+                    </div>
+
+                    <div class="">
+                    <label class="labels">Confirm Password</label>
+                    <input type="password" id="password2" name="password_confirmation" class="form-control" placeholder="Confirm Password Here" required>
+                    </div>
+                    <input type=button class="btn-sm btn-info" id="show" value="Show Password" onclick="ShowPassword()">
+                    <input type=button class="btn-sm btn-info" style="display:none" id="hide" value="Hide Password" onclick="HidePassword()">
 
                     <input type="hidden" name="level" class="form-control" value="admin">
             </div>

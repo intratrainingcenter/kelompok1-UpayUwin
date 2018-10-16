@@ -82,8 +82,8 @@ class UserController extends Controller
     {
         $update = User::find($id);
         $update->name = $request->name;
-        $update->emali = $request->email;
-        $update->password = $request->password;
+        $update->email = $request->email;
+        $update->password = Hash::make($request['password']);
         $update->save();
 
         return redirect()->route('user.index');

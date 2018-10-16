@@ -45,7 +45,7 @@ Route::get('UpayUwin/payment', function(){
 Route::get('/pay','PaymentController@payWithpaypal');
 
 Route::get('/backend/login',function(){
-	return view('backend.User.login');
+	return view('backend.User.login')->middleware('admin');
 });
 
 //Route Untuk Backend
