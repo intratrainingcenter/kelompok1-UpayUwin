@@ -69,6 +69,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
     </script>
     <!-- //script for show signin and signup modal -->
+    
+    @include('master_frontend.livechat.livechat')
     <!-- smooth dropdown -->
     <script>
         $(document).ready(function () {

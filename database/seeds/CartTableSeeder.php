@@ -16,7 +16,7 @@ class CartTableSeeder extends Seeder
             'id_user' => '1',
             'voucher_code' => '1234-4567-8900-1480',
             'type' => 'Gemscool',
-            'qty' => '1',
+            'qty' => '10',
             'nominal' => '100.000',
             ],
             [
