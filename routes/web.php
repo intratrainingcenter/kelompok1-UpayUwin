@@ -55,7 +55,7 @@ Route::prefix('frontend')->group(function () {
 	Route::prefix('wallet')->group(function () {
 	});
 	Route::post('signup','frontend\signupcontroller@store')->name('signup');
-	
+	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('index', function(){
 		return view('frontend.index');
 	})->name('index');
@@ -63,6 +63,7 @@ Route::prefix('frontend')->group(function () {
 	Route::get('user', function(){
 		return view('frontend.user');
 	})->name('user');
+
 
 	Route::get('topup', function(){
 		return view('frontend.topup');

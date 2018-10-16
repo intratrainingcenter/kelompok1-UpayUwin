@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class CartTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('cart')->insert([
+            [
+            'id_user' => '1',
+            'voucher_code' => '1234-4567-8900-1480',
+            'type' => 'Gemscool',
+            'qty' => '1',
+            'nominal' => '100.000',
+            ],
+            [
+                'id_user' => '1',
+                'voucher_code' => '1234-4567-8900-1480',
+                'type' => 'Garena',
+                'qty' => '1',
+                'nominal' => '100.000',
+                ]
+        ]);
+    }
+}

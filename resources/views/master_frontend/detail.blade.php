@@ -1,6 +1,6 @@
 <div class="modal fade" id="detailmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModal1" aria-hidden="true">
-        <div class="agilemodal-dialog modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="agilemodal-dialog modal-dialog modal-dialog1" role="document">
+        <div class="modal-content modal-content1">
         <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Users Detail</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -9,22 +9,11 @@
                 </div>
 				<div class="modal-body">
 					<ul class="list-group">
+						<li class="list-group-item">Name</li>
+						<li class="list-group-item">Wallet</li>
 						<li class="list-group-item">Item list</li>
 						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
-						<li class="list-group-item">Item list</li>
+						
 					</ul>
 				</div>
 
@@ -34,7 +23,7 @@
 
 
     <style>
-            	.modal-dialog{
+            	.modal-dialog1{
 			margin:0;
 			position: fixed;
 			top:0;
@@ -44,7 +33,7 @@
 			width:60%;
 			overflow-y: auto;
 		}
-		.modal-content{
+		.modal-content1{
 			border:none;
 			background: none;
 			-webkit-box-shadow: none;
@@ -52,7 +41,7 @@
 			box-shadow: none;
 			border-radius:0;
 		}
-		.fade-scale {
+		.fade-scale1 {
 			transform: scale(1,0); /* scale(0); horizontal*/
 			opacity: 0;
 			-webkit-transition: all .25s linear;
@@ -60,7 +49,7 @@
 			transition: all .25s linear;
 		}
 
-		.fade-scale.in {
+		.fade-scale.in1 {
 			opacity: 1;
 			transform: scale(1,1); /* scale(1); horizontal*/
 		}
