@@ -34,8 +34,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- easy-responsive-tabs css -->
 		<link rel="stylesheet" href="{{asset('FrontEnd1')}}/css/easy-responsive-tabs.css" type="text/css" media="all" />
 		<!-- online-fonts -->
-		<link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
-		<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+		<link href="{{asset('FrontEnd1')}}/font/font-googleapis.css" rel="stylesheet">
+		<link href="{{asset('FrontEnd1')}}/font/font-googleapis.min.css" rel="stylesheet">
 		<!-- //online-fonts -->
 	
 </head>
@@ -54,42 +54,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			@include('master_frontend.signup')
 		<!-- //signup modal -->
     <!-- signin Modal -->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModal1" aria-hidden="true">
-        <div class="agilemodal-dialog modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body  pt-3 pb-5 px-sm-5">
-                    <div class="row">
-                        <div class="col-md-6 align-self-center">
-                            <img src="{{asset('FrontEnd1')}}/images/p3.png" class="img-fluid" alt="login_image" />
-                        </div>
-                        <div class="col-md-6">
-                            <form action="{{ route('login') }}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="" name="email" required="">
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder=" " name="password" required="">
-                                </div>
-                                <div class="right-w3l">
-                                    <input type="submit" class="form-control" value="Login">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @include('master_frontend.signin')
     <!-- signin Modal -->
+        <!-- user Modal -->
+			@include('master_frontend.detail')
+		<!-- //user modal -->
     <!-- js -->
     <script src="{{asset('FrontEnd1')}}/js/jquery-2.2.3.min.js"></script>
     <script>
@@ -98,6 +67,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
     </script>
     <!-- //script for show signin and signup modal -->
+    
+    @include('master_frontend.livechat.livechat')
     <!-- smooth dropdown -->
     <script>
         $(document).ready(function () {

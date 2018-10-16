@@ -4,9 +4,9 @@ namespace App\Http\Controllers\frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\cart;
 
-class signupcontroller extends Controller
+class cartcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class signupcontroller extends Controller
      */
     public function index()
     {
-        //
+        $data = cart::all();
+        return view('frontend.checkout', compact('data'));
     }
 
     /**
@@ -36,21 +37,7 @@ class signupcontroller extends Controller
      */
     public function store(Request $request)
     {
-        $check = User::where('email','=',$request->get('Email'))->first();
-        if (!$check = null ) {
-            return redirect()->route('index')->with('failed', 'Email telah terpakai');
-        }
-        else
-        {$data = new User([
-            'name' => $request->get('Name'),
-            'email' => $request->get('Email'),
-            'password' => bcrypt($request->get('Password')),
-            'saldo' => '0',
-            'level' => 'user',
-            'status' => 'logout',   
-        ]);
-        $data->save();
-        return redirect()->route('index')->with('success', 'Data Telah Ditambahkan'); }
+        //
     }
 
     /**
