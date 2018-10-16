@@ -4,4 +4,5 @@
 
 @section('js')
 	{{-- your js here --}}
+	<script src="{{asset('backend/js/showhidepasswordregister.js')}}"></script>
 @endsection
