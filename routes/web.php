@@ -63,8 +63,9 @@ Route::prefix('frontend')->group(function () {
 	Route::get('user', function(){
 		return view('frontend.user');
 	})->name('user');
-
-	ROute::get('livechat', 'frontend\livechatcontroller@index')->name('livechat');
+	
+	Route::post('livechatuser','frontend\livechatcontroller@store')->name('livechatuser');
+	Route::get('livechat', 'frontend\livechatcontroller@index')->name('livechat');
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');

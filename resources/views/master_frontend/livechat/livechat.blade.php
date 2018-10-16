@@ -71,11 +71,11 @@
 
 			<p class="chat-feedback">Your partner is typing…</p>
 
-			<form action="#" method="post">
+			<form action="{{route('livechatuser')}}" method="post" >
 
 				<fieldset>
-					
-					<input type="text" placeholder="Type your message…" autofocus>
+                @csrf
+					<input type="text" placeholder="Type your message…" name="livechatuser" autofocus>
 					<input type="hidden">
 
 				</fieldset>
