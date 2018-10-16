@@ -13,7 +13,7 @@
                             <img src="{{asset('FrontEnd1')}}/images/p3.png" class="img-fluid" alt="login_image" />
                         </div>
                         <div class="col-md-6">
-                            <form action="{{url('signup')}}" method="post">
+                            <form action="{{route('signup')}}" method="post">
                             @csrf
                                 <div class="form-group">
                                     <label for="recipient-name1" class="col-form-label">Your Name</label>
@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="sub-w3l">
                                     <div class="sub-agile">
-                                        <input type="checkbox" id="brand2" value="">
+                                        <input type="checkbox" id="brand2" value="" required>
                                         <label for="brand2" class="mb-3">
                                             <span></span>I Accept to the Terms & Conditions</label>
                                     </div>
