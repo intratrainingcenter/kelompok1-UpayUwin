@@ -18,7 +18,7 @@ class productController extends Controller
     public function index()
     {
         $categori = kategori::all();
-        return view('frontend/product', compact('categori'));
+        return view('interface_frontend/frontend_shop/category/grid', compact('categori'));
     }
 
     /**
@@ -53,7 +53,7 @@ class productController extends Controller
         $categori = kategori::find($id);
         $voucher = voucher_game::where('kode_kategori',$id)->get();
 
-        return view('frontend/detail_voucher', compact('voucher' , 'categori'));
+        return view('interface_frontend/frontend_shop/item', compact('voucher' , 'categori'));
     }
 
     /**
