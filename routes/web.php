@@ -57,6 +57,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	Route::resource('voucher','backend\VoucherController');
 	//Route User
 	Route::resource('user','backend\UserController');
+  //Route item
+  Route::resource('item','backend\ItemController');
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
@@ -77,7 +79,7 @@ Route::prefix('frontend')->group(function () {
 	Route::get('index', function(){
 		return view('index_frontend');
 	})->name('index');
-	
+
 	Route::post('livechatuser','frontend\livechatcontroller@store')->name('livechatuser');
 	Route::get('livechat', 'frontend\livechatcontroller@index')->name('livechat');
 	Route::get('topup', function(){

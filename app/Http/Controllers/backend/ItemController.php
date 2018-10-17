@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\voucher_game;
-use App\kategori;
-
-class productController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +14,7 @@ class productController extends Controller
      */
     public function index()
     {
-        $categori = kategori::all();
-        return view('interface_frontend.frontend_shop.grid', compact('categori'));
+        return view('backend.item.index');
     }
 
     /**
@@ -50,10 +46,7 @@ class productController extends Controller
      */
     public function show($id)
     {
-        $categori = kategori::find($id);
-        $voucher = voucher_game::where('kode_kategori',$id)->get();
-
-        return view('frontend/detail_voucher', compact('voucher' , 'categori'));
+        //
     }
 
     /**
