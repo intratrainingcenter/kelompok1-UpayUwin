@@ -38,8 +38,8 @@
                         <tr>
                             <td>{{$data->kode_voucher}}</td>
                             <td>{{$data->nama_voucher}}</td>
-                            <td>{{$data->kode_kategori}}</td>
-                            <td>{{$data->harga_voucher}}</td>
+                            <td>{{$data->nama_kategori}}</td>
+                            <td>Rp {{number_format($data->harga_voucher)}}</td>
                             <td>{{$data->masa_aktif}}</td>
                             <td>{{$data->status}}</td>
                             <td>
