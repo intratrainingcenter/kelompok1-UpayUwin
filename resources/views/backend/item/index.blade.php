@@ -43,7 +43,6 @@
                         </tr>
                         @include('backend.item.edit')
                         @include('backend.item.delete')
-                        @endforeach
                     </tbody>
                 </table>
             </div>

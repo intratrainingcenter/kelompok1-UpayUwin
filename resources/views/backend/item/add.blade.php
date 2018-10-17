@@ -27,10 +27,10 @@
                     <input type="number" name="price" class="form-control" placeholder="Harga Here" required>
 
                     <label class="labels">Stok :</label>
-                    <input type="date" name="Stock" class="form-control" id="cono1" required>
+                    <input type="number" name="Stock" class="form-control" id="cono1" required>
 
                     <label class="labels">Deskripsi :</label>
-                    <input type="date" name="Description" class="form-control" id="cono1" required>
+                    <input type="text" name="Description" class="form-control" id="cono1" required>
 
                     <div class="row">
                         <div class="col-md-3">
