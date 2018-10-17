@@ -75,12 +75,8 @@ Route::prefix('frontend')->group(function () {
 	Route::post('signup','frontend\signupcontroller@store')->name('signup');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('index', function(){
-		return view('frontend.index');
+		return view('index_frontend');
 	})->name('index');
-	
-	Route::get('user', function(){
-		return view('frontend.user');
-	})->name('user');
 	
 	Route::post('livechatuser','frontend\livechatcontroller@store')->name('livechatuser');
 	Route::get('livechat', 'frontend\livechatcontroller@index')->name('livechat');

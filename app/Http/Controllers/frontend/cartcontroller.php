@@ -16,7 +16,7 @@ class cartcontroller extends Controller
     public function index()
     {
         $data = cart::all();
-        return view('frontend.checkout', compact('data'));
+        return view('interface_frontend.frontend.checkout', compact('data'));
     }
 
     /**
