@@ -45,7 +45,7 @@ Route::get('UpayUwin/payment', function(){
 Route::get('/pay','PaymentController@payWithpaypal');
 
 Route::get('/backend/login',function(){
-	return view('backend.User.login');
+	return view('backend.User.login')->middleware('admin');
 });
 
 //Route Untuk Backend
@@ -66,12 +66,27 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 
 
 
+
 //Route Untuk Frontend
 Route::prefix('frontend')->group(function () {
 	//Route wallet
 	Route::prefix('wallet')->group(function () {
 	});
-
+	Route::post('signup','frontend\signupcontroller@store')->name('signup');
+	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
+	Route::get('index', function(){
+		return view('frontend.index');
+	})->name('index');
+	
+	Route::get('user', function(){
+		return view('frontend.user');
+	})->name('user');
+	
+	Route::post('livechatuser','frontend\livechatcontroller@store')->name('livechatuser');
+	Route::get('livechat', 'frontend\livechatcontroller@index')->name('livechat');
+	Route::get('topup', function(){
+		return view('frontend.topup');
+	})->name('topup');
 });
 
 Auth::routes();

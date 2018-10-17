@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\frontend;
 
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\input;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\cart;
 
-class UserController extends Controller
+class cartcontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::all();
-        return view ('backend.User.index',compact('data'));
+        $data = cart::all();
+        return view('frontend.checkout', compact('data'));
     }
 
     /**
@@ -39,14 +37,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $insert = new User;
-        $insert->name = $request->name;
-        $insert->email = $request->email;
-        $insert->password = Hash::make($request['password']);
-        $insert->level = $request->level;
-        $insert->save();
-
-        return redirect()->route('user.index');
+        //
     }
 
     /**
@@ -80,13 +71,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $update = User::find($id);
-        $update->name = $request->name;
-        $update->email = $request->email;
-        $update->password = Hash::make($request['password']);
-        $update->save();
-
-        return redirect()->route('user.index');
+        //
     }
 
     /**
@@ -97,9 +82,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-      $data = User::find($id);
-      $data->delete();
-
-      return redirect()->route('user.index');
+        //
     }
 }

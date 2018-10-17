@@ -21,7 +21,7 @@ class CreateVoucherGamesTable extends Migration
             $table->integer('harga_voucher');
             $table->date('masa_aktif');
             $table->enum('status',['Aktif','Pasif']);
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

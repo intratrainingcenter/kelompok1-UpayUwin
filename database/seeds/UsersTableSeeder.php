@@ -2,8 +2,6 @@
 
 use Illuminate\Database\Seeder;
 
-use Illuminate\Support\Facades\Hash;
-
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -25,7 +23,7 @@ class UsersTableSeeder extends Seeder
             [
             'name' => 'admin',
             'email' => 'admin@gmail.com',
-            'password' => bcrypt('1234') ,
+            'password' => bcrypt('1234'),
             'saldo' => '0',
             'level' => 'admin',
             'status' => 'logout',
