@@ -18,7 +18,7 @@ Route::get('/backend', function () {
 });
 
 Route::get('/', 'frontend\productController@index');
-Route::get('/game/{id}', 'frontend\productController@show');
+Route::get('/voucher/{id}', 'frontend\productController@show');
 
 Route::get('/product', function(){
 	return view('frontend.user');
