@@ -41,6 +41,7 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
+    @yield('add_header');
 </head>
 
 <body class="header-fixed">
@@ -91,7 +92,7 @@
         });
 
     </script>
-
+    @yield('add_footer');
     <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
     <script src="assets/plugins/html5shiv.js"></script>

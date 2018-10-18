@@ -40,9 +40,9 @@ class productController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         $idUser = Auth::user()->id;
-        $voucher = voucher_game::find($request->V);
+        $voucher = voucher_game::find($request->voucher);
         $total = $voucher->harga_voucher * $request->qty;
 
         $cart = new cart;
