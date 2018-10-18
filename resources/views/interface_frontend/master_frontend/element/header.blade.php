@@ -94,19 +94,10 @@
                     <!-- Nav Menu -->
                     <ul class="nav navbar-nav">
                         <!-- Pages -->
-                        <li class="dropdown active">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                Pages
+                        <li class="active">
+                            <a href="javascript:void(0);">
+                                Home
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.html">Shop UI</a></li>
-                                <li class="active"><a href="shop-ui-inner.html">Product Page</a></li>
-                                <li><a href="shop-ui-filter-grid.html">Filter Grid Page</a></li>
-                                <li><a href="shop-ui-filter-list.html">Filter List Page</a></li>
-                                <li><a href="shop-ui-add-to-cart.html">Checkout</a></li>
-                                <li><a href="shop-ui-login.html">Login</a></li>
-                                <li><a href="shop-ui-register.html">Register</a></li>
-                            </ul>
                         </li>
                         <!-- End Pages -->
 
@@ -138,7 +129,7 @@
                         <!-- Gifts -->
                         <li class="dropdown mega-menu-fullwidth">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                Gifts
+                                Items
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -146,9 +137,9 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
-                                                    <h3 class="mega-menu-heading">Pellentes que nec diam lectus</h3>
-                                                    <p>Proin pulvinar libero quis auctor pharet ra. Aenean fermentum met us orci, sedf eugiat augue pulvina r vitae. Nulla dolor nisl, molestie nec aliquam vitae, gravida sodals dolor...</p>
-                                                    <button type="button" class="btn-u btn-u-dark">Read More</button>
+                                                    <h3 class="mega-menu-heading">Rare,Epic, Legendary and Unique Items Available</h3>
+                                                    <p>Various of Rare - Legendary items, with attractive price, can you get here. purchase it now before it runs out.</p>
+                                                    <button type="button" class="btn-u btn-u-dark">Check Now</button>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
                                                     <a href="#"><img class="product-offers img-responsive" src="{{asset('FrontEnd')}}/assets/img/blog/01.jpg" alt=""></a>
@@ -170,7 +161,7 @@
                         <!-- Books -->
                         <li class="dropdown mega-menu-fullwidth">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                Books
+                                Games
                             </a>
                             <ul class="dropdown-menu">
                                 <li>

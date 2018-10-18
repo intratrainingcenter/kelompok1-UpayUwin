@@ -39,72 +39,18 @@
 
 <body class="header-fixed">
 <div class="wrapper">
-    <!--=== Header v5 ===-->   
-    @include('interface_frontend.master_frontend.element.header')
+        <!--=== Header v5 ===-->   
+            @include('interface_frontend.master_frontend.element.header')
         <!--=== End Header v5 ===-->
 
-    <!--=== Slider ===-->
-        @include('interface_frontend.master_frontend.element.slider')
-    <!--=== End Slider ===-->
+            <!-- Content -->
+                @yield('content')
+            <!-- End Content -->
 
-    <!--=== Product Content ===-->
-    <div class="container content-md">
-        <!--=== Illustration v1 ===-->
-            @include('interface_frontend.master_frontend.element.promo')
-        <!--=== End Illustration v1 ===-->
 
-        <div class="heading heading-v1 margin-bottom-20">
-            <h2>Featured products</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio elit, ultrices vel cursus sed, placerat ut leo. Phasellus in magna erat. Etiam gravida convallis augue non tincidunt. Nunc lobortis dapibus neque quis lacinia. Nam dapibus tellus sit amet odio venenatis</p>
-        </div>
-
-            <!--=== Illustration v2 ===-->
-                @include('interface_frontend.master_frontend.shop.featured') 
-            <!--=== End Illustration v2 ===-->
-
-                <!--=== Illustration v3 ===-->
-                    @include('interface_frontend.master_frontend.element.illustration')
-                <!--=== End Illustration v3 ===-->
-
-                    <div class="heading heading-v1 margin-bottom-40">
-                        <h2>Latest products</h2>
-                    </div>
-
-                        <!--=== Illustration v2 ===-->
-                            @include('interface_frontend.master_frontend.shop.quick_review') 
-                        <!--=== End Illustration v2 ===-->
-    </div>
-    <!--=== End Product Content ===-->
-
-    <!--=== Twitter-Block ===-->
-        @include('interface_frontend.master_frontend.element.twitter')
-    <!--=== End Twitter-Block ===-->
-
-    <div class="container">
-            <!--=== Product Service ===-->
-                @include('interface_frontend.master_frontend.element.service')
-            <!--=== End Product Service ===-->
-        
-                <!--=== Illustration v4 ===-->
-                    @include('interface_frontend.master_frontend.shop.category')
-                <!--=== End Illustration v4 ===-->
-    </div><!--/end cotnainer-->
-
-    <!--=== Collection Banner ===-->
-        @include('interface_frontend.master_frontend.element.collection')
-    <!--=== End Collection Banner ===-->
-
-        <!--=== Sponsors ===-->
-                @include('interface_frontend.master_frontend.element.sponsors')
-        <!--=== End Sponsors ===-->
-
-            <!--=== Shop Suvbscribe ===-->
-                @include('interface_frontned.master_frontend.shop.subscribe')
-            <!--=== End Shop Suvbscribe ===-->
-
-    <!--=== Footer v4 ===-->
-    @include('interface_frontend.master_frontend.element.footer')
-    <!--=== End Footer v4 ===-->
+        <!--=== Footer v4 ===-->
+            @include('interface_frontend.master_frontend.element.footer')
+        <!--=== End Footer v4 ===-->
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->
