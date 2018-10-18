@@ -15,10 +15,20 @@ class productController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexVoucher()
     {
+        $product = 'Voucher';
+        $count = kategori::count();
         $categori = kategori::all();
-        return view('interface_frontend/frontend_shop/category/grid', compact('categori'));
+        return view('interface_frontend/frontend_shop/category/grid', compact('count','categori','product'));
+    }
+
+    public function indexItem()
+    {
+        $count = kategori::count();
+        $product = 'Item';
+        $categori = kategori::all();
+        return view('interface_frontend/frontend_shop/category/grid', compact('count','categori','product'));
     }
 
     /**
