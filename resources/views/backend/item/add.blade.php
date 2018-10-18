@@ -1,7 +1,7 @@
 <div class="modal fade" id="Modal-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none; aria-hidden="true" ">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form id="form_add" action="" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+          <form id="form_add" enctype="multipart/form-data" accept-charset="utf-8">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add item</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -16,21 +16,22 @@
                     </div>
 
                     <label class="labels">Nama item :</label>
-                    <input type="text" name="name_item" class="form-control" placeholder="Nama item Here" required>
+                    <input type="text" id="name_item" name="name_item" class="form-control" placeholder="Nama item Here" required>
 
                     <label class="labels">Kategori :</label>
-                    <select name="category" class="form-control" required>
+                    <input type="text" id="category_item" name="category_item" class="form-control" placeholder="Kategori item Here" required>
+                    <!-- <select name="category" class="form-control" required>
                             <option value=""></option>
-                    </select>
+                    </select> -->
 
                     <label class="labels">Harga :</label>
-                    <input type="number" name="price" class="form-control" placeholder="Harga Here" required>
+                    <input type="number" id="price_item" name="price_item" class="form-control" placeholder="Harga Here" required>
 
                     <label class="labels">Stok :</label>
-                    <input type="number" name="Stock" class="form-control" id="cono1" required>
+                    <input type="number" id="stock_item" name="Stock" class="form-control" required>
 
                     <label class="labels">Deskripsi :</label>
-                    <input type="text" name="Description" class="form-control" id="cono1" required>
+                    <input type="text" name="Description" class="form-control" id="description_item" required>
 
                     <div class="row">
                         <div class="col-md-3">
@@ -38,13 +39,13 @@
                         </div>
                          <div class="col-md-9">
                             <label class="labels">Foto :</label>
-                            <input id="input_logo" type="file" name="image" class="form-control" required>
+                            <input id="image_item" type="text" name="image" class="form-control" required>
                         </div>
                     </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
-                <button id="save" type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Save</button>
+                <button id="saveadd" type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Save</button>
             </div>
             </form>
         </div>

@@ -79,25 +79,47 @@
 		const dbRefItem = firebase.database().ref().child('item');
 		dbRefItem.on('value', function(snapshot) {
 			// console.log(snapshot.val());
-    var value = snapshot.val();
-    var htmls = [];
-    $.each(value, function(index, value){
-    	if(value) {
-    		htmls.push('<tr>\
-        		<td>'+ value.kode +'</td>\
-        		<td>'+ value.nama +'</td>\
-        		<td>'+ value.kategori +'</td>\
-        		<td>'+ value.harga +'</td>\
-        		<td>'+ value.deskripsi +'</td>\
-        		<td>'+ value.stok +'</td>\
-        		<td>'+ value.gambar +'</td>\
-        		<td><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
-						<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
-    	}
-    	lastIndex = index;
-    });
-    $('#result').html(htmls);
-});
+	    var value = snapshot.val();
+	    var htmls = [];
+	    $.each(value, function(index, value){
+	    	if(value) {
+	    		htmls.push('<tr>\
+	        		<td>'+ value.kode +'</td>\
+	        		<td>'+ value.nama +'</td>\
+	        		<td>'+ value.kategori +'</td>\
+	        		<td>'+ value.harga +'</td>\
+	        		<td>'+ value.deskripsi +'</td>\
+	        		<td>'+ value.stok +'</td>\
+	        		<td>'+ value.gambar +'</td>\
+	        		<td><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
+							<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
+	    	}
+	    	lastIndex = index;
+	    });
+	    $('#result').html(htmls);
+	});
+
+	$('#saveadd').on('click', function(){
+		var values = $("#form_add").serializeArray();
+		var kode 			= values[0].value;
+		var nama 			= values[1].value;
+		var kategori	= values[2].value;
+		var harga 		= values[3].value;
+		var stok 			= values[5].value;
+		var deskripsi = values[4].value;
+		var gambar 		= values[6].value;
+		var iditem 		= lastIndex+1;
+
+	    firebase.database().ref().child('item/' + iditem).set({
+	        kode: kode,
+	        nama: nama,
+	        kategori: kategori,
+	        harga: harga,
+	        stok: stok,
+					deskripsi: deskripsi,
+	        gambar: gambar,
+	    });
+	});
 
 	</script>
 
