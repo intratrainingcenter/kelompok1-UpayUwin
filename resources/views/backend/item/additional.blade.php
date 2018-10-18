@@ -92,7 +92,7 @@
 	        		<td>'+ value.stok +'</td>\
 	        		<td>'+ value.gambar +'</td>\
 	        		<td><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
-							<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
+							<button type="button" class="btn btn-outline-danger removeData" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
 	    	}
 	    	lastIndex = index;
 	    });
@@ -119,6 +119,27 @@
 					deskripsi: deskripsi,
 	        gambar: gambar,
 	    });
+			event.preventDefault()
+			$('#Modal-add').modal('hide');
+	});
+
+	//remove data
+	$("body").on('click', '.removeData', function() {
+		var id = $(this).attr('data-id');
+		$('body').find('.item-remove-record-model').append('<input name="id" type="hidden" value="'+ id +'">');
+	});
+
+	$('.confirm-delete-item').on('click', function(){
+		var values = $(".item-remove-record-model").serializeArray();
+		var id = values[0].value;
+		firebase.database().ref().child('item/' + id).remove();
+	    $('body').find('.item-remove-record-model').find( "input" ).remove();
+			event.preventDefault()
+		$("#Modal-delete").modal('hide');
+	});
+
+	$('.remove-data-from-delete-form').click(function() {
+		$('body').find('.item-remove-record-model').find( "input" ).remove();
 	});
 
 	</script>

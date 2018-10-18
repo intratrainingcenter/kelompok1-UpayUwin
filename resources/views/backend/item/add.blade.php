@@ -45,7 +45,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
-                <button id="saveadd" type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Save</button>
+                <button id="saveadd" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Save</button>
             </div>
             </form>
         </div>
