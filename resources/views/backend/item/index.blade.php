@@ -1,7 +1,7 @@
 @extends('../index_backend')
 @extends('backend.item.additional')
 @section('content')
-	<div class="page-breadcrumb">
+					<div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
                         <h4 class="page-title">item</h4>
@@ -36,11 +36,11 @@
                     </thead>
                     <tbody id="result">
 
-                        @include('backend.item.edit')
-                        @include('backend.item.delete')
                     </tbody>
                 </table>
             </div>
           </div>
         </div>
+				@include('backend.item.edit')
+				@include('backend.item.delete')
 @endsection
