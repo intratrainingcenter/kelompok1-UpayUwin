@@ -1,30 +1,6 @@
-@extends('interface_frontend.frontend_shop.category.additional')
-
-@include('interface_frontend.master_frontend.element.resource_header')
-<body class="header-fixed">
-    <div class="wrapper">
-        <!--=== Header v5 ===-->
-        @include('interface_frontend.master_frontend.element.header')
-        <!--=== End Header v5 ===-->
-
-        <!--=== Breadcrumbs v4 ===-->
-        <div class="breadcrumbs-v4">
-            <div class="container">
-                <span class="page-name">Product Filter Page</span>
-                <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
-                <ul class="breadcrumb-v4-in">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="">Product</a></li>
-                    <li class="active">Product Filter Page</li>
-                </ul>
-            </div>
-            <!--/end container-->
-        </div>
-        <!--=== End Breadcrumbs v4 ===-->
-
-        <!--=== Content Part ===-->
-        <div class="content container">
-            <div class="row">
+@extends('index_shop')
+@section('content')
+<div class="row">
                 <div class="col-md-3 filter-by-block md-margin-bottom-60">
                     <h1>Filter By</h1>
 
@@ -143,8 +119,8 @@
                 <div class="text-center">
                     <ul class="pagination pagination-v2">
                         <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                        <li><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
                     </ul>
@@ -153,13 +129,4 @@
             </div>
         </div>
         <!--/end row-->
-    </div>
-    <!--/end container-->
-    <!--=== End Content Part ===-->
-    @include('interface_frontend.master_frontend.element.footer')
-    </div>
-    @yield('add_footer')
-
-</body>
-
-</html>
+@endsection

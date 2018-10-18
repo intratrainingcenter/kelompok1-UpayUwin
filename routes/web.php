@@ -17,6 +17,10 @@ Route::get('/backend', function () {
     return redirect()->route('dashboard.index');
 });
 
+Route::get('/list', function () {
+    return view('interface_frontend.frontend_shop.list');
+});
+
 Route::get('/', 'frontend\productController@index');
 Route::get('/voucher/{id}', 'frontend\productController@show');
 
