@@ -15,7 +15,7 @@ class signupcontroller extends Controller
      */
     public function index()
     {
-        //
+        return view('interface_frontend/frontend_signup/signup');
     }
 
     /**
