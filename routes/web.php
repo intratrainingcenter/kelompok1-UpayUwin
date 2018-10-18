@@ -88,6 +88,7 @@ Route::prefix('frontend')->group(function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/backend/formLogin', 'Auth\LoginController@showLoginForm')->name('formLogin');
+Route::get('/formLogin', 'Auth\LoginController@showLoginFormUser')->name('LoginUser');
 Route::get('registeradmin',function(){
   return view('backend.User.register');
 })->name('register.admin');

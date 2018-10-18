@@ -1,39 +1,6 @@
 @extends('interface_frontend.frontend_shop.category.additional')
 
-<head>
-    <title>Product Grid | Unify - Responsive Website Template</title>
-
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-
-    <!-- Web Fonts -->
-    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/shop.style.css">
-
-    <!-- CSS Header and Footer -->
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/headers/header-v5.css">
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/footers/footer-v4.css">
-
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/line-icons/line-icons.css">
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/noUiSlider/jquery.nouislider.css">
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
-
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
-</head>
-
+@include('interface_frontend.master_frontend.element.resource_header')
 <body class="header-fixed">
     <div class="wrapper">
         <!--=== Header v5 ===-->
@@ -163,7 +130,7 @@
                                 <div class="product-description product-description-brd margin-bottom-30">
                                     <div class="overflow-h margin-bottom-5">
                                         <div class="pull-left">
-                                            <h4 class="title-price"><a href="shop-ui-inner.html">{{$cat->nama_kategori}}</a></h4>
+                                            <h4 class="title-price"><a href="{{url('/voucher/'.$cat->id)}}">{{$cat->nama_kategori}}</a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -189,35 +156,9 @@
     </div>
     <!--/end container-->
     <!--=== End Content Part ===-->
-
-    <!--=== Shop Suvbscribe ===-->
-    <div class="shop-subscribe">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 md-margin-bottom-20">
-                    <h2>subscribe to our weekly <strong>newsletter</strong></h2>
-                </div>
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Email your email...">
-                        <span class="input-group-btn">
-                            <button class="btn" type="button"><i class="fa fa-envelope-o"></i></button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/end container-->
-    </div>
-    <!--=== End Shop Suvbscribe ===-->
-
-    <!--=== Footer v4 ===-->
     @include('interface_frontend.master_frontend.element.footer')
-    <!--=== End Footer v4 ===-->
     </div>
-    <!--/wrapper-->
-
-    @include('interface_frontend.frontend_shop.category.additional')
+    @yield('add_footer')
 
 </body>
 

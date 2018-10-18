@@ -1,3 +1,5 @@
+@section('add_footer')
+    
 <!-- JS Global Compulsory -->
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery-migrate.min.js"></script>
@@ -27,3 +29,4 @@
 <!--[if lt IE 10]>
     <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
+@endsection
