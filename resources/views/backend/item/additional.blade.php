@@ -91,7 +91,7 @@
 	        		<td>'+ value.deskripsi +'</td>\
 	        		<td>'+ value.stok +'</td>\
 	        		<td>'+ value.gambar +'</td>\
-	        		<td><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
+	        		<td><button type="button" class="btn btn-outline-warning updateData" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
 							<button type="button" class="btn btn-outline-danger removeData" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
 	    	}
 	    	lastIndex = index;
@@ -101,23 +101,23 @@
 
 	$('#saveadd').on('click', function(){
 		var values = $("#form_add").serializeArray();
-		var kode 			= values[0].value;
-		var nama 			= values[1].value;
-		var kategori	= values[2].value;
-		var harga 		= values[3].value;
-		var stok 			= values[5].value;
-		var deskripsi = values[4].value;
-		var gambar 		= values[6].value;
-		var iditem 		= lastIndex+1;
+		var code_item 			= values[0].value;
+		var name_item 			= values[1].value;
+		var category_item		= values[2].value;
+		var price_item 			= values[3].value;
+		var stock_item 			= values[4].value;
+		var description_item = values[5].value;
+		var image_item 			= values[6].value;
+		var iditem 					= lastIndex+1;
 
 	    firebase.database().ref().child('item/' + iditem).set({
-	        kode: kode,
-	        nama: nama,
-	        kategori: kategori,
-	        harga: harga,
-	        stok: stok,
-					deskripsi: deskripsi,
-	        gambar: gambar,
+	        kode: code_item,
+	        nama: name_item,
+	        kategori: category_item,
+	        harga: price_item,
+					deskripsi: description_item,
+					stok: stock_item,
+	        gambar: image_item,
 	    });
 			event.preventDefault()
 			$('#Modal-add').modal('hide');
@@ -142,6 +142,57 @@
 		$('body').find('.item-remove-record-model').find( "input" ).remove();
 	});
 
+
+	//update data
+	var updateID = 0;
+	$('body').on('click', '.updateData', function() {
+		updateID = $(this).attr('data-id');
+	firebase.database().ref().child('item/' + updateID).on('value', function(snapshot) {
+			var value = snapshot.val();
+			var updateData = '<label class="labels">Kode item :</label>\
+			<input type="text" name="code_item" class="form-control" placeholder="Kode item Here" value="'+value.kode+'">\
+			<label class="labels">Nama item :</label>\
+			<input type="text" name="name_item" class="form-control" placeholder="Nama item Here" value="'+value.nama+'">\
+			<label class="labels">Kategori :</label>\
+			<input type="text" name="category_item" class="form-control" placeholder="Kategori item Here" value="'+value.kategori+'">\
+			<label class="labels">Harga :</label>\
+			<input type="number" name="price" class="form-control" placeholder="Harga Here" value="'+value.harga+'">\
+			<label class="labels">Stok :</label>\
+			<input type="number" name="stock" class="form-control" id="cono1" value="'+value.stok+'">\
+			<label class="labels">Deskripsi :</label>\
+			<input type="text" name="Description" class="form-control" id="cono1" value="'+value.deskripsi+'">\
+			<div class="row">\
+					<div class="col-md-3">\
+							<img id="" class="foto" src="" alt="">\
+					</div>\
+					 <div class="col-md-9">\
+							<label class="labels">Foto :</label>\
+							<input key="" type="text" value="'+value.gambar+'" name="image" class="form-control input_logo">\
+					</div>\
+			</div>';
+			$('#resultupdate').html(updateData);
+		});
+	});
+
+	$('.saveupdate').on('click', function() {
+		var values = $(".item-update-record-model").serializeArray();
+		var postData = {
+			 kode				: values[0].value,
+			 nama				: values[1].value,
+			 kategori		: values[2].value,
+			 harga			: values[3].value,
+			 stok				: values[4].value,
+			 deskripsi	: values[5].value,
+			 gambar			: values[6].value,
+		};
+
+		var updates = {};
+		updates['item/' + updateID] = postData;
+
+		firebase.database().ref().update(updates);
+		event.preventDefault()
+		$("#Modal-edit").modal('hide');
+	});
 	</script>
 
 @endsection
