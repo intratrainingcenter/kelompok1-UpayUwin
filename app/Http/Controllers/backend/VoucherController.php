@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\voucher_game;
 use App\kategori;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class VoucherController extends Controller
 {
@@ -17,7 +18,10 @@ class VoucherController extends Controller
      */
     public function index()
     {
-        $data = voucher_game::all();
+        // $data = voucher_game::all();
+        $data = DB::table('voucher_games')
+                    ->join('kategoris','voucher_games.kode_kategori','=','kategoris.id')
+                    ->select('voucher_games.*','kategoris.nama_kategori')->get();
         $category = kategori::all();
         return view('backend.voucher.index',['data'=>$data,'category'=>$category]);
     }

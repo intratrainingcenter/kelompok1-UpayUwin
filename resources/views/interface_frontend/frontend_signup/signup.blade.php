@@ -44,38 +44,37 @@
 						<img src="{{asset('FrontEnd/log')}}/assets/img/themes/logo1-default.png" alt="">
 					</a>
 					<h2 class="margin-bottom-30">Create new account</h2>
-
-					<div class="input-group margin-bottom-20">
-						<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
-						<input type="text" class="form-control rounded-right" placeholder="Your name">
-					</div>
-
+					<form action="{{route('signup')}}" method="post">
+                            @csrf
 					<div class="input-group margin-bottom-20">
 						<span class="input-group-addon rounded-left"><i class="icon-user color-green"></i></span>
-						<input type="text" class="form-control rounded-right" placeholder="Username">
+						<input type="text" name="name" class="form-control rounded-right" placeholder="Username" required autocomplete="off">
 					</div>
 
 					<div class="input-group margin-bottom-20">
 						<span class="input-group-addon rounded-left"><i class="icon-envelope color-green"></i></span>
-						<input type="email" class="form-control rounded-right" placeholder="Your email">
+						<input type="email" name="email" class="form-control rounded-right" placeholder="Your email" required autocomplete="off">
 					</div>
 
 					<div class="input-group margin-bottom-30">
 						<span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
-						<input type="password" class="form-control rounded-right" placeholder="Password">
+						<input type="password" name="password" class="form-control rounded-right" placeholder="Password" required autocomplete="off">
+					</div>
+
+					<div class="input-group margin-bottom-30">
+						<span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
+						<input type="password" name="confirm_password" class="form-control rounded-right" placeholder="Confirm Password" required autocomplete="off">
 					</div>
 
 					<div class="checkbox margin-bottom-30">
 						<label>
-							<input type="checkbox"> I agree to terms &amp; conditions
+							<input type="checkbox" required> I agree to terms &amp; conditions
 						</label>
 
-						<label>
-							<input type="checkbox"> Subscribe to our newsletter
-						</label>
 					</div>
 
 					<button type="submit" class="btn-u btn-block rounded">Create new</button>
+					</form>
 				</div>
 			</div>
 		</div>

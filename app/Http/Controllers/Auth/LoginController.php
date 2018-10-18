@@ -48,6 +48,11 @@ class LoginController extends Controller
         return view('backend/User/login');
     }
 
+    public function showLoginFormUser()
+    {
+        return view('interface_frontend/frontend_signin/signin');
+    }
+
     protected function authenticated(Request $request, $user)
     {
         $email = Auth::user()->email;

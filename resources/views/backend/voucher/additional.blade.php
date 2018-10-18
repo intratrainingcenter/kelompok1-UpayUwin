@@ -25,6 +25,10 @@
 
 @section ('js')
 	<script>
+		//dissable space
+		$(document).on('keydown', '#code', function(e) {
+		    if (e.keyCode == 32) return false;
+		});
 		$(document).ready(function() {
 			var save = true;
 			$('#label_danger').hide();
