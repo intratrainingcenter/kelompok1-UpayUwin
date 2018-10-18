@@ -19,6 +19,7 @@ Route::get('/backend', function () {
 
 Route::get('/', 'frontend\productController@index');
 Route::get('/voucher/{id}', 'frontend\productController@show');
+Route::post('/voucher/buy', 'frontend\productController@store');
 
 Route::get('/product', function(){
 	return view('frontend.user');

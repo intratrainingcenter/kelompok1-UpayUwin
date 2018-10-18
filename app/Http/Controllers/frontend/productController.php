@@ -4,9 +4,11 @@ namespace App\Http\Controllers\frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 use App\voucher_game;
 use App\kategori;
+use App\cart;
 
 class productController extends Controller
 {
@@ -39,7 +41,18 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $idUser = Auth::user()->id;
+        $voucher = voucher_game::find($request->V);
+        $total = $voucher->harga_voucher * $request->qty;
+
+        $cart = new cart;
+        $cart->id_user = $idUser;
+        $cart->voucher_code = $voucher->kode_voucher;
+        $cart->type = 'voucher';
+        $cart->qty = $request->qty;
+        $cart->nominal = $total;
+        $cart->save();
+        return redirect()->back();
     }
 
     /**
