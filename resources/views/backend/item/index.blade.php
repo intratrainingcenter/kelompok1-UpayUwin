@@ -28,19 +28,14 @@
                             <th>Nama item</th>
                             <th>Kategori</th>
                             <th>Harga item</th>
-                            <th>Stok</th>
                             <th>Deskripsi</th>
+														<th>Stok</th>
+														<th>Gambar</th>
                             <th>Opsi</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit"><i class="fas fa-pencil-alt"></i></button>
-                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Modal-delete"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
+                    <tbody id="result">
+
                         @include('backend.item.edit')
                         @include('backend.item.delete')
                     </tbody>

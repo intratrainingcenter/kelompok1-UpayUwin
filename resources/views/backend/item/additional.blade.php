@@ -34,24 +34,24 @@
     			dataType: 'json',
     			 async: false
 			}).responseText);
-			
+
 		// checking the voucher code if it has same value
 		$('#code').keyup(function(event) {
-				
+
 			$.each(data, function(index, val) {
-					
+
 					if($('#code').val() == val.kode_voucher){
 						save = false;
 						$('#label_danger').show();
 						$('#code').addClass('is-invalid');
-						return false; 
+						return false;
 					}else{
 						save = true;
 						$('#label_danger').hide();
 						$('#code').removeClass('is-invalid');
 					}
-					
-				}); 
+
+				});
 			});
 			$(document).on('submit','#form_add',function(){
 				if (save == false) {
@@ -69,7 +69,36 @@
 			});
 		});
 	</script>
-	@include('backend.voucher.more-js')
-@endsection
+	@include('backend.item.more-js')
+	<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+	<script type="text/javascript" src="{{asset('js/firebase-price_list.js')}}"></script>
+	<script type="text/javascript">
+		//get data
 
-							
+		var lastIndex = 0;
+		const dbRefItem = firebase.database().ref().child('item');
+		dbRefItem.on('value', function(snapshot) {
+			// console.log(snapshot.val());
+    var value = snapshot.val();
+    var htmls = [];
+    $.each(value, function(index, value){
+    	if(value) {
+    		htmls.push('<tr>\
+        		<td>'+ value.kode +'</td>\
+        		<td>'+ value.nama +'</td>\
+        		<td>'+ value.kategori +'</td>\
+        		<td>'+ value.harga +'</td>\
+        		<td>'+ value.deskripsi +'</td>\
+        		<td>'+ value.stok +'</td>\
+        		<td>'+ value.gambar +'</td>\
+        		<td><button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
+						<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
+    	}
+    	lastIndex = index;
+    });
+    $('#result').html(htmls);
+});
+
+	</script>
+
+@endsection
