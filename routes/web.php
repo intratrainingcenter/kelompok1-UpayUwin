@@ -72,14 +72,14 @@ Route::prefix('frontend')->group(function () {
 	//Route wallet
 	Route::prefix('wallet')->group(function () {
 	});
+	Route::get('register', function(){
+		return view('interface_frontend.frontend_signup.signup');
+	});
 	Route::post('signup','frontend\signupcontroller@store')->name('signup');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('index', function(){
 		return view('index_frontend');
 	})->name('index');
-	
-	Route::post('livechatuser','frontend\livechatcontroller@store')->name('livechatuser');
-	Route::get('livechat', 'frontend\livechatcontroller@index')->name('livechat');
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
@@ -88,6 +88,7 @@ Route::prefix('frontend')->group(function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/backend/formLogin', 'Auth\LoginController@showLoginForm')->name('formLogin');
+Route::get('/formLogin', 'Auth\LoginController@showLoginFormUser')->name('LoginUser');
 Route::get('registeradmin',function(){
   return view('backend.User.register');
 })->name('register.admin');
