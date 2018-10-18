@@ -39,18 +39,37 @@
 
 <body class="header-fixed">
 <div class="wrapper">
-        <!--=== Header v5 ===-->   
-            @include('interface_frontend.master_frontend.element.header')
+    <!--=== Header v5 ===-->   
+    @include('interface_frontend.master_frontend.element.header')
         <!--=== End Header v5 ===-->
 
-            <!-- Content -->
-                @yield('content')
-            <!-- End Content -->
+        <!--=== Breadcrumbs v4 ===-->
+        <div class="breadcrumbs-v4">
+            <div class="container">
+                <span class="page-name">Product Filter Page</span>
+                <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
+                <ul class="breadcrumb-v4-in">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">Product</a></li>
+                    <li class="active">Product Filter Page</li>
+                </ul>
+            </div><!--/end container-->
+        </div> 
+        <!--=== End Breadcrumbs v4 ===-->
 
+    <!--=== Content Part ===-->
+    <div class="content container">
+        @yield('content')
+    </div><!--/end container-->    
+    <!--=== End Content Part ===-->
 
-        <!--=== Footer v4 ===-->
-            @include('interface_frontend.master_frontend.element.footer')
-        <!--=== End Footer v4 ===-->
+            <!--=== Shop Suvbscribe ===-->
+            @include('interface_frontend.master_frontend.shop.subscribe')
+            <!--=== End Shop Suvbscribe ===-->
+
+    <!--=== Footer v4 ===-->
+    @include('interface_frontend.master_frontend.element.footer')
+    <!--=== End Footer v4 ===-->
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->

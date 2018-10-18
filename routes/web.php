@@ -17,8 +17,12 @@ Route::get('/backend', function () {
     return redirect()->route('dashboard.index');
 });
 
+Route::get('/list', function () {
+    return view('interface_frontend.frontend_shop.list');
+});
+
 Route::get('/', 'frontend\productController@index');
-Route::get('/voucher/{id}', 'frontend\productController@show');
+Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 Route::post('/voucher/buy', 'frontend\productController@store');
 
 Route::get('/product', function(){
@@ -79,7 +83,7 @@ Route::prefix('frontend')->group(function () {
 	Route::post('signup','frontend\signupcontroller@store')->name('signup');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('index', function(){
-		return view('index_frontend');
+		return view('interface_frontend.frontend.index');
 	})->name('index');
 	Route::get('topup', function(){
 		return view('frontend.topup');

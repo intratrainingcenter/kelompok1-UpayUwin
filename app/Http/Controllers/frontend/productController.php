@@ -61,12 +61,20 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showVoucher($id)
+    {
+        $category = kategori::find($id);
+        $voucher = voucher_game::where('kode_kategori',$id)->get();
+
+        return view('interface_frontend/frontend_shop/voucher/voucher', compact('voucher' , 'category'));
+    }
+
+    public function showItem($id)
     {
         $categori = kategori::find($id);
         $voucher = voucher_game::where('kode_kategori',$id)->get();
 
-        return view('interface_frontend/frontend_shop/item', compact('voucher' , 'categori'));
+        return view('interface_frontend/frontend_shop/voucher/voucher', compact('voucher' , 'categori'));
     }
 
     /**

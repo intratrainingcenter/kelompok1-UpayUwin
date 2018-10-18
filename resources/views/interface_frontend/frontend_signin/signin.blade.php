@@ -11,8 +11,8 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{asset('FrontEnd')}}/favicon.ico">
 
 	<!-- Web Fonts -->
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700&amp;subset=cyrillic,latin">
@@ -78,16 +78,7 @@
 	<!--=== End Content Part ===-->
 
 	<!--=== Sticky Footer ===-->
-	<div class="container sticky-footer">
-		<ul class="list-unstyled list-inline social-links margin-bottom-20">
-			<li><a href="#"><i class="icon-custom icon rounded-x icon-bg-blue fa fa-facebook"></i></a></li>
-			<li><a href="#"><i class="icon-custom icon rounded-x icon-bg-blue fa fa-twitter"></i></a></li>
-			<li><a href="#"><i class="icon-custom icon rounded-x icon-bg-blue fa fa-google-plus"></i></a></li>
-		</ul>
-		<p class="copyright-space">
-			2016 &copy; All Rights Reserved. Unify Template by <a href="#">Htmlstream</a>
-		</p>
-	</div>
+	 @include('interface_frontend.master_frontend.log.footer')
 	<!--=== End Sticky Footer ===-->
 
 	<!-- JS Global Compulsory -->
