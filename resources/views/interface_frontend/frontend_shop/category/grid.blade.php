@@ -1,4 +1,6 @@
 @extends('index_shop')
+@extends('interface_frontend.frontend_shop.category.additional')
+
 @section('content')
 <div class="row">
                 <div class="col-md-3 filter-by-block md-margin-bottom-60">
