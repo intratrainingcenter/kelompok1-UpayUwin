@@ -19,10 +19,12 @@
                     <input type="text" id="name_item" name="name_item" class="form-control" placeholder="Nama item Here" required>
 
                     <label class="labels">Kategori :</label>
-                    <input type="text" id="category_item" name="category_item" class="form-control" placeholder="Kategori item Here" required>
-                    <!-- <select name="category" class="form-control" required>
-                            <option value=""></option>
-                    </select> -->
+                    <!-- <input type="text" id="category_item" name="category_item" class="form-control" placeholder="Kategori item Here" required> -->
+                    <select name="category" class="form-control" required>
+                        @foreach($category as $value)
+                            <option id="category_item" value="{{$value->nama_kategori}}">{{$value->nama_kategori}}</option>
+                        @endforeach
+                    </select>
 
                     <label class="labels">Harga :</label>
                     <input type="number" id="price_item" name="price_item" class="form-control" placeholder="Harga Here" required>

@@ -108,7 +108,7 @@
 		var stock_item 			= values[4].value;
 		var description_item = values[5].value;
 		var image_item 			= values[6].value;
-		var iditem 					= lastIndex+1;
+		var iditem 					= parseInt(lastIndex) + 1;
 
 	    firebase.database().ref().child('item/' + iditem).set({
 	        kode: code_item,

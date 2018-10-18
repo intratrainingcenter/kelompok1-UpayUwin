@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\kategori;
 
 class ItemController extends Controller
 {
@@ -14,7 +15,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('backend.item.index');
+        $category = kategori::all();
+        return view('backend.item.index',compact('category'));
     }
 
     /**
