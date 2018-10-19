@@ -18,7 +18,7 @@ Route::get('/backend', function () {
 });
 
 Route::get('/livechat', function () {
-    return view('interface_frontend.master_frontend.others.livechat');
+    return view('backend.customer_service.livechat');
 })->name('livechat');
 
 Route::get('/setting', function () {
