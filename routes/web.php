@@ -42,12 +42,18 @@ Route::get('UpayUwin/cart', function () {
 });
 // Route::get('UpayUwin/product', 'frontend\productController@index');
 
+Route::get('/', function(){
+	return view('welcome');	
+>>>>>>> Stashed changes
+});
+
 Route::get('UpayUwin/payment', function(){
     return view('frontend.payment');
 });
 
 Route::get('/pay','PaymentController@payWithpaypal');
 
+<<<<<<< Updated upstream
 Route::get('/backend/login',function(){
 	return view('backend.User.login')->middleware('admin');
 });
@@ -55,17 +61,31 @@ Route::get('/backend/login',function(){
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
 
+=======
+Route::resource('category','categoryController');
+
+//Route Untuk Backend
+Route::prefix('backend')->group(function () { 
+	
+	//Route Dashboard
+>>>>>>> Stashed changes
 	Route::resource('dashboard','backend\DashboardController');
-	//Route Voucher
-	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
+	//Rsoute Dashboard
 	Route::resource('voucher','backend\VoucherController');
 	//Route User
+<<<<<<< Updated upstream
 	Route::resource('user','backend\UserController');
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
   	//Route setting
   	Route::resource('setting','backend\SettingController');
+=======
+	Route::prefix('User')->group(function () {
+		
+
+	});
+>>>>>>> Stashed changes
 });
 
 
@@ -89,6 +109,7 @@ Route::prefix('frontend')->group(function () {
 	})->name('topup');
 });
 
+<<<<<<< Updated upstream
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/backend/formLogin', 'Auth\LoginController@showLoginForm')->name('formLogin');

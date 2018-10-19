@@ -18,7 +18,7 @@ table, th, td {
      <h1>EDIT CATEGORY BARANG </h1>
 
      <form method="post" action="{{action('categoryController@update', $id)}}" enctype="multipart/form-data">
-    <input type="hidden" name="_method" value="PATCH" />
+     <input type="hidden" name="_method" value="PATCH" />
               	{{ csrf_field() }}
     KODE CATEGORY:<br>
     <input type="number" name="kode_category" value="{{ $data->kode_kategori }}">
