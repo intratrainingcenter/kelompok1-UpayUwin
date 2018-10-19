@@ -17,8 +17,16 @@ Route::get('/backend', function () {
     return redirect()->route('dashboard.index');
 });
 
-Route::get('/list', function () {
-    return view('interface_frontend.frontend_shop.list');
+Route::get('/livechat', function () {
+    return view('interface_frontend.master_frontend.others.livechat');
+})->name('livechat');
+
+Route::get('/setting', function () {
+    return view('interface_frontend.frontend_user.setting_user');
+})->name('setting');
+
+Route::get('/404', function () {
+    return view('interface_frontend.frontend_user.404');
 });
 
 Route::get('/', 'frontend\productController@index');

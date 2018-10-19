@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-inline right-topbar pull-right">
-                        <li><a href="#">Account</a></li>
+                        <li><a href="{{route('setting')}}">Account</a></li>
                         <li>@if (Auth::check())
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
@@ -28,8 +28,10 @@
                             </form>
                             @else
                             <a href="{{route('LoginUser')}}">Login</a>
+                            | 
+                            <a href="{{route('signup.index')}}">Register</a>
                             @endif
-                            | <a href="{{route('signup.index')}}">Register</a>
+                           
                         </li>
                     </ul>
                 </div>
