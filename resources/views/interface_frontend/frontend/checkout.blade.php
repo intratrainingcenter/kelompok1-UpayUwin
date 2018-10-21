@@ -80,26 +80,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($data as $index => $data)
                                     <tr>
                                         <td class="product-in-table">
                                             <img class="img-responsive" src="{{asset('FrontEnd')}}/assets/img/thumb/08.jpg" alt="">
                                             <div class="product-it-in">
-                                                <h3>Double-Breasted</h3>
-                                                <span>Sed aliquam tincidunt tempus</span>
+                                                <h3>{{$data->type}} {{$data->nominal}}</h3>
+                                                <span>{{$data->voucher_code}}</span>
                                             </div>    
                                         </td>
-                                        <td>$ 160.00</td>
+                                        <td>{{number_format($data->nominal)}}</td>
                                         <td>
                                             <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty1();' value='-'>-</button>
-                                            <input type='text' class="quantity-field" name='qty1' value="5" id='qty1'/>
+                                            <input type='text' class="quantity-field" name='qty1' value="{{$data->qty}}" id='qty1'/>
                                             <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty1").value++;' value='+'>+</button>
                                         </td>
-                                        <td class="shop-red">$ 320.00</td>
+                                        <td class="shop-red">{{number_format($data->qty*$data->nominal) }}</td>
                                         <td>
                                             <button type="button" class="close"><span>&times;</span><span class="sr-only">Close</span></button>
                                         </td>
                                     </tr>
-                                    
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

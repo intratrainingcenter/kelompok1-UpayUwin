@@ -18,35 +18,15 @@
     <h2 class="chat__users">Users Online: 45</h2>
     <ul class="chat__wrapper">
         <li class="chat__human">
-            <img class="chat__avatar" src="https://robohash.org/joe" alt="" />
-            <span class="chat__name">Joe Richardson</span>
-        </li>
-        
-        <li class="chat__human">
-            <img class="chat__avatar" src="https://robohash.org/nah" alt="" />
-            <span class="chat__name">Bill Gates</span>
-        </li>
-        
-        <li class="chat__human">
-            <img class="chat__avatar" src="https://robohash.org/ok" alt="" />
-            <span class="chat__name">Steve Jobs</span>
-        </li>
-        
-        <li class="chat__human">
-            <img class="chat__avatar" src="https://robohash.org/hi" alt="" />
-            <span class="chat__name">Mark Zuckerberg</span>
-        </li>
-        
-        <li class="chat__human">
             <img class="chat__avatar" src="https://robohash.org/bruh" alt="" />
-            <span class="chat__name">Denzel Washington</span>
+            <span class="chat__name" id="sl">User</span>
         </li>
     </ul>
 </nav>
 
 <div class="conversation">
-    <div class="conversation__header">
-        Denzel Washington
+    <div class="conversation__header" id="test2">
+        
         <span class="close-msg">&times;</span>
     </div>
     <ul class="conversation__wrap">
@@ -57,20 +37,11 @@
         <li class="conversation__msg cf">
             <span class="right">Yo!</span>
         </li>
-        
-        <li class="conversation__msg cf">
-            <span>How Goes it?</span>
-        </li>
-        
-        <li class="conversation__msg cf">
-            <span class="right">Bruh.</span>
-        </li>
     </ul>
     
     <input class="input" type="text" placeholder="Enter Message" />
 </div>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-  
-
     <script  src="{{asset('backend/livechat')}}/js/index.js"></script>
+    <script  src="{{asset('js')}}/livechat.js"></script>
