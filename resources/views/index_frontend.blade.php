@@ -51,6 +51,7 @@
         <!--=== Footer v4 ===-->
             @include('interface_frontend.master_frontend.element.footer')
         <!--=== End Footer v4 ===-->
+        @include('interface_frontend.master_frontend.others.livechat')
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->
@@ -73,6 +74,8 @@
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/revolution-slider.js"></script>
 <script>
     jQuery(document).ready(function() {
+        
+        console.log( "ready!" );
         App.init();
         App.initScrollBar();
         App.initParallaxBg();
