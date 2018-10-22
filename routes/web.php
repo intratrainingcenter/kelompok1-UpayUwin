@@ -30,7 +30,7 @@ Route::get('/404', function () {
 });
 
 Route::get('/', 'frontend\productController@index');
-Route::get('/voucher/{id}', 'frontend\productController@show');
+Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
 Route::get('/product', function(){
 	return view('frontend.user');
