@@ -21,7 +21,6 @@
                           <th>No</th>
                           <th>Name</th>
                           <th>Email</th>
-                          <th>Saldo</th>
                           <th>level</th>
                           <th>Opsi</th>
                       </tr>
@@ -34,7 +33,6 @@
                           <td>{{$no}}</td>
                           <td>{{$data_user->name}}</td>
                           <td>{{$data_user->email}}</td>
-                          <td>{{$data_user->saldo}}</td>
                           <td>{{$data_user->level}}</td>
                           <td>
                             <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit{{$data_user->id}}"><i class="fas fa-pencil-alt"></i></button>
