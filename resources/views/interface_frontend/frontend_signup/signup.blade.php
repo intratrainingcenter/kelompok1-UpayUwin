@@ -44,7 +44,7 @@
 						<img src="{{asset('FrontEnd/log')}}/assets/img/themes/logo1-default.png" alt="">
 					</a>
 					<h2 class="margin-bottom-30">Create new account</h2>
-					<form action="{{route('signup')}}" method="post">
+					<form action="{{route('regis')}}" method="post">
                             @csrf
 					<div class="input-group margin-bottom-20">
 						<span class="input-group-addon rounded-left"><i class="icon-user color-green"></i></span>

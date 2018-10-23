@@ -13,7 +13,7 @@
 
 Route::get('signup',function(){
 	return view('interface_frontend/frontend_signup/signup');
-});
+})->name('signup');
 
 Route::get('/admin', function () {
     return redirect()->route('dashboard.index');
@@ -88,13 +88,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 //Route Untuk Frontend
 Route::prefix('frontend')->group(function () {
 	//Route wallet
-	Route::prefix('wallet')->group(function () {
-	});
-	Route::get('register', function(){
-		return view('interface_frontend.frontend_signup.signup');
-	});
 	Route::get('/voucher/sort', 'frontend\productController@sortProduct')->name('voucher.sort');
-	Route::post('signup','frontend\signupcontroller@store')->name('signup');
+	Route::post('regis','frontend\signupcontroller@store')->name('regis');
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	
