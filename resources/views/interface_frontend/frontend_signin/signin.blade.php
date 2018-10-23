@@ -68,7 +68,7 @@
 						</div>
 
 						<div class="social-login text-center">
-							<p>Dont have an account? <a href="page_registration2.html">Create New</a></p>
+							<p>Dont have an account? <a href="{{route('signup')}}">Create New</a></p>
 						</div>
 					</div>
 				</form>

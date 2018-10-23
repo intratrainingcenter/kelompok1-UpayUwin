@@ -21,12 +21,12 @@ class signupcontroller extends Controller
             $data = new User([
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),
-                'password' => bcrypt($request->get('Password')),
+                'password' => bcrypt($request->get('password')),
                 'level' => 'user',
                 'status' => 'logout',   
             ]);
             $data->save();
-            return redirect()->route('index')->with('success', 'Data Telah Ditambahkan'); 
+            return redirect()->route('LoginUser')->with('success', 'Data Telah Ditambahkan'); 
         }
         
     }

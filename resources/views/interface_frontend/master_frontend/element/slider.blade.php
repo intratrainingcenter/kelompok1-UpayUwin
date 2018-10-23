@@ -4,7 +4,7 @@
                 <!-- SLIDE -->
                 <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 1">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('FrontEnd')}}/assets/img/1.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <img src="{{asset('FrontEnd')}}/assets/img/pubege.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
                     <div class="tp-caption revolution-ch1 sft start"
                         data-x="center"
@@ -40,7 +40,7 @@
                 <!-- SLIDE -->
                 <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('FrontEnd')}}/assets/img/5.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <img src="{{asset('FrontEnd')}}/assets/img/wanderer.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
                     <div class="tp-caption revolution-ch3 sft start"
                         data-x="center"
@@ -90,7 +90,7 @@
                 <!-- SLIDE -->
                 <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 3">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('FrontEnd')}}/assets/img/3.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="right top" data-bgrepeat="no-repeat">
+                    <img src="{{asset('FrontEnd')}}/assets/img/elsu.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="right top" data-bgrepeat="no-repeat">
 
                     <div class="tp-caption revolution-ch3 sft start"
                         data-x="right"
@@ -140,7 +140,7 @@
                 <!-- SLIDE -->
                 <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 4">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('FrontEnd')}}/assets/img/2.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <img src="{{asset('FrontEnd')}}/assets/img/gow.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
                     <div class="tp-caption revolution-ch1 sft start"
                         data-x="center"
@@ -190,7 +190,7 @@
                 <!-- SLIDE -->
                 <li class="revolution-mch-1" data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 5">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('FrontEnd')}}/assets/img/4.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="right top" data-bgrepeat="no-repeat">
+                    <img src="{{asset('FrontEnd')}}/assets/img/doto.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="right top" data-bgrepeat="no-repeat">
 
                     <div class="tp-caption revolution-ch5 sft start"
                         data-x="right"

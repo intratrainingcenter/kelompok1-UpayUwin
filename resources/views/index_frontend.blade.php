@@ -51,7 +51,7 @@
         <!--=== Footer v4 ===-->
             @include('interface_frontend.master_frontend.element.footer')
         <!--=== End Footer v4 ===-->
-        @include('interface_frontend.master_frontend.others.livechat')
+        <!-- @include('interface_frontend.master_frontend.others.livechat') -->
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->
