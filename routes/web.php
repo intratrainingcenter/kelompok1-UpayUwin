@@ -80,6 +80,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
   	//Route setting
   	Route::resource('setting','backend\SettingController');
+		//Route report voucher
+		Route::resource('report_voucher','backend\report_voucher');
 });
 
 
@@ -92,7 +94,7 @@ Route::prefix('frontend')->group(function () {
 	Route::post('regis','frontend\signupcontroller@store')->name('regis');
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
-	
+
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
