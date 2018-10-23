@@ -36,12 +36,12 @@
                     <input type="text" name="Description" class="form-control" id="description_item" required>
 
                     <div class="row">
-                        <div class="col-md-3">
+                        <!-- <div class="col-md-3">
                             <img class="fotoAdd" src="{{asset('img/noimage.jpg')}}" alt="">
-                        </div>
+                        </div> -->
                          <div class="col-md-9">
                             <label class="labels">Foto :</label>
-                            <input id="image_item" type="text" name="image" class="form-control" required>
+                            <input id="image_item" type="file" name="image" value="upload" class="form-control" required>
                         </div>
                     </div>
             </div>

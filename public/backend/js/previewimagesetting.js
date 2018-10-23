@@ -1,3 +1,4 @@
+$('#uploadPreview').hide();
 $(document).on('change paste keyup', '#image' , function(){
 		$('#logo').hide();
 		$('#uploadPreview').show();

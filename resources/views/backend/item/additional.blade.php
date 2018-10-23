@@ -86,7 +86,13 @@
 	    		htmls.push('<tr>\
 	        		<td>'+ value.kode +'</td>\
 	        		<td>'+ value.nama +'</td>\
-	        		<td>'+ value.kategori +'</td>\
+									@foreach($category as $value)\
+										@if ($value->kode_kategori == '+value.kategori+')\
+											<td>{{$value->nama_kategori}}</td>\
+											@else\
+											<td>'+value.kategori+'</td>\
+										@endif\
+									@endforeach\
 	        		<td>'+ value.harga +'</td>\
 	        		<td>'+ value.deskripsi +'</td>\
 	        		<td>'+ value.stok +'</td>\
@@ -123,6 +129,16 @@
 			$('#Modal-add').modal('hide');
 	});
 
+	// //upload image add
+	// var upload_image = document.getElementById('image_item');
+	// 	upload_image.addEventlistener('change',function(e){
+	// 		//get file
+	// 		var file = e.target.files[0];
+	// 		//get storege files
+	// 		var storagefiles = firebase.storage().ref('item/' + file.name);
+	//
+	// 	});
+
 	//remove data
 	$("body").on('click', '.removeData', function() {
 		var id = $(this).attr('data-id');
@@ -154,7 +170,11 @@
 			<label class="labels">Nama item :</label>\
 			<input type="text" name="name_item" class="form-control" placeholder="Nama item Here" value="'+value.nama+'">\
 			<label class="labels">Kategori :</label>\
-			<input type="text" name="category_item" class="form-control" placeholder="Kategori item Here" value="'+value.kategori+'">\
+			<select name="category" class="form-control" required>\
+					@foreach($category as $value)\
+							<option id="category_item" value="{{$value->nama_kategori}}">{{$value->nama_kategori}}</option>\
+					@endforeach\
+			</select>\
 			<label class="labels">Harga :</label>\
 			<input type="number" name="price" class="form-control" placeholder="Harga Here" value="'+value.harga+'">\
 			<label class="labels">Stok :</label>\
