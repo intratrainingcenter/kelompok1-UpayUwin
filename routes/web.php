@@ -15,7 +15,7 @@ Route::get('signup',function(){
 	return view('interface_frontend/frontend_signup/signup');
 });
 
-Route::get('/backend', function () {
+Route::get('/admin', function () {
     return redirect()->route('dashboard.index');
 });
 
@@ -30,8 +30,11 @@ Route::get('/setting', function () {
 Route::get('/404', function () {
     return view('interface_frontend.frontend_user.404');
 });
-
-Route::get('/', 'frontend\productController@index');
+Route::get('/', function () {
+	return view('interface_frontend.frontend.index');
+})->name('index');
+Route::get('/voucher', 'frontend\productController@indexVoucher');
+Route::get('/item', 'frontend\productController@indexItem');
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
 Route::get('/product', function(){
@@ -69,6 +72,7 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	//Route Voucher
 	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
 	Route::resource('voucher','backend\VoucherController');
+
 	//Route User
 	Route::resource('user','backend\UserController');
 	//Route setting
@@ -89,12 +93,11 @@ Route::prefix('frontend')->group(function () {
 	Route::get('register', function(){
 		return view('interface_frontend.frontend_signup.signup');
 	});
+	Route::get('/voucher/sort', 'frontend\productController@sortProduct')->name('voucher.sort');
 	Route::post('signup','frontend\signupcontroller@store')->name('signup');
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
-	Route::get('index', function(){
-		return view('interface_frontend.frontend.index');
-	})->name('index');
+	
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');

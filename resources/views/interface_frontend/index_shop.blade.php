@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -86,13 +87,7 @@
 <!-- JS Page Level -->           
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
-<script>
-    jQuery(document).ready(function() {
-        App.init();
-        App.initScrollBar();        
-        MouseWheel.initMouseWheel();
-    });
-</script>
+
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
     <script src="assets/plugins/html5shiv.js"></script>
@@ -101,6 +96,8 @@
 <!--[if lt IE 10]>
     <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
-@yield('add_footer')
+<script>
+    @yield('add_footer')
+</script>
 </body>
 </html> 
