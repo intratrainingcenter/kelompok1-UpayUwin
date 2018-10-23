@@ -18,7 +18,7 @@ Route::get('/backend', function () {
 });
 
 Route::get('/livechat', function () {
-    return view('interface_frontend.master_frontend.others.livechat');
+    return view('backend.customer_service.livechat');
 })->name('livechat');
 
 Route::get('/setting', function () {
@@ -30,7 +30,7 @@ Route::get('/404', function () {
 });
 
 Route::get('/', 'frontend\productController@index');
-Route::get('/voucher/{id}', 'frontend\productController@show');
+Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
 Route::get('/product', function(){
 	return view('frontend.user');
@@ -88,6 +88,7 @@ Route::prefix('frontend')->group(function () {
 		return view('interface_frontend.frontend_signup.signup');
 	});
 	Route::post('signup','frontend\signupcontroller@store')->name('signup');
+	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('index', function(){
 		return view('interface_frontend.frontend.index');

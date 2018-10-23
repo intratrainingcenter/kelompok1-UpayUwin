@@ -34,6 +34,7 @@
     
     <!-- CSS Customization -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
+    @yield('add_header')
 </head> 
 
 <body class="header-fixed">
@@ -100,6 +101,6 @@
 <!--[if lt IE 10]>
     <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
-
+@yield('add_footer')
 </body>
 </html> 

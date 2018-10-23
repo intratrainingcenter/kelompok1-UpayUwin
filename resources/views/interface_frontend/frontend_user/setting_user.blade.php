@@ -16,7 +16,7 @@
 									<dl class="dl-horizontal">
 										<dt><strong>Your name </strong></dt>
 										<dd>
-											Edward Rooster
+										{{ Auth::user()->name }}
 											<span>
 												<a class="pull-right" href="#">
 													<i class="fa fa-pencil"></i>
@@ -26,17 +26,7 @@
 										<hr>
 										<dt><strong>Your ID </strong></dt>
 										<dd>
-											FKJ-032440
-											<span>
-												<a class="pull-right" href="#">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</span>
-										</dd>
-										<hr>
-										<dt><strong>Company name </strong></dt>
-										<dd>
-											Htmlstream
+										{{ Auth::user()->id }}
 											<span>
 												<a class="pull-right" href="#">
 													<i class="fa fa-pencil"></i>
@@ -46,47 +36,16 @@
 										<hr>
 										<dt><strong>Primary Email Address </strong></dt>
 										<dd>
-											edward-rooster@gmail.com
+										{{ Auth::user()->email }}
 											<span>
 												<a class="pull-right" href="#">
 													<i class="fa fa-pencil"></i>
 												</a>
 											</span>
 										</dd>
-										<hr>
-										<dt><strong>Phone Number </strong></dt>
-										<dd>
-											(304) 33-2867-499
-											<span>
-												<a class="pull-right" href="#">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</span>
-										</dd>
-										<hr>
-										<dt><strong>Office Number </strong></dt>
-										<dd>
-											(304) 44-9810-296
-											<span>
-												<a class="pull-right" href="#">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</span>
-										</dd>
-										<hr>
-										<dt><strong>Address </strong></dt>
-										<dd>
-											California, US
-											<span>
-												<a class="pull-right" href="#">
-													<i class="fa fa-pencil"></i>
-												</a>
-											</span>
-										</dd>
+										
 										<hr>
 									</dl>
-									<button type="button" class="btn-u btn-u-default">Cancel</button>
-									<button type="button" class="btn-u">Save Changes</button>
 								</div>
 
 								<div id="passwordTab" class="profile-edit tab-pane fade">
@@ -129,14 +88,15 @@
 									<h2 class="heading-md">Manage your Profile</h2>
 									<p>Change your User Information</p>
 									<br>
-									<form class="sky-form" id="sky-form4" action="#">
+									<form class="sky-form" id="sky-form4" action="{{route('settinguser', Auth::user()->id)}}" method="POST">
+										@csrf
 										<dl class="dl-horizontal">
 											<dt>Username</dt>
 											<dd>
 												<section>
 													<label class="input">
 														<i class="icon-append fa fa-user"></i>
-														<input type="text" placeholder="Username" name="username">
+														<input type="text" placeholder="Username" name="username" value="{{ Auth::user()->name }}" required autocomplete="off">
 														<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
 													</label>
 												</section>
@@ -146,7 +106,7 @@
 												<section>
 													<label class="input">
 														<i class="icon-append fa fa-envelope"></i>
-														<input type="email" placeholder="Email address" name="email">
+														<input type="email" placeholder="Email address" name="email" value="{{ Auth::user()->email }}" required autocomplete="off">
 														<b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
 													</label>
 												</section>
@@ -156,7 +116,7 @@
 												<section>
 													<label class="input">
 														<i class="icon-append fa fa-lock"></i>
-														<input type="password" id="password" name="password" placeholder="Password">
+														<input type="password" id="password" name="password" placeholder="Password" required autocomplete="off">
 														<b class="tooltip tooltip-bottom-right">Don't forget your password</b>
 													</label>
 												</section>

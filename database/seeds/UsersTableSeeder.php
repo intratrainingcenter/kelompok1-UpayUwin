@@ -16,7 +16,6 @@ class UsersTableSeeder extends Seeder
             'name' => 'user',
             'email' => 'user@gmail.com',
             'password' => bcrypt('1234'),
-            'saldo' => '0',
             'level' => 'user',
             'status' => 'logout',
             ],
@@ -24,7 +23,6 @@ class UsersTableSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('1234'),
-            'saldo' => '0',
             'level' => 'admin',
             'status' => 'logout',
 
