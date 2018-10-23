@@ -18,4 +18,12 @@ class settingusercontroller extends Controller
         $user->save();
         return redirect()->route('setting')->with('success','Your Profile has been changed');
     }
+    public function updatepass(Request $request)
+    {
+        // dd($request);
+        $user = User::find(Auth::id());
+        $user->password = $request->get('password');
+        $user->save();
+        return redirect()->route('setting')->with('success','Your Profile has been changed');
+    }
 }
