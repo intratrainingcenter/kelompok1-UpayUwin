@@ -15,10 +15,20 @@ class productController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexVoucher()
     {
+        $product = 'Voucher';
+        $count = kategori::count();
         $categori = kategori::all();
-        return view('interface_frontend/frontend_shop/category/grid', compact('categori'));
+        return view('interface_frontend/frontend_shop/category/grid', compact('count','categori','product'));
+    }
+
+    public function indexItem()
+    {
+        $count = kategori::count();
+        $product = 'Item';
+        $categori = kategori::all();
+        return view('interface_frontend/frontend_shop/category/grid', compact('count','categori','product'));
     }
 
     /**
@@ -62,6 +72,16 @@ class productController extends Controller
         $voucher = voucher_game::where('kode_kategori',$id)->get();
 
         return view('interface_frontend/frontend_shop/voucher/voucher', compact('voucher' , 'categori'));
+    }
+
+    public function sortProduct(Request $request){
+
+        if($request->sort == 'new'){
+            $categori = kategori::orderBy('created_at', 'DESC')->get();
+        }else{
+            $categori = kategori::orderBy('created_at', 'ASC')->get();
+        }
+        return view('interface_frontend/frontend_shop/category/sort', compact('categori'));
     }
 
     /**
