@@ -88,6 +88,7 @@ Route::prefix('frontend')->group(function () {
 		return view('interface_frontend.frontend_signup.signup');
 	});
 	Route::post('signup','frontend\signupcontroller@store')->name('signup');
+	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('index', function(){
 		return view('interface_frontend.frontend.index');

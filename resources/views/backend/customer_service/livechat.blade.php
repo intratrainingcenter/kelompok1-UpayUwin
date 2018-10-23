@@ -16,11 +16,11 @@
 
 <nav class="chat">
     <h2 class="chat__users">Users Online: 45</h2>
-    <ul class="chat__wrapper">
-        <li class="chat__human">
-            <img class="chat__avatar" src="https://robohash.org/bruh" alt="" />
+    <ul class="chat__wrapper" id="chatclick">
+        <!-- <li class="chat__human">
+            <img class="chat__avatar" src="" alt="" />
             <span class="chat__name" id="sl">User</span>
-        </li>
+        </li> -->
     </ul>
 </nav>
 
@@ -30,16 +30,17 @@
         <span class="close-msg">&times;</span>
     </div>
     <ul class="conversation__wrap">
-        <li class="conversation__msg cf">
+        <!-- <li class="conversation__msg cf">
             <span>Hey!</span>
         </li>
         
         <li class="conversation__msg cf">
             <span class="right">Yo!</span>
-        </li>
+        </li> -->
     </ul>
-    
+    <form>
     <input class="input" type="text" placeholder="Enter Message" />
+    </form>
 </div>
     <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

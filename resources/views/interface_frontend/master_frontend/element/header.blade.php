@@ -16,8 +16,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-inline right-topbar pull-right">
-                        <li><a href="{{route('setting')}}">Account ( {{ Auth::user()->name }} {{ Auth::user()->id }} )</a></li>
                         <li>@if (Auth::check())
+                        <a href="{{route('setting')}}">Account ( {{ Auth::user()->name }} {{ Auth::user()->id }} )</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

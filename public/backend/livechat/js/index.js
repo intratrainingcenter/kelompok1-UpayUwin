@@ -7,9 +7,3 @@ $('.conversation__header').on('click', function() {
     $('.conversation').slideToggle(300);
     
 });
-
-$('.chat__name').on('click', function() {
-    $('.conversation').slideToggle(300);
-    var t = $(this).text();
-    document.getElementById("test2").innerHTML = t;
-});
