@@ -11,7 +11,9 @@
 |
 */
 
-Route::resource('signup','frontend\signupcontroller');
+Route::get('signup',function(){
+	return view('interface_frontend/frontend_signup/signup');
+});
 
 Route::get('/backend', function () {
     return redirect()->route('dashboard.index');
