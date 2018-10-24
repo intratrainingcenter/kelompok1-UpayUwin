@@ -29,7 +29,7 @@
                             @else
                             <a href="{{route('LoginUser')}}">Login</a>
                             | 
-                            <a href="{{route('signup.index')}}">Register</a>
+                            <a href="{{route('signup')}}">Register</a>
                             @endif
                            
                         </li>
