@@ -54,7 +54,8 @@ Route::get('UpayUwin/payment', function(){
     return view('frontend.payment');
 });
 
-Route::get('/pay','PaymentController@payWithpaypal');
+Route::post('/pay','PaymentController@payWithpaypal')->name('paymentpaypal');
+Route::get('/payment/status','PaymentController@getPaymentStatus')->name('payment.status');
 
 Route::get('/backend/login',function(){
 	return view('backend.User.login')->middleware('admin');
