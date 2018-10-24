@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="">
     <title class="tittle"></title>
     @include('master_backend.css_index_backend')
+    
     @yield('css')
 </head>
 
@@ -61,6 +62,8 @@
     })
   });
   </script>
+  
+  @include('backend.customer_service.livechat')
 </body>
 @extends('master_backend.topnav_user_profile')
 </html>
