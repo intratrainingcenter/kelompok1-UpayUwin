@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(VoucherTableSeeder::class);
         $this->call(KategoriTableSeeder::class);
         $this->call(CartTableSeeder::class);
+        $this->call(SettingTableSeeder::class);
     }
 }
