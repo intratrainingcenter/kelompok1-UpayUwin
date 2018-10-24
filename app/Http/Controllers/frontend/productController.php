@@ -74,6 +74,16 @@ class productController extends Controller
         return view('interface_frontend/frontend_shop/voucher/voucher', compact('voucher' , 'categori'));
     }
 
+    public function sortProduct(Request $request){
+
+        if($request->sort == 'new'){
+            $categori = kategori::orderBy('created_at', 'DESC')->get();
+        }else{
+            $categori = kategori::orderBy('created_at', 'ASC')->get();
+        }
+        return view('interface_frontend/frontend_shop/category/sort', compact('categori'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

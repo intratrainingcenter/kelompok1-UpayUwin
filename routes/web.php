@@ -62,6 +62,7 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	//Route Voucher
 	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
 	Route::resource('voucher','backend\VoucherController');
+
 	//Route User
 	Route::resource('user','backend\UserController');
 	//Route setting
@@ -82,6 +83,7 @@ Route::prefix('frontend')->group(function () {
 	Route::get('register', function(){
 		return view('interface_frontend.frontend_signup.signup');
 	});
+	Route::get('/voucher/sort', 'frontend\productController@sortProduct')->name('voucher.sort');
 	Route::post('signup','frontend\signupcontroller@store')->name('signup');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	

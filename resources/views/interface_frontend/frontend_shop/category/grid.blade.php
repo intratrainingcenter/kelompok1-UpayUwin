@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="filter-results">
-            <div class="row illustration-v2">
+            <div class="row illustration-v2" id="load">
                 @foreach ($categori as $cat)
                 <div class="col-sm-3">
                     <div class="product-img product-img-brd">
