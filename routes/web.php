@@ -20,7 +20,7 @@ Route::get('/admin', function () {
 });
 
 Route::get('/livechat', function () {
-    return view('backend.customer_service.livechat');
+    return view('backend.customer_service.thunder');
 })->name('livechat');
 
 Route::get('/setting', function () {

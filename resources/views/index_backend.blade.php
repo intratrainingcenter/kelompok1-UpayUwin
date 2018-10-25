@@ -63,7 +63,7 @@
   });
   </script>
   
-  @include('backend.customer_service.livechat')
+  
 </body>
 @extends('master_backend.topnav_user_profile')
 </html>
