@@ -96,7 +96,9 @@ Route::prefix('frontend')->group(function () {
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('showcart', 'frontend\cartcontroller@showcart')->name('showcart');
-	
+	Route::get('/detach/{id}', 'frontend\cartcontroller@deaddQty');
+	Route::get('/attach/{id}', 'frontend\cartcontroller@addQty');
+	Route::get('/cancel/{id}', 'frontend\cartcontroller@cancel');
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
