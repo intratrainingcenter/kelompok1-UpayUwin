@@ -20,10 +20,11 @@ use PayPal\Rest\ApiContext;
 use Redirect;
 use Session;
 use URL;
+use App\voucher_game;
+use App\cart;
 
 class PaymentController extends Controller
-{
-	// private $_api_context;
+{	
 
     public function __construct()
     {
@@ -40,27 +41,39 @@ class PaymentController extends Controller
 
     public function payWithpaypal(Request $request)
     {
-    	
+    	$items = cart::whereIn('voucher_code', $request->voucher_code)
+    					->join('voucher_games','voucher_games.kode_voucher','=','cart.voucher_code')
+    					->select('cart.*','voucher_games.nama_voucher')
+    					->get();
+
 		$payer = new Payer();
 		        $payer->setPaymentMethod('paypal');
 
-		$item_1 = new Item();
-		$item_1->setName('Boneka Buzz Light') /** item name **/
-		            ->setCurrency('USD')
-		            ->setQuantity(1)
-		            ->setPrice(50); /** unit price **/
+		$all_item = array();
+		$grand_total = array();
+		foreach ($items as $key => $value) {
+
+    		${'item_$key'.$key} = new Item();
+			${'item_$key'.$key}->setName($value->nama_voucher) 
+				               ->setCurrency('USD')
+				               ->setQuantity($value->qty)
+				               ->setPrice($value->nominal); 
+    		
+    		$grand_total[] = $value->qty*$value->nominal;
+    		$all_item[]=${'item_$key'.$key};
+    	}	
 
 		$item_list = new ItemList();
-		        $item_list->setItems(array($item_1));
+		        $item_list->setItems($all_item);
 
 		$amount = new Amount();
 		        $amount->setCurrency('USD')
-		            ->setTotal(50);
+		            ->setTotal(array_sum($grand_total));
 
 		$transaction = new Transaction();
 		        $transaction->setAmount($amount)
 		            ->setItemList($item_list)
-		            ->setDescription('Your transaction description');
+		            ->setDescription('Pembelian Pada Website Resmi UpayUwin');
 
 		$redirect_urls = new RedirectUrls();
 		        $redirect_urls->setReturnUrl(URL::route('payment.status')) /** Specify return URL **/
@@ -107,32 +120,29 @@ class PaymentController extends Controller
     {
         /** Get the payment ID before session clear **/
         $payment_id = Session::get('paypal_payment_id');
-        $key = \Input::get('PayerID');
-        $test = \Input::get('token');
-        dd($key,$test);
 
         /** clear the session payment ID **/
         Session::forget('paypal_payment_id');
 
         if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
             \Session::put('error', 'Payment failed');
-            dd('gk kenek');
+            return Redirect::to('/frontend/checkout');
         }
 
         $payment = Payment::get($payment_id, $this->_api_context);
         $execution = new PaymentExecution();
-        $execution->setPayerId("EASCFVNRRY6SS");
+        $execution->setPayerId(Input::get('PayerID'));
 
         /**Execute the payment **/
         $result = $payment->execute($execution, $this->_api_context);
         if ($result->getState() == 'approved') {
             \Session::put('success', 'Payment success');
-            dd('success');
+           
             return Redirect::to('/');
         }
         \Session::put('error', 'Payment failed');
-        	dd('failed');
-        return Redirect::to('/');
+        	
+        return Redirect::to('/frontend/checkout');
     	
     }
 
