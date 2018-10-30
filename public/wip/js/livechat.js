@@ -23,6 +23,8 @@ var config = {
 		document.getElementById("test2").innerHTML = t;
 		var chat = ""
 		var chatRef2 = db.ref('livechat/users/'+t);
+        var objDiv = document.getElementById("your_div");
+        objDiv.scrollTop = objDiv.scrollHeight;
 		chatRef2.on('child_added',function showData(items)
 			{
                 if (items.val().pembalas == 'admin') {

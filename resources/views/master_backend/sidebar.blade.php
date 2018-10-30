@@ -15,7 +15,7 @@
                         </ul>
                         </li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-buttons.html" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Customer Service</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('customer')}}" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Customer Service</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('setting.index')}}" aria-expanded="false"><i class="fas fa-cog"></i><span class="hide-menu"> Setting</span></a></li>
 
                     </ul>

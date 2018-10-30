@@ -38,7 +38,7 @@
 						</ul>
 					</section>
 				</section>
-				<section class="chat-conversation">
+				<section class="chat-conversation" >
 					<header class="chat-conversation-header">
 						<button class="chat-back-arrow" title="Go to chat list">
 							<svg viewBox="0 0 24 24">
@@ -52,7 +52,7 @@
 							
 						</div>
 					</header>
-					<section class="chat-conversation-body">
+					<section class="chat-conversation-body" id="your_div">
 						<!-- <div class="chat-bubble-containter">
 							<p class="chat-bubble-left">How are you?</p>
 						</div>

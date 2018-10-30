@@ -20,7 +20,7 @@ Route::get('/admin', function () {
 });
 
 Route::get('/livechat', function () {
-    return view('backend.customer_service.thunder');
+    return view('backend.customer_service.swanky');
 })->name('livechat');
 
 Route::get('/setting', function () {
@@ -72,7 +72,10 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	//Route Voucher
 	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
 	Route::resource('voucher','backend\VoucherController');
-
+	//Route CS
+	Route::get('/customer', function () {
+		return view('backend.customer_service.index');
+	})->name('customer');
 	//Route User
 	Route::resource('user','backend\UserController');
 	//Route setting
@@ -92,6 +95,7 @@ Route::prefix('frontend')->group(function () {
 	Route::post('regis','frontend\signupcontroller@store')->name('regis');
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
+	Route::get('showcart', 'frontend\cartcontroller@showcart')->name('showcart');
 	
 	Route::get('topup', function(){
 		return view('frontend.topup');
