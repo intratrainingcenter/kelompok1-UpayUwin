@@ -19,70 +19,37 @@ class cartcontroller extends Controller
         $data =  cart::where('id_user','=',Auth::id())->get();
         return view('interface_frontend.frontend.checkout', compact('data'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function showcart()
     {
-        //
+        $data =  cart::where('id_user','=',Auth::id())->get();
+        return response()->json(array('success' => true, 'cart' => $data));
+        // return view('interface_frontend.frontend.checkout', compact('data'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function deaddQty($id)
     {
-        //
+        $data =  cart::where('id_user','=',Auth::id())->find($id);
+        //dd($data->qty);
+        if ($data->qty == 1) {
+            $data->qty = 1;
+            $data->save();
+        } else {
+        $data->qty = $data->qty - 1;
+        $data->save();
+        }
+        return response()->json(array('success' => true, 'cart' => $data));
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function addQty($id)
     {
-        //
+        $data =  cart::where('id_user','=',Auth::id())->find($id);
+        //dd($data->qty);
+        $data->qty = $data->qty + 1;
+        $data->save();
+        return response()->json(array('success' => true, 'cart' => $data));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function cancel($id)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $data =  cart::where('id_user','=',Auth::id())->find($id);
+        $data->delete();
+        return response()->json(array('success' => true, 'cart' => $data));
     }
 }

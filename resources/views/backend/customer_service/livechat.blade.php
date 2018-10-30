@@ -29,7 +29,8 @@
         
         <span class="close-msg">&times;</span>
     </div>
-    <ul class="conversation__wrap">
+    <div class="conversation__wrap"  style="overflow:auto; height:400px;">
+    <ul >
         <!-- <li class="conversation__msg cf">
             <span>Hey!</span>
         </li>
@@ -38,9 +39,8 @@
             <span class="right">Yo!</span>
         </li> -->
     </ul>
-    <form>
-    <input class="input" type="text" placeholder="Enter Message" />
-    </form>
+    </div>
+    <input id="myInput" class="input" type="text" placeholder="Enter Message" />
 </div>
     <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

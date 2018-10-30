@@ -70,7 +70,7 @@
                     </div>
                     <section>
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-striped" id="cartrow">
                                 <thead>
                                     <tr>
                                         <th>Product</th>
@@ -79,8 +79,8 @@
                                         <th>Total</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                @foreach($data as $index => $data)
+                                <tbody >
+                                <!-- @foreach($data as $index => $data)
                                     <tr>
                                         <td class="product-in-table">
                                             <img class="img-responsive" src="{{asset('FrontEnd')}}/assets/img/thumb/08.jpg" alt="">
@@ -100,7 +100,7 @@
                                             <button type="button" class="close"><span>&times;</span><span class="sr-only">Close</span></button>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endforeach -->
                                 </tbody>
                             </table>
                         </div>
@@ -410,6 +410,8 @@
 <script src="{{asset('FrontEnd')}}/assets/js/forms/page_login.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/stepWizard.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
+<!-- Cart Ajax -->
+<script src="{{asset('FrontEnd')}}/cart/cart.js"></script>
 <script>
     jQuery(document).ready(function() {
         App.init();
@@ -417,6 +419,7 @@
         App.initScrollBar();        
         StepWizard.initStepWizard();
 });
+
 </script>
 
 <!--[if lt IE 9]>
