@@ -26,7 +26,10 @@ $( document ).ready(function(){
                     var total = '';
                     var minicart = '';
                     var checkout = "'{{ route('checkout') }}'";
-                   
+                    var count = '';
+                    var json = data;
+                        var count = json.cart.length;
+                    console.log(data)
                     $.each(data, function (key, items) {
                         $.each(items, function (key, datas) {
                             cart +="<tr>";
@@ -47,8 +50,7 @@ $( document ).ready(function(){
                             cart +=        "<td>";
                             cart +=            "<button type='button' class='close' onclick='cancelorder("+ datas.id +")'><span>&times;</span><span class='sr-only'>Close</span></button>";
                             cart +=        "</td>";
-                            cart +=    "</tr>";
-                           
+                            cart +=    "</tr>";   
                         });
                     });
                     $.each(data, function (key, items) {
@@ -60,11 +62,9 @@ $( document ).ready(function(){
                             minicart +=                "<span>Black Glasses</span>";
                             minicart +=                "<small>1 x $400.00</small>";
                             minicart +=            "</div>";
-                            minicart +=         "</li>";
-                            
+                            minicart +=         "</li>";   
                         });
                     });
-
                     total +=    "<li class='subtotal'>";
                     total +=            "<div class='overflow-h margin-bottom-10'>";
                     total +=                "<span>Subtotal</span>";
@@ -81,7 +81,6 @@ $( document ).ready(function(){
                     total +=            "</li>";
                     $('#minicart').html(minicart+total);
                     $('table tbody').html(cart);
-                   
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;

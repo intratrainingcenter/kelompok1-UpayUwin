@@ -16,8 +16,8 @@ class cartcontroller extends Controller
      */
     public function index()
     {
-        $data =  cart::where('id_user','=',Auth::id())->get();
-        return view('interface_frontend.frontend.checkout', compact('data'));
+        // $data =  cart::where('id_user','=',Auth::id())->get();
+        return view('interface_frontend.frontend.checkout');
     }
     public function showcart()
     {
