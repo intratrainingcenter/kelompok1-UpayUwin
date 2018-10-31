@@ -92,7 +92,7 @@ Route::prefix('frontend')->group(function () {
 	Route::post('regis','frontend\signupcontroller@store')->name('regis');
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
-	
+
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
