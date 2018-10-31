@@ -113,9 +113,8 @@
 		var price_item 			= values[3].value;
 		var stock_item 			= values[4].value;
 		var description_item = values[5].value;
-		var image_item 			= values[6].value;
+		var image_item 			= $('input[type=file]').val().split('\\').pop();
 		var iditem 					= parseInt(lastIndex) + 1;
-
 	    firebase.database().ref().child('item/' + iditem).set({
 	        kode: code_item,
 	        nama: name_item,
@@ -123,21 +122,11 @@
 	        harga: price_item,
 					deskripsi: description_item,
 					stok: stock_item,
-	        gambar: image_item,
+					gambar:image_item,
 	    });
 			event.preventDefault()
 			$('#Modal-add').modal('hide');
 	});
-
-	// //upload image add
-	// var upload_image = document.getElementById('image_item');
-	// 	upload_image.addEventlistener('change',function(e){
-	// 		//get file
-	// 		var file = e.target.files[0];
-	// 		//get storege files
-	// 		var storagefiles = firebase.storage().ref('item/' + file.name);
-	//
-	// 	});
 
 	//remove data
 	$("body").on('click', '.removeData', function() {
@@ -213,6 +202,15 @@
 		event.preventDefault()
 		$("#Modal-edit").modal('hide');
 	});
+
+
+	//upload image
+	var fileButton = document.getElementById("fileButton");
+  fileButton.addEventListener('change', function(e){
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref('item/' + file.name);
+    	storageRef.put(file);
+  });
 	</script>
 
 @endsection

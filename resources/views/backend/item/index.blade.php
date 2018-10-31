@@ -16,6 +16,7 @@
                     </div>
                 </div>
             </div>
+						
             @include('backend.item.add')
             <div class="container-fluid">
              <div class="card">
@@ -41,6 +42,9 @@
             </div>
           </div>
         </div>
+
+
+
 				@include('backend.item.edit')
 				@include('backend.item.delete')
 @endsection
