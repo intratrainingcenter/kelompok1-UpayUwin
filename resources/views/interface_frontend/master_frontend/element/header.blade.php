@@ -64,46 +64,8 @@
                     <li>
                         <a href="#"><i class="fa fa-shopping-cart"></i></a>
                         <span class="badge badge-sea rounded-x">3</span>
-                        <ul class="list-unstyled badge-open mCustomScrollbar" data-mcs-theme="minimal-dark">
-                            <li>
-                                <img src="{{asset('FrontEnd')}}/assets/img/thumb/05.jpg" alt="">
-                                <button type="button" class="close">×</button>
-                                <div class="overflow-h">
-                                    <span>Black Glasses</span>
-                                    <small>1 x $400.00</small>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="{{asset('FrontEnd')}}/assets/img/thumb/02.jpg" alt="">
-                                <button type="button" class="close">×</button>
-                                <div class="overflow-h">
-                                    <span>Black Glasses</span>
-                                    <small>1 x $400.00</small>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="{{asset('FrontEnd')}}/assets/img/thumb/03.jpg" alt="">
-                                <button type="button" class="close">×</button>
-                                <div class="overflow-h">
-                                    <span>Black Glasses</span>
-                                    <small>1 x $400.00</small>
-                                </div>
-                            </li>
-                            <li class="subtotal">
-                                <div class="overflow-h margin-bottom-10">
-                                    <span>Subtotal</span>
-                                    <span class="pull-right subtotal-cost">$1200.00</span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <a href="shop-ui-inner.html" class="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View
-                                            Cart</a>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <a href="shop-ui-add-to-cart.html" class="btn-u btn-u-sea-shop btn-block">Checkout</a>
-                                    </div>
-                                </div>
-                            </li>
+                        <ul class="list-unstyled badge-open mCustomScrollbar" data-mcs-theme="minimal-dark" id="minicart">
+                            <!-- Minicart Ajax -->
                         </ul>
                     </li>
                 </ul>
@@ -122,22 +84,25 @@
                         <!-- Promotion -->
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
-                                Promotion
+                                Vouchers
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-submenu">
-                                    <a href="javascript:void(0);">Jeans</a>
+                                    <a href="javascript:void(0);">PC Games</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Skinny Jeans</a></li>
-                                        <li><a href="#">Bootcut Jeans</a></li>
-                                        <li><a href="#">Straight Cut Jeans</a></li>
+                                        <li><a href="#">RF Online</a></li>
+                                        <li><a href="#">Dragon Nest</a></li>
+                                        <li><a href="#">Point Blank</a></li>
+                                        <li><a href="#">Lost Saga</a></li>
                                     </ul>    
                                 </li>
                                 <li class="dropdown-submenu">
-                                    <a href="javascript:void(0);">Shoes</a>
+                                    <a href="javascript:void(0);">Mobile Games</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Sandals</a></li>
-                                        <li><a href="#">Heels</a></li>
+                                        <li><a href="#">Arena Of Valor</a></li>
+                                        <li><a href="#">Omnyoji Arena</a></li>
+                                        <li><a href="#">PUBG Mobile</a></li>
+                                        <li><a href="#">Mobile Legend</a></li>
                                     </ul>    
                                 </li>
                             </ul>
@@ -157,7 +122,7 @@
                                                 <div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                     <h3 class="mega-menu-heading">Rare,Epic, Legendary and Unique Items Available</h3>
                                                     <p>Various of Rare - Legendary items, with attractive price, can you get here. purchase it now before it runs out.</p>
-                                                    <button type="button" class="btn-u btn-u-dark">Check Now</button>
+                                                    <a href="{{route('item')}}"><button type="button" class="btn-u btn-u-dark">Check Now</button></a>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
                                                     <a href="#"><img class="product-offers img-responsive" src="{{asset('FrontEnd')}}/assets/img/blog/01.jpg" alt=""></a>
@@ -187,130 +152,64 @@
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Clothe</h3>
+                                                    <h3 class="mega-menu-heading">Vouchers</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Shorts</a> <span class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Skirts</a></li>
-                                                        <li><a href="#">T-Shirts</a></li>
+                                                        <li><a href="#">PUBG Mobile</a></li>
+                                                        <li><a href="#">LytoGame</a></li>
+                                                        <li><a href="#">Gemscool</a> <span class="label label-danger-shop">SOLD</span></li>
+                                                        <li><a href="#">Megaxus</a></li>
                                                     </ul>
-                                                    <h3 class="mega-menu-heading">Shoes</h3>
+                                                </div>
+                                                <div class="col-md-2 col-sm-6">
+                                                    <h3 class="mega-menu-heading">Key / Code</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">FLats</a></li>
-                                                        <li><a href="#">Heels</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                        <li><a href="#">Sports</a></li>
+                                                        <li><a href="#">Google Play</a></li>
+                                                        <li><a href="#">Steam Key</a></li>
+                                                        <li><a href="#">UniPin</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-2 col-sm-6">
+                                                    <h3 class="mega-menu-heading">Items</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">Closers Online</a></li>
+                                                        <li><a href="#">Dragon Nest</a> <span class="label label-danger-shop">Hot</span></li>
+                                                        <li><a href="#">Dota 2</a></li>
+                                                        <li><a href="#">Elsword</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-2 col-sm-6">
+                                                    <h3 class="mega-menu-heading">Gold &amp; Balance</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">Closers Online</a></li>
+                                                        <li><a href="#">Dragon Nest</a> <span class="label label-danger-shop">Hot</span></li>
+                                                        <li><a href="#">Lost Saga</a></li>
+                                                        <li><a href="#">Elsword</a></li>
+                                                        <li><a href="#">RF Online</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-2 col-sm-6">
+                                                    <h3 class="mega-menu-heading">RankedUp Account</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">Dragon Nest</a> <span class="label label-danger-shop">Hot</span></li>
+                                                        <li><a href="#">7 Knights</a></li>
+                                                        <li><a href="#">Closers Online</a></li>
+                                                        <li><a href="#">Lost Saga</a></li>
+                                                        <li><a href="#">Elsword</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-2 col-sm-6">
+                                                    <h3 class="mega-menu-heading">Joki Account</h3>
+                                                    <ul class="list-unstyled style-list">
+                                                        <li><a href="#">PUBG</a></li>
+                                                        <li><a href="#">Arena Of Valor</a></li>
+                                                        <li><a href="#">Omnyoji Arena</a></li>
+                                                        <li><a href="#">Dragon Nest</a></li>
+                                                        <li><a href="#">Closers Online</a></li>
+                                                        <li><a href="#">Elsword</a></li>
                                                     </ul>
                                                 </div>
 
-                                                <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Accessories</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">All accessories</a></li>
-                                                        <li><a href="#">Bags &amp; Purses</a></li>
-                                                        <li><a href="#">Scarvs &amp; Hats</a></li>
-                                                        <li><a href="#">Jewellery</a></li>
-                                                        <li><a href="#">Fragrance &amp; Beauty</a></li>
-                                                    </ul>
-                                                    <h3 class="mega-menu-heading">Lingerie</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Linger</a> <span class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Slippers</a></li>
-                                                    </ul>
-                                                    <h3 class="mega-menu-heading">Nightwear</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Nightwear</a></li>
-                                                        <li><a href="#">Socks</a></li>
-                                                        <li><a href="#">Tights</a></li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Mixed</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a> <span class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Shorts</a></li>
-                                                        <li><a href="#">Skirts</a></li>
-                                                        <li><a href="#">T-shirts</a></li>
-                                                        <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">Flats</a></li>
-                                                        <li><a href="#">Heels</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                        <li><a href="#">Sports</a></li>
-                                                        <li><a href="#">Socks</a></li>
-                                                        <li><a href="#">Tights</a></li>
-                                                    </ul>
-                                                </div>        
-
-                                                <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Clothe</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Shorts</a> <span class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Skirts</a></li>
-                                                        <li><a href="#">T-shirts</a></li>
-                                                    </ul>
-                                                    <h3 class="mega-menu-heading">Shoes</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">Flats</a></li>
-                                                        <li><a href="#">Heels</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                        <li><a href="#">Sports</a></li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Accessories</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">All accessories</a></li>
-                                                        <li><a href="#">Bags &amp; Purses</a></li>
-                                                        <li><a href="#">Scarvs &amp; Hats</a></li>
-                                                        <li><a href="#">Jewellery</a></li>
-                                                        <li><a href="#">Fragrance &amp; Beauty</a></li>
-                                                    </ul>
-                                                    <h3 class="mega-menu-heading">Lingerie</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Linger</a> <span class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Slippers</a></li>
-                                                    </ul>
-                                                    <h3 class="mega-menu-heading">Nightwear</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Nightwear</a></li>
-                                                        <li><a href="#">Socks</a></li>
-                                                        <li><a href="#">Tights</a></li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-md-2 col-sm-6">
-                                                    <h3 class="mega-menu-heading">Mixed</h3>
-                                                    <ul class="list-unstyled style-list">
-                                                        <li><a href="#">New in</a></li>
-                                                        <li><a href="#">Coats &amp; Jackets</a> <span class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Shorts</a></li>
-                                                        <li><a href="#">Skirts</a></li>
-                                                        <li><a href="#">T-shirts</a></li>
-                                                        <li><a href="#">Boots</a></li>
-                                                        <li><a href="#">Flats</a></li>
-                                                        <li><a href="#">Heels</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                        <li><a href="#">Sports</a></li>
-                                                        <li><a href="#">Socks</a></li>
-                                                        <li><a href="#">Tights</a> <span class="label label-danger-shop">New</span></li>
-                                                    </ul>
-                                                </div>
+                                                
                                             </div><!--/end row-->
                                         </div><!--/end container-->
                                     </div><!--/end mega menu content-->  
