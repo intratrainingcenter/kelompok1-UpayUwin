@@ -73,12 +73,22 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 	<script type="text/javascript" src="{{asset('js/firebase-price_list.js')}}"></script>
 	<script type="text/javascript">
-		//get data
 
+		//get image
+		var urlimage = '';
+		var storageRef = firebase.storage().ref("item/avatar.png");
+		storageRef.getDownloadURL().then(function(url) {
+			urlimage = url;
+			// console.log(urlimage);
+		});
+
+		//get data
 		var lastIndex = 0;
 		const dbRefItem = firebase.database().ref().child('item');
 		dbRefItem.on('value', function(snapshot) {
 			// console.log(snapshot.val());
+			// ujicoba tampil gambar
+			document.querySelector('#cobagambar').src = urlimage;
 	    var value = snapshot.val();
 	    var htmls = [];
 	    $.each(value, function(index, value){
@@ -86,13 +96,7 @@
 	    		htmls.push('<tr>\
 	        		<td>'+ value.kode +'</td>\
 	        		<td>'+ value.nama +'</td>\
-									@foreach($category as $value)\
-										@if ($value->kode_kategori == '+value.kategori+')\
-											<td>{{$value->nama_kategori}}</td>\
-											@else\
-											<td>'+value.kategori+'</td>\
-										@endif\
-									@endforeach\
+							<td>'+value.kategori+'</td>\
 	        		<td>'+ value.harga +'</td>\
 	        		<td>'+ value.deskripsi +'</td>\
 	        		<td>'+ value.stok +'</td>\
