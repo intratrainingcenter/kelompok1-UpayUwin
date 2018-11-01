@@ -36,8 +36,9 @@ $( document ).ready(function(){
                             cart +=        "<td class='product-in-table'>";
                             cart +=           " <img class='img-responsive' src='"+frontend+"/assets/img/thumb/08.jpg' alt=''>";
                             cart +=            "<div class='product-it-in'>";
-                            cart +=                "<h3>"+ datas.type +"   "+ addCommas(datas.nominal) +"</h3>";
-                            cart +=                "<span>"+ datas.voucher_code +"</span>";
+                            cart +=                  "<h3>"+ datas.type +"   "+ addCommas(datas.nominal) +"</h3>";
+                            cart +=                  "<span>"+ datas.voucher_code +"</span>";
+                            cart +=                  "<input type='hidden' name='voucher_code[]' value='"+datas.voucher_code+"'>";
                             cart +=            "</div>";    
                             cart +=        "</td>";
                             cart +=        "<td>"+ addCommas(datas.nominal) +"</td>";
