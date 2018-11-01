@@ -69,31 +69,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <h2 class="title-type">Shipping Address</h2>
-                                <div class="billing-info-inputs checkbox-list">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <input id="name2" type="text" placeholder="First Name" name="firstname" class="form-control">
-                                            <input id="email2" type="text" placeholder="Email" name="email" class="form-control email">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input id="surname2" type="text" placeholder="Last Name" name="lastname" class="form-control">
-                                            <input id="phone2" type="tel" placeholder="Phone" name="phone" class="form-control">
-                                        </div>
-                                    </div>
-                                    <input id="shippingAddress" type="text" placeholder="Address Line 1" name="address1" class="form-control">
-                                    <input id="shippingAddress2" type="text" placeholder="Address Line 2" name="address2" class="form-control">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <input id="city2" type="text" placeholder="City" name="city" class="form-control">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input id="zip2" type="text" placeholder="Zip/Postal Code" name="zip" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>       
                     </section>
                         
