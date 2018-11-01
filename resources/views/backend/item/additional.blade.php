@@ -73,12 +73,22 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 	<script type="text/javascript" src="{{asset('js/firebase-price_list.js')}}"></script>
 	<script type="text/javascript">
-		//get data
 
+		//get image
+		var urlimage = '';
+		var storageRef = firebase.storage().ref("item/avatar.png");
+		storageRef.getDownloadURL().then(function(url) {
+			urlimage = url;
+			// console.log(urlimage);
+		});
+
+		//get data
 		var lastIndex = 0;
 		const dbRefItem = firebase.database().ref().child('item');
 		dbRefItem.on('value', function(snapshot) {
 			// console.log(snapshot.val());
+			// ujicoba tampil gambar
+			document.querySelector('#cobagambar').src = urlimage;
 	    var value = snapshot.val();
 	    var htmls = [];
 	    $.each(value, function(index, value){
@@ -86,13 +96,7 @@
 	    		htmls.push('<tr>\
 	        		<td>'+ value.kode +'</td>\
 	        		<td>'+ value.nama +'</td>\
-									@foreach($category as $value)\
-										@if ($value->kode_kategori == '+value.kategori+')\
-											<td>{{$value->nama_kategori}}</td>\
-											@else\
-											<td>'+value.kategori+'</td>\
-										@endif\
-									@endforeach\
+							<td>'+value.kategori+'</td>\
 	        		<td>'+ value.harga +'</td>\
 	        		<td>'+ value.deskripsi +'</td>\
 	        		<td>'+ value.stok +'</td>\
@@ -113,9 +117,8 @@
 		var price_item 			= values[3].value;
 		var stock_item 			= values[4].value;
 		var description_item = values[5].value;
-		var image_item 			= values[6].value;
+		var image_item 			= $('input[type=file]').val().split('\\').pop();
 		var iditem 					= parseInt(lastIndex) + 1;
-
 	    firebase.database().ref().child('item/' + iditem).set({
 	        kode: code_item,
 	        nama: name_item,
@@ -123,21 +126,11 @@
 	        harga: price_item,
 					deskripsi: description_item,
 					stok: stock_item,
-	        gambar: image_item,
+					gambar:image_item,
 	    });
 			event.preventDefault()
 			$('#Modal-add').modal('hide');
 	});
-
-	// //upload image add
-	// var upload_image = document.getElementById('image_item');
-	// 	upload_image.addEventlistener('change',function(e){
-	// 		//get file
-	// 		var file = e.target.files[0];
-	// 		//get storege files
-	// 		var storagefiles = firebase.storage().ref('item/' + file.name);
-	//
-	// 	});
 
 	//remove data
 	$("body").on('click', '.removeData', function() {
@@ -213,6 +206,15 @@
 		event.preventDefault()
 		$("#Modal-edit").modal('hide');
 	});
+
+
+	//upload image
+	var fileButton = document.getElementById("fileButton");
+  fileButton.addEventListener('change', function(e){
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref('item/' + file.name);
+    	storageRef.put(file);
+  });
 	</script>
 
 @endsection

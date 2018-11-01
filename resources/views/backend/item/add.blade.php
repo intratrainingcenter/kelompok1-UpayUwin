@@ -41,7 +41,8 @@
                         </div> -->
                          <div class="col-md-9">
                             <label class="labels">Foto :</label>
-                            <input id="image_item" type="file" name="image" value="upload" class="form-control" required>
+                            <input id="image_item" type="hidden" name="image" class="form-control" required>
+                            <input id="fileButton" type="file" name="image" class="form-control" required>
                         </div>
                     </div>
             </div>

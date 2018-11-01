@@ -18,6 +18,7 @@
             </div>
             @include('backend.item.add')
             <div class="container-fluid">
+							<img id="cobagambar" height="100" width="100"/>
              <div class="card">
                <div class="card-body">
                  <button type="button" class="btn btn-outline-info add-button" data-toggle="modal" data-target="#Modal-add"><i class="fas fa-credit-card"></i> Add item</button>
@@ -41,6 +42,9 @@
             </div>
           </div>
         </div>
+
+
+
 				@include('backend.item.edit')
 				@include('backend.item.delete')
 @endsection
