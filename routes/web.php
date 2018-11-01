@@ -78,6 +78,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	})->name('customer');
 	//Route User
 	Route::resource('user','backend\UserController');
+  //Route item
+  Route::resource('item','backend\ItemController');
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
