@@ -59,7 +59,8 @@
     <!--=== Content Medium Part ===-->
     <div class="content-md margin-bottom-30">
         <div class="container">
-            <form class="shopping-cart" action="#">
+            <form id="shopping-cart" class="shopping-cart" action="{{ route('paymentpaypal') }}" method="post">
+                @csrf
                 <div>
                     <div class="header-tags">            
                         <div class="overflow-h">
@@ -87,12 +88,13 @@
                                             <div class="product-it-in">
                                                 <h3>{{$data->type}} {{$data->nominal}}</h3>
                                                 <span>{{$data->voucher_code}}</span>
+                                                <input type="hidden" name="voucher_code[]" value="{{$data->voucher_code}}">
                                             </div>    
                                         </td>
                                         <td>{{number_format($data->nominal)}}</td>
                                         <td>
                                             <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty1();' value='-'>-</button>
-                                            <input type='text' class="quantity-field" name='qty1' value="{{$data->qty}}" id='qty1'/>
+                                            <input type='text' class="quantity-field" name='qty1[]' value="{{$data->qty}}" id='qty1'/>
                                             <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty1").value++;' value='+'>+</button>
                                         </td>
                                         <td class="shop-red">{{number_format($data->qty*$data->nominal) }}</td>
@@ -104,75 +106,6 @@
                                 </tbody>
                             </table>
                         </div>
-                    </section>
-                    
-                    <div class="header-tags">
-                        <div class="overflow-h">
-                            <h2>Billing info</h2>
-                            <p>Shipping and address infot</p>
-                            <i class="rounded-x fa fa-home"></i>
-                        </div>    
-                    </div>
-                    <section class="billing-info">
-                        <div class="row">
-                            <div class="col-md-6 md-margin-bottom-40">
-                                <h2 class="title-type">Billing Address</h2>
-                                <div class="billing-info-inputs checkbox-list">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <input id="name" type="text" placeholder="First Name" name="firstname" class="form-control required">
-                                            <input id="email" type="text" placeholder="Email" name="email" class="form-control required email">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input id="surname" type="text" placeholder="Last Name" name="lastname" class="form-control required">
-                                            <input id="phone" type="tel" placeholder="Phone" name="phone" class="form-control required">
-                                        </div>
-                                    </div>
-                                    <input id="billingAddress" type="text" placeholder="Address Line 1" name="address1" class="form-control required">
-                                    <input id="billingAddress2" type="text" placeholder="Address Line 2" name="address2" class="form-control required">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <input id="city" type="text" placeholder="City" name="city" class="form-control required">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input id="zip" type="text" placeholder="Zip/Postal Code" name="zip" class="form-control required">
-                                        </div>
-                                    </div>
-                                    
-                                    <label class="checkbox text-left">
-                                        <input type="checkbox" name="checkbox"/>
-                                        <i></i>
-                                        Ship item to the above billing address
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <h2 class="title-type">Shipping Address</h2>
-                                <div class="billing-info-inputs checkbox-list">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <input id="name2" type="text" placeholder="First Name" name="firstname" class="form-control">
-                                            <input id="email2" type="text" placeholder="Email" name="email" class="form-control email">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input id="surname2" type="text" placeholder="Last Name" name="lastname" class="form-control">
-                                            <input id="phone2" type="tel" placeholder="Phone" name="phone" class="form-control">
-                                        </div>
-                                    </div>
-                                    <input id="shippingAddress" type="text" placeholder="Address Line 1" name="address1" class="form-control">
-                                    <input id="shippingAddress2" type="text" placeholder="Address Line 2" name="address2" class="form-control">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <input id="city2" type="text" placeholder="City" name="city" class="form-control">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <input id="zip2" type="text" placeholder="Zip/Postal Code" name="zip" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>       
                     </section>
                         
                     <div class="header-tags">
@@ -189,58 +122,6 @@
                                 <!-- Accordion -->
                                 <div class="accordion-v2">
                                     <div class="panel-group" id="accordion">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                                        <i class="fa fa-credit-card"></i>
-                                                        Credit or Debit Card
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="collapseOne" class="panel-collapse collapse in">
-                                                <div class="panel-body cus-form-horizontal">
-                                                    <div class="form-group">
-                                                        <label class="col-sm-4 no-col-space control-label">Cardholder Name</label>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" class="form-control required" name="cardholder" placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-4 no-col-space control-label">Card Number</label>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" class="form-control required" name="cardnumber" placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-4 no-col-space control-label">Payment Types</label>
-                                                        <div class="col-sm-8">
-                                                            <ul class="list-inline payment-type">
-                                                                <li><i class="fa fa-cc-paypal"></i></li>
-                                                                <li><i class="fa fa-cc-visa"></i></li>
-                                                                <li><i class="fa fa-cc-mastercard"></i></li>
-                                                                <li><i class="fa fa-cc-discover"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-4">Expiration Date</label>
-                                                        <div class="col-sm-8 input-small-field">
-                                                            <input type="text" name="mm" placeholder="MM" class="form-control required sm-margin-bottom-20">
-                                                            <span class="slash">/</span>
-                                                            <input type="text" name="yy" placeholder="YY" class="form-control required">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-sm-4 no-col-space control-label">CSC</label>
-                                                        <div class="col-sm-8 input-small-field">
-                                                            <input type="text" name="number" placeholder="" class="form-control required">
-                                                            <a href="#">What's this?</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
@@ -367,7 +248,7 @@
         </div><!--/end container-->
     </div>
     <!--=== End Content Medium Part ===-->     
-
+    
     <!--=== Shop Suvbscribe ===-->
     <div class="shop-subscribe">
         <div class="container">
