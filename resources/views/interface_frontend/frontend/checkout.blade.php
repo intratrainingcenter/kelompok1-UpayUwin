@@ -1,7 +1,8 @@
-@extends('interface_frontend.index_checkout')
 @section('content')
-<div class="container">
-            <form class="shopping-cart" action="#">
+@extends('interface_frontend.index_checkout')
+        <div class="container">
+            <form id="shopping-cart" class="shopping-cart" action="{{ route('paymentpaypal') }}" method="post">
+                @csrf
                 <div>
                     <div class="header-tags">            
                         <div class="overflow-h">
@@ -69,7 +70,31 @@
                                 </div>
                             </div>
 
-                            
+                            <div class="col-md-6">
+                                <h2 class="title-type">Shipping Address</h2>
+                                <div class="billing-info-inputs checkbox-list">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <input id="name2" type="text" placeholder="First Name" name="firstname" class="form-control">
+                                            <input id="email2" type="text" placeholder="Email" name="email" class="form-control email">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input id="surname2" type="text" placeholder="Last Name" name="lastname" class="form-control">
+                                            <input id="phone2" type="tel" placeholder="Phone" name="phone" class="form-control">
+                                        </div>
+                                    </div>
+                                    <input id="shippingAddress" type="text" placeholder="Address Line 1" name="address1" class="form-control">
+                                    <input id="shippingAddress2" type="text" placeholder="Address Line 2" name="address2" class="form-control">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <input id="city2" type="text" placeholder="City" name="city" class="form-control">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input id="zip2" type="text" placeholder="Zip/Postal Code" name="zip" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>       
                     </section>
                         
@@ -82,7 +107,30 @@
                     </div>
                     <section>
                         <div class="row">
-                            @include('interface_frontend.master_frontend.others.paypal')
+                            <div class="col-md-6 md-margin-bottom-50">
+                                <h2 class="title-type">Choose a payment method</h2>
+                                <!-- Accordion -->
+                                <div class="accordion-v2">
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                                        <i class="fa fa-paypal"></i>
+                                                        Pay with PayPal
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse">
+                                                <div class="content margin-left-10">
+                                                    <a href="#"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_150x38.png" alt="PayPal"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Accordion -->    
+                            </div>
 
                             @include('interface_frontend.master_frontend.others.question')
                         </div>

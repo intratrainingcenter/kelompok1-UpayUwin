@@ -41,7 +41,8 @@ Route::get('UpayUwin/payment', function(){
     return view('frontend.payment');
 });
 
-Route::get('/pay','PaymentController@payWithpaypal');
+Route::post('/pay','PaymentController@payWithpaypal')->name('paymentpaypal');
+Route::get('/payment/status','PaymentController@getPaymentStatus')->name('payment.status');
 
 Route::get('/backend/login',function(){
 	return view('backend.User.login')->middleware('admin');
@@ -60,6 +61,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	})->name('customer');
 	//Route User
 	Route::resource('user','backend\UserController');
+  //Route item
+  Route::resource('item','backend\ItemController');
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
