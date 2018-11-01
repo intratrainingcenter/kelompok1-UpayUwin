@@ -74,25 +74,25 @@
 	<script type="text/javascript" src="{{asset('js/firebase-price_list.js')}}"></script>
 	<script type="text/javascript">
 
-		//get image
-		var urlimage = '';
-		var storageRef = firebase.storage().ref("item/avatar.png");
-		storageRef.getDownloadURL().then(function(url) {
-			urlimage = url;
-			// console.log(urlimage);
-		});
 
+
+	document.querySelector('#cobagambar').src = urlimage;
+
+		var dataimage = '';
 		//get data
 		var lastIndex = 0;
 		const dbRefItem = firebase.database().ref().child('item');
 		dbRefItem.on('value', function(snapshot) {
 			// console.log(snapshot.val());
 			// ujicoba tampil gambar
-			document.querySelector('#cobagambar').src = urlimage;
 	    var value = snapshot.val();
 	    var htmls = [];
 	    $.each(value, function(index, value){
+				//get image
+				dataimage+=value.gambar;
+
 	    	if(value) {
+					dataimage = new Array(value.gambar);
 	    		htmls.push('<tr>\
 	        		<td>'+ value.kode +'</td>\
 	        		<td>'+ value.nama +'</td>\
@@ -101,6 +101,7 @@
 	        		<td>'+ value.deskripsi +'</td>\
 	        		<td>'+ value.stok +'</td>\
 	        		<td>'+ value.gambar +'</td>\
+	        		<td><img src="'+urlimage+'" height="100" width="100"/></td>\
 	        		<td><button type="button" class="btn btn-outline-warning updateData" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
 							<button type="button" class="btn btn-outline-danger removeData" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
 	    	}
@@ -109,6 +110,13 @@
 	    $('#result').html(htmls);
 	});
 
+	console.log(dataimage);
+	var urlimage = '';
+	var storageRef = firebase.storage().ref("item/avatar.png" );
+	storageRef.getDownloadURL().then(function(url) {
+		urlimage = url;
+		console.log(urlimage);
+	});
 	$('#saveadd').on('click', function(){
 		var values = $("#form_add").serializeArray();
 		var code_item 			= values[0].value;
