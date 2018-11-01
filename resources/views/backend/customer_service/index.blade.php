@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{asset('backend/livechat')}}/css/style.css">
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <div class="container">
-<h3 class=" text-center">Messaging</h3>
+<h3 class=" text-center">Customer Service</h3>
 <div class="messaging">
       <div class="inbox_msg">
         <div class="inbox_people">
@@ -22,6 +22,7 @@
             </div>
           </div>
           <div class="inbox_chat" id="myDIV">
+<!--                   
             <div class="chat_list active_chat">
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
@@ -41,13 +42,14 @@
                     astrology under one roof.</p>
                 </div>
               </div>
-            </div>
+            </div> -->
             
           </div>
         </div>
         <div class="mesgs">
           <div class="msg_history" id="chatroom">
-            <div class="incoming_msg">
+                  
+            <!-- <div class="incoming_msg">
               <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
               <div class="received_msg">
                 <div class="received_withd_msg">
@@ -84,13 +86,13 @@
                     products, at a price anyone can afford.</p>
                   <span class="time_date"> 11:01 AM    |    Today</span></div>
               </div>
-            </div>
+            </div> -->
+
           </div>
           <div class="type_msg">
             <div class="input_msg_write">
-              <input type="text" class="write_msg" placeholder="Type a message" id="chat-input" autocomplete="off" />
-              <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-            </div>
+              <input type="text" class="write_msg" placeholder="Write a Reply..." id="chat-input" autocomplete="off" />
+              </div>
           </div>
         </div>
       </div>
@@ -120,14 +122,14 @@ var send = document.getElementById('chat-input');
 // Add active class to the current button (highlight it)
 var header = document.getElementById("myDIV");
 var btns = header.getElementsByClassName("chat_list");
-
+var t = '';
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
-    
+    t = $('h5').this.text();
     var current = document.getElementsByClassName("active_chat");
     current[0].className = current[0].className.replace(" active_chat", "");
     this.className += " active_chat";
-    alert(username)
+    alert(t)
   });
 }
 </script>
