@@ -1,31 +1,23 @@
 @if (Auth::check())
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
 	<title>Profile Settings | Unify - Responsive Website Template</title>
-
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
-
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="{{asset('FrontEnd')}}/favicon.ico">
-
 	<!-- Web Fonts -->
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-
 	<!-- CSS Global Compulsory -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/style.css">
-
 	<!-- CSS Header and Footer -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/headers/header-default.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/footers/footer-v1.css">
-
 	<!-- CSS Implementing Plugins -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/animate.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/line-icons/line-icons.css">
@@ -33,14 +25,11 @@
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
-
 	<!-- CSS Page Style -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/pages/profile.css">
-
 	<!-- CSS Theme -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/theme-colors/default.css" id="style_color">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/theme-skins/dark.css">
-
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/custom.css">
 </head>
@@ -86,9 +75,9 @@
 				</div>
 				<!--End Left Sidebar-->
 
-				<!-- Profile Content -->
-                @yield('content')
-				<!-- End Profile Content -->
+					<!-- Profile Content -->
+					@yield('content')
+					<!-- End Profile Content -->
 			</div><!--/end row-->
 		</div>
             <!--=== End Profile ===-->
@@ -127,16 +116,6 @@
 			StyleSwitcher.initStyleSwitcher();
 		});
 	</script>
-<!--[if lt IE 9]>
-	<script src="assets/plugins/respond.js"></script>
-	<script src="assets/plugins/html5shiv.js"></script>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<script src="assets/plugins/sky-forms-pro/skyforms/js/sky-forms-ie8.js"></script>
-	<![endif]-->
-
-<!--[if lt IE 10]>
-	<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
-	<![endif]-->
 
 </body>
 </html>
