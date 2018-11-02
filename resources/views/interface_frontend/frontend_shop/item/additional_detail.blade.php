@@ -22,8 +22,10 @@
                 </div>\
             </div>\
             <div class="col-md-6">\
-                <h3>'+value.nama+'</h3>\
-                <p>'+value.nama+'</p><br>\
+                <strong><h1>'+value.nama+'</h1></strong>\
+                <h3>'+value.kategori+'</h3>\
+                <h3>'+value.harga+' | '+value.stok+'</h3>\
+                <h4>'+value.deskripsi+'</h4><br>\
                 <form name="f1" class="product-quantity sm-margin-bottom-20">\
                     <button type="button" class="quantity-button" name="subtract" onclick="javascript: subtractQty();" value="-">-</button>\
                     <input type="text" class="quantity-field" name="qty" value="1" id="qty" />\
@@ -32,6 +34,7 @@
                 </form>\
             </div>';
         $('#load_data').html(updateData);
+        $('#active').text(value.nama);
     });
     $(document).on("click", "#add", function (e) {
 		e.preventDefault();
