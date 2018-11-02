@@ -73,30 +73,33 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
 	<script type="text/javascript" src="{{asset('js/firebase-price_list.js')}}"></script>
 	<script type="text/javascript">
-		//get data
 
+
+
+		var dataimage = '';
+		//get data
 		var lastIndex = 0;
 		const dbRefItem = firebase.database().ref().child('item');
 		dbRefItem.on('value', function(snapshot) {
 			// console.log(snapshot.val());
+			// ujicoba tampil gambar
 	    var value = snapshot.val();
 	    var htmls = [];
 	    $.each(value, function(index, value){
+				//get image
+				dataimage+=value.gambar;
+
 	    	if(value) {
+					dataimage = new Array(value.gambar);
 	    		htmls.push('<tr>\
 	        		<td>'+ value.kode +'</td>\
 	        		<td>'+ value.nama +'</td>\
-									@foreach($category as $value)\
-										@if ($value->kode_kategori == '+value.kategori+')\
-											<td>{{$value->nama_kategori}}</td>\
-											@else\
-											<td>'+value.kategori+'</td>\
-										@endif\
-									@endforeach\
+							<td>'+value.kategori+'</td>\
 	        		<td>'+ value.harga +'</td>\
 	        		<td>'+ value.deskripsi +'</td>\
 	        		<td>'+ value.stok +'</td>\
 	        		<td>'+ value.gambar +'</td>\
+	        		<td><img src="'+urlimage+'" height="100" width="100"/></td>\
 	        		<td><button type="button" class="btn btn-outline-warning updateData" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
 							<button type="button" class="btn btn-outline-danger removeData" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
 	    	}
@@ -105,6 +108,23 @@
 	    $('#result').html(htmls);
 	});
 
+	console.log(dataimage);
+	var urlimage = '';
+	var storageRef = firebase.storage().ref("item/avatar.png" );
+	storageRef.getDownloadURL().then(function(url) {
+		urlimage = url;
+		console.log(urlimage);
+	});
+
+	//upload image add
+	var fileButton = document.getElementById("fileButton");
+	console.log(fileButton);
+  fileButton.addEventListener('change', function(e){
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref('item/' + file.name);
+    	storageRef.put(file);
+  });
+	
 	$('#saveadd').on('click', function(){
 		var values = $("#form_add").serializeArray();
 		var code_item 			= values[0].value;
@@ -113,9 +133,8 @@
 		var price_item 			= values[3].value;
 		var stock_item 			= values[4].value;
 		var description_item = values[5].value;
-		var image_item 			= values[6].value;
+		var image_item 			= $('input[type=file]').val().split('\\').pop();
 		var iditem 					= parseInt(lastIndex) + 1;
-
 	    firebase.database().ref().child('item/' + iditem).set({
 	        kode: code_item,
 	        nama: name_item,
@@ -123,21 +142,11 @@
 	        harga: price_item,
 					deskripsi: description_item,
 					stok: stock_item,
-	        gambar: image_item,
+					gambar:image_item,
 	    });
 			event.preventDefault()
 			$('#Modal-add').modal('hide');
 	});
-
-	// //upload image add
-	// var upload_image = document.getElementById('image_item');
-	// 	upload_image.addEventlistener('change',function(e){
-	// 		//get file
-	// 		var file = e.target.files[0];
-	// 		//get storege files
-	// 		var storagefiles = firebase.storage().ref('item/' + file.name);
-	//
-	// 	});
 
 	//remove data
 	$("body").on('click', '.removeData', function() {
@@ -187,15 +196,26 @@
 					</div>\
 					 <div class="col-md-9">\
 							<label class="labels">Foto :</label>\
-							<input key="" type="text" value="'+value.gambar+'" name="image" class="form-control input_logo">\
+							<input id="image_item" type="hidden" name="image" class="form-control" required>\
+							<input id="fileButtonupdate" type="file" name="image" class="form-control nameimage" required>\
 					</div>\
 			</div>';
 			$('#resultupdate').html(updateData);
 		});
+		//upload image update
+		var fileButtonupdate = document.getElementById("fileButtonupdate");
+		console.log(fileButtonupdate);
+	  fileButtonupdate.addEventListener('change', function(e){
+	  var fileupdate = e.target.files['#fileButtonupdate'];
+	  var storageRefupdate = firebase.storage().ref('item/' + fileupdate);
+	    	storageRefupdate.put(fileupdate);
+	  });
 	});
 
 	$('.saveupdate').on('click', function() {
-		var values = $(".item-update-record-model").serializeArray();
+		var values = $("#modal-update").serializeArray();
+		var image_item 	= $('#fileButtonupdate').val().split('\\').pop();
+		// console.log(image_item);
 		var postData = {
 			 kode				: values[0].value,
 			 nama				: values[1].value,
@@ -203,7 +223,7 @@
 			 harga			: values[3].value,
 			 stok				: values[4].value,
 			 deskripsi	: values[5].value,
-			 gambar			: values[6].value,
+			 gambar			: image_item,
 		};
 
 		var updates = {};
@@ -213,6 +233,10 @@
 		event.preventDefault()
 		$("#Modal-edit").modal('hide');
 	});
+
+
+
+
 	</script>
 
 @endsection
