@@ -41,9 +41,6 @@
             </div>
           </div>
         </div>
-
-
-
 				@include('backend.item.edit')
 				@include('backend.item.delete')
 @endsection
