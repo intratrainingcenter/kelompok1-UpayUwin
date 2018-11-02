@@ -62,8 +62,6 @@
     })
   });
   </script>
-  
-  
 </body>
 @extends('master_backend.topnav_user_profile')
 </html>

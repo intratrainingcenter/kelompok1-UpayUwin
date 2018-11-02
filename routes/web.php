@@ -34,8 +34,10 @@ Route::get('/', function () {
 	return view('interface_frontend.frontend.index');
 })->name('index');
 Route::get('/voucher', 'frontend\productController@indexVoucher');
-Route::get('/item', 'frontend\productController@indexItem');
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
+
+Route::get('/item', 'frontend\productController@indexItem');
+Route::get('/item_category/{id}', 'frontend\productController@showCategoryItem');
 Route::get('/item/{id}', 'frontend\productController@showItem');
 
 Route::get('/product', function(){
