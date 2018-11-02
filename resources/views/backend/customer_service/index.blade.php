@@ -2,6 +2,16 @@
 @extends('backend.dashboard.additional')
 
 @section('content')
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
+
 <link rel="stylesheet" href="{{asset('backend/livechat')}}/css/style.css">
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <div class="container">
@@ -27,7 +37,7 @@
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                 <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <h5 class="username">Sunil Rajput <span class="chat_date">Dec 25</span></h5>
                   <p>Test, which is a new approach to have all solutions 
                     astrology under one roof.</p>
                 </div>
@@ -108,30 +118,9 @@ $(document).on('ready', function(){
                         var objDiv = document.getElementById("chatroom");
                         objDiv.scrollTop = objDiv.scrollHeight;
                 })
-//Send Chat onKey Enter
-var send = document.getElementById('chat-input');
-            var date = new Date().toLocaleString();
-            send.addEventListener("keyup",function(event){
-                event.preventDefault();
-                if (event.keyCode == 13) {
-                // console.log(date)
-                alert(this.value)
-                this.value = "";
-                }
-            })
-// Add active class to the current button (highlight it)
-var header = document.getElementById("myDIV");
-var btns = header.getElementsByClassName("chat_list");
-var t = '';
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    t = $('h5').this.text();
-    var current = document.getElementsByClassName("active_chat");
-    current[0].className = current[0].className.replace(" active_chat", "");
-    this.className += " active_chat";
-    alert(t)
-  });
-}
+
+
 </script>
+<script  src="{{asset('backend/livechat')}}/js/livechat.js"></script>
     
 @endsection
