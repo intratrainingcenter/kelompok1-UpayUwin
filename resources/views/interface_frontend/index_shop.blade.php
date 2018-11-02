@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<html lang="en"> 
+
 <head>
     <title>Product List | Unify - Responsive Website Template</title>
 
@@ -82,11 +81,17 @@
 <script src="{{asset('FrontEnd')}}/assets/plugins/smoothScroll.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/noUiSlider/jquery.nouislider.full.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- Master Slider -->
+<script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/masterslider.min.js"></script>
+<script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/jquery.easing.min.js"></script>    
 <!-- JS Customization -->
 <script src="{{asset('FrontEnd')}}/assets/js/custom.js"></script>
 <!-- JS Page Level -->           
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
+<script src="{{asset('FrontEnd')}}/assets/js/plugins/owl-carousel.js"></script>
+<script src="{{asset('FrontEnd')}}/assets/js/plugins/master-slider.js"></script>
+<script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
 
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
@@ -96,8 +101,6 @@
 <!--[if lt IE 10]>
     <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
-<script>
-    @yield('add_footer')
-</script>
+@yield('add_footer')
 </body>
 </html> 
