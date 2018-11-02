@@ -1,48 +1,43 @@
-@extends('interface_frontend.index_product')
+@extends('interface_frontend.index_shop')
 @extends('interface_frontend.frontend_shop.item.additional')
 @section('content')
-<div class="shop-product">
-            <div class="container">
-                <ul class="breadcrumb-v5">
-                    <li><a href="index.html"><i class="fa fa-home"></i></a></li>
-                    <li><a href="#">Item</a></li>
-                    <li class="active">{{$category->nama_kategori}}</li>
-                </ul>
-            </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 md-margin-bottom-50">
-                        <div class="ms-showcase2-template">
-                            <!-- Master Slider -->
-                            <div class=" ms-skin-default" id="masterslider">
-                                <div class="ms-slide">
-                                    <img class="ms-brd" src="{{asset('FrontEnd')}}/assets/img/blank.gif" data-src="{{asset('FrontEnd')}}/assets/img/blog/28.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <h3>Mobile Legend</h3>
-                        <p>Integer <strong>dapibus ut elit</strong> non volutpat. Integer auctor purus a lectus
-                            suscipit fermentum. Vivamus lobortis nec erat consectetur elementum.</p><br>
-
-                        <h3 class="shop-product-title">Voucher</h3>
-                        <form name="f1" class="product-quantity sm-margin-bottom-20">
-                            <select class="form-control" name="voucher" id="">
-                                @foreach ($voucher as $data)
-                                    <option value="{{$data->kode_voucher}}">{{$data->nama_voucher}} | {{"Rp.".number_format($data->harga_voucher)}}</option>
-                                @endforeach
-                            </select><br>
-                            <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty();' value='-'>-</button>
-                            <input type='text' class="quantity-field" name='qty' value="1" id='qty' />
-                            <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty").value++;' value='+'>+</button>
-                            <button type="button" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
+<div class="row">
+    <div class="col-sm-3 filter-by-block">
+        <div class="panel-group" id="accordion-v2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion-v2" href="#collapseTwo">
+                            Sort by
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <form id="formSort">
+                            <select name="sort" class="form-control" id="sortby">
+                                <option value="new">Newest</option>
+                                <option value="old">Oldest</option>
+                            </select>
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-sm-9" id="hasil">
+        <div class="row ">
+            <div class="col-sm-4 result-category">
+                <h2></h2>
+                <small class="shop-bg-red badge-results" id="count"></small><br><br>
+            </div>
+        </div>
+        <div class="filter-results">
+            <div class="row illustration-v2" id="load">
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

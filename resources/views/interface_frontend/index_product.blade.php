@@ -78,6 +78,7 @@
     <script src="{{asset('FrontEnd')}}/assets/js/plugins/owl-carousel.js"></script>
     <script src="{{asset('FrontEnd')}}/assets/js/plugins/master-slider.js"></script>
     <script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
+    <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
     <script>
         jQuery(document).ready(function () {
             App.init();
@@ -93,6 +94,7 @@
     <script src="assets/plugins/html5shiv.js"></script>
     <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>    
 <![endif]-->
+@yield('add_footer')
 
 </body>
 
