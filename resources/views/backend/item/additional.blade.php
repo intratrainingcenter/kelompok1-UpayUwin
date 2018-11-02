@@ -115,6 +115,16 @@
 		urlimage = url;
 		console.log(urlimage);
 	});
+
+	//upload image add
+	var fileButton = document.getElementById("fileButton");
+	console.log(fileButton);
+  fileButton.addEventListener('change', function(e){
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref('item/' + file.name);
+    	storageRef.put(file);
+  });
+	
 	$('#saveadd').on('click', function(){
 		var values = $("#form_add").serializeArray();
 		var code_item 			= values[0].value;
@@ -192,13 +202,20 @@
 			</div>';
 			$('#resultupdate').html(updateData);
 		});
+		//upload image update
+		var fileButtonupdate = document.getElementById("fileButtonupdate");
+		console.log(fileButtonupdate);
+	  fileButtonupdate.addEventListener('change', function(e){
+	  var fileupdate = e.target.files['#fileButtonupdate'];
+	  var storageRefupdate = firebase.storage().ref('item/' + fileupdate);
+	    	storageRefupdate.put(fileupdate);
+	  });
 	});
 
 	$('.saveupdate').on('click', function() {
 		var values = $("#modal-update").serializeArray();
 		var image_item 	= $('#fileButtonupdate').val().split('\\').pop();
-		console.log(image_item);
-		// alert(image_item);
+		// console.log(image_item);
 		var postData = {
 			 kode				: values[0].value,
 			 nama				: values[1].value,
@@ -218,20 +235,8 @@
 	});
 
 
-	//upload image add
-	var fileButton = document.getElementById("fileButton");
-  fileButton.addEventListener('change', function(e){
-  var file = e.target.files[0];
-  var storageRef = firebase.storage().ref('item/' + file.name);
-    	storageRef.put(file);
-  });
-	//upload image update
-	var fileButtonupdate = document.getElementById("fileButtonupdate");
-  fileButtonupdate.addEventListener('change', function(e){
-  var fileupdate = e.target.files[1];
-  var storageRefupdate = firebase.storage().ref('item/' + fileupdate.name);
-    	storageRefupdate.put(fileupdate);
-  });
+
+
 	</script>
 
 @endsection
