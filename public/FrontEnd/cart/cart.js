@@ -152,13 +152,14 @@ $( document ).ready(function(){
                     dataType : 'json',
                     success: function(data){
                         console.log(data)
+                        fetch_data();
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                         var errorMsg = 'Ajax request failed: ' + xhr.responseText;
                         // $('#content').html(errorMsg);
                       }
                 });
-                fetch_data();
+                
             } else {
                 fetch_data();
             }
