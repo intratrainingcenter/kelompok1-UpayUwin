@@ -59,6 +59,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-responsive-collapse">
+                @if (Auth::check())
                 <!-- Shopping Cart -->
                 <ul class="list-inline shop-badge badge-lists badge-icons pull-right">
                     <li>
@@ -70,6 +71,7 @@
                     </li>
                 </ul>
                 <!-- End Shopping Cart -->
+                @endif
 
                 <!-- Nav Menu -->
                 <ul class="nav navbar-nav">
@@ -89,21 +91,11 @@
                             <ul class="dropdown-menu">
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">PC Games</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">RF Online</a></li>
-                                        <li><a href="#">Dragon Nest</a></li>
-                                        <li><a href="#">Point Blank</a></li>
-                                        <li><a href="#">Lost Saga</a></li>
-                                    </ul>    
+                                     
                                 </li>
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">Mobile Games</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Arena Of Valor</a></li>
-                                        <li><a href="#">Omnyoji Arena</a></li>
-                                        <li><a href="#">PUBG Mobile</a></li>
-                                        <li><a href="#">Mobile Legend</a></li>
-                                    </ul>    
+                                     
                                 </li>
                             </ul>
                         </li>
@@ -125,13 +117,13 @@
                                                     <a href="{{route('item')}}"><button type="button" class="btn-u btn-u-dark">Check Now</button></a>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
-                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('FrontEnd')}}/assets/img/blog/01.jpg" alt=""></a>
+                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/GustDragon.jpg" alt=""></a>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 sm-margin-bottom-30">
-                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('FrontEnd')}}/assets/img/blog/02.jpg" alt=""></a>
+                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/midnight.png" alt=""></a>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4">
-                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('FrontEnd')}}/assets/img/blog/03.jpg" alt=""></a>
+                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/midnight_armor.png" alt=""></a>
                                                 </div>
                                             </div><!--/end row-->
                                         </div><!--/end container-->
@@ -218,9 +210,7 @@
                         </li>
                         <!-- End Books -->
                         
-                        <!-- Main Demo -->
-                        <li><a href="../index.html">CONTACT US</a></li>
-                        <!-- Main Demo -->
+                        
                     </ul>
                 <!-- End Nav Menu -->
             </div>
