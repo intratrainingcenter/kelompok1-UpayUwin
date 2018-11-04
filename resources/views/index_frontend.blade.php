@@ -46,7 +46,9 @@
             <!-- Content -->
                 @yield('content')
             <!-- End Content -->
-
+                <!-- Start Widget Chat -->
+                    @include('backend.customer_service.livechat')
+                <!-- End Widget -->
 
         <!--=== Footer v4 ===-->
             @include('interface_frontend.master_frontend.element.footer')
