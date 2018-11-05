@@ -34,6 +34,7 @@ Route::get('/', function () {
 	return view('interface_frontend.frontend.index');
 })->name('index');
 Route::get('/voucher', 'frontend\productController@indexVoucher');
+<<<<<<< HEAD
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
 Route::get('/item', 'frontend\productController@indexItem');
@@ -58,6 +59,11 @@ Route::get('UpayUwin/cart', function () {
 });
 // Route::get('UpayUwin/product', 'frontend\productController@index');
 
+=======
+Route::get('/item', 'frontend\productController@indexItem')->name('item');
+Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
+
+>>>>>>> develop
 Route::get('UpayUwin/payment', function(){
     return view('frontend.payment');
 });

@@ -53,9 +53,7 @@
             @include('interface_frontend.master_frontend.shop.subscribe')
             <!--=== End Shop Suvbscribe ===-->
 
-        <!--=== Footer v4 ===-->
-        @include('interface_frontend.master_frontend.element.footer')
-        <!--=== End Footer v4 ===-->
+        
     </div>
     <!--/wrapper-->
 

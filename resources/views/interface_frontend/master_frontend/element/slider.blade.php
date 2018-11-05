@@ -15,9 +15,9 @@
                         data-easing="Back.easeInOut"
                         data-endeasing="Power1.easeIn"                        
                         data-endspeed="300">
-                        The New <br>
-                        <strong>Collection</strong><br>
-                        is here
+                        Kebutuhan Gaming<br>
+                        <strong>Dari Balance &amp; Perlengkapan</strong><br>
+                        Ada Disini
                     </div>
 
                     <!-- LAYER -->
@@ -51,7 +51,7 @@
                         data-easing="Back.easeInOut"
                         data-endeasing="Power1.easeIn"                        
                         data-endspeed="300">
-                        Latest <strong>Fashion</strong> Trends
+                        Voucher Murah  &amp;<strong>Transaksi Aman</strong>
                     </div>
 
                     <!-- LAYER -->
@@ -66,9 +66,8 @@
                         data-endeasing="Power1.easeIn"
                         data-captionhidden="off"
                         style="z-index: 6">
-                        Cras non dui et quam auctor pretium.<br>
-                        Aenean enim tortr, tempus et iteus m
-                    </div>
+                        Tidak ada di tempat lain ,kami sediakan disini<br>
+                        </div>
 
                     <!-- LAYER -->
                     <div class="tp-caption sft"
@@ -82,7 +81,7 @@
                         data-endeasing="Power1.easeIn"
                         data-captionhidden="off"
                         style="z-index: 6">
-                        <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Shop Now</a>
+                        <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Cek Sekarang</a>
                     </div>
                 </li>
                 <!-- END SLIDE -->
@@ -101,7 +100,7 @@
                         data-easing="Back.easeInOut"
                         data-endeasing="Power1.easeIn"                        
                         data-endspeed="300">
-                        <strong>Luxury</strong> Watches
+                        <strong>Kekurangan Gold?</strong> Disini solusinya
                     </div>
 
                     <!-- LAYER -->
@@ -116,8 +115,8 @@
                         data-endeasing="Power1.easeIn"
                         data-captionhidden="off"
                         style="z-index: 6">
-                        lectus. Cras non dui et quam auctor.<br>
-                        Aenean enim tortor, tempus et im
+                        Kepercayaan itu Mahal<br>
+                        
                     </div>
 
                     <!-- LAYER -->
@@ -151,7 +150,7 @@
                         data-easing="Back.easeInOut"
                         data-endeasing="Power1.easeIn"                        
                         data-endspeed="300">
-                        Girl's Accesories
+                        Skin &amp; Costume Terbaru
                     </div>
 
                     <!-- LAYER -->
@@ -166,7 +165,7 @@
                         data-endeasing="Power1.easeIn"
                         data-captionhidden="off"
                         style="z-index: 6">
-                        Super Promo
+                        Super Promo dari game kesayanganmu
                     </div>
 
                     <!-- LAYER -->
@@ -201,7 +200,7 @@
                         data-easing="Back.easeInOut"
                         data-endeasing="Power1.easeIn"                        
                         data-endspeed="300">
-                        <strong>Jeans</strong> Collection
+                        <strong>Joki Akun</strong> Boosting Account
                     </div>
 
                     <!-- LAYER -->
@@ -216,8 +215,8 @@
                         data-endeasing="Power1.easeIn"
                         data-captionhidden="off"
                         style="z-index: 6">
-                        Cras non dui et quam auctor pretium.<br>
-                        Aenean enim tortr, tempus et iteus m
+                        Layanan Cepat dengan harga menarik<br>
+                        Dijamin Aman
                     </div>
 
                     <!-- LAYER -->
@@ -232,7 +231,7 @@
                         data-endeasing="Power1.easeIn"
                         data-captionhidden="off"
                         style="z-index: 6">
-                        <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Shop Now</a>
+                        <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Coming Soon</a>
                     </div>
                 </li>
                 <!-- END SLIDE -->

@@ -75,6 +75,9 @@
 
 					<button type="submit" class="btn-u btn-block rounded">Create new</button>
 					</form>
+					<div class="social-login text-center">
+							<p>Already have an account? <a href="{{route('LoginUser')}}">Login</a></p>
+						</div>
 				</div>
 			</div>
 		</div>

@@ -38,10 +38,17 @@
         </div> 
     <div class="content container">
         @yield('content')
-    </div>
-    @include('interface_frontend.master_frontend.shop.subscribe')
-    @include('interface_frontend.master_frontend.element.footer')
-</div>
+    </div><!--/end container-->    
+    <!--=== End Content Part ===-->
+
+            <!--=== Shop Suvbscribe ===-->
+            @include('interface_frontend.master_frontend.shop.subscribe')
+            <!--=== End Shop Suvbscribe ===-->
+
+    
+</div><!--/wrapper-->
+
+<!-- JS Global Compulsory -->           
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery-migrate.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -58,10 +65,11 @@
 <!-- JS Page Level -->           
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
-<script src="{{asset('FrontEnd')}}/assets/js/plugins/owl-carousel.js"></script>
-<script src="{{asset('FrontEnd')}}/assets/js/plugins/master-slider.js"></script>
-<script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
-
-@yield('add_footer')
+<!--=== Footer v4 ===-->
+@include('interface_frontend.master_frontend.element.footer')
+    <!--=== End Footer v4 ===-->
+<script>
+    @yield('add_footer')
+</script>
 </body>
 </html> 
