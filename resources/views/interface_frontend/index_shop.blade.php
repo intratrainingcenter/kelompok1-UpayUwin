@@ -68,8 +68,6 @@
 <!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')
     <!--=== End Footer v4 ===-->
-<script>
-    @yield('add_footer')
-</script>
+@yield('add_footer')
 </body>
 </html> 
