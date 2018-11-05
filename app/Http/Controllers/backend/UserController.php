@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::all();
+        $data = User::all()->where('level','admin');
         return view ('backend.User.index',compact('data'));
     }
 
