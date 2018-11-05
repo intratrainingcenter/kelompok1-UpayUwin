@@ -1,5 +1,5 @@
 @extends('interface_frontend.index_shop')
-@extends('interface_frontend.frontend_shop.item.an_additional')
+@extends('interface_frontend.frontend_shop.item.add')
 @section('content')
 
 <div class="row" id="hasil">

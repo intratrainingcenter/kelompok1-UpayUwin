@@ -72,19 +72,20 @@ class productController extends Controller
         return view('interface_frontend/frontend_shop/item/item', compact('category'));
     }
 
-    public function showItem($id)
+    public function showItem($category, $id)
     {
-        return view('interface_frontend/frontend_shop/item/item_detail', compact('id'));
+        return view('interface_frontend/frontend_shop/item/item_detail', compact('category','id'));
     }
 
     public function sortProduct(Request $request){
 
+        $product = $request->product;
         if($request->sort == 'new'){
             $categori = kategori::orderBy('created_at', 'DESC')->get();
         }else{
             $categori = kategori::orderBy('created_at', 'ASC')->get();
         }
-        return view('interface_frontend/frontend_shop/category/sort', compact('categori'));
+        return view('interface_frontend/frontend_shop/category/sort', compact('categori','product'));
     }
 
     /**

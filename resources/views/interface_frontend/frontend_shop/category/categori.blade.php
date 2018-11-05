@@ -29,7 +29,7 @@
     <div class="col-sm-9" id="hasil">
         <div class="row ">
             <div class="col-sm-4 result-category">
-                <h2>{{$product}}</h2>
+                <h2 id="product">{{$product}}</h2>
                 <small class="shop-bg-red badge-results">{{$count}} Results</small><br><br>
             </div>
         </div>
