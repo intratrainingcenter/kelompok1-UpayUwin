@@ -5,9 +5,11 @@ namespace App\Http\Controllers\frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\channel_message;
 use App\transaksi_penjualan;
 use App\detail_transaksi;
 use Hash;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class settingusercontroller extends Controller
@@ -49,11 +51,21 @@ class settingusercontroller extends Controller
     }
     public function showfeed()
     {
-
+        $data =  channel_message::get();
+        return response()->json(array('success' => true, 'msg' => $data));
     }
-    public function feedback()
+    public function feedback(Request $request)
     {
-
+        $data =  new channel_message;
+        //dd($data->qty);
+        $data->channels = 'customer_service';
+        $data->messages = $request->json('messages');
+        $data->from = Auth::id();
+        $data->receive = 'admin';
+        $data->created_at = Carbon::now()->setTime(23,59,59)->format('Y-m-d H:i:s');
+        $data->updated_at = Carbon::now()->setTime(23,59,59)->format('Y-m-d H:i:s');
+        $data->save();
+        return response()->json(array('success' => true, 'cart' => $data));
     }
     public function replyfeed()
     {

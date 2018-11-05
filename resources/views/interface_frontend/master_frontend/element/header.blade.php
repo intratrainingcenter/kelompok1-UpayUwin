@@ -64,7 +64,7 @@
                 <ul class="list-inline shop-badge badge-lists badge-icons pull-right">
                     <li>
                         <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                        <span class="badge badge-sea rounded-x">3</span>
+                        <span class="badge badge-sea rounded-x" id="count_cart"></span>
                         <ul class="list-unstyled badge-open mCustomScrollbar" data-mcs-theme="minimal-dark" id="minicart">
                             <!-- Minicart Ajax -->
                         </ul>
@@ -120,10 +120,10 @@
                                                     <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/GustDragon.jpg" alt=""></a>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4 sm-margin-bottom-30">
-                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/midnight.png" alt=""></a>
+                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/maneater.jpg" alt=""></a>
                                                 </div>
                                                 <div class="col-md-3 col-sm-4 col-xs-4">
-                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/midnight_armor.png" alt=""></a>
+                                                    <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/pwcostume.jpg" alt=""></a>
                                                 </div>
                                             </div><!--/end row-->
                                         </div><!--/end container-->
