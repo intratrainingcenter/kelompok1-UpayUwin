@@ -29,16 +29,17 @@
                             suscipit fermentum. Vivamus lobortis nec erat consectetur elementum.</p><br>
 
                         <h3 class="shop-product-title">Voucher</h3>
-                        <form name="f1" class="product-quantity sm-margin-bottom-20">
+                        <form id="form_order" action="/voucher/store" name="f1" class="product-quantity sm-margin-bottom-20" method="post">
+                            @csrf
                             <select class="form-control" name="voucher" id="">
                                 @foreach ($voucher as $data)
-                                    <option value="{{$data->kode_voucher}}">{{$data->nama_voucher}} | {{"Rp.".number_format($data->harga_voucher)}}</option>
+                                    <option value="{{$data->id}}">{{$data->nama_voucher}} | {{"Rp.".number_format($data->harga_voucher)}}</option>
                                 @endforeach
                             </select><br>
                             <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty();' value='-'>-</button>
                             <input type='text' class="quantity-field" name='qty' value="1" id='qty' />
                             <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty").value++;' value='+'>+</button>
-                            <button type="button" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
+                            <button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
                         </form>
 
                     </div>
