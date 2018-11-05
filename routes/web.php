@@ -56,7 +56,6 @@ Route::get('/backend/login',function(){
 
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
-
 	Route::resource('dashboard','backend\DashboardController');
 	//Route Voucher
 	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
@@ -73,7 +72,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	Route::resource('setting2','backend\SettingController');
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
   	//Route setting
-  	Route::resource('setting','backend\SettingController');
+	  Route::resource('setting','backend\SettingController');
+	//   Category
 });
 
 
