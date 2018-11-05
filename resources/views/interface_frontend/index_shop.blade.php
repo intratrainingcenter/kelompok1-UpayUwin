@@ -68,9 +68,7 @@
             @include('interface_frontend.master_frontend.shop.subscribe')
             <!--=== End Shop Suvbscribe ===-->
 
-    <!--=== Footer v4 ===-->
-    @include('interface_frontend.master_frontend.element.footer')
-    <!--=== End Footer v4 ===-->
+    
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->           
@@ -87,15 +85,9 @@
 <!-- JS Page Level -->           
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
-
-<!--[if lt IE 9]>
-    <script src="assets/plugins/respond.js"></script>
-    <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>    
-<![endif]-->
-<!--[if lt IE 10]>
-    <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
-<![endif]-->
+<!--=== Footer v4 ===-->
+@include('interface_frontend.master_frontend.element.footer')
+    <!--=== End Footer v4 ===-->
 <script>
     @yield('add_footer')
 </script>

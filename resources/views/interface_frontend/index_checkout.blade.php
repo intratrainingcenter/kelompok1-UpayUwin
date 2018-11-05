@@ -52,9 +52,7 @@
     </div>
     <!--=== End Content Medium Part ===-->     
 
-     <!--=== Footer v4 ===-->
-     @include('interface_frontend.master_frontend.element.footer')
-    <!--=== End Footer v4 ===-->
+     
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->           
@@ -74,9 +72,10 @@
 <script src="{{asset('FrontEnd')}}/assets/js/forms/page_login.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/stepWizard.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
-<!-- Cart Ajax -->
-<script src="{{asset('FrontEnd')}}/cart/cart.js"></script>
-<script> var frontend = "{{asset('FrontEnd')}}"; </script>
+
+<!--=== Footer v4 ===-->
+@include('interface_frontend.master_frontend.element.footer')
+    <!--=== End Footer v4 ===-->
 <script>
     jQuery(document).ready(function() {
         App.init();

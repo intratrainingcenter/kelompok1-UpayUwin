@@ -25,7 +25,7 @@ $( document ).ready(function(){
                     var cart = '';
                     var total = '';
                     var minicart = '';
-                    var checkout = "'{{ route('checkout') }}'";
+                    
                     var count = '';
                     var json = data;
                         var count = json.cart.length;
@@ -75,10 +75,6 @@ $( document ).ready(function(){
                     total +=                "<div class='col-xs-6'>";
                     total +=                "<a href='"+ checkout +"' class='btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block'>View Cart</a>";
                     total +=            "</div>";
-                    total +=            "<div class='col-xs-6'>";
-                    total +=                    "<a href='shop-ui-add-to-cart.html' class='btn-u btn-u-sea-shop btn-block'>Checkout</a>";
-                    total +=                    "</div>";
-                    total +=                "</div>";
                     total +=            "</li>";
                     $('#minicart').html(minicart+total);
                     $('table tbody').html(cart);

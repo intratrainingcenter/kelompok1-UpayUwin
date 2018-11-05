@@ -64,7 +64,7 @@
           </div>
           <div class="type_msg">
             <div class="input_msg_write">
-              <input disabled="disabled" onkeyup="myFunction()" type="text" class="write_msg" placeholder="Write a Reply..." id="chat-input" autocomplete="off" />
+              <input disabled="disabled" type="text" class="write_msg" placeholder="Write a Reply..." id="chat-input" autocomplete="off" />
               </div>
           </div>
         </div>

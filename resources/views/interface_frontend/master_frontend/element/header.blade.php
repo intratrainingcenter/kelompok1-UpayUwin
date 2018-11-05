@@ -77,7 +77,7 @@
                 <ul class="nav navbar-nav">
                         <!-- Pages -->
                         <li class="active">
-                            <a href="javascript:void(0);">
+                            <a href="{{route('index')}}">
                                 Home
                             </a>
                         </li>
