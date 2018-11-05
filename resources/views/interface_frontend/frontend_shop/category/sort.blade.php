@@ -1,8 +1,11 @@
 @foreach ($categori as $cat)
 <div class="col-sm-3">
     <div class="product-img product-img-brd">
-        <a href="{{url('/voucher/'.$cat->id)}}"><img class="full-width img-responsive" src="{{asset('FrontEnd')}}/assets/img/blog/16.jpg"
-                alt=""></a>
+        @if ($product == 'voucher')
+        <a href="{{url('/voucher/'.$cat->id)}}"><img class="full-width img-responsive" src="{{asset('FrontEnd')}}/assets/img/blog/16.jpg" alt=""></a>
+        @else
+        <a href="{{url('/item_category/'.$cat->nama_kategori)}}"><img class="full-width img-responsive" src="{{asset('FrontEnd')}}/assets/img/blog/16.jpg" alt=""></a>
+        @endif
     </div>
     <div class="product-description product-description-brd">
         <div class="overflow-h ">

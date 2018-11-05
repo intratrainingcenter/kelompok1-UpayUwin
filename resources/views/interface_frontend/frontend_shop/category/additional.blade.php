@@ -8,10 +8,11 @@
     $(document).on("change", "#sortby", function (e) {
         e.preventDefault();
         let sort = $(this).find('option:selected').val() ;
+        let product = $('#product').text() ;
         $.ajax({
             type: 'GET',
             url: '{{route("voucher.sort")}}',
-            data: {'sort' : sort},
+            data: {'sort' : sort , 'product' : product},
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },

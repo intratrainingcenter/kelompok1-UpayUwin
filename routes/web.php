@@ -38,7 +38,7 @@ Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
 Route::get('/item', 'frontend\productController@indexItem');
 Route::get('/item_category/{id}', 'frontend\productController@showCategoryItem');
-Route::get('/item/{id}', 'frontend\productController@showItem');
+Route::get('/item/{category}/{id}', 'frontend\productController@showItem');
 
 Route::get('/product', function(){
 	return view('frontend.user');

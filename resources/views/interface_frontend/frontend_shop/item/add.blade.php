@@ -8,7 +8,6 @@
 <script>
     let lastIndex = 0;
     let category = $('#load').attr('category');
-    console.log(category);
     
     const dbRefItem = firebase.database().ref().child('item').orderByChild("kategori").equalTo(category);
     dbRefItem.on('value', function(snapshot) {
@@ -21,21 +20,16 @@
 
     if(value){
          $.each(value, function(index,value){
-            var urlimage = [];
-            var storageRef = firebase.storage().ref("item/"+value.gambar );
-            storageRef.getDownloadURL().then(function(url) {
-                urlimage.push(url) ;
-            });
-            console.log(urlimage);
             count = snapshot.numChildren()+' result';
-            htmls.push(' <div class="col-sm-3"> \
+            htmls.push(' <div class="col-sm-4"> \
                 <div class="product-img product-img-brd">\
-                    <a href="{{url("/item/")}}/'+index+'"><img class="full-width img-responsive" src="" alt=""></a>\
+                    <a href="{{url("/item")}}/'+category+'/'+index+'"><img class="full-width img-responsive" src="'+value.gambar+'" alt=""></a>\
                 </div>\
                 <div class="product-description product-description-brd">\
                     <div class="overflow-h ">\
                         <div class="pull-left">\
-                            <h4 class="title-price"><a href="{{url("/item/".'+value.id+')}}"></a>'+value.nama+' <br> '+value.harga+'</h4>\
+                            <a href="{{url("/item")}}/'+category+'/'+index+'"><h2><strong>'+value.nama+'</strong></h2> </a>\
+                            <h3>Rp '+addDot(value.harga)+'</h3>\
                         </div>\
                     </div>\
                 </div>\
@@ -48,8 +42,15 @@
         </center>\ ');
     }
     
+    $('#active').html(category);
     $('#load').html(htmls);
     $('#count').text(count);
 });
+
+function addDot(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return parts.join(".");
+}
 </script>
 @endsection
