@@ -65,6 +65,7 @@ Route::get('UpayUwin/payment', function(){
     return view('frontend.payment');
 });
 
+Route::get('/laporantransaksi','backend\LaporanTransaksiController@index');
 Route::post('/pay','PaymentController@payWithpaypal')->name('paymentpaypal');
 Route::get('/payment/status','PaymentController@getPaymentStatus')->name('payment.status');
 
