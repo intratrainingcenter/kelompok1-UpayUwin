@@ -85,15 +85,21 @@ Route::prefix('frontend')->group(function () {
 	Route::get('/voucher/sort', 'frontend\productController@sortProduct')->name('voucher.sort');
 	Route::post('regis','frontend\signupcontroller@store')->name('regis');
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
+	Route::post('settingpassword', 'frontend\settingusercontroller@updatepass')->name('settingpassword');
 	Route::get('history', 'frontend\settingusercontroller@historytransaction')->name('history');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('showcart', 'frontend\cartcontroller@showcart')->name('showcart');
 	Route::get('/detach/{id}', 'frontend\cartcontroller@deaddQty');
 	Route::get('/attach/{id}', 'frontend\cartcontroller@addQty');
 	Route::get('/cancel/{id}', 'frontend\cartcontroller@cancel');
+	Route::get('showfeed', 'frontend\settingcontroller@showfeed')->name('showfeed');
+	Route::get('/feedback/{id}', 'frontend\settingusercontroller@feedback');
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
+	Route::get('chat', function(){
+		return view('interface_frontend.frontend_user.chat');
+	})->name('chat');
 });
 
 Auth::routes();
