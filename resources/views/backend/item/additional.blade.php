@@ -98,8 +98,7 @@
 	        		<td>'+ value.harga +'</td>\
 	        		<td>'+ value.deskripsi +'</td>\
 	        		<td>'+ value.stok +'</td>\
-	        		<td>'+ value.gambar +'</td>\
-	        		<td><img src="'+urlimage+'" height="100" width="100"/></td>\
+	        		<td><img src="'+value.gambar+'" height="100" width="100"/></td>\
 	        		<td><button type="button" class="btn btn-outline-warning updateData" data-toggle="modal" data-target="#Modal-edit" data-id="'+index+'"><i class="fas fa-pencil-alt"></i></button>\
 							<button type="button" class="btn btn-outline-danger removeData" data-toggle="modal" data-target="#Modal-delete" data-id="'+index+'"><i class="fas fa-trash-alt"></i></button></tr>');
 	    	}
@@ -108,46 +107,53 @@
 	    $('#result').html(htmls);
 	});
 
-	console.log(dataimage);
-	var urlimage = '';
-	var storageRef = firebase.storage().ref("item/avatar.png" );
-	storageRef.getDownloadURL().then(function(url) {
-		urlimage = url;
-		console.log(urlimage);
-	});
-
 	//upload image add
+	var uploader = document.getElementById("uploader");
 	var fileButton = document.getElementById("fileButton");
-	console.log(fileButton);
   fileButton.addEventListener('change', function(e){
   var file = e.target.files[0];
   var storageRef = firebase.storage().ref('item/' + file.name);
-    	storageRef.put(file);
+    	var task = storageRef.put(file);
+			task.on('state_changed',
+			function progress(snapshot){
+				var percentage=(snapshot.bytesTransferred / snapshot.totalBytes)*100;
+				uploader.value=percentage;
+				if (percentage==100) {
+					alert("sukses");
+					storageRef.getDownloadURL().then(function(url){
+						downloadURL = url;
+
+						$('#saveadd').on('click', function(){
+							var values = $("#form_add").serializeArray();
+							var code_item 			= values[0].value;
+							var name_item 			= values[1].value;
+							var category_item		= values[2].value;
+							var price_item 			= values[3].value;
+							var stock_item 			= values[4].value;
+							var description_item = values[5].value;
+							var image_item 			=  downloadURL;
+							var iditem 					= parseInt(lastIndex) + 1;
+						    firebase.database().ref().child('item/' + iditem).set({
+						        kode: code_item,
+						        nama: name_item,
+						        kategori: category_item,
+						        harga: price_item,
+										deskripsi: description_item,
+										stok: stock_item,
+										gambar:image_item,
+						    });
+								event.preventDefault()
+								$('#Modal-add').modal('hide');
+						});
+
+					});
+				}
+			},function error(err){
+				alert("gagal")
+			},
+		 );
   });
 	
-	$('#saveadd').on('click', function(){
-		var values = $("#form_add").serializeArray();
-		var code_item 			= values[0].value;
-		var name_item 			= values[1].value;
-		var category_item		= values[2].value;
-		var price_item 			= values[3].value;
-		var stock_item 			= values[4].value;
-		var description_item = values[5].value;
-		var image_item 			= $('input[type=file]').val().split('\\').pop();
-		var iditem 					= parseInt(lastIndex) + 1;
-	    firebase.database().ref().child('item/' + iditem).set({
-	        kode: code_item,
-	        nama: name_item,
-	        kategori: category_item,
-	        harga: price_item,
-					deskripsi: description_item,
-					stok: stock_item,
-					gambar:image_item,
-	    });
-			event.preventDefault()
-			$('#Modal-add').modal('hide');
-	});
-
 	//remove data
 	$("body").on('click', '.removeData', function() {
 		var id = $(this).attr('data-id');
@@ -233,9 +239,6 @@
 		event.preventDefault()
 		$("#Modal-edit").modal('hide');
 	});
-
-
-
 
 	</script>
 

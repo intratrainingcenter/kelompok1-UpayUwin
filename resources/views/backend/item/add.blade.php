@@ -41,6 +41,7 @@
                         </div> -->
                          <div class="col-md-9">
                             <label class="labels">Foto :</label>
+                            <progress id="uploader" value="0" max="100">0%</progress>
                             <input id="image_item" type="hidden" name="image" class="form-control" required>
                             <input id="fileButton" type="file" name="image" class="form-control" required>
                         </div>
