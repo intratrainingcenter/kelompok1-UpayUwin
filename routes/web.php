@@ -34,6 +34,30 @@ Route::get('/', function () {
 	return view('interface_frontend.frontend.index');
 })->name('index');
 Route::get('/voucher', 'frontend\productController@indexVoucher');
+
+Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
+
+Route::get('/item', 'frontend\productController@indexItem');
+Route::get('/item/{id}', 'frontend\productController@showCategoryItem');
+Route::get('/item/{category}/{id}', 'frontend\productController@showItem');
+
+Route::get('/product', function(){
+	return view('frontend.user');
+});
+
+Route::get('UpayUwin/User', function(){
+	return view('frontend.user');
+});
+
+Route::get('UpayUwin/cart', function(){
+    return view('frontend.cart');
+});
+
+Route::get('UpayUwin/cart', function () {
+	return view('frontend.cart');
+});
+// Route::get('UpayUwin/product', 'frontend\productController@index');
+
 Route::get('/item', 'frontend\productController@indexItem')->name('item');
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
@@ -41,6 +65,7 @@ Route::get('UpayUwin/payment', function(){
     return view('frontend.payment');
 });
 
+Route::get('/laporantransaksi','backend\LaporanTransaksiController@index');
 Route::post('/pay','PaymentController@payWithpaypal')->name('paymentpaypal');
 Route::get('/payment/status','PaymentController@getPaymentStatus')->name('payment.status');
 

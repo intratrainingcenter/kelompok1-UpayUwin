@@ -76,6 +76,7 @@
     <script src="{{asset('FrontEnd')}}/assets/js/plugins/owl-carousel.js"></script>
     <script src="{{asset('FrontEnd')}}/assets/js/plugins/master-slider.js"></script>
     <script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
+    <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
     <script>
         jQuery(document).ready(function () {
             App.init();
@@ -87,7 +88,9 @@
     </script>
 <!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')
-        <!--=== End Footer v4 ===-->
+    <!--=== End Footer v4 ===-->
+@yield('add_footer')
+
 </body>
 
 </html>

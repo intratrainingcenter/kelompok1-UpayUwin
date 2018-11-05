@@ -8,17 +8,15 @@
                         <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
                         <br>
                         <ul class="list-unstyled address-list margin-bottom-20">
-                            <li><i class="fa fa-angle-right"></i>California, US, Lorem Lis Street, Orange, 25</li>
-                            <li><i class="fa fa-angle-right"></i>Phone: 800 123 3456</li>
-                            <li><i class="fa fa-angle-right"></i>Fax: 800 123 3456</li>
-                            <li><i class="fa fa-angle-right"></i>Email: info@anybiz.co</li>
+                            <li><i class="fa fa-angle-right"></i>Kedoya , Jakarta Barat</li>
+                            <li><i class="fa fa-angle-right"></i>Phone: -------</li>
+                            <li><i class="fa fa-angle-right"></i>Fax: -------</li>
+                            <li><i class="fa fa-angle-right"></i>Email: intratrainingcenter</li>
                         </ul>
 
                         <ul class="list-inline shop-social">
                             <li><a href="#"><i class="fb rounded-md fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="tw rounded-md fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="gp rounded-md fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="yt rounded-md fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                     <!-- End About -->                    
@@ -40,9 +38,7 @@
                     <div class="col-md-6">  
                         <ul class="list-inline sponsors-icons pull-right">
                             <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                            
                         </ul>
                     </div>
                 </div>

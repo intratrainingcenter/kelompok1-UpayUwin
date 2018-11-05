@@ -1,64 +1,41 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<html lang="en"> 
 <head>
     <title>Product List | Unify - Responsive Website Template</title>
-
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-
-    <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
-
-    <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-
-    <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/shop.style.css">
-    
-    <!-- CSS Header and Footer -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/headers/header-v5.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/footers/footer-v4.css">
-
-    <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">    
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/noUiSlider/jquery.nouislider.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
-    
-    <!-- CSS Customization -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
     @yield('add_header')
 </head> 
 
 <body class="header-fixed">
 <div class="wrapper">
-    <!--=== Header v5 ===-->   
     @include('interface_frontend.master_frontend.element.header')
-        <!--=== End Header v5 ===-->
-
-        <!--=== Breadcrumbs v4 ===-->
         <div class="breadcrumbs-v4">
             <div class="container">
                 <span class="page-name">Product Filter Page</span>
                 <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
                 <ul class="breadcrumb-v4-in">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="">Product</a></li>
-                    <li class="active">Product Filter Page</li>
+                    <li><a href="{{url('/')}}">Home</a></li>
+                    <li><a href="{{url('/item')}}">Item</a></li>
+                    <li class="active" id="active"></li>
                 </ul>
-            </div><!--/end container-->
+            </div>
         </div> 
-        <!--=== End Breadcrumbs v4 ===-->
-
-    <!--=== Content Part ===-->
     <div class="content container">
         @yield('content')
     </div><!--/end container-->    
@@ -80,6 +57,9 @@
 <script src="{{asset('FrontEnd')}}/assets/plugins/smoothScroll.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/noUiSlider/jquery.nouislider.full.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- Master Slider -->
+<script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/masterslider.min.js"></script>
+<script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/jquery.easing.min.js"></script>    
 <!-- JS Customization -->
 <script src="{{asset('FrontEnd')}}/assets/js/custom.js"></script>
 <!-- JS Page Level -->           
@@ -88,8 +68,6 @@
 <!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')
     <!--=== End Footer v4 ===-->
-<script>
-    @yield('add_footer')
-</script>
+@yield('add_footer')
 </body>
 </html> 
