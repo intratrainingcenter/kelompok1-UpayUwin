@@ -74,6 +74,7 @@ Route::prefix('backend')->middleware('admin')->group(function () {
   	//Route setting
 	  Route::resource('setting','backend\SettingController');
 	//   Category
+	Route::resource('category','backend\CategoryController');
 });
 
 
