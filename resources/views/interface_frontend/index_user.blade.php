@@ -53,7 +53,7 @@
 							<a href="page_profile_users.html"><i class="fa fa-group"></i> Users</a>
 						</li>
 						<li class="list-group-item">
-							<a href="page_profile_history.html"><i class="fa fa-history"></i> History</a>
+							<a href="{{route('history')}}"><i class="fa fa-history"></i> History</a>
 						</li>
 						<li class="list-group-item active">
 							<a href="page_profile_settings.html"><i class="fa fa-cog"></i> Settings</a>
