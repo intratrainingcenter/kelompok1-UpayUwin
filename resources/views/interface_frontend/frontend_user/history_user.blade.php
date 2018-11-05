@@ -12,22 +12,25 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>Number</th>
+									<th>Transaction Code</th>
 									<th>Goods</th>
 									<th class="hidden-sm">Quantity</th>
 									<th>Price</th>
+									<th>Time &amp; Date</th>
 									<th>Status</th>
 								</tr>
 							</thead>
 							<tbody>
+							@foreach($data as $index => $data)
 								<tr>
-									<td>1</td>
-									<td>Mark</td>
-									<td class="hidden-sm">Otto</td>
-									<td>@mdo</td>
-									<td><span class="label label-warning">Expiring</span></td>
+									<td>{{$data->kode_transaksi}}</td>
+									<td>{{$data->kode_voucher}}</td>
+									<td class="hidden-sm">{{$data->jumlah}}</td>
+									<td>{{$data->harga}}</td>
+									<td>{{$data->created_at}}</td>
+									<td><span class="label label-success">Paid</span></td>
 								</tr>
-								
+							@endforeach
 							</tbody>
 						</table>
 					</div>
