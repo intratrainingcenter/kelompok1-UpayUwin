@@ -82,9 +82,7 @@
 		</div>
             <!--=== End Profile ===-->
 
-		<!--=== Footer Version 1 ===-->
-            @include('interface_frontend.master_frontend.user.footer')
-		<!--=== End Footer Version 1 ===-->
+		
 	</div><!--/wrapper-->
 
 	<!-- JS Global Compulsory -->
@@ -116,6 +114,9 @@
 			StyleSwitcher.initStyleSwitcher();
 		});
 	</script>
+	<!--=== Footer Version 1 ===-->
+	@include('interface_frontend.master_frontend.user.footer')
+		<!--=== End Footer Version 1 ===-->
 
 </body>
 </html>
