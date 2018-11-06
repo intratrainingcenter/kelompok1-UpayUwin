@@ -1,6 +1,6 @@
 @if (Auth::check())
 <!DOCTYPE html>
-<html lang="en">
+<html oncontextmenu="return false" lang="en">
 <head>
 	<title>Profile Settings | Unify - Responsive Website Template</title>
 	<!-- Meta -->
