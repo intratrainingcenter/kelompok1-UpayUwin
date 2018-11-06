@@ -4,7 +4,7 @@ $(document).on('ready',function(){
 });
 
 function fetch_data()
-        {
+{
             var msg ='';
             $.ajax({
                 url: '/frontend/showfeed',
