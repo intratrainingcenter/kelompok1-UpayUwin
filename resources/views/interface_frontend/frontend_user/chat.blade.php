@@ -1,5 +1,15 @@
 @extends('interface_frontend.index_user')
 @section('content')
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-functions.js"></script>
+
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="{{asset('backend/livechat')}}/css/style.css">
 				<div class="col-md-9">
@@ -43,6 +53,8 @@
                                     <div class="type_msg">
                                         <div class="input_msg_write">
                                             <input type="text" class="write_msg" placeholder="Write a Suggestion..." id="chat-input" autocomplete="off" />
+                                            <input type="hidden" id="sendreplyurl" value="">
+                                            <button class="msg_send_btn" type="button" id="sendreply"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                             </div>
@@ -50,6 +62,6 @@
                     </div>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
                     <script  src="{{asset('FrontEnd/livechat')}}/js/livechat.js"></script>
-                    <script> var auth_id = '{{ Auth::user()->id }}'</script>
+                    <script> var auth_id = '{{ Auth::user()->id }}'; var authed = '{{ Auth::user()->name }}';</script>
 				</div>
 @endsection
