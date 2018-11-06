@@ -37,9 +37,10 @@ Route::get('/item', 'frontend\productController@indexItem');
 Route::get('/item/{id}', 'frontend\productController@showCategoryItem');
 Route::get('/item/{category}/{id}', 'frontend\productController@showItem');
 
-// Route::get('UpayUwin/product', 'frontend\productController@index');
-
 Route::get('/item', 'frontend\productController@indexItem')->name('item');
+Route::post('/item/store', 'frontend\productController@addto_cart_item');
+
+Route::post('/voucher/store', 'frontend\productController@store');
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
 Route::get('UpayUwin/payment', function(){
