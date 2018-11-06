@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                
+
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-inline right-topbar pull-right">
@@ -28,10 +28,10 @@
                             </form>
                             @else
                             <a href="{{route('LoginUser')}}">Login</a>
-                            | 
+                            |
                             <a href="{{route('signup')}}">Register</a>
                             @endif
-                           
+
                         </li>
                     </ul>
                 </div>
@@ -53,7 +53,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html">
-                    <img id="logo-header" src="{{asset('FrontEnd')}}/assets/img/logo.png" alt="Logo">
+                    <img id="logo-header" style="width:60px; height:60px;" class="imageecommerce" src="" alt="Logo">
                 </a>
             </div>
 
@@ -91,11 +91,11 @@
                             <ul class="dropdown-menu">
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">PC Games</a>
-                                     
+
                                 </li>
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">Mobile Games</a>
-                                     
+
                                 </li>
                             </ul>
                         </li>
@@ -127,7 +127,7 @@
                                                 </div>
                                             </div><!--/end row-->
                                         </div><!--/end container-->
-                                    </div><!--/end mega menu content-->  
+                                    </div><!--/end mega menu content-->
                                 </li>
                             </ul><!--/end dropdown-menu-->
                         </li>
@@ -201,16 +201,16 @@
                                                     </ul>
                                                 </div>
 
-                                                
+
                                             </div><!--/end row-->
                                         </div><!--/end container-->
-                                    </div><!--/end mega menu content-->  
+                                    </div><!--/end mega menu content-->
                                 </li>
                             </ul><!--/end dropdown-menu-->
                         </li>
                         <!-- End Books -->
-                        
-                        
+
+
                     </ul>
                 <!-- End Nav Menu -->
             </div>
