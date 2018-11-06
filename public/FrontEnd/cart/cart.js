@@ -14,6 +14,7 @@ $( document ).ready(function(){
             //Perform Ajax request.
             fetch_data();
             
+            
         });
         function fetch_data()
         {
@@ -23,22 +24,25 @@ $( document ).ready(function(){
                 dataType : 'json',
                 success: function(data){
                     var cart = '';
-                    //If the success function is execute,
-                    //then the Ajax request was successful.
-                    //Add the data we received in our Ajax
-                    //request to the "content" div.
-                    // $('#content').html(data);
+                    var total = '';
+                    var minicart = '';
+                    
+                    var count = '';
+                    var json = data;
+                        var count = json.cart.length;
+                    console.log(data)
                     $.each(data, function (key, items) {
                         $.each(items, function (key, datas) {
                             cart +="<tr>";
                             cart +=        "<td class='product-in-table'>";
-                            cart +=           " <img class='img-responsive' src='' alt=''>";
+                            cart +=           " <img class='img-responsive' src='"+frontend+"/assets/img/thumb/08.jpg' alt=''>";
                             cart +=            "<div class='product-it-in'>";
-                            cart +=                "<h3>"+ datas.type +"   "+ addCommas(datas.nominal) +"</h3>";
-                            cart +=                "<span>"+ datas.voucher_code +"</span>";
+                            cart +=                  "<h3>"+ datas.type +"   "+ addCommas(datas.nominal) +"</h3>";
+                            cart +=                  "<span>"+ datas.voucher_code +"</span>";
+                            cart +=                  "<input type='hidden' name='voucher_code[]' value='"+datas.voucher_code+"'>";
                             cart +=            "</div>";    
                             cart +=        "</td>";
-                            cart +=        "<td></td>";
+                            cart +=        "<td>"+ addCommas(datas.nominal) +"</td>";
                             cart +=        "<td>";
                             cart +=            "<button type='button' class='quantity-button' onclick='deaddQty("+ datas.id +")' name='subtract'>-</button>";
                             cart +=            "<input type='text' disabled class='quantity-field' name='qty1' value='"+ datas.qty +"' id='qty1"+ datas.id +"'/>";
@@ -48,12 +52,33 @@ $( document ).ready(function(){
                             cart +=        "<td>";
                             cart +=            "<button type='button' class='close' onclick='cancelorder("+ datas.id +")'><span>&times;</span><span class='sr-only'>Close</span></button>";
                             cart +=        "</td>";
-                            cart +=    "</tr>";
-                            // console.log(cart)
+                            cart +=    "</tr>";   
                         });
                     });
+                    $.each(data, function (key, items) {
+                        $.each(items, function (key, datas) {
+                            minicart +=         "<li>";
+                            minicart +=            "<img class='img-responsive' src='"+frontend+"/assets/img/thumb/08.jpg' alt=''>";
+                            minicart +=            "<button type='button' onclick='cancelorder("+ datas.id +")' class='close'>×</button>";
+                            minicart +=            "<div class='overflow-h'>";
+                            minicart +=                "<span>"+ datas.type +"</span>";
+                            minicart +=                "<small>Quantities : "+ datas.qty +" x "+ datas.nominal +" = "+ addCommas(datas.qty * datas.nominal) +"</small>";
+                            minicart +=            "</div>";
+                            minicart +=         "</li>";   
+                        });
+                    });
+                    total +=    "<li class='subtotal'>";
+                    total +=            "<div class='overflow-h margin-bottom-10'>";
+                    total +=                
+                    total +=            "</div>";
+                    total +=            "<div class='row'>";
+                    total +=                "<div class='col-xs-6'>";
+                    total +=                "<a href='"+ checkout +"' class='btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block'>View Cart</a>";
+                    total +=            "</div>";
+                    total +=            "</li>";
+                    $('#minicart').html(minicart+total);
                     $('table tbody').html(cart);
-                   // console.log(data)
+                    document.getElementById("count_cart").innerHTML = count;
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;
@@ -124,13 +149,14 @@ $( document ).ready(function(){
                     dataType : 'json',
                     success: function(data){
                         console.log(data)
+                        fetch_data();
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                         var errorMsg = 'Ajax request failed: ' + xhr.responseText;
                         // $('#content').html(errorMsg);
                       }
                 });
-                fetch_data();
+                
             } else {
                 fetch_data();
             }

@@ -1,7 +1,8 @@
 <div class="modal fade" id="Profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none; aria-hidden="true" ">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form action="" method="post" accept-charset="utf-8">
+          <form method="post" action="{{Route('user.update',['id'=>auth::user()->id])}}" id="edit_user" accept-charset="utf-8">
+            @csrf @method('PATCH')
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -20,16 +21,17 @@
               <div class="form-group row">
                 <label class="col-sm-2 control-label">Nama</label>
                 <div class="col-sm-10">
-                <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" disabled>
+                <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control">
               </div>
-            </div>
+              </div>
               <div class="form-group row">
                 <label class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                <input type="text" name="name" value="{{ Auth::user()->email }}" class="form-control" disabled>
+                <input type="text" name="email" value="{{ Auth::user()->email }}" class="form-control">
               </div>
               </div>
             </div>
+            <button id="save_edituser" type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Save</button>
             </div>
             </form>
         </div>

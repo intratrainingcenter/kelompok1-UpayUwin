@@ -16,7 +16,6 @@
 
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/shop.style.css">
@@ -46,12 +45,8 @@
             <!-- Content -->
                 @yield('content')
             <!-- End Content -->
-
-
-        <!--=== Footer v4 ===-->
-            @include('interface_frontend.master_frontend.element.footer')
-        <!--=== End Footer v4 ===-->
-        <!-- @include('interface_frontend.master_frontend.others.livechat') -->
+                
+        
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->
@@ -83,11 +78,9 @@
         RevolutionSlider.initRSfullWidth();
 });
 </script>
-<!--[if lt IE 9]>
-    <script src="assets/plugins/respond.js"></script>
-    <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
-<![endif]-->
+        <!--=== Footer v4 ===-->
+        @include('interface_frontend.master_frontend.element.footer')
+        <!--=== End Footer v4 ===-->
 
 </body>
 </html> 

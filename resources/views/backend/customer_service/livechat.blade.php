@@ -1,48 +1,56 @@
+<link rel="stylesheet" href="{{asset('backend/livechat')}}/css/chat-style.css">
+<div id="live-chat">
+		<header class="clearfix">
+			<h4>John Doe</h4>
+			<span class="chat-message-counter">3</span>
+		</header>
+		<div class="chat" >
+			<div class="chat-history" id="scrolldiv">
+				<div class="chat-message clearfix">
+					<img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32">
+					<div class="chat-message-content clearfix">
+						<span class="chat-time">13:35</span>
+						<h5>John Doe</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
+					</div> <!-- end chat-message-content -->
+				</div> <!-- end chat-message -->
+				<hr>
+				<div class="chat-message clearfix">
+					<img src="http://gravatar.com/avatar/2c0ad52fc5943b78d6abe069cc08f320?s=32" alt="" width="32" height="32">
+					<div class="chat-message-content clearfix">
+						<span class="chat-time">13:37</span>
+						<h5>Marco Biedermann</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
+					</div> <!-- end chat-message-content -->
+				</div> <!-- end chat-message -->
+				<hr>
+				<div class="chat-message clearfix">
+					<img src="http://lorempixum.com/32/32/people" alt="" width="32" height="32">
 
-<head>
+					<div class="chat-message-content clearfix">
+						
+						<span class="chat-time">13:38</span>
 
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+						<h5>John Doe</h5>
 
-  
-      <link rel="stylesheet" href="{{asset('backend/livechat')}}/css/style.css">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
 
-  
-</head>
+					</div> <!-- end chat-message-content -->
 
+				</div> <!-- end chat-message -->
 
-  <button type="button" class="button js-trigger">Chat (45)</button>
+				<hr>
 
-<nav class="chat">
-    <h2 class="chat__users">Users Online: 45</h2>
-    <ul class="chat__wrapper" id="chatclick">
-        <!-- <li class="chat__human">
-            <img class="chat__avatar" src="" alt="" />
-            <span class="chat__name" id="sl">User</span>
-        </li> -->
-    </ul>
-</nav>
+			</div> <!-- end chat-history -->
 
-<div class="conversation">
-    <div class="conversation__header" id="test2">
-        
-        <span class="close-msg">&times;</span>
-    </div>
-    <div class="conversation__wrap"  style="overflow:auto; height:400px;">
-    <ul >
-        <!-- <li class="conversation__msg cf">
-            <span>Hey!</span>
-        </li>
-        
-        <li class="conversation__msg cf">
-            <span class="right">Yo!</span>
-        </li> -->
-    </ul>
-    </div>
-    <input id="myInput" class="input" type="text" placeholder="Enter Message" />
-</div>
-    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script  src="{{asset('backend/livechat')}}/js/index.js"></script>
-    <script  src="{{asset('js')}}/livechat.js"></script>
+			<!-- <p class="chat-feedback">Your partner is typing…</p> -->
+			<form action="#" method="post">
+				<fieldset>
+					<input type="text" placeholder="Type your message…" autofocus>
+					<input type="hidden">
+				</fieldset>
+			</form>
+		</div> <!-- end chat -->
+	</div> <!-- end live-chat -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script  src="{{asset('backend/livechat')}}/js/chat-widget.js"></script>

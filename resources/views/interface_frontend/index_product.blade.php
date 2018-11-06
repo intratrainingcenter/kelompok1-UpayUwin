@@ -53,9 +53,7 @@
             @include('interface_frontend.master_frontend.shop.subscribe')
             <!--=== End Shop Suvbscribe ===-->
 
-        <!--=== Footer v4 ===-->
-        @include('interface_frontend.master_frontend.element.footer')
-        <!--=== End Footer v4 ===-->
+        
     </div>
     <!--/wrapper-->
 
@@ -78,6 +76,7 @@
     <script src="{{asset('FrontEnd')}}/assets/js/plugins/owl-carousel.js"></script>
     <script src="{{asset('FrontEnd')}}/assets/js/plugins/master-slider.js"></script>
     <script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
+    <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
     <script>
         jQuery(document).ready(function () {
             App.init();
@@ -87,12 +86,10 @@
         });
 
     </script>
-
-    <!--[if lt IE 9]>
-    <script src="assets/plugins/respond.js"></script>
-    <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>    
-<![endif]-->
+<!--=== Footer v4 ===-->
+@include('interface_frontend.master_frontend.element.footer')
+    <!--=== End Footer v4 ===-->
+@yield('add_footer')
 
 </body>
 

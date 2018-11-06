@@ -4,6 +4,8 @@ namespace App\Http\Controllers\frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class signupcontroller extends Controller
@@ -26,7 +28,8 @@ class signupcontroller extends Controller
                 'status' => 'logout',   
             ]);
             $data->save();
-            return redirect()->route('LoginUser')->with('success', 'Data Telah Ditambahkan'); 
+            Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+            return redirect()->route('index')->with('success', 'Data Telah Ditambahkan'); 
         }
         
     }
