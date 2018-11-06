@@ -19,9 +19,8 @@
                                         <div class="chat_people" >
                                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                                             <div class="chat_ib">
-                                            <h5>Admin Customer Service</h5><h4><span class="chat_date">Dec 25</span></h4>
-                                            <p>Test, which is a new approach to have all solutions 
-                                                astrology under one roof.</p>
+                                            <h5>Customer Service</h5><h4><span class="chat_date"></span></h4>
+                                            <p></p>
                                             </div>
                                         </div>
                                     </div>
@@ -29,9 +28,8 @@
                                         <div class="chat_people" >
                                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                                             <div class="chat_ib">
-                                            <h5>Upay-Uwin</h5><h4><span class="chat_date">Dec 25</span></h4>
-                                            <p>Test, which is a new approach to have all solutions 
-                                                astrology under one roof.</p>
+                                            <h5>Upay-Uwin</h5><h4><span class="chat_date"></span></h4>
+                                            <p></p>
                                             </div>
                                         </div>
                                     </div>

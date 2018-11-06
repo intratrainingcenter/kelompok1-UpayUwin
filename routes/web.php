@@ -94,7 +94,8 @@ Route::prefix('frontend')->group(function () {
 	Route::get('/attach/{id}', 'frontend\cartcontroller@addQty');
 	Route::get('/cancel/{id}', 'frontend\cartcontroller@cancel');
 	Route::get('showfeed', 'frontend\settingusercontroller@showfeed')->name('showfeed');
-	Route::post('/feedback/{id}', 'frontend\settingusercontroller@feedback');
+	Route::get('feeds', 'frontend\settingusercontroller@feeds')->name('feeds');
+	Route::post('/feedback', 'frontend\settingusercontroller@feedback')->name('feedback');
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');

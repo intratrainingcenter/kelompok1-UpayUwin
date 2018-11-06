@@ -17,6 +17,7 @@ class CreateChannelMessagesTable extends Migration
             $table->increments('id');
             $table->string('channels');
             $table->string('messages');
+            $table->string('room');
             $table->string('from');
             $table->string('receive');
             $table->timestamps();
