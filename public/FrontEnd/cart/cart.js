@@ -14,6 +14,7 @@ $( document ).ready(function(){
             //Perform Ajax request.
             fetch_data();
             
+            
         });
         function fetch_data()
         {
@@ -57,19 +58,18 @@ $( document ).ready(function(){
                     $.each(data, function (key, items) {
                         $.each(items, function (key, datas) {
                             minicart +=         "<li>";
-                            minicart +=            "<img src='"+frontend+"/assets/img/thumb/05.jpg' alt=''>";
-                            minicart +=            "<button type='button' class='close'>×</button>";
+                            minicart +=            "<img class='img-responsive' src='"+frontend+"/assets/img/thumb/08.jpg' alt=''>";
+                            minicart +=            "<button type='button' onclick='cancelorder("+ datas.id +")' class='close'>×</button>";
                             minicart +=            "<div class='overflow-h'>";
-                            minicart +=                "<span>Black Glasses</span>";
-                            minicart +=                "<small>1 x $400.00</small>";
+                            minicart +=                "<span>"+ datas.type +"</span>";
+                            minicart +=                "<small>Quantities : "+ datas.qty +" x "+ datas.nominal +" = "+ addCommas(datas.qty * datas.nominal) +"</small>";
                             minicart +=            "</div>";
                             minicart +=         "</li>";   
                         });
                     });
                     total +=    "<li class='subtotal'>";
                     total +=            "<div class='overflow-h margin-bottom-10'>";
-                    total +=                "<span>Subtotal</span>";
-                    total +=                "<span class='pull-right subtotal-cost'>$1200.00</span>";
+                    total +=                
                     total +=            "</div>";
                     total +=            "<div class='row'>";
                     total +=                "<div class='col-xs-6'>";
@@ -78,6 +78,7 @@ $( document ).ready(function(){
                     total +=            "</li>";
                     $('#minicart').html(minicart+total);
                     $('table tbody').html(cart);
+                    document.getElementById("count_cart").innerHTML = count;
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;

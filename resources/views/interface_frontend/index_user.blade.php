@@ -43,20 +43,17 @@
 			<div class="row">
 				<!--Left Sidebar-->
 				<div class="col-md-3 md-margin-bottom-40">
-					<img class="img-responsive profile-img margin-bottom-20" src="{{asset('FrontEnd/log')}}/assets/img/team/img32-md.jpg" alt="">
+					<img class="img-responsive profile-img margin-bottom-20" src="{{asset('images')}}/anonymous-user.png" alt="">
 
 					<ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
-						<li class="list-group-item">
-							<a href="page_profile_me.html"><i class="fa fa-user"></i> Profile</a>
+						<li class="list-group-item {{ Request::is('setting') ? 'active' : '' }}">
+							<a href="{{route('setting')}}"><i class="fa fa-user"></i> Profile</a>
 						</li>
-						<li class="list-group-item">
-							<a href="page_profile_users.html"><i class="fa fa-group"></i> Users</a>
+						<li class="list-group-item {{ Request::is('frontend/chat') ? 'active' : '' }}">
+							<a href="{{route('chat')}}"><i class="fa fa-comments-o"></i> Customer Service</a>
 						</li>
-						<li class="list-group-item">
-							<a href="page_profile_history.html"><i class="fa fa-history"></i> History</a>
-						</li>
-						<li class="list-group-item active">
-							<a href="page_profile_settings.html"><i class="fa fa-cog"></i> Settings</a>
+						<li class="list-group-item {{ Request::is('frontend/history') ? 'active' : '' }}">
+							<a href="{{route('history')}}"><i class="fa fa-history"></i> History</a>
 						</li>
 						<li class="list-group-item">
 							<a href="page_profile_history.html"><i class="fa fa-power-off"></i> Logout</a>

@@ -4,14 +4,12 @@
 @section('content')
 <!-- Firebase App is always required and must be first -->
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
-
 <!-- Add additional services that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
-
 <link rel="stylesheet" href="{{asset('backend/livechat')}}/css/style.css">
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <div class="container">
@@ -58,9 +56,6 @@
         </div>
         <div class="mesgs">
           <div class="msg_history" id="chatroom">
-                  
-             
-
           </div>
           <div class="type_msg">
             <div class="input_msg_write">
@@ -69,10 +64,7 @@
           </div>
         </div>
       </div>
-      
-      
       <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
-      
     </div>
 </div>
 <script  src="{{asset('backend/livechat')}}/js/livechat.js"></script>

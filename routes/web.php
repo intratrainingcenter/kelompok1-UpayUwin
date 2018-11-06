@@ -19,10 +19,6 @@ Route::get('/admin', function () {
     return redirect()->route('dashboard.index');
 });
 
-Route::get('/livechat', function () {
-    return view('backend.customer_service.swanky');
-})->name('livechat');
-
 Route::get('/setting', function () {
     return view('interface_frontend.frontend_user.setting_user');
 })->name('setting');
@@ -61,7 +57,6 @@ Route::get('/backend/login',function(){
 
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
-
 	Route::resource('dashboard','backend\DashboardController');
 	//Route Voucher
 	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
@@ -78,7 +73,9 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	Route::resource('setting2','backend\SettingController');
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
   	//Route setting
-  	Route::resource('setting','backend\SettingController');
+	  Route::resource('setting','backend\SettingController');
+	//   Category
+	Route::resource('category','backend\CategoryController');
 });
 
 
@@ -90,14 +87,22 @@ Route::prefix('frontend')->group(function () {
 	Route::get('/voucher/sort', 'frontend\productController@sortProduct')->name('voucher.sort');
 	Route::post('regis','frontend\signupcontroller@store')->name('regis');
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
+	Route::post('settingpassword', 'frontend\settingusercontroller@updatepass')->name('settingpassword');
+	Route::get('history', 'frontend\settingusercontroller@historytransaction')->name('history');
 	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
 	Route::get('showcart', 'frontend\cartcontroller@showcart')->name('showcart');
 	Route::get('/detach/{id}', 'frontend\cartcontroller@deaddQty');
 	Route::get('/attach/{id}', 'frontend\cartcontroller@addQty');
 	Route::get('/cancel/{id}', 'frontend\cartcontroller@cancel');
+	Route::get('showfeed', 'frontend\settingusercontroller@showfeed')->name('showfeed');
+	Route::get('feeds', 'frontend\settingusercontroller@feeds')->name('feeds');
+	Route::post('/feedback', 'frontend\settingusercontroller@feedback')->name('feedback');
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
+	Route::get('chat', function(){
+		return view('interface_frontend.frontend_user.chat');
+	})->name('chat');
 });
 
 Auth::routes();
