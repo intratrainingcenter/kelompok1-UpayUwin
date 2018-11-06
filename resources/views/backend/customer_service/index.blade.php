@@ -2,6 +2,15 @@
 @extends('backend.dashboard.additional')
 
 @section('content')
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-functions.js"></script>
 
 <link rel="stylesheet" href="{{asset('backend/livechat')}}/css/style.css">
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -17,9 +26,7 @@
             </div>
             <div class="srch_bar">
               <div class="stylish-input-group">
-                <input type="text" class="search-bar"  placeholder="Search" >
-                <span class="input-group-addon">
-                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                
                 </span> </div>
             </div>
           </div>
