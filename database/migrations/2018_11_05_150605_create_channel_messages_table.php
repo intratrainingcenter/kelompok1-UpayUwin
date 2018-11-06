@@ -15,6 +15,11 @@ class CreateChannelMessagesTable extends Migration
     {
         Schema::create('channel_messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('channels');
+            $table->string('messages');
+            $table->string('room');
+            $table->string('from');
+            $table->string('receive');
             $table->timestamps();
         });
     }

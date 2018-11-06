@@ -37,9 +37,10 @@ Route::get('/item', 'frontend\productController@indexItem');
 Route::get('/item/{id}', 'frontend\productController@showCategoryItem');
 Route::get('/item/{category}/{id}', 'frontend\productController@showItem');
 
-// Route::get('UpayUwin/product', 'frontend\productController@index');
-
 Route::get('/item', 'frontend\productController@indexItem')->name('item');
+Route::post('/item/store', 'frontend\productController@addto_cart_item');
+
+Route::post('/voucher/store', 'frontend\productController@store');
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
 Route::get('UpayUwin/payment', function(){
@@ -56,7 +57,6 @@ Route::get('/backend/login',function(){
 
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
-
 	Route::resource('dashboard','backend\DashboardController');
 	//Route Voucher
 	Route::get('voucher/kode','backend\VoucherController@cek_kode')->name('cek.kode');
@@ -73,7 +73,9 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	Route::resource('setting2','backend\SettingController');
   Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
   	//Route setting
-  	Route::resource('setting','backend\SettingController');
+	  Route::resource('setting','backend\SettingController');
+	//   Category
+	Route::resource('category','backend\CategoryController');
 });
 
 
@@ -92,8 +94,9 @@ Route::prefix('frontend')->group(function () {
 	Route::get('/detach/{id}', 'frontend\cartcontroller@deaddQty');
 	Route::get('/attach/{id}', 'frontend\cartcontroller@addQty');
 	Route::get('/cancel/{id}', 'frontend\cartcontroller@cancel');
-	Route::get('showfeed', 'frontend\settingcontroller@showfeed')->name('showfeed');
-	Route::get('/feedback/{id}', 'frontend\settingusercontroller@feedback');
+	Route::get('showfeed', 'frontend\settingusercontroller@showfeed')->name('showfeed');
+	Route::get('feeds', 'frontend\settingusercontroller@feeds')->name('feeds');
+	Route::post('/feedback', 'frontend\settingusercontroller@feedback')->name('feedback');
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');

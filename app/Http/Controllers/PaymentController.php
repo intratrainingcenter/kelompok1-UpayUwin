@@ -62,6 +62,7 @@ class PaymentController extends Controller
 		$all_item = array();
 		$grand_total = array();
 		$bought_vouchers = array();
+		$code_forDelete = array();
 		foreach ($items as $key => $value) {
 
     		${'item_$key'.$key} = new Item();
@@ -77,10 +78,14 @@ class PaymentController extends Controller
 				'jumlah' => $value->qty,
 				'harga' => $value->nominal
 			];
-
+			// kode utk delete voucher di cart
+			$code_forDelete[]=[
+				$value->voucher_code,
+			];
     		$grand_total[] = $value->qty*$value->nominal;
     		$all_item[]=${'item_$key'.$key};
-    	}	
+    	}
+    	Session::put('code_forDelete', $code_forDelete);	
     	Session::put('grand_total', array_sum($grand_total));
     	Session::put('bought_vouchers', $bought_vouchers);
 		$item_list = new ItemList();
@@ -159,17 +164,23 @@ class PaymentController extends Controller
         $result = $payment->execute($execution, $this->_api_context);
         if ($result->getState() == 'approved') {
             \Session::put('success', 'Payment success');
-           
+           	// save transaksi
             $transaction = new transaksi_penjualan;
 			$transaction->kode_transaksi = Session::get('transaction_code');
             $transaction->id_user = Auth::id();
 			$transaction->tanggal_transaksi = date("Y-m-d");  
 			$transaction->total = Session::get('grand_total');;
 			$transaction->save();
+			// save detail transaksi
 			detail_transaksi::insert(Session::get('bought_vouchers')); 
+			// delete
+			$cart = cart::where('id_user', Auth::id())
+					->whereIn('voucher_code', Session::get('code_forDelete'))->delete();
+
 			Session::forget('transaction_code');
 			Session::forget('grand_total');
-			Session::forget('bought_vouchers');  
+			Session::forget('bought_vouchers'); 
+			Session::forget('code_forDelete');
             return Redirect::to('/');
         }
         \Session::put('error', 'Payment failed');

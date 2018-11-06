@@ -4,9 +4,11 @@ namespace App\Http\Controllers\frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Auth;
 use App\voucher_game;
 use App\kategori;
+use App\cart;
+use Session;
 
 class productController extends Controller
 {
@@ -49,8 +51,38 @@ class productController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {  
+        $idUser = Auth::user()->id;
+        $voucher = voucher_game::find($request->voucher);
+        $total = $voucher->harga_voucher * $request->qty;
+
+        $cart = new cart;
+        $cart->id_user = $idUser;
+        $cart->voucher_code = $voucher->kode_voucher;
+        $cart->type = 'voucher';
+        $cart->qty = $request->qty;
+        $cart->nominal = $total;
+        $cart->save();
+        
+        Session::flash('message', 'Voucher telah Ditambahkan Ke Cart'); 
+        return redirect()->back();
+    }
+
+    public function addto_cart_item(Request $request)
+    {  
+        $idUser = Auth::user()->id;
+        $total = $request->harga * $request->qty;
+
+        $cart = new cart;
+        $cart->id_user = $idUser;
+        $cart->voucher_code = $request->kode;
+        $cart->type = 'item';
+        $cart->qty = $request->qty;
+        $cart->nominal = $total;
+        $cart->save();
+
+        Session::flash('message', 'Item telah Ditambahkan Ke Cart'); 
+        return redirect()->back();
     }
 
     /**
