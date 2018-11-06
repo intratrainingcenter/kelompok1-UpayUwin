@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::all();
+        $data = User::all()->where('level','admin');
         return view ('backend.User.index',compact('data'));
     }
 
@@ -83,10 +83,9 @@ class UserController extends Controller
         $update = User::find($id);
         $update->name = $request->name;
         $update->email = $request->email;
-        $update->password = Hash::make($request['password']);
         $update->save();
 
-        return redirect()->route('user.index');
+        return redirect()->route('dashboard.index');
     }
 
     /**
