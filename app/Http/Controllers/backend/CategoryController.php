@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\backend;
 
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\input;
 use Illuminate\Http\Request;
+use App\kategori;
 use App\Http\Controllers\Controller;
-use App\User;
 
-class UserController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::all()->where('level','admin');
-        return view ('backend.User.index',compact('data'));
+        $data = kategori::get();
+        return view('backend.kategori.index', compact('data'));
     }
 
     /**
@@ -39,14 +37,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $insert = new User;
-        $insert->name = $request->name;
-        $insert->email = $request->email;
-        $insert->password = Hash::make($request['password']);
-        $insert->level = $request->level;
-        $insert->save();
-
-        return redirect()->route('user.index');
+        
+        $this->validate($request, array(
+            'code_category' => 'required',
+            'category' => 'required',
+        ));
+        //dd($request->code_category);
+        $data = new kategori;
+        $data->kode_kategori = $request->code_category;
+        $data->nama_kategori = $request->category;
+        $data->save();
+        return redirect()->route('category.index');
     }
 
     /**
@@ -80,12 +81,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $update = User::find($id);
-        $update->name = $request->name;
-        $update->email = $request->email;
-        $update->save();
-
-        return redirect()->route('dashboard.index');
+        $this->validate($request, array(
+            'code_category' => 'required',
+            'category' => 'required',
+        ));
+        
+        $data = kategori::find($id);
+        $data->kode_kategori = $request->code_category;
+        $data->nama_kategori = $request->category;
+        $data->save();
+        return redirect()->back();
     }
 
     /**
@@ -96,9 +101,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-      $data = User::find($id);
-      $data->delete();
-
-      return redirect()->route('user.index');
+        $data = kategori::find($id);
+        $data->delete();
+        return redirect()->back();
     }
 }

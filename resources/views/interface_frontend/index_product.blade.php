@@ -86,12 +86,9 @@
         });
 
     </script>
-
-    <!--[if lt IE 9]>
-    <script src="assets/plugins/respond.js"></script>
-    <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>    
-<![endif]-->
+<!--=== Footer v4 ===-->
+@include('interface_frontend.master_frontend.element.footer')
+    <!--=== End Footer v4 ===-->
 @yield('add_footer')
 
 </body>

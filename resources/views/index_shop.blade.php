@@ -37,9 +37,8 @@
     <div class="content container">
         @yield('content')
     </div>
-    @include('interface_frontend.master_frontend.shop.subscribe')
-    @include('interface_frontend.master_frontend.element.footer')
 </div>
+    @include('interface_frontend.master_frontend.shop.subscribe')
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery-migrate.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -63,5 +62,9 @@
         RevolutionSlider.initRSfullWidth();
 });
 </script>
+        <!--=== Footer v4 ===-->
+        @include('interface_frontend.master_frontend.element.footer')
+        <!--=== End Footer v4 ===-->
+
 </body>
 </html> 

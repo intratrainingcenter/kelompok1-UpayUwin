@@ -9,6 +9,11 @@
 				<!-- Topbar -->
 				<div class="topbar">
 					<ul class="loginbar pull-right">
+						<li><a href="{{route('index')}}">
+										Home </a>
+								</li>
+						<li>|
+						</li>
                     @if (Auth::check())
 						<li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
