@@ -14,7 +14,9 @@
             <div class="container">
                 <div class="row" id="load_data" index="{{$id}}">
                     
+                    
                 </div>
+
             </div>
         </div>
 @endsection

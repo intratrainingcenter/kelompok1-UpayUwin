@@ -40,6 +40,9 @@
                             <input type='text' class="quantity-field" name='qty' value="1" id='qty' />
                             <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty").value++;' value='+'>+</button>
                             <button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
+                            @if(Session::has("message"))
+                            <p class="alert {{ Session::get("alert-class", "alert-info") }}">{{ Session::get("message") }}</p>
+                            @endif
                         </form>
 
                     </div>

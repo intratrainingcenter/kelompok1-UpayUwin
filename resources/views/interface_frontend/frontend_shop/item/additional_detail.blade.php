@@ -24,11 +24,17 @@
                 <h3>'+value.kategori+'</h3>\
                 <h3>Rp '+addDot(value.harga)+' | Stok '+value.stok+'</h3>\
                 <h4>'+value.deskripsi+'</h4><br>\
-                <form name="f1" class="product-quantity sm-margin-bottom-20">\
+                <form id="form_order" action="{{url("/item/store")}}" name="f1" class="product-quantity sm-margin-bottom-20" method="post">\
+                    @csrf\
                     <button type="button" class="quantity-button" name="subtract" onclick="javascript: subtractQty();" value="-">-</button>\
-                    <input type="text" class="quantity-field" name="qty" value="1" id="qty" min="0" max="'+value.stok+'"/>\
+                    <input type="hidden" name="kode" value="'+value.kode+'" />\
+                    <input type="hidden" name="harga" value="'+value.harga+'" />\
+                    <input type="number" class="quantity-field" name="qty" value="1" id="qty" min="0" max="'+value.stok+'"/>\
                     <button type="button" id="add" class="quantity-button" name="add" value="+">+</button>\
-                    <button type="button" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>\
+                    <button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>\
+                    @if(Session::has("message"))\
+                    <p class="alert {{ Session::get("alert-class", "alert-info") }}">{{ Session::get("message") }}</p>\
+                    @endif\
                 </form>\
             </div>';
         $('#load_data').html(updateData);
@@ -39,10 +45,19 @@
 		document.getElementById("qty").value++;
     });
 
+$('#form_order').submit(function(event) {
+    /* Act on the event */
+    if ($('#qty').val() <= 0) {
+        event.preventDefault();
+    }
+});
+
 function addDot(x) {
     var parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     return parts.join(".");
 }
+
+
 </script>
 @endsection

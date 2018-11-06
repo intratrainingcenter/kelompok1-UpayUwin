@@ -41,24 +41,9 @@ Route::get('/item', 'frontend\productController@indexItem');
 Route::get('/item/{id}', 'frontend\productController@showCategoryItem');
 Route::get('/item/{category}/{id}', 'frontend\productController@showItem');
 
-Route::get('/product', function(){
-	return view('frontend.user');
-});
-
-Route::get('UpayUwin/User', function(){
-	return view('frontend.user');
-});
-
-Route::get('UpayUwin/cart', function(){
-    return view('frontend.cart');
-});
-
-Route::get('UpayUwin/cart', function () {
-	return view('frontend.cart');
-});
-// Route::get('UpayUwin/product', 'frontend\productController@index');
-
 Route::get('/item', 'frontend\productController@indexItem')->name('item');
+Route::post('/item/store', 'frontend\productController@addto_cart_item');
+
 Route::post('/voucher/store', 'frontend\productController@store');
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
