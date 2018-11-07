@@ -47,7 +47,7 @@ Route::get('UpayUwin/payment', function(){
     return view('frontend.payment');
 });
 
-Route::get('/laporantransaksi','backend\LaporanTransaksiController@index');
+
 Route::post('/pay','PaymentController@payWithpaypal')->name('paymentpaypal');
 Route::get('/payment/status','PaymentController@getPaymentStatus')->name('payment.status');
 
@@ -76,6 +76,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	  Route::resource('setting','backend\SettingController');
 	//   Category
 	Route::resource('category','backend\CategoryController');
+	// Laporan Transaksi
+	Route::get('laporantransaksi','backend\LaporanTransaksiController@index')->name('laporan');
 });
 
 

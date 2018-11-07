@@ -16,6 +16,9 @@
                     <label class="labels">New Category :</label>  
                     <input type="text" id="code" name="category" class="form-control" placeholder="Insert Name of New Category here" required>
                     
+                    <label class="labels">Nama Kategori :</label>     
+                    <input type="text" name="detail" class="form-control" placeholder="Category Name Here" value="">
+                    
                     <div id="label_danger" class="invalid-feedback">
                         Kode Voucher Sudah Ada
                     </div>
