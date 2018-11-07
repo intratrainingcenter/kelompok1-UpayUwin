@@ -46,6 +46,7 @@ class CategoryController extends Controller
         $data = new kategori;
         $data->kode_kategori = $request->code_category;
         $data->nama_kategori = $request->category;
+        $data->detail = $request->detail;
         $data->save();
         return redirect()->route('category.index');
     }
@@ -89,6 +90,7 @@ class CategoryController extends Controller
         $data = kategori::find($id);
         $data->kode_kategori = $request->code_category;
         $data->nama_kategori = $request->category;
+        $data->detail = $request->detail;
         $data->save();
         return redirect()->back();
     }

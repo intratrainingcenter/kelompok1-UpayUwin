@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Shop UI | Unify - Responsive Website Template</title>
+    <title class="tittle"></title>
 
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="address" id="address" content="">
+    <meta name="phone" id="phone" content="">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('FrontEnd')}}/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
 
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/footers/footer-v4.css">
 
     <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">    
+    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
@@ -34,19 +34,19 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
-</head>	
+</head>
 
 <body class="header-fixed">
 <div class="wrapper">
-        <!--=== Header v5 ===-->   
+        <!--=== Header v5 ===-->
             @include('interface_frontend.master_frontend.element.header')
         <!--=== End Header v5 ===-->
 
             <!-- Content -->
                 @yield('content')
             <!-- End Content -->
-                
-        
+
+
 </div><!--/wrapper-->
 
 <!-- JS Global Compulsory -->
@@ -69,7 +69,7 @@
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/revolution-slider.js"></script>
 <script>
     jQuery(document).ready(function() {
-        
+
         console.log( "ready!" );
         App.init();
         App.initScrollBar();
@@ -78,9 +78,51 @@
         RevolutionSlider.initRSfullWidth();
 });
 </script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $.ajax({
+    type: 'GET',
+    url: '{{ URL::route("settingweb") }}',
+    data: {
+      _method: 'GET'
+    },
+  }).done(function (data) {
+    console.log(data);
+    $(".tittle").text(data.tittle);
+    $("meta[name='address']").attr("content", data.address);
+    $("meta[name='phone']").attr("content", data.phone);
+    $(".address").text(data.address);
+    $(".phone").text(data.phone);
+    $("link[rel=icon]").attr("href","{{asset('backend/img')}}/"+ data.logo);
+    $(".imageecommerce").attr("src","{{asset('backend/img')}}/"+ data.logo);
+  }).fail(function (data) {
+    console.log(data);
+  })
+});
+</script>
         <!--=== Footer v4 ===-->
         @include('interface_frontend.master_frontend.element.footer')
         <!--=== End Footer v4 ===-->
+<link rel="manifest" href="/manifest.json" />
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "2a16b621-58e7-4a72-9a4e-37bba2deea96",
+      autoRegister: false,
+      notifyButton: {
+        enable: true,
+      },
+      allowLocalhostAsSecureOrigin: true,
+    });
+  });
+</script>
+<!--[if lt IE 9]>
+    <script src="assets/plugins/respond.js"></script>
+    <script src="assets/plugins/html5shiv.js"></script>
+    <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
 
 </body>
-</html> 
+</html>

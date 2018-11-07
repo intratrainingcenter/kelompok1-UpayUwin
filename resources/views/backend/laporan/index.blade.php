@@ -15,7 +15,6 @@
                     </div>
                 </div>
             </div>
-            @include('backend.kategori.add')
             <div class="container-fluid">
              <div class="card">     
                <div class="card-body"> 
@@ -31,7 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($data as $number => $data)
+                        @foreach($transaksi as $number => $data)
                         <tr>
                             <td>{{$number + 1}}</td>
                             <td>{{$data->kode_kategori}}</td>
@@ -42,8 +41,7 @@
                                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Modal-delete{{$data->id}}"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
-                        @include('backend.kategori.edit')
-                        @include('backend.kategori.delete')
+                        @include('backend.kategori.view')
                         @endforeach
                     </tbody>
                 </table>

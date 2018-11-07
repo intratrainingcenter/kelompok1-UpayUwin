@@ -10,7 +10,7 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('category.index')}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Kategori Voucher</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('user.index')}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">User</span></a></li>
 
-                        <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Laporan Transaksi </span></a></li>
+                        <li class="sidebar-item"><a href="{{route('laporan')}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Laporan Transaksi </span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('customer')}}" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Customer Service</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('setting.index')}}" aria-expanded="false"><i class="fas fa-cog"></i><span class="hide-menu"> Setting</span></a></li>

@@ -17,5 +17,6 @@ class LaporanTransaksiController extends Controller
 		    return DB::table('detail_transaksis')->get();
 		});
 		dd($transaksi,$detail_transaksi);
+		return view('backend.laporan.index', compact('transaksi','detail_transaksi'));
     }
 }

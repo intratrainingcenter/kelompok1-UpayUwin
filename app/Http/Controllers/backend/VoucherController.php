@@ -62,6 +62,8 @@ class VoucherController extends Controller
           $image->move(public_path('/img/voucher'),$filename);
           $data->foto = $filename;
           $data->save();
+
+          $this->OneSignal($request->name_voucher,$request->category,$request->price);
         };
         return redirect()->route('voucher.index');
     }
@@ -118,6 +120,7 @@ class VoucherController extends Controller
             $image->move(public_path('/img/voucher'),$filename);
             $data->foto = $filename;
             $data->save();
+
             return redirect()->back();
         }else{
             $data->save();
@@ -144,5 +147,36 @@ class VoucherController extends Controller
     {
         $data = voucher_game::all('kode_voucher');
         return Response()->json($data);
+    }
+    public function OneSignal($name,$category,$price){
+        $content = array(
+            "en" => 'Hi There ! We Have a New Product Visit Our Site Click here now
+            Name : '.$name.'
+            Category : '.$category.'
+            Price : $'.$price
+            );
+        $fields = array(
+                            'app_id' => "2a16b621-58e7-4a72-9a4e-37bba2deea96",
+                            'included_segments' => array('Active Users'),
+                            'url' => route('index'),
+                            'contents' => $content,
+                       );
+
+        $fields = json_encode($fields);
+
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8',
+                                                   'Authorization: Basic MDYzNjk2ZWEtY2I0MC00OWU5LThjYzgtNzQ0NDQ4YmFkMzNm'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
     }
 }
