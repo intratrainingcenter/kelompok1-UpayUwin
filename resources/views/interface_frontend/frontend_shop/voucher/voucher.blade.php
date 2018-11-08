@@ -5,11 +5,10 @@
             <div class="container">
                 <ul class="breadcrumb-v5">
                     <li><a href="index.html"><i class="fa fa-home"></i></a></li>
-                    <li><a href="#">Voucher Yya</a></li>
+                    <li><a href="{{url('/voucher')}}">Voucher</a></li>
                     <li class="active">{{$category->nama_kategori}}</li>
                 </ul>
             </div>
-
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 md-margin-bottom-50">
@@ -17,7 +16,7 @@
                             <!-- Master Slider -->
                             <div class=" ms-skin-default" id="masterslider">
                                 <div class="ms-slide">
-                                    <img class="ms-brd" src="{{asset('FrontEnd')}}/assets/img/blank.gif" data-src="{{asset('FrontEnd')}}/assets/img/blog/28.jpg">
+                                    <img class="ms-brd" src="{{asset('img/voucher.jpg')}}" data-src="{{asset('img/voucher.jpg')}}">
                                 </div>
                             </div>
                         </div>
@@ -25,21 +24,24 @@
 
                     <div class="col-md-6">
                         <h3>Mobile Legend</h3>
-                        <p>Integer <strong>dapibus ut elit</strong> non volutpat. Integer auctor purus a lectus
-                            suscipit fermentum. Vivamus lobortis nec erat consectetur elementum.</p><br>
-
+                        <p>{{$category->detail}}</p>
                         <h3 class="shop-product-title">Voucher</h3>
                         <form id="form_order" action="/voucher/store" name="f1" class="product-quantity sm-margin-bottom-20" method="post">
                             @csrf
                             <select class="form-control" name="voucher" id="">
                                 @foreach ($voucher as $data)
-                                    <option value="{{$data->id}}">{{$data->nama_voucher}} | {{"Rp.".number_format($data->harga_voucher)}}</option>
+                                    <option value="{{$data->id}}">{{$data->nama_voucher}} | {{"$ ".number_format($data->harga_voucher,2)}}</option>
                                 @endforeach
                             </select><br>
                             <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty();' value='-'>-</button>
                             <input type='text' class="quantity-field" name='qty' value="1" id='qty' />
                             <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty").value++;' value='+'>+</button>
-                            <button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
+                            @if (Auth::check())
+                                <button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>
+                            @else
+                                <button type="button" class="btn-u btn-u-sea-shop btn-u-lg" disabled="">Add to Cart</button>
+                                <p class="alert alert-danger">Login Untuk Melanjutkan Proses</p>
+                            @endif
                             @if(Session::has("message"))
                             <p class="alert {{ Session::get("alert-class", "alert-info") }}">{{ Session::get("message") }}</p>
                             @endif

@@ -26,7 +26,7 @@
 	        		<td>'+ value.kode +'</td>\
 	        		<td>'+ value.nama +'</td>\
 							<td>'+value.kategori+'</td>\
-	        		<td>'+ value.harga +'</td>\
+	        		<td>'+ toUSD(value.harga) +'</td>\
 	        		<td>'+ value.deskripsi +'</td>\
 	        		<td>'+ value.stok +'</td>\
 	        		<td><img src="'+value.gambar+'" height="100" width="100"/></td>\
@@ -189,41 +189,17 @@
 			 );
 		});
 
-		// upload image update
-		// var fileButtonupdate = document.getElementById("fileButtonupdate");
-		// console.log(fileButtonupdate);
-	  // fileButtonupdate.addEventListener('change', function(e){
-	  // var fileupdate = e.target.files['#fileButtonupdate'];
-	  // var storageRefupdate = firebase.storage().ref('item/' + fileupdate);
-	  //   	storageRefupdate.put(fileupdate);
-	  // });
 	});
-
-	// $('.saveupdate').on('click', function() {
-	// 	var values = $("#modal-update").serializeArray();
-	// 	var image_item 	= downloadURLupdate;
-	// 	// console.log(image_item);
-	// 	var postData = {
-	// 		 kode				: values[0].value,
-	// 		 nama				: values[1].value,
-	// 		 kategori		: values[2].value,
-	// 		 harga			: values[3].value,
-	// 		 stok				: values[4].value,
-	// 		 deskripsi	: values[5].value,
-	// 		 gambar			: image_item,
-	// 	};
-	//
-	// 	var updates = {};
-	// 	updates['item/' + updateID] = postData;
-	//
-	// 	firebase.database().ref().update(updates);
-	// 	event.preventDefault()
-	// 	$("#Modal-edit").modal('hide');
-	// });
-
-
-
-
+	
+function toUSD(number) {
+    var number = number.toString(), 
+    dollars = number.split('.')[0], 
+    cents = (number.split('.')[1] || '') +'00';
+    dollars = dollars.split('').reverse().join('')
+        .replace(/(\d{3}(?!$))/g, '$1,')
+        .split('').reverse().join('');
+    return '$ ' + dollars + '.' + cents.slice(0, 2);
+}
 	</script>
 
 @endsection

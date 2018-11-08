@@ -22,7 +22,7 @@
             <div class="col-md-6">\
                 <strong><h1>'+value.nama+'</h1></strong>\
                 <h3>'+value.kategori+'</h3>\
-                <h3>Rp '+addDot(value.harga)+' | Stok '+value.stok+'</h3>\
+                <h3>'+toUSD(value.harga)+' | Stok '+value.stok+'</h3>\
                 <h4>'+value.deskripsi+'</h4><br>\
                 <form id="form_order" action="{{url("/item/store")}}" name="f1" class="product-quantity sm-margin-bottom-20" method="post">\
                     @csrf\
@@ -31,7 +31,12 @@
                     <input type="hidden" name="harga" value="'+value.harga+'" />\
                     <input type="number" class="quantity-field" name="qty" value="1" id="qty" min="0" max="'+value.stok+'"/>\
                     <button type="button" id="add" class="quantity-button" name="add" value="+">+</button>\
-                    <button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>\
+                    @if (Auth::check())\
+                        <button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Add to Cart</button>\
+                    @else\
+                        <button type="button" class="btn-u btn-u-sea-shop btn-u-lg" disabled="">Add to Cart</button>\
+                        <p class="alert alert-danger">Login Untuk Melanjutkan Proses</p>\
+                    @endif\
                     @if(Session::has("message"))\
                     <p class="alert {{ Session::get("alert-class", "alert-info") }}">{{ Session::get("message") }}</p>\
                     @endif\
@@ -52,10 +57,14 @@ $('#form_order').submit(function(event) {
     }
 });
 
-function addDot(x) {
-    var parts = x.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return parts.join(".");
+function toUSD(number) {
+    var number = number.toString(), 
+    dollars = number.split('.')[0], 
+    cents = (number.split('.')[1] || '') +'00';
+    dollars = dollars.split('').reverse().join('')
+        .replace(/(\d{3}(?!$))/g, '$1,')
+        .split('').reverse().join('');
+    return '$' + dollars + '.' + cents.slice(0, 2);
 }
 
 
