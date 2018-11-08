@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Check Out | Unify - Responsive Website Template</title>
+    <title class="tittle"></title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="address" id="address" content="">
+    <meta name="phone" id="phone" content="">
+
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
     <!-- CSS Global Compulsory -->
@@ -18,17 +19,17 @@
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/headers/header-v5.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/footers/footer-v4.css">
     <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">    
+    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/jquery-steps/css/custom-jquery.steps.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
     <!-- CSS Customization -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
-</head>	
+</head>
 <body class="header-fixed">
 <div class="wrapper">
-    <!--=== Header v5 ===-->   
+    <!--=== Header v5 ===-->
     @include('interface_frontend.master_frontend.element.header')
         <!--=== End Header v5 ===-->
 
@@ -43,19 +44,19 @@
                 <li class="active">Shopping Cart</li>
             </ul>
         </div><!--/end container-->
-    </div> 
+    </div>
     <!--=== End Breadcrumbs v4 ===-->
 
     <!--=== Content Medium Part ===-->
     <div class="content-md margin-bottom-30">
         @yield('content')
     </div>
-    <!--=== End Content Medium Part ===-->     
+    <!--=== End Content Medium Part ===-->
 
-     
+
 </div><!--/wrapper-->
 
-<!-- JS Global Compulsory -->           
+<!-- JS Global Compulsory -->
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery-migrate.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -67,7 +68,7 @@
 <script src="{{asset('FrontEnd')}}/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
 <!-- JS Customization -->
 <script src="{{asset('FrontEnd')}}/assets/js/custom.js"></script>
-<!-- JS Page Level -->           
+<!-- JS Page Level -->
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/forms/page_login.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/stepWizard.js"></script>
@@ -80,11 +81,11 @@
     jQuery(document).ready(function() {
         App.init();
         Login.initLogin();
-        App.initScrollBar();        
+        App.initScrollBar();
         StepWizard.initStepWizard();
 });
 
 </script>
 
 </body>
-</html> 
+</html>

@@ -4,6 +4,7 @@
 
 @section('add_footer')
     {{--  additional footer  --}}
+<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 <script>
     $(document).on("change", "#sortby", function (e) {
         e.preventDefault();
@@ -20,8 +21,8 @@
             $('#load').html(data_load);
         }).fail(function (data_load) {
             console.log(data_load);
-        })    
+        })
     });
 </script>
-        
+
 @endsection

@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
-    <title>Product List | Unify - Responsive Website Template</title>
+    <title class="tittle"></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="address" id="address" content="">
+    <meta name="phone" id="phone" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/shop.style.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/headers/header-v5.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/footers/footer-v4.css">
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">    
+    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/noUiSlider/jquery.nouislider.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
     @yield('add_header')
-</head> 
+</head>
 
 <body class="header-fixed">
 <div class="wrapper">
@@ -35,20 +35,20 @@
                     <li class="active" id="active"></li>
                 </ul>
             </div>
-        </div> 
+        </div>
     <div class="content container">
         @yield('content')
-    </div><!--/end container-->    
+    </div><!--/end container-->
     <!--=== End Content Part ===-->
 
             <!--=== Shop Suvbscribe ===-->
             @include('interface_frontend.master_frontend.shop.subscribe')
             <!--=== End Shop Suvbscribe ===-->
 
-    
+
 </div><!--/wrapper-->
 
-<!-- JS Global Compulsory -->           
+<!-- JS Global Compulsory -->
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery-migrate.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -59,10 +59,10 @@
 <script src="{{asset('FrontEnd')}}/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- Master Slider -->
 <script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/masterslider.min.js"></script>
-<script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/jquery.easing.min.js"></script>    
+<script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/jquery.easing.min.js"></script>
 <!-- JS Customization -->
 <script src="{{asset('FrontEnd')}}/assets/js/custom.js"></script>
-<!-- JS Page Level -->           
+<!-- JS Page Level -->
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
 <!--=== Footer v4 ===-->
@@ -70,4 +70,4 @@
     <!--=== End Footer v4 ===-->
 @yield('add_footer')
 </body>
-</html> 
+</html>
