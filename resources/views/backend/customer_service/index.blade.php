@@ -50,5 +50,5 @@
       <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
     </div>
 </div>
-<script  src="{{asset('FrontEnd/livechat')}}/js/livereply.js"></script>    
+<script  src="{{asset('backend/livechat')}}/js/livechat.js"></script>    
 @endsection
