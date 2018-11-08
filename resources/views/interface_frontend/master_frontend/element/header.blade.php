@@ -1,6 +1,4 @@
-<!--=== Header v5 ===-->
 <div class="header-v5 header-static">
-    <!-- Topbar v3 -->
     <div class="topbar-v3">
         <div class="search-open">
             <div class="container">
@@ -8,11 +6,9 @@
                 <div class="search-close"><i class="icon-close"></i></div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-inline right-topbar pull-right">
@@ -22,7 +18,6 @@
                                document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -31,20 +26,14 @@
                             |
                             <a href="{{route('signup')}}">Register</a>
                             @endif
-
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <!--/container-->
     </div>
-    <!-- End Topbar v3 -->
-
-    <!-- Navbar -->
     <div class="navbar navbar-default mega-menu" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -56,34 +45,23 @@
                     <img id="logo-header" style="width:60px; height:60px;" class="imageecommerce" src="" alt="Logo">
                 </a>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-responsive-collapse">
                 @if (Auth::check())
-                <!-- Shopping Cart -->
                 <ul class="list-inline shop-badge badge-lists badge-icons pull-right">
                     <li>
                         <a href="#"><i class="fa fa-shopping-cart"></i></a>
                         <span class="badge badge-sea rounded-x" id="count_cart"></span>
                         <ul class="list-unstyled badge-open mCustomScrollbar" data-mcs-theme="minimal-dark" id="minicart">
-                            <!-- Minicart Ajax -->
                         </ul>
                     </li>
                 </ul>
-                <!-- End Shopping Cart -->
                 @endif
-
-                <!-- Nav Menu -->
                 <ul class="nav navbar-nav">
-                        <!-- Pages -->
                         <li class="active">
                             <a href="{{route('index')}}">
                                 Home
                             </a>
                         </li>
-                        <!-- End Pages -->
-
-                        <!-- Promotion -->
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
                                 Vouchers
@@ -91,17 +69,12 @@
                             <ul class="dropdown-menu">
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">PC Games</a>
-
                                 </li>
                                 <li class="dropdown-submenu">
                                     <a href="javascript:void(0);">Mobile Games</a>
-
                                 </li>
                             </ul>
                         </li>
-                        <!-- End Promotion -->
-
-                        <!-- Gifts -->
                         <li class="dropdown mega-menu-fullwidth">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
                                 Items
@@ -125,15 +98,12 @@
                                                 <div class="col-md-3 col-sm-4 col-xs-4">
                                                     <a href="#"><img class="product-offers img-responsive" src="{{asset('images')}}/pwcostume.jpg" alt=""></a>
                                                 </div>
-                                            </div><!--/end row-->
-                                        </div><!--/end container-->
-                                    </div><!--/end mega menu content-->
+                                            </div>
+                                        </div>
+                                    </div>
                                 </li>
-                            </ul><!--/end dropdown-menu-->
+                            </ul>
                         </li>
-                        <!-- End Gifts -->
-
-                        <!-- Books -->
                         <li class="dropdown mega-menu-fullwidth">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
                                 Games
@@ -200,21 +170,14 @@
                                                         <li><a href="#">Elsword</a></li>
                                                     </ul>
                                                 </div>
-
-
-                                            </div><!--/end row-->
-                                        </div><!--/end container-->
-                                    </div><!--/end mega menu content-->
+                                            </div>
+                                        </div>
+                                    </div>
                                 </li>
-                            </ul><!--/end dropdown-menu-->
+                            </ul>
                         </li>
-                        <!-- End Books -->
-
-
                     </ul>
-                <!-- End Nav Menu -->
             </div>
         </div>
     </div>
-    <!-- End Navbar -->
 </div>

@@ -53,6 +53,7 @@
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/owl-carousel.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/revolution-slider.js"></script>
+        @include('interface_frontend.master_frontend.element.footer')
 <script>
     jQuery(document).ready(function() {
         App.init();
@@ -62,9 +63,5 @@
         RevolutionSlider.initRSfullWidth();
 });
 </script>
-        <!--=== Footer v4 ===-->
-        @include('interface_frontend.master_frontend.element.footer')
-        <!--=== End Footer v4 ===-->
-
 </body>
 </html> 

@@ -3,15 +3,12 @@
             <div class="heading heading-v1 margin-bottom-20">
                 <h2>Latest Tweets</h2>
             </div>
-
             <div id="carousel-example-generic-v5" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li class="active rounded-x" data-target="#carousel-example-generic-v5" data-slide-to="0"></li>
                     <li class="rounded-x" data-target="#carousel-example-generic-v5" data-slide-to="1"></li>
                     <li class="rounded-x" data-target="#carousel-example-generic-v5" data-slide-to="2"></li>
                 </ol>
-
                 <div class="carousel-inner">
                     <div class="item active">
                         <p>Unify has reached 10000 plus sales and we just want to thank you to our all customers for being part of the Unify Template success <a href="http://bit.ly/1c0UN3Y">http://bit.ly/1c0UN3Y</a><p>
@@ -41,7 +38,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="carousel-arrow">
                     <a class="left carousel-control" href="#carousel-example-generic-v5" data-slide="prev">
                         <i class="fa fa-angle-left"></i>

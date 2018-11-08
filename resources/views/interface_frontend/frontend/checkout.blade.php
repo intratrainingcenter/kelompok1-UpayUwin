@@ -28,9 +28,6 @@
                             </table>
                         </div>
                     </section>
-                    
-                    
-                        
                     <div class="header-tags">
                         <div class="overflow-h">
                             <h2>Payment</h2>
@@ -42,7 +39,6 @@
                         <div class="row">
                             <div class="col-md-6 md-margin-bottom-50">
                                 <h2 class="title-type">Choose a payment method</h2>
-                                <!-- Accordion -->
                                 <div class="accordion-v2">
                                     <div class="panel-group" id="accordion">
                                         <div class="panel panel-default">
@@ -62,17 +58,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Accordion -->    
                             </div>
-
                             @include('interface_frontend.master_frontend.others.question')
                         </div>
                     </section>
-
                     <div class="coupon-code">
                         <div class="row">
                             <div class="col-sm-4 sm-margin-bottom-30">
-                                
                             </div>
                             <div class="col-sm-3 col-sm-offset-5">
                                 <ul class="list-inline total-result">
@@ -101,5 +93,5 @@
                     </div>    
                 </div>
             </form>
-        </div><!--/end container-->
+        </div>
 @endsection

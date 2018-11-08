@@ -1,17 +1,12 @@
-
 		<div class="footer-v1">
 			<div class="footer">
 				<div class="container">
 					<div class="row">
-						<!-- About -->
 						<div class="col-md-3 md-margin-bottom-40">
 							<a href="index.html"><img id="logo-footer" class="footer-logo" src="{{asset('FrontEnd/log')}}/assets/img/logo2-default.png" alt=""></a>
 							<p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
 							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
-						</div><!--/col-md-3-->
-						<!-- End About -->
-
-						<!-- Latest -->
+						</div>
 						<div class="col-md-3 md-margin-bottom-40">
 							<div class="posts">
 								<div class="headline"><h2>Latest Posts</h2></div>
@@ -30,10 +25,7 @@
 									</li>
 								</ul>
 							</div>
-						</div><!--/col-md-3-->
-						<!-- End Latest -->
-
-						<!-- Link List -->
+						</div>
 						<div class="col-md-3 md-margin-bottom-40">
 							<div class="headline"><h2>Useful Links</h2></div>
 							<ul class="list-unstyled link-list">
@@ -43,10 +35,7 @@
 								<li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
 								<li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
 							</ul>
-						</div><!--/col-md-3-->
-						<!-- End Link List -->
-
-						<!-- Address -->
+						</div>
 						<div class="col-md-3 map-img md-margin-bottom-40">
 							<div class="headline"><h2>Contact Us</h2></div>
 							<address class="md-margin-bottom-40">
@@ -56,12 +45,10 @@
 								Fax: 800 123 3456 <br />
 								Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
 							</address>
-						</div><!--/col-md-3-->
-						<!-- End Address -->
+						</div>
 					</div>
 				</div>
-			</div><!--/footer-->
-
+			</div>
 			<div class="copyright">
 				<div class="container">
 					<div class="row">
@@ -71,8 +58,6 @@
 								<a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
 							</p>
 						</div>
-
-						<!-- Social Links -->
 						<div class="col-md-6">
 							<ul class="footer-socials list-inline">
 								<li>
@@ -112,8 +97,7 @@
 								</li>
 							</ul>
 						</div>
-						<!-- End Social Links -->
 					</div>
 				</div>
-			</div><!--/copyright-->
+			</div>
 		</div>
