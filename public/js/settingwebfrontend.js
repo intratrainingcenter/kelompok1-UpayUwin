@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $.ajax({
     type: 'GET',
-    url: location.origin +'/backend/settingweb',
+    url: location.origin +'/settingweb',
     data: {
       _method: 'GET'
     },
