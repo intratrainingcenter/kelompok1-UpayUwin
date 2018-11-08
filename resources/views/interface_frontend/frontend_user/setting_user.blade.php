@@ -10,11 +10,15 @@
 								<li><a data-toggle="tab" href="#verifypassword">Account Status</a></li>
 							</ul>
 							<div class="tab-content">
-								
+							@if (Auth::check())
+
 							@include('interface_frontend.frontend_user.tabs.profile')
 							@include('interface_frontend.frontend_user.tabs.password')
 							@include('interface_frontend.frontend_user.tabs.settings')
+							
+							@else
 
+							@endif
 							</div>
 						</div>
 					</div>

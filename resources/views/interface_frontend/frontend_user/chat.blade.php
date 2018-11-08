@@ -1,16 +1,14 @@
 @extends('interface_frontend.index_user')
 @section('content')
+@if (Auth::check())
 <!-- Firebase App is always required and must be first -->
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
-
 <!-- Add additional services that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-functions.js"></script>
-
-<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="{{asset('backend/livechat')}}/css/style.css">
 				<div class="col-md-9">
 					<!-- Firebase App is always required and must be first -->
@@ -64,4 +62,6 @@
                     <script  src="{{asset('FrontEnd/livechat')}}/js/livechat.js"></script>
                     <script> var auth_id = '{{ Auth::user()->id }}'; var authed = '{{ Auth::user()->name }}';</script>
 				</div>
+@else
+@endif
 @endsection
