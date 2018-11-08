@@ -102,6 +102,7 @@
 	<script type="text/javascript" src="{{asset('FrontEnd/log')}}/assets/js/forms/checkout.js"></script>
 	<script type="text/javascript" src="{{asset('FrontEnd/log')}}/assets/js/plugins/datepicker.js"></script>
 	<script type="text/javascript" src="{{asset('FrontEnd/log')}}/assets/js/plugins/style-switcher.js"></script>
+	<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 			App.init();

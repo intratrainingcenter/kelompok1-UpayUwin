@@ -102,6 +102,7 @@
 
 	<!-- JS Page Level -->
 	<script src="{{asset('FrontEnd/log')}}/assets/js/app.js"></script>
+	<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 	<script>
 		jQuery(document).ready(function() {
 			App.init();

@@ -73,6 +73,7 @@
 <script src="{{asset('FrontEnd')}}/assets/js/forms/page_login.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/stepWizard.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
+<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 
 <!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')

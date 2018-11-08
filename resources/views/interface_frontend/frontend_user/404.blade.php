@@ -203,6 +203,7 @@
 	<!-- JS Page Level -->
 	<script type="{{asset('FrontEnd/log')}}/text/javascript" src="assets/js/app.js"></script>
 	<script type="{{asset('FrontEnd/log')}}/text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+	<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 	<script type="{{asset('FrontEnd/log')}}/text/javascript">
 		jQuery(document).ready(function() {
 			App.init();

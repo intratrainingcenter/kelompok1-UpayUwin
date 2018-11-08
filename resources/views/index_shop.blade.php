@@ -53,6 +53,7 @@
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/owl-carousel.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/revolution-slider.js"></script>
+<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 <script>
     jQuery(document).ready(function() {
         App.init();

@@ -65,6 +65,7 @@
 <!-- JS Page Level -->
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
+<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 <!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')
     <!--=== End Footer v4 ===-->
