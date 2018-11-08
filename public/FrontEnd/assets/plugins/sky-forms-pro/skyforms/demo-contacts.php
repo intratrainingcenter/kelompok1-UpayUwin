@@ -19,14 +19,14 @@ $_SESSION['captcha_id'] = $str;
 
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Sky Forms Pro</title>
-		
+
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-		
+
 		<link rel="stylesheet" href="css/demo.css">
 		<link rel="stylesheet" href="css/font-awesome.css">
 		<link rel="stylesheet" href="css/sky-forms.css">
@@ -34,25 +34,25 @@ $_SESSION['captcha_id'] = $str;
 		<!--[if lt IE 9]>
 			<link rel="stylesheet" href="css/sky-forms-ie8.css">
 		<![endif]-->
-		
+
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.form.min.js"></script>
-		<script src="js/jquery.validate.min.js"></script>		
+		<script src="js/jquery.validate.min.js"></script>
 		<!--[if lt IE 10]>
 			<script src="js/jquery.placeholder.min.js"></script>
-		<![endif]-->		
+		<![endif]-->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="js/sky-forms-ie8.js"></script>
 		<![endif]-->
 	</head>
-	
+
 	<body class="bg-pink">
 		<div class="body">
 			<form action="demo-contacts-process.php" method="post" id="sky-form" class="sky-form">
 				<header>Contacts form</header>
-				
-				<fieldset>					
+
+				<fieldset>
 					<div class="row">
 						<section class="col col-6">
 							<label class="label">Name</label>
@@ -69,7 +69,7 @@ $_SESSION['captcha_id'] = $str;
 							</label>
 						</section>
 					</div>
-					
+
 					<section>
 						<label class="label">Subject</label>
 						<label class="input">
@@ -77,7 +77,7 @@ $_SESSION['captcha_id'] = $str;
 							<input type="text" name="subject" id="subject">
 						</label>
 					</section>
-					
+
 					<section>
 						<label class="label">Message</label>
 						<label class="textarea">
@@ -85,7 +85,7 @@ $_SESSION['captcha_id'] = $str;
 							<textarea rows="4" name="message" id="message"></textarea>
 						</label>
 					</section>
-					
+
 					<section>
 						<label class="label">Enter characters below:</label>
 						<label class="input input-captcha">
@@ -93,29 +93,29 @@ $_SESSION['captcha_id'] = $str;
 							<input type="text" maxlength="6" name="captcha" id="captcha">
 						</label>
 					</section>
-					
+
 					<section>
 						<label class="checkbox"><input type="checkbox" name="copy"><i></i>Send a copy to my e-mail address</label>
 					</section>
 				</fieldset>
-				
+
 				<footer>
 					<button type="submit" class="button">Send message</button>
 				</footer>
-				
+
 				<div class="message">
 					<i class="fa fa-check"></i>
 					<p>Your message was successfully sent!</p>
 				</div>
-			</form>			
+			</form>
 		</div>
-		
+
 		<script type="text/javascript">
 			$(function()
 			{
 				// Validation
 				$("#sky-form").validate(
-				{					
+				{
 					// Rules for form validation
 					rules:
 					{
@@ -139,7 +139,7 @@ $_SESSION['captcha_id'] = $str;
 							remote: 'captcha/process.php'
 						}
 					},
-										
+
 					// Messages for form validation
 					messages:
 					{
@@ -162,8 +162,8 @@ $_SESSION['captcha_id'] = $str;
 							remote: 'Correct captcha is required'
 						}
 					},
-										
-					// Ajax form submition					
+
+					// Ajax form submition
 					submitHandler: function(form)
 					{
 						$(form).ajaxSubmit(
@@ -178,14 +178,14 @@ $_SESSION['captcha_id'] = $str;
 							}
 						});
 					},
-					
+
 					// Do not change code below
 					errorPlacement: function(error, element)
 					{
 						error.insertAfter(element.parent());
 					}
 				});
-			});			
+			});
 		</script>
 	</body>
 </html>
