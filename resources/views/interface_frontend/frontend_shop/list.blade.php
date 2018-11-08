@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Product List | Unify - Responsive Website Template</title>
+    <title class="tittle"></title>
 
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="address" id="address" content="">
+    <meta name="phone" id="phone" content="">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
 
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
@@ -20,25 +20,25 @@
     <!-- CSS Global Compulsory -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/shop.style.css">
-    
+
     <!-- CSS Header and Footer -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/headers/header-v5.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/footers/footer-v4.css">
 
     <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">    
+    <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/animate.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/noUiSlider/jquery.nouislider.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
-    
+
     <!-- CSS Customization -->
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
-</head> 
+</head>
 
 <body class="header-fixed">
 <div class="wrapper">
-    <!--=== Header v5 ===-->   
+    <!--=== Header v5 ===-->
     @include('interface_frontend.master_frontend.element.header')
         <!--=== End Header v5 ===-->
 
@@ -53,7 +53,7 @@
                 <li class="active">Product Filter Page</li>
             </ul>
         </div><!--/end container-->
-    </div> 
+    </div>
     <!--=== End Breadcrumbs v4 ===-->
 
     <!--=== Content Part ===-->
@@ -114,7 +114,7 @@
                                             <small><a href="#">(87)</a></small>
                                         </label>
                                     </li>
-                                </ul>        
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                                             <small><a href="#">(11)</a></small>
                                         </label>
                                     </li>
-                                </ul>        
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -208,7 +208,7 @@
                                             <small><a href="#">(3)</a></small>
                                         </label>
                                     </li>
-                                </ul>        
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -230,7 +230,7 @@
                                 <p class="slider-snap-text">
                                     <span class="slider-snap-value-lower"></span>
                                     <span class="slider-snap-value-upper"></span>
-                                </p>    
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -334,7 +334,7 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/end result category-->
 
                 <div class="filter-results">
@@ -342,7 +342,7 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <a href="shop-ui-inner.html"><img class="img-responsive sm-margin-bottom-20" src="{{asset('FrontEnd')}}/assets/img/blog/16.jpg" alt=""></a>
-                            </div> 
+                            </div>
                             <div class="col-sm-8 product-description">
                                 <div class="overflow-h margin-bottom-5">
                                     <ul class="list-inline overflow-h">
@@ -357,11 +357,11 @@
                                                 <li><i class="rating fa fa-star"></i></li>
                                             </ul>
                                         </li>
-                                    </ul>    
+                                    </ul>
                                     <div class="margin-bottom-10">
                                         <span class="title-price margin-right-10">$60.00</span>
                                         <span class="title-price line-through">$95.00</span>
-                                    </div>    
+                                    </div>
                                     <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin erat nec ornarevolu tpat. Etiam ut felis nec nisl eleifend lobortis. Aenean nibh est, hendrerit non conva.</p>
                                     <ul class="list-inline add-to-wishlist margin-bottom-20">
                                         <li class="wishlist-in">
@@ -374,16 +374,16 @@
                                         </li>
                                     </ul>
                                     <button type="button" class="btn-u btn-u-sea-shop">Add to Cart</button>
-                                </div>    
+                                </div>
                             </div>
                         </div>
-                    </div>    
+                    </div>
 
                     <div class="list-product-description product-description-brd margin-bottom-30">
                         <div class="row">
                             <div class="col-sm-4">
                                 <a href="shop-ui-inner.html"><img class="img-responsive sm-margin-bottom-20" src="{{asset('FrontEnd')}}/assets/img/blog/17.jpg" alt=""></a>
-                            </div> 
+                            </div>
                             <div class="col-sm-8 product-description">
                                 <div class="overflow-h margin-bottom-5">
                                     <ul class="list-inline overflow-h">
@@ -398,11 +398,11 @@
                                                 <li><i class="rating fa fa-star"></i></li>
                                             </ul>
                                         </li>
-                                    </ul>    
+                                    </ul>
                                     <div class="margin-bottom-10">
                                         <span class="title-price margin-right-10">$60.00</span>
                                         <span class="title-price line-through">$95.00</span>
-                                    </div>    
+                                    </div>
                                     <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin erat nec ornarevolu tpat. Etiam ut felis nec nisl eleifend lobortis. Aenean nibh est, hendrerit non conva.</p>
                                     <ul class="list-inline add-to-wishlist margin-bottom-20">
                                         <li class="wishlist-in">
@@ -415,16 +415,16 @@
                                         </li>
                                     </ul>
                                     <button type="button" class="btn-u btn-u-sea-shop">Add to Cart</button>
-                                </div>    
+                                </div>
                             </div>
                         </div>
-                    </div>    
+                    </div>
 
                     <div class="list-product-description product-description-brd margin-bottom-30">
                         <div class="row">
                             <div class="col-sm-4">
                                 <a href="shop-ui-inner.html"><img class="img-responsive sm-margin-bottom-20" src="{{asset('FrontEnd')}}/assets/img/blog/21.jpg" alt=""></a>
-                            </div> 
+                            </div>
                             <div class="col-sm-8 product-description">
                                 <div class="overflow-h margin-bottom-5">
                                     <ul class="list-inline overflow-h">
@@ -439,11 +439,11 @@
                                                 <li><i class="rating fa fa-star"></i></li>
                                             </ul>
                                         </li>
-                                    </ul>    
+                                    </ul>
                                     <div class="margin-bottom-10">
                                         <span class="title-price margin-right-10">$60.00</span>
                                         <span class="title-price line-through">$95.00</span>
-                                    </div>    
+                                    </div>
                                     <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin erat nec ornarevolu tpat. Etiam ut felis nec nisl eleifend lobortis. Aenean nibh est, hendrerit non conva.</p>
                                     <ul class="list-inline add-to-wishlist margin-bottom-20">
                                         <li class="wishlist-in">
@@ -456,16 +456,16 @@
                                         </li>
                                     </ul>
                                     <button type="button" class="btn-u btn-u-sea-shop">Add to Cart</button>
-                                </div>    
+                                </div>
                             </div>
                         </div>
-                    </div>    
+                    </div>
 
                     <div class="list-product-description product-description-brd margin-bottom-30">
                         <div class="row">
                             <div class="col-sm-4">
                                 <a href="shop-ui-inner.html"><img class="img-responsive sm-margin-bottom-20" src="{{asset('FrontEnd')}}/assets/img/blog/22.jpg" alt=""></a>
-                            </div> 
+                            </div>
                             <div class="col-sm-8 product-description">
                                 <div class="overflow-h margin-bottom-5">
                                     <ul class="list-inline overflow-h">
@@ -480,11 +480,11 @@
                                                 <li><i class="rating fa fa-star"></i></li>
                                             </ul>
                                         </li>
-                                    </ul>    
+                                    </ul>
                                     <div class="margin-bottom-10">
                                         <span class="title-price margin-right-10">$60.00</span>
                                         <span class="title-price line-through">$95.00</span>
-                                    </div>    
+                                    </div>
                                     <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin erat nec ornarevolu tpat. Etiam ut felis nec nisl eleifend lobortis. Aenean nibh est, hendrerit non conva.</p>
                                     <ul class="list-inline add-to-wishlist margin-bottom-20">
                                         <li class="wishlist-in">
@@ -497,7 +497,7 @@
                                         </li>
                                     </ul>
                                     <button type="button" class="btn-u btn-u-sea-shop">Add to Cart</button>
-                                </div>    
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -506,7 +506,7 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <a href="shop-ui-inner.html"><img class="img-responsive sm-margin-bottom-20" src="{{asset('FrontEnd')}}/assets/img/blog/23.jpg" alt=""></a>
-                            </div> 
+                            </div>
                             <div class="col-sm-8 product-description">
                                 <div class="overflow-h margin-bottom-5">
                                     <ul class="list-inline overflow-h">
@@ -521,11 +521,11 @@
                                                 <li><i class="rating fa fa-star"></i></li>
                                             </ul>
                                         </li>
-                                    </ul>    
+                                    </ul>
                                     <div class="margin-bottom-10">
                                         <span class="title-price margin-right-10">$60.00</span>
                                         <span class="title-price line-through">$95.00</span>
-                                    </div>    
+                                    </div>
                                     <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin erat nec ornarevolu tpat. Etiam ut felis nec nisl eleifend lobortis. Aenean nibh est, hendrerit non conva.</p>
                                     <ul class="list-inline add-to-wishlist margin-bottom-20">
                                         <li class="wishlist-in">
@@ -538,10 +538,10 @@
                                         </li>
                                     </ul>
                                     <button type="button" class="btn-u btn-u-sea-shop">Add to Cart</button>
-                                </div>    
+                                </div>
                             </div>
                         </div>
-                    </div>     
+                    </div>
                 </div><!--/end filter resilts-->
 
                 <div class="text-center">
@@ -551,11 +551,11 @@
                         <li class="active"><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>                                                            
+                    </ul>
                 </div><!--/end pagination-->
             </div>
         </div><!--/end row-->
-    </div><!--/end container-->    
+    </div><!--/end container-->
     <!--=== End Content Part ===-->
 
     <!--=== Shop Suvbscribe ===-->
@@ -564,14 +564,14 @@
             <div class="row">
                 <div class="col-md-8 md-margin-bottom-20">
                     <h2>subscribe to our weekly <strong>newsletter</strong></h2>
-                </div>  
+                </div>
                 <div class="col-md-4">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Email your email...">
                         <span class="input-group-btn">
                             <button class="btn" type="button"><i class="fa fa-envelope-o"></i></button>
                         </span>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </div><!--/end container-->
@@ -583,7 +583,7 @@
     <!--=== End Footer v4 ===-->
 </div><!--/wrapper-->
 
-<!-- JS Global Compulsory -->           
+<!-- JS Global Compulsory -->
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery-migrate.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -594,24 +594,24 @@
 <script src="{{asset('FrontEnd')}}/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <!-- JS Customization -->
 <script src="{{asset('FrontEnd')}}/assets/js/custom.js"></script>
-<!-- JS Page Level -->           
+<!-- JS Page Level -->
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
 <script>
     jQuery(document).ready(function() {
         App.init();
-        App.initScrollBar();        
+        App.initScrollBar();
         MouseWheel.initMouseWheel();
     });
 </script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
     <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>    
+    <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
 <![endif]-->
 <!--[if lt IE 10]>
     <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
 
 </body>
-</html> 
+</html>

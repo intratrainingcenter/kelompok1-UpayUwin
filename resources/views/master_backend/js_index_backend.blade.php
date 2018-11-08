@@ -18,7 +18,7 @@
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot/jquery.flot.stack.js')}}"></script>
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
-    <script src="{{asset('matrix-admin-bt4/dist/js/pages/chart/chart-page-init.js')}}"></script>
+    <script src="{{asset('template/backend/matrix-admin-bt4/dist/js/pages/chart/chart-page-init.js')}}"></script>
     {{-- form --}}
     <script src="{{asset('template/backend/matrix-admin-bt4/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js')}}"></script>
     <script src="{{asset('template/backend/matrix-admin-bt4/dist/js/pages/mask/mask.init.js')}}"></script>
