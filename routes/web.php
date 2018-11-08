@@ -50,6 +50,7 @@ Route::get('/payment/status','PaymentController@getPaymentStatus')->name('paymen
 Route::get('/backend/login',function(){
 	return view('backend.User.login')->middleware('admin');
 });
+Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
 
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
@@ -67,7 +68,6 @@ Route::prefix('backend')->middleware('admin')->group(function () {
   Route::resource('item','backend\ItemController');
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
-  Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
   	//Route setting
 	  Route::resource('setting','backend\SettingController');
 	//   Category
