@@ -65,7 +65,28 @@
 <!-- JS Page Level -->
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
-<script src="{{asset('js/settingwebfrontend.js')}}"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $.ajax({
+    type: 'GET',
+    url: '{{ URL::route("settingweb") }}',
+    data: {
+      _method: 'GET'
+    },
+  }).done(function (data) {
+    console.log(data);
+    $(".tittle").text(data.tittle);
+    $("meta[name='address']").attr("content", data.address);
+    $("meta[name='phone']").attr("content", data.phone);
+    $(".address").text(data.address);
+    $(".phone").text(data.phone);
+    $("link[rel=icon]").attr("href","{{asset('backend/img')}}"/+ data.logo);
+    $(".imageecommerce").attr("src","{{asset('backend/img')}}"/+ data.logo);
+  }).fail(function (data) {
+    console.log(data);
+  })
+});
+</script>
 <!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')
     <!--=== End Footer v4 ===-->

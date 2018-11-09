@@ -44,7 +44,7 @@
 			<div class="col-md-6 col-sm-6 hidden-xs image-block equal-height-column"></div>
 
 			<div class="col-md-6 col-sm-6 form-block equal-height-column">
-				<a href="index.html">
+				<a href="#">
 					<img src="{{asset('FrontEnd/log')}}/assets/img/themes/logo1-blue.png" alt="">
 				</a>
 				<h2 class="margin-bottom-30">Login To Your Account</h2>

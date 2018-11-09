@@ -28,7 +28,7 @@
                 <span class="page-name">Product Filter Page</span>
                 <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
                 <ul class="breadcrumb-v4-in">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="">Product</a></li>
                     <li class="active">Product Filter Page</li>
                 </ul>

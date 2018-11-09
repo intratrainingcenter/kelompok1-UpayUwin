@@ -8,15 +8,15 @@
 <script>
     let lastIndex = 0;
     let category = $('#load').attr('category');
-    
+
     const dbRefItem = firebase.database().ref().child('item').orderByChild("kategori").equalTo(category);
     dbRefItem.on('value', function(snapshot) {
     console.log(snapshot.val());
     let value = snapshot.val();
     let count = '';
     let htmls = [];
-    
-   
+
+
 
     if(value){
          $.each(value, function(index,value){
@@ -41,7 +41,7 @@
             <h2>Sorry Item From {{$category}} Not Found</h2>\
         </center>\ ');
     }
-    
+
     $('#active').html(category);
     $('#load').html(htmls);
     $('#count').text(count);

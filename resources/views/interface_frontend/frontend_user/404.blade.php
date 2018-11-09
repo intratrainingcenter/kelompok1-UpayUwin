@@ -61,7 +61,7 @@
 						@else
 						You must Logged in , to see the content.
 						@endif</p>
-						<a class="btn-u btn-bordered" href="index.html">Back Home</a>
+						<a class="btn-u btn-bordered" href="#">Back Home</a>
 					</div>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 					<div class="row">
 						<!-- About -->
 						<div class="col-md-3 md-margin-bottom-40">
-							<a href="index.html"><img id="logo-footer" class="footer-logo" src="assets/img/logo2-default.png" alt=""></a>
+							<a href="#"><img id="logo-footer" class="footer-logo" src="assets/img/logo2-default.png" alt=""></a>
 							<p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
 							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
 						</div><!--/col-md-3-->

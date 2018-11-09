@@ -4,7 +4,7 @@
 <div class="shop-product">
             <div class="container">
                 <ul class="breadcrumb-v5">
-                    <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#"><i class="fa fa-home"></i></a></li>
                     <li><a href="#">Voucher Yya</a></li>
                     <li class="active">{{$category->nama_kategori}}</li>
                 </ul>
