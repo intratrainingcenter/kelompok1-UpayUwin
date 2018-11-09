@@ -18,6 +18,7 @@ $( document ).ready(function(){
         });
         function fetch_data()
         {
+            var GrandTotals = [];
             $.ajax({
                 url: '/frontend/showcart',
                 type : 'GET',
@@ -26,7 +27,6 @@ $( document ).ready(function(){
                     var cart = '';
                     var total = '';
                     var minicart = '';
-                    
                     var count = '';
                     var json = data;
                         var count = json.cart.length;
@@ -53,8 +53,12 @@ $( document ).ready(function(){
                             cart +=            "<button type='button' class='close' onclick='cancelorder("+ datas.id +")'><span>&times;</span><span class='sr-only'>Close</span></button>";
                             cart +=        "</td>";
                             cart +=    "</tr>";   
+
+                            GrandTotals[key]= (datas.qty * datas.nominal);
+                            
                         });
                     });
+
                     $.each(data, function (key, items) {
                         $.each(items, function (key, datas) {
                             minicart +=         "<li>";
@@ -76,8 +80,11 @@ $( document ).ready(function(){
                     total +=                "<a href='"+ checkout +"' class='btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block'>View Cart</a>";
                     total +=            "</div>";
                     total +=            "</li>";
+                    var sum = GrandTotals.reduce(add, 0);
                     $('#minicart').html(minicart+total);
                     $('table tbody').html(cart);
+                    document.getElementById("Subtotals").innerHTML = sum;
+                    document.getElementById("GrandTotals").innerHTML = sum;
                     document.getElementById("count_cart").innerHTML = count;
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
@@ -86,7 +93,9 @@ $( document ).ready(function(){
                   }
             });
         }
-
+        function add(a, b) {
+            return a + b;
+        }
         function deaddQty(id) 
         {
             id += ''

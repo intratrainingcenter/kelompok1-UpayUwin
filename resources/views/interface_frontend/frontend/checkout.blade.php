@@ -71,20 +71,14 @@
                                     <li>
                                         <h4>Subtotal:</h4>
                                         <div class="total-result-in">
-                                            <span>$ 1280.00</span>
+                                            <span id="Subtotals"></span>
                                         </div>    
-                                    </li>    
-                                    <li>
-                                        <h4>Shipping:</h4>
-                                        <div class="total-result-in">
-                                            <span class="text-right">- - - -</span>
-                                        </div>
-                                    </li>
+                                    </li> 
                                     <li class="divider"></li>
                                     <li class="total-price">
                                         <h4>Total:</h4>
                                         <div class="total-result-in">
-                                            <span>$ 1280.00</span>
+                                            <span id="GrandTotals"></span>
                                         </div>
                                     </li>
                                 </ul>
