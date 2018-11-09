@@ -39,7 +39,7 @@
             <span class="page-name">Check Out</span>
             <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
             <ul class="breadcrumb-v4-in">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="">Product</a></li>
                 <li class="active">Shopping Cart</li>
             </ul>
@@ -73,6 +73,7 @@
 <script src="{{asset('FrontEnd')}}/assets/js/forms/page_login.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/stepWizard.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/forms/product-quantity.js"></script>
+<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 
 <!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')
