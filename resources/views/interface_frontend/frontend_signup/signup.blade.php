@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html oncontextmenu="return false" lang="en">
 <head>
 	<title>Regsitration Pages | Unify - Responsive Website Template</title>
 	<meta charset="utf-8">
@@ -79,8 +79,8 @@
 	</script>
 	<script>
 		$(".image-block").backstretch([
-			"{{asset('FrontEnd/log')}}/assets/img/bg/img6.jpg",
-			"{{asset('FrontEnd/log')}}/assets/img/bg/img5.jpg",
+			"{{asset('FrontEnd')}}/assets/img/doto.jpg",
+			"{{asset('FrontEnd')}}/assets/img/pubege.jpg",
 			], {
 				fade: 1000,
 				duration: 7000

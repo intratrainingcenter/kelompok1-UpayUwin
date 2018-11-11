@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html oncontextmenu="return false" lang="en">
 <head>
     <title>Check Out | Unify - Responsive Website Template</title>
     <meta charset="utf-8">

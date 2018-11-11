@@ -29,7 +29,7 @@ Route::get('/404', function () {
 Route::get('/', function () {
 	return view('interface_frontend.frontend.index');
 })->name('index');
-Route::get('/voucher', 'frontend\productController@indexVoucher');
+Route::get('/voucher', 'frontend\productController@indexVoucher')->name('voucher');
 
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
