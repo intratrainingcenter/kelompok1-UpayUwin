@@ -73,7 +73,7 @@ $( document ).ready(function(){
                     });
                     total +=    "<li class='subtotal'>";
                     total +=            "<div class='overflow-h margin-bottom-10'>";
-                    total +=                
+                    total +=                "<span>total</span><span class='pull-right subtotal-cost' id='subtot'></span>"
                     total +=            "</div>";
                     total +=            "<div class='row'>";
                     total +=                "<div class='col-xs-6'>";
@@ -82,6 +82,8 @@ $( document ).ready(function(){
                     total +=            "</li>";
                     var sum = GrandTotals.reduce(add, 0);
                     $('#minicart').html(minicart+total);
+                    $('#subtot').html('$'+sum);
+                    $('#count_cart').html(count);
                     $('table tbody').html(cart);
                     document.getElementById("Subtotals").innerHTML = sum;
                     document.getElementById("GrandTotals").innerHTML = sum;

@@ -143,7 +143,7 @@ li:first-child {
 .illustration-v1.illustration-img1 {
 	width: 100%;
 	overflow: hidden;
-	background-image: url(../img/blog/07.jpg);
+	background-image: url(../img/blog/leftchar.jpg);
 	transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -195,7 +195,7 @@ li:first-child {
 .illustration-v1.illustration-img2 {
 	width: 100%;
 	overflow: hidden;
-	background-image: url(../img/blog/08.jpg);
+	background-image: url(../img/blog/rightchar.png);
 	transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -540,15 +540,15 @@ li:first-child {
 }
 
 .illustration-v3.illustration-img1 {
-	background-image: url(../img/blog/13.jpg);
+	background-image: url(../img/blog/pocer.png);
 }
 
 .illustration-v3.illustration-img2 {
-	background-image: url(../img/blog/14.jpg);
+	background-image: url(../img/blog/goldbox.png);
 }
 
 .illustration-v3.illustration-img3 {
-	background-image: url(../img/blog/15.jpg);
+	background-image: url(../img/blog/UNIQUE.png);
 }
 
 .illustration-v3.illustration-img1:hover,
