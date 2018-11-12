@@ -8,7 +8,7 @@
 							<a href="#"><img id="logo-footer" class="footer-logo" src="{{asset('FrontEnd/log')}}/assets/img/logo2-default.png" alt=""></a>
 							<p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
 							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
-						</div><!--/col-md-3-->
+						</div>
 						<!-- End About -->
 
 						<!-- Latest -->
@@ -30,7 +30,7 @@
 									</li>
 								</ul>
 							</div>
-						</div><!--/col-md-3-->
+						</div>
 						<!-- End Latest -->
 
 						<!-- Link List -->
@@ -43,7 +43,7 @@
 								<li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
 								<li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
 							</ul>
-						</div><!--/col-md-3-->
+						</div>
 						<!-- End Link List -->
 
 						<!-- Address -->
@@ -56,7 +56,7 @@
 								Fax: 800 123 3456 <br />
 								Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
 							</address>
-						</div><!--/col-md-3-->
+						</div>
 						<!-- End Address -->
 					</div>
 				</div>
