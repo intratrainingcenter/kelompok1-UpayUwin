@@ -5,23 +5,16 @@
 	<script type="text/javascript" src="{{asset('js/firebase-price_list.js')}}"></script>
 	<script type="text/javascript">
 
-
-
 		var dataimage = '';
 		//get data
 		var lastIndex = 0;
 		const dbRefItem = firebase.database().ref().child('item');
 		dbRefItem.on('value', function(snapshot) {
-			// console.log(snapshot.val());
-			// ujicoba tampil gambar
 	    var value = snapshot.val();
 	    var htmls = [];
 	    $.each(value, function(index, value){
 				//get image
-				dataimage+=value.gambar;
-
 	    	if(value) {
-					dataimage = new Array(value.gambar);
 	    		htmls.push('<tr>\
 	        		<td>'+ value.kode +'</td>\
 	        		<td>'+ value.nama +'</td>\
@@ -52,7 +45,6 @@
 				var percentage=(snapshot.bytesTransferred / snapshot.totalBytes)*100;
 				uploader.value=percentage;
 				if (percentage==100) {
-					alert("sukses");
 					storageRef.getDownloadURL().then(function(url){
 						downloadURL = url;
 						$('#saveadd').on('click', function(){
@@ -81,7 +73,6 @@
 					});
 				}
 			},function error(err){
-				alert("gagal")
 			},
 		 );
   });
@@ -128,67 +119,28 @@
 			<label class="labels">Stok :</label>\
 			<input type="number" name="stock" class="form-control" id="cono1" value="'+value.stok+'">\
 			<label class="labels">Deskripsi :</label>\
-			<input type="text" name="Description" class="form-control" id="cono1" value="'+value.deskripsi+'">\
-			<div class="row">\
-					<div class="col-md-3">\
-							<img id="" class="foto" src="" alt="">\
-					</div>\
-					 <div class="col-md-9">\
-							<label class="labels">Foto :</label>\
-							<progress id="uploaderupdate" value="0" max="100">0%</progress>\
-							<input id="image_item" type="hidden" name="image" class="form-control" required>\
-							<input id="fileButtonupdate" type="file" name="image" class="form-control nameimage" required>\
-					</div>\
-			</div>';
+			<input type="text" name="Description" class="form-control" id="cono1" value="'+value.deskripsi+'">';
 			$('#resultupdate').html(updateData);
 		});
+	});
 
-		//upload image update
-		var uploaderupdate = document.getElementById("uploaderupdate");
-		var fileButtonupdate = document.getElementById("fileButtonupdate");
-		fileButtonupdate.addEventListener('change', function(e){
-		var fileupdate = e.target.files['#fileButtonupdate'];
-		console.log(fileupdate);
-		var storageRefupdate = firebase.storage().ref('item/' + fileupdate.name);
-				var taskupdate = storageRefupdate.put(fileupdate);
-				taskupdate.on('state_changed',
-				function progress(snapshot){
-					var percentageupdate=(snapshot.bytesTransferred / snapshot.totalBytes)*100;
-					uploaderupdate.value=percentageupdate;
-					if (percentageupdate==100) {
-						alert("sukses");
-						storageRefupdate.getDownloadURL().then(function(url){
-							downloadURLupdate = url;
-							$('.saveupdate').on('click', function() {
-								var values = $("#modal-update").serializeArray();
-								var image_item 	= downloadURLupdate;
-								// console.log(image_item);
-								var postData = {
-									 kode				: values[0].value,
-									 nama				: values[1].value,
-									 kategori		: values[2].value,
-									 harga			: values[3].value,
-									 stok				: values[4].value,
-									 deskripsi	: values[5].value,
-									 gambar			: image_item,
-								};
+	$('.saveupdate').on('click', function() {
+		var values = $("#modal-update").serializeArray();
+		var postData = {
+			 kode				: values[0].value,
+			 nama				: values[1].value,
+			 kategori		: values[2].value,
+			 harga			: values[3].value,
+			 stok				: values[4].value,
+			 deskripsi	: values[5].value,
+		};
 
-								var updates = {};
-								updates['item/' + updateID] = postData;
+		var updates = {};
+		updates['item/' + updateID] = postData;
 
-								firebase.database().ref().update(updates);
-								event.preventDefault()
-								$("#Modal-edit").modal('hide');
-							});
-
-						});
-					}
-				},function error(err){
-					alert("gagal")
-				},
-			 );
-		});
-
+		firebase.database().ref().update(updates);
+		event.preventDefault()
+		$("#Modal-edit").modal('hide');
 	});
 	
 function toUSD(number) {
@@ -200,6 +152,7 @@ function toUSD(number) {
         .split('').reverse().join('');
     return '$ ' + dollars + '.' + cents.slice(0, 2);
 }
+
 	</script>
 
 @endsection
