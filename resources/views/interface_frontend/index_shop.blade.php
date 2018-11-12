@@ -30,7 +30,7 @@
                 <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
                 <ul class="breadcrumb-v4-in">
                     <li><a href="{{url('/')}}">Home</a></li>
-                    <li><a href="{{url('/item')}}">Item</a></li>
+                    <li><a href="" id="cat"></a></li>
                     <li class="active" id="active"></li>
                 </ul>
             </div>
@@ -67,8 +67,8 @@ $(document).ready(function () {
     $("meta[name='phone']").attr("content", data.phone);
     $(".address").text(data.address);
     $(".phone").text(data.phone);
-    $("link[rel=icon]").attr("href","{{asset('backend/img')}}"/+ data.logo);
-    $(".imageecommerce").attr("src","{{asset('backend/img')}}"/+ data.logo);
+    $("link[rel=icon]").html('{{asset("/backend/img/'data.logo'")}}');
+    $(".imageecommerce").html('{{asset("/backend/img/'data.logo'")}}');
   }).fail(function (data) {
     
   })

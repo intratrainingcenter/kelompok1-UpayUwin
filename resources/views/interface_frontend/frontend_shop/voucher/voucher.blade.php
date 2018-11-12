@@ -11,7 +11,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 md-margin-bottom-50">
+                    <div class="col-md-6 col-sm-6 md-margin-bottom-50">
                         <div class="ms-showcase2-template">
                         
                             <div class=" ms-skin-default" id="masterslider">

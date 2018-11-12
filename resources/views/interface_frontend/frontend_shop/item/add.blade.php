@@ -21,9 +21,9 @@
     if(value){
          $.each(value, function(index,value){
             count = snapshot.numChildren()+' result';
-            htmls.push(' <div class="col-md-3"> \
+            htmls.push(' <div class="col-md-3 col-sm-3 col-xs-3"> \
                 <div class="product-img product-img-brd">\
-                    <a href="{{url("/item")}}/'+category+'/'+index+'"><img class="full-width img-responsive" src="'+value.gambar+'" alt=""></a>\
+                    <a href="{{url("/item")}}/'+category+'/'+index+'"><img class="ms-brd" width="100%" height="200px" src="'+value.gambar+'" alt=""></a>\
                 </div>\
                 <div class="product-description product-description-brd">\
                     <div class="overflow-h ">\
@@ -42,7 +42,8 @@
         </center>\ ');
     }
 
-    $('#active').html(category);
+    $('#cat').html('{{url("/'category'")}}');
+    $('#cat').text(category);
     $('#load').html(htmls);
     $('#count').text(count);
 });

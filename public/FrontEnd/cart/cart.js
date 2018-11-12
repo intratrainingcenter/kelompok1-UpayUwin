@@ -85,9 +85,8 @@ $( document ).ready(function(){
                     $('#subtot').html('$'+sum);
                     $('#count_cart').html(count);
                     $('table tbody').html(cart);
-                    document.getElementById("Subtotals").innerHTML = sum;
-                    document.getElementById("GrandTotals").innerHTML = sum;
-                    document.getElementById("count_cart").innerHTML = count;
+                    $('#Subtotals').html(sum);
+                    $('#GrandTotals').html(sum);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;

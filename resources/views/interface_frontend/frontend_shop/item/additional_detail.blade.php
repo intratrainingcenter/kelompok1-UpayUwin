@@ -15,7 +15,7 @@
             <div class="col-md-6 md-margin-bottom-50">\
                 <div class="ms-showcase2-template">\
                     <div class=" ms-skin-default" id="masterslider">\
-                        <img class="ms-brd" src="'+value.gambar+'" >\
+                        <img class="ms-brd" width="500px" src="'+value.gambar+'" >\
                     </div>\
                 </div>\
             </div>\
