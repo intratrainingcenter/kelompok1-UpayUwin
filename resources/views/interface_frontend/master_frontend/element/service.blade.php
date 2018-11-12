@@ -29,4 +29,4 @@
                     <a href="#">+Read More</a>
                 </div>
             </div>
-        </div><!--/end row-->
+        </div>

@@ -15,21 +15,11 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio elit, ultrices vel cursus sed, placerat ut leo. Phasellus in magna erat. Etiam gravida convallis augue non tincidunt. Nunc lobortis dapibus neque quis lacinia. Nam dapibus tellus sit amet odio venenatis</p>
         </div>
 
-            <!--=== Illustration v2 ===-->
-                @include('interface_frontend.master_frontend.shop.featured') 
-            <!--=== End Illustration v2 ===-->
-
                 <!--=== Illustration v3 ===-->
                     @include('interface_frontend.master_frontend.element.illustration')
                 <!--=== End Illustration v3 ===-->
 
-                    <div class="heading heading-v1 margin-bottom-40">
-                        <h2>Latest products</h2>
-                    </div>
-
-                        <!--=== Illustration v2 ===-->
-                            @include('interface_frontend.master_frontend.shop.quick_review') 
-                        <!--=== End Illustration v2 ===-->
+                    
     </div>
     <!--=== End Product Content ===-->
 
@@ -42,9 +32,6 @@
                 @include('interface_frontend.master_frontend.element.service')
             <!--=== End Product Service ===-->
         
-                <!--=== Illustration v4 ===-->
-                    @include('interface_frontend.master_frontend.shop.category')
-                <!--=== End Illustration v4 ===-->
     </div><!--/end cotnainer-->
 
     <!--=== Collection Banner ===-->

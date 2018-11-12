@@ -1,7 +1,6 @@
 <div class="col-md-6">
-                                <h2 class="title-type">Frequently asked questions</h2>
-                                <!-- Accordion -->
-                                <div class="accordion-v2 plus-toggle">
+        <h2 class="title-type">Frequently asked questions</h2>
+        <div class="accordion-v2 plus-toggle">
                                     <div class="panel-group" id="accordion-v2">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
@@ -61,5 +60,4 @@
                                         </div>    
                                     </div>
                                 </div>
-                                <!-- End Accordion -->    
-                            </div>
+</div>

@@ -23,9 +23,10 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Kode Kategori</th>
-                            <th>Kategori</th>
-                            <th>Detail</th>
+                            <th>Kode Transaksi</th>
+                            <th>User</th>
+                            <th>Tanggal</th>
+                            <th>Total Belanja</th>
                             <th>Opsi</th>
                         </tr>
                     </thead>
@@ -33,15 +34,16 @@
                         @foreach($transaksi as $number => $data)
                         <tr>
                             <td>{{$number + 1}}</td>
-                            <td>{{$data->kode_kategori}}</td>
-                            <td>{{$data->nama_kategori}}</td>
+                            <td>{{$data->kode_transaksi}}</td>
+                            <td>{{$data->id_user}}</td>
+                            <td>{{$data->tanggal_transaksi}}</td>
+                            <td>{{$data->total}}</td>
                             <td>{{$data->detail}}</td>
                             <td>
-                                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-edit{{$data->id}}"><i class="fas fa-pencil-alt"></i></button>
-                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Modal-delete{{$data->id}}"><i class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-view{{$data->id}}"><i class="fas fa-pencil-alt"></i></button>
                             </td>
                         </tr>
-                        @include('backend.kategori.view')
+                        @include('backend.laporan.view')
                         @endforeach
                     </tbody>
                 </table>

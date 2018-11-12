@@ -73,12 +73,27 @@ class settingusercontroller extends Controller
         $data =  channel_message::where('room','=',Auth::id())->where('channels','=','Upay-Uwin')->get();
         return response()->json(array('success' => true, 'msg' => $data));
     }
-    public function replyfeed()
+    public function replyfeed(Request $request, $id)
     {
-
+        $data = new channel_message;
+        // $data->channels = 'customer_service';
+        // $data->messages = $request->messages;
+        // $data->room = $id;
+        // $data->from = 'admin';
+        // $data->receive = 'receive';
+        // $data->created_at = Carbon::now()->setTime(23,59,59)->format('Y-m-d H:i:s');
+        // $data->updated_at = Carbon::now()->setTime(23,59,59)->format('Y-m-d H:i:s');
+        // //$data->save();
+        return response()->json(array('success' => true, 'message' => $data));
     }
-    public function servicefeed()
+    public function servicefeed($id)
     {
-        
+        $data =  channel_message::where('room','=',$id)->where('channels','=','customer_service')->get();
+        return response()->json(array('success' => true, 'msg' => $data));
+    }
+    public function feedsuser()
+    {
+        $data =  User::where('level','=','user')->get();
+        return response()->json(array('success' => true, 'user' => $data));
     }
 }

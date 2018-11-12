@@ -18,12 +18,9 @@
                         </ul>
                     </div>
                     <!-- End About -->
-
-
                 </div><!--/end row-->
             </div><!--/end continer-->
         </div><!--/footer-->
-
         <div class="copyright">
             <div class="container">
                 <div class="row">
@@ -36,7 +33,6 @@
                     <div class="col-md-6">
                         <ul class="list-inline sponsors-icons pull-right">
                             <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-
                         </ul>
                     </div>
                 </div>

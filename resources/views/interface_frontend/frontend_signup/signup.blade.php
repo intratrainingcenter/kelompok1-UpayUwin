@@ -1,43 +1,25 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<html oncontextmenu="return false" lang="en">
 <head>
 	<title class="tittle"></title>
-
-	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="address" id="address" content="">
 	<meta name="phone" id="phone" content="">
-
-	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="">
-
-	<!-- Web Fonts -->
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700&amp;subset=cyrillic,latin">
-
-	<!-- CSS Global Compulsory -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/style.css">
-
-	<!-- CSS Implementing Plugins -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/animate.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/line-icons/line-icons.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/font-awesome/css/font-awesome.min.css">
-
-	<!-- CSS Page Style -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/pages/page_log_reg_v4.css">
-
-	<!-- CSS Customization -->
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/custom.css">
 </head>
 <body>
-	<!--=== Content Part ===-->
 	<div class="container-fluid">
 		<div class="row equal-height-columns">
 			<div class="col-md-6 col-sm-6 hidden-xs image-block equal-height-column"></div>
-
 			<div class="col-md-6 col-sm-6 form-block equal-height-column">
 				<div class="reg-block">
 					<a href="#">
@@ -81,26 +63,14 @@
 				</div>
 			</div>
 		</div>
-	</div><!--/container-->
-	<!--=== End Content Part ===-->
-
-	<!--=== Sticky Footer ===-->
-	 @include('interface_frontend.master_frontend.log.footer')
-	<!--=== End Sticky Footer ===-->
-
-	<!-- JS Global Compulsory -->
+	</div>
+	@include('interface_frontend.master_frontend.log.footer')
 	<script src="{{asset('FrontEnd/log')}}/assets/plugins/jquery/jquery.min.js"></script>
 	<script src="{{asset('FrontEnd/log')}}/assets/plugins/jquery/jquery-migrate.min.js"></script>
 	<script src="{{asset('FrontEnd/log')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-	<!-- JS Implementing Plugins -->
 	<script src="{{asset('FrontEnd/log')}}/assets/plugins/back-to-top.js"></script>
 	<script src="{{asset('FrontEnd/log')}}/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
-
-	<!-- JS Customization -->
 	<script src="{{asset('FrontEnd/log')}}/assets/js/custom.js"></script>
-
-	<!-- JS Page Level -->
 	<script src="{{asset('FrontEnd/log')}}/assets/js/app.js"></script>
 	<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 	<script>
@@ -110,17 +80,12 @@
 	</script>
 	<script>
 		$(".image-block").backstretch([
-			"{{asset('FrontEnd/log')}}/assets/img/bg/img6.jpg",
-			"{{asset('FrontEnd/log')}}/assets/img/bg/img5.jpg",
+			"{{asset('FrontEnd')}}/assets/img/doto.jpg",
+			"{{asset('FrontEnd')}}/assets/img/pubege.jpg",
 			], {
 				fade: 1000,
 				duration: 7000
 			});
 	</script>
-<!--[if lt IE 9]>
-	<script src="assets/plugins/respond.js"></script>
-	<script src="assets/plugins/html5shiv.js"></script>
-	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
-	<![endif]-->
 </body>
 </html>

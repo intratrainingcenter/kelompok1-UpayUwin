@@ -1,6 +1,5 @@
 <div class="col-md-6 md-margin-bottom-50">
                                 <h2 class="title-type">Choose a payment method</h2>
-                                <!-- Accordion -->
                                 <div class="accordion-v2">
                                     <div class="panel-group" id="accordion">
                                         <div class="panel panel-default">
@@ -72,5 +71,4 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Accordion -->    
                             </div>

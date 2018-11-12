@@ -1,5 +1,6 @@
 @extends('interface_frontend.index_user')
 @section('content')
+@if (Auth::check())
 				<div class="col-md-9">
 					<!--Basic Table-->
 					<div class="panel panel-green margin-bottom-40">
@@ -36,4 +37,6 @@
 					</div>
 					<!--End Basic Table-->
 				</div>
+@else
+@endif
 @endsection

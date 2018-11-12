@@ -14,22 +14,25 @@ function scrolling()
 }
            
 var db = firebase.initializeApp(config).database();
-var chatRef = db.ref('livechat/users/');
-var users = "";
-chatRef.on('child_added', function showData(items)
-{
-      console.log(items.key)
-      var chatRef3 = db.ref('livechat/users/'+items.key);
-     chatRef3.orderByValue().limitToLast(1).on('child_added',function showData(items)
-      {
-        lastmsguser = items.val().message;
-      });
-      users +=       "<div class='chat_list' onclick='clickme(this)'><div class='chat_people'><div class='chat_img'><img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'></div><div class='chat_ib'><h5>"+items.key+"</h5><h4><span class='chat_date'>Dec 25</span></h4><p id='lastmsg"+items.key+"'>"+lastmsguser+"</p></div></div></div>";
-     
-      console.log(lastmsguser);
-      $('#myDIV').html(users);
-     
-})
+function initialUser(){
+    var chatRef = db.ref('livechat/users/');
+    var users = "";
+    chatRef.on('child_added', function showData(items)
+    {
+        console.log(items.key)
+        var chatRef3 = db.ref('livechat/users/'+items.key);
+        chatRef3.orderByValue().limitToLast(1).on('child_added',function showData(items)
+        {
+            lastmsguser = items.val().message;
+            lastseen = items.val().waktu;
+        });
+        users +=       "<div class='chat_list' onclick='clickme(this)'><div class='chat_people'><div class='chat_img'><img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'></div><div class='chat_ib'><h5>"+items.key+"</h5><h4><span class='chat_date'>"+lastseen+"</span></h4><p id='lastmsg"+items.key+"'>"+lastmsguser+"</p></div></div></div>";
+        //console.log(lastmsguser);
+        $('#myDIV').html(users);
+        
+    })
+}
+
 
 var Title = '';
 function clickme(elem) {
@@ -54,23 +57,36 @@ function clickme(elem) {
                    else {
                     msg +="<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span></div></div></div>";
                 }
+                
                 $('#chatroom').html(msg);	
-      });
-      scrolling();
-      //Send Chat onKey Enter
-      var send = document.getElementById('chat-input');
-      var date = new Date().toLocaleString();
-      send.addEventListener("keyup",function(event){
-          event.preventDefault();
-          if (event.keyCode == 13) {
-          // console.log(date)
-          chatRef2.push({
-              message : this.value,
+            });
+            var replyurl = Title;
+            $('#sendreplyurl').val(replyurl)
+            scrolling();
+}
+$(document).on('ready',function(){
+    initialUser();
+})
+
+$('#sendreply').on('click',function(){
+    var chatRef3 = db.ref('livechat/users/'+$('#sendreplyurl').val());
+    chatRef3.push({
+              message : $('#chat-input').val(),
               pembalas : "admin",
               status : "unread",
               waktu : date
           })
-          this.value = "";
-          }
-      })
-}
+          scrolling();
+          initialUser();
+    $('#chat-input').val("")
+})
+
+//Send Chat onKey Enter
+var send = document.getElementById('chat-input');
+var date = new Date().toLocaleString();
+send.addEventListener("keyup",function(event){
+    event.preventDefault();
+    if (event.keyCode == 13) {
+        $('#sendreply').click()
+    }
+})

@@ -29,7 +29,7 @@ Route::get('/404', function () {
 Route::get('/', function () {
 	return view('interface_frontend.frontend.index');
 })->name('index');
-Route::get('/voucher', 'frontend\productController@indexVoucher');
+Route::get('/voucher', 'frontend\productController@indexVoucher')->name('voucher');
 
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
@@ -92,9 +92,15 @@ Route::prefix('frontend')->group(function () {
 	Route::get('/detach/{id}', 'frontend\cartcontroller@deaddQty');
 	Route::get('/attach/{id}', 'frontend\cartcontroller@addQty');
 	Route::get('/cancel/{id}', 'frontend\cartcontroller@cancel');
-	Route::get('showfeed', 'frontend\settingusercontroller@showfeed')->name('showfeed');
+	// livechat
+	Route::get('feedsuser', 'frontend\settingusercontroller@feedsuser')->name('feedsuser');
+	Route::get('servicefeed/{id}', 'frontend\settingusercontroller@servicefeed')->name('servicefeed');
+	Route::post('/replyfeed/{id}', 'frontend\settingusercontroller@replyfeed')->name('replyfeed');
+	// Front Chat
 	Route::get('feeds', 'frontend\settingusercontroller@feeds')->name('feeds');
+	Route::get('showfeed', 'frontend\settingusercontroller@showfeed')->name('showfeed');
 	Route::post('/feedback', 'frontend\settingusercontroller@feedback')->name('feedback');
+
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');

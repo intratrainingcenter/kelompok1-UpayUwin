@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html oncontextmenu="return false" lang="en">  
 <head>
     <title class="tittle"></title>
     <meta charset="utf-8">
@@ -54,6 +54,7 @@
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/owl-carousel.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/revolution-slider.js"></script>
 <script src="{{asset('js/settingwebfrontend.js')}}"></script>
+        @include('interface_frontend.master_frontend.element.footer')
 <script>
     jQuery(document).ready(function() {
         App.init();
@@ -63,9 +64,5 @@
         RevolutionSlider.initRSfullWidth();
 });
 </script>
-        <!--=== Footer v4 ===-->
-        @include('interface_frontend.master_frontend.element.footer')
-        <!--=== End Footer v4 ===-->
-
 </body>
 </html>

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class LaporanTransaksiController extends Controller
 {
     public function index(){
-    	$minutes = 60;
+    	$minutes = now()->addMinutes(1);
     	$transaksi = \Cache::remember('transaksi', $minutes, function () {
 		    return DB::table('transaksi_penjualans')->get();
 		});

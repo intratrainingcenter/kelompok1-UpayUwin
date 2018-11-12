@@ -4,7 +4,7 @@
                     <div class="illustration-v1 illustration-img1">
                         <div class="illustration-bg">
                             <div class="illustration-ads ad-details-v1">
-                                <h3>NEW YEAR <strong>SALE</strong> 30% - 60% <strong>off</strong></h3>
+                                <h3><strong>SALE</strong><strong></strong></h3>
                                 <a class="btn-u btn-brd btn-brd-hover btn-u-light" href="#">Purchase Now</a>
                             </div>    
                         </div>    
@@ -23,4 +23,4 @@
                     </a>
                 </div>    
             </div>
-        </div><!--/end row-->
+        </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html oncontextmenu="return false" lang="en">
 <head>
     <title class="tittle"></title>
     <meta charset="utf-8">
@@ -20,8 +20,7 @@
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
     @yield('add_header')
-</head>
-
+</head> 
 <body class="header-fixed">
 <div class="wrapper">
     @include('interface_frontend.master_frontend.element.header')
@@ -38,58 +37,22 @@
         </div>
     <div class="content container">
         @yield('content')
-    </div><!--/end container-->
-    <!--=== End Content Part ===-->
-
-            <!--=== Shop Suvbscribe ===-->
-            @include('interface_frontend.master_frontend.shop.subscribe')
-            <!--=== End Shop Suvbscribe ===-->
-
-
-</div><!--/wrapper-->
-
-<!-- JS Global Compulsory -->
+    </div>
+        @include('interface_frontend.master_frontend.shop.subscribe')
+</div>
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/jquery/jquery-migrate.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- JS Implementing Plugins -->
 <script src="{{asset('FrontEnd')}}/assets/plugins/back-to-top.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/smoothScroll.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/noUiSlider/jquery.nouislider.full.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<!-- Master Slider -->
 <script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/masterslider.min.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/plugins/master-slider/quick-start/masterslider/jquery.easing.min.js"></script>
-<!-- JS Customization -->
 <script src="{{asset('FrontEnd')}}/assets/js/custom.js"></script>
-<!-- JS Page Level -->
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-  $.ajax({
-    type: 'GET',
-    url: '{{ URL::route("settingweb") }}',
-    data: {
-      _method: 'GET'
-    },
-  }).done(function (data) {
-    console.log(data);
-    $(".tittle").text(data.tittle);
-    $("meta[name='address']").attr("content", data.address);
-    $("meta[name='phone']").attr("content", data.phone);
-    $(".address").text(data.address);
-    $(".phone").text(data.phone);
-    $("link[rel=icon]").attr("href","{{asset('backend/img')}}"/+ data.logo);
-    $(".imageecommerce").attr("src","{{asset('backend/img')}}"/+ data.logo);
-  }).fail(function (data) {
-    console.log(data);
-  })
-});
-</script>
-<!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')
-    <!--=== End Footer v4 ===-->
 @yield('add_footer')
 </body>
 </html>
