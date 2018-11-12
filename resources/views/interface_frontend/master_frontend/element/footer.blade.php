@@ -4,7 +4,7 @@
                 <div class="row">
                     <!-- About -->
                     <div class="col-md-4 md-margin-bottom-40">
-                        <a href="index.html"><img class="footer-logo imageecommerce" src="" style="width:150px; height:150px;" alt=""></a>
+                        <a href="#"><img class="footer-logo imageecommerce" src="" style="width:150px; height:150px;" alt=""></a>
                         <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
                         <br>
                         <ul class="list-unstyled address-list margin-bottom-20">
@@ -42,3 +42,4 @@
 <!-- Cart Ajax -->
 <script src="{{asset('FrontEnd')}}/cart/cart.js"></script>
 <script> var frontend = "{{asset('FrontEnd')}}"; var checkout = "{{ route('checkout') }}"; </script>
+<script src="{{asset('js/settingwebfrontend.js')}}"></script>

@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <img id="logo-header" style="width:60px; height:60px;" class="imageecommerce" src="" alt="Logo">
                 </a>
             </div>

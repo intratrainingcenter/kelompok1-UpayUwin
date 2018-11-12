@@ -43,10 +43,6 @@ Route::post('/item/store', 'frontend\productController@addto_cart_item');
 Route::post('/voucher/store', 'frontend\productController@store');
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
 
-Route::get('UpayUwin/payment', function(){
-    return view('frontend.payment');
-});
-
 
 Route::post('/pay','PaymentController@payWithpaypal')->name('paymentpaypal');
 Route::get('/payment/status','PaymentController@getPaymentStatus')->name('payment.status');
@@ -54,6 +50,7 @@ Route::get('/payment/status','PaymentController@getPaymentStatus')->name('paymen
 Route::get('/backend/login',function(){
 	return view('backend.User.login')->middleware('admin');
 });
+Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
 
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
@@ -71,7 +68,6 @@ Route::prefix('backend')->middleware('admin')->group(function () {
   Route::resource('item','backend\ItemController');
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
-  Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
   	//Route setting
 	  Route::resource('setting','backend\SettingController');
 	//   Category
@@ -91,7 +87,7 @@ Route::prefix('frontend')->group(function () {
 	Route::post('setting', 'frontend\settingusercontroller@update')->name('settinguser');
 	Route::post('settingpassword', 'frontend\settingusercontroller@updatepass')->name('settingpassword');
 	Route::get('history', 'frontend\settingusercontroller@historytransaction')->name('history');
-	Route::get('checkout', 'frontend\cartcontroller@index')->name('checkout');
+	Route::get('checkout', 'frontend\cartcontroller@index')->middleware('user')->name('checkout');
 	Route::get('showcart', 'frontend\cartcontroller@showcart')->name('showcart');
 	Route::get('/detach/{id}', 'frontend\cartcontroller@deaddQty');
 	Route::get('/attach/{id}', 'frontend\cartcontroller@addQty');

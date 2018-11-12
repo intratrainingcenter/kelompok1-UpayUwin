@@ -4,7 +4,7 @@
 <div class="shop-product">
             <div class="container">
                 <ul class="breadcrumb-v5">
-                    <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#"><i class="fa fa-home"></i></a></li>
                     <li><a href="{{url('/item')}}">Item MOBALOG</a></li>
                     <li><a href="{{url('/item/'.$category)}}">{{$category}}</a></li>
                     <li class="active" id="active"></li>
@@ -13,8 +13,8 @@
 
             <div class="container">
                 <div class="row" id="load_data" index="{{$id}}">
-                    
-                    
+
+
                 </div>
 
             </div>

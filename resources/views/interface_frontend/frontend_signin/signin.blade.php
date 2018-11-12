@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html oncontextmenu="return false" lang="en">
 <head>
-	<title>Login Pages | Unify - Responsive Website Template</title>
+	<title class="tittle"></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-    <link rel="shortcut icon" href="{{asset('FrontEnd')}}/favicon.ico">
+	<meta name="address" id="address" content="">
+	<meta name="phone" id="phone" content="">
+	<link rel="icon" type="image/png" sizes="16x16" href="">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700&amp;subset=cyrillic,latin">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/style.css">
@@ -23,7 +23,7 @@
 		<div class="row equal-height-columns">
 			<div class="col-md-6 col-sm-6 hidden-xs image-block equal-height-column"></div>
 			<div class="col-md-6 col-sm-6 form-block equal-height-column">
-				<a href="index.html">
+				<a href="#">
 					<img src="{{asset('FrontEnd/log')}}/assets/img/themes/logo1-blue.png" alt="">
 				</a>
 				<h2 class="margin-bottom-30">Login To Your Account</h2>
@@ -62,6 +62,7 @@
 	<script src="{{asset('FrontEnd/log')}}/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
 	<script src="{{asset('FrontEnd/log')}}/assets/js/custom.js"></script>
 	<script src="{{asset('FrontEnd/log')}}/assets/js/app.js"></script>
+	<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 	<script>
 		jQuery(document).ready(function() {
 			App.init();

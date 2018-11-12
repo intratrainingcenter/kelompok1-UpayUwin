@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html oncontextmenu="return false" lang="en">
 <head>
-	<title>Profile Settings | Unify - Responsive Website Template</title>
+	<title class="tittle"></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="shortcut icon" href="{{asset('FrontEnd')}}/favicon.ico">
+	<meta name="address" id="address" content="">
+	<meta name="phone" id="phone" content="">
+	<link rel="icon" type="image/png" sizes="16x16" href="">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{asset('FrontEnd/log')}}/assets/css/style.css">
@@ -72,6 +72,7 @@
 	<script type="text/javascript" src="{{asset('FrontEnd/log')}}/assets/js/forms/checkout.js"></script>
 	<script type="text/javascript" src="{{asset('FrontEnd/log')}}/assets/js/plugins/datepicker.js"></script>
 	<script type="text/javascript" src="{{asset('FrontEnd/log')}}/assets/js/plugins/style-switcher.js"></script>
+	<script src="{{asset('js/settingwebfrontend.js')}}"></script>
 	@include('interface_frontend.master_frontend.element.footer')
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
