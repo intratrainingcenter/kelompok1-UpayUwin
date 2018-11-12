@@ -9,7 +9,7 @@ var config = {
 var db = firebase.initializeApp(config).database();
 var chatRef = db.ref('livechat/users/');
 $(document).on('ready',function(){
-    //alert('Ready')
+
     fetch_data();
     chatRef.once('value', function(snapshot) {
         if (snapshot.hasChild(authed)) {
@@ -51,26 +51,26 @@ function fetch_voucher()
                 type : 'GET',
                 dataType : 'json',
                 success: function(data){
-                    //console.log(data['msg']);
+
                     $.each(data['msg'], function(key,items){
                         if (items.from == 'admin') {
                             msg += "<div class='outgoing_msg'><div class='sent_msg'><p>"+ items.messages +"</p><span class='time_date'>"+ items.created_at +"</span> </div></div>";
-                        } 
+                        }
                            else {
                             msg +="<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>"+ items.messages +"</p><span class='time_date'>"+ items.created_at +"</span></div></div></div>";
                         }
-                        
+
                     })
                     
                     $('#chatroom').html(msg);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                    // $('#content').html(errorMsg);
+
                   }
             });
 }
-function clickme(elem) 
+function clickme(elem)
 {
             // get all 'a' elements
             var a = document.getElementsByClassName("chat_list");
