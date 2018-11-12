@@ -18,7 +18,6 @@ class VoucherController extends Controller
      */
     public function index()
     {
-        // $data = voucher_game::all();
         $data = DB::table('voucher_games')
                     ->join('kategoris','voucher_games.kode_kategori','=','kategoris.id')
                     ->select('voucher_games.*','kategoris.nama_kategori')->get();
@@ -33,7 +32,7 @@ class VoucherController extends Controller
      */
     public function create()
     {
-       
+
     }
 
     /**
@@ -43,7 +42,7 @@ class VoucherController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $this->validate($request, array(
             'image' => 'image|mimes:jpeg,png,jpg|max:4048',
         ));
@@ -76,7 +75,7 @@ class VoucherController extends Controller
      */
     public function show($id)
     {
-    
+
     }
 
     /**
@@ -98,11 +97,11 @@ class VoucherController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
+    {
         $this->validate($request, array(
             'image' => 'image|mimes:jpeg,png,jpg|max:4048',
         ));
-        
+
         $data = voucher_game::find($id);
         $data->kode_voucher=$request->code_voucher;
         $data->nama_voucher=$request->name_voucher;

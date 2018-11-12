@@ -11,7 +11,7 @@
 
     const dbRefItem = firebase.database().ref().child('item').orderByChild("kategori").equalTo(category);
     dbRefItem.on('value', function(snapshot) {
-    console.log(snapshot.val());
+    
     let value = snapshot.val();
     let count = '';
     let htmls = [];
@@ -48,8 +48,8 @@
 });
 
 function toUSD(number) {
-    var number = number.toString(), 
-    dollars = number.split('.')[0], 
+    var number = number.toString(),
+    dollars = number.split('.')[0],
     cents = (number.split('.')[1] || '') +'00';
     dollars = dollars.split('').reverse().join('')
         .replace(/(\d{3}(?!$))/g, '$1,')

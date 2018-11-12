@@ -4,10 +4,10 @@
                         <span class="text-white">Enter your e-mail address below and we will send you instructions how to recover a password.</span>
                     </div>
                     <div class="row m-t-20">
-                        <!-- Form -->
+
                         <form class="col-12" action="{{ route('password.email') }}" method="post">
                           @csrf
-                            <!-- email -->
+
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
@@ -20,7 +20,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <!-- pwd -->
+                          
                             <div class="row m-t-20 p-t-20 border-top border-secondary">
                                 <div class="col-12">
                                     <a class="btn btn-success" href="#" id="to-login" name="action">Back To Login</a>

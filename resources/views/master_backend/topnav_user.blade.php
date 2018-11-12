@@ -3,8 +3,7 @@
       <div class="dropdown-menu dropdown-menu-right user-dd animated">
           <button type="button" class="dropdown-item" data-toggle="modal" data-target="#Profile"><i class="ti-user m-r-5 m-l-5"></i>Profile</button>
           <div class="dropdown-divider"></div>
-          <!-- <button type="button" class="dropdown-item" data-toggle="modal" data-target="#accountsetting"><i class="ti-user m-r-5 m-l-5"></i>Account Setting</button>
-          <div class="dropdown-divider"></div> -->
+          
           <a class="dropdown-item" href="{{ route('logout') }}"
                  onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
