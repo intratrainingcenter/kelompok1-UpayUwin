@@ -6,7 +6,6 @@ $(document).ready(function () {
       _method: 'GET'
     },
   }).done(function (data) {
-    console.log(data);
     $(".tittle").text(data.tittle);
     $("meta[name='address']").attr("content", data.address);
     $("meta[name='phone']").attr("content", data.phone);
@@ -15,6 +14,6 @@ $(document).ready(function () {
     $("link[rel=icon]").attr("href","backend/img/"+ data.logo);
     $(".imageecommerce").attr("src","backend/img/"+ data.logo);
   }).fail(function (data) {
-    console.log(data);
+  
   })
 });
