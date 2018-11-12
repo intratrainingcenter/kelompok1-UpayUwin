@@ -3,7 +3,6 @@
 <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
     <div class="auth-box bg-dark border-top border-secondary">
         <div>
-
             <form class="form-horizontal m-t-20" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="row p-b-30">
@@ -19,7 +18,6 @@
                                 </span>
                             @endif
                         </div>
-                        
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
@@ -47,7 +45,6 @@
                                 <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                             </div>
                             <input type="password" id="password2" class="form-control form-control-lg" name="password_confirmation" placeholder=" Confirm Password" aria-label="Password" aria-describedby="basic-addon1" required>
-
                         </div>
                         <input type=button class="btn-sm btn-info" id="show" value="Show Password" onclick="ShowPassword()">
                         <input type=button class="btn-sm btn-info" style="display:none" id="hide" value="Hide Password" onclick="HidePassword()">

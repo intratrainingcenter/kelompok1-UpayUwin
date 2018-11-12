@@ -1,28 +1,6 @@
 @section ('css')
-	<style>
-		.labels{
-			margin-top: 8px;
-		}
-		.add-button{
-			margin-bottom: 10px;
-		}
-		.closebtn {
-		    margin-left: 15px;
-		    font-weight: bold;
-		    float: right;
-		    font-size: 22px;
-		    line-height: 20px;
-		    cursor: pointer;
-		    transition: 0.3s;
-		}
-		.fotoAdd,.foto{
-			margin-top: 10px;
-			width: 100%;
-			height: 100%;
-		}
-	</style>
+<link href="{{asset('backend/css/voucher.css')}}" rel="stylesheet">
 @endsection
-
 @section ('js')
 	<script>
 		//dissable space
@@ -38,24 +16,23 @@
     			dataType: 'json',
     			 async: false
 			}).responseText);
-			
+
 		// checking the voucher code if it has same value
 		$('#code').keyup(function(event) {
-				
+
 			$.each(data, function(index, val) {
-					
+
 					if($('#code').val() == val.kode_voucher){
 						save = false;
 						$('#label_danger').show();
 						$('#code').addClass('is-invalid');
-						return false; 
+						return false;
 					}else{
 						save = true;
 						$('#label_danger').hide();
 						$('#code').removeClass('is-invalid');
 					}
-					
-				}); 
+				});
 			});
 			$(document).on('submit','#form_add',function(){
 				if (save == false) {
@@ -75,5 +52,3 @@
 	</script>
 	@include('backend.voucher.more-js')
 @endsection
-
-							

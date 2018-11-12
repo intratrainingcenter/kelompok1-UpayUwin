@@ -1,6 +1,5 @@
 @extends('../index_backend')
 @extends('backend.dashboard.additional')
-
 @section('content')
 <!-- Firebase App is always required and must be first -->
 <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
@@ -26,7 +25,7 @@
             </div>
             <div class="srch_bar">
               <div class="stylish-input-group">
-                
+
                 </span> </div>
             </div>
           </div>
@@ -49,5 +48,5 @@
       <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
     </div>
 </div>
-<script  src="{{asset('backend/livechat')}}/js/livechat.js"></script>    
+<script  src="{{asset('backend/livechat')}}/js/livechat.js"></script>
 @endsection

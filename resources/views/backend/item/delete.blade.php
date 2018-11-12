@@ -9,7 +9,6 @@
                 </button>
             </div>
             <div class="modal-body">
-
                     <center>
                         <h3>Konfirmasi Hapus item</h3>
                         <p>Apakah Anda ingin Menghapus item ini?</p>

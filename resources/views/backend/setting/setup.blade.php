@@ -6,17 +6,16 @@
 	@include('backend.setting.css')
 </head>
 <body>
-	       
 	<div class="container-fluid">
 		<div class="row"  style="margin-top: 20px;">
-			<div class="col-md-12">	
+			<div class="col-md-12">
 				<div class="card">
 					<div class="card-body">
 						<h3><i class=" fas fa-seedling"></i> Get Started Application Setup</h3>
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 		<form action="{{ route('setting.store') }}" method="post" enctype="multipart/form-data">
 			@csrf()
 			<div class="row">
@@ -42,14 +41,12 @@
 							<hr>
 								<label>Nama Website</label>
 								<input type="text" class="form-control" name="web_name" required="">
-
 								<label class="labels">Alamat Perusahaan</label>
 								<input type="text" class="form-control" name="company_address" required="">
-
 								<label class="labels">Nomor Telphone</label>
 								<input type="number" class="form-control" name="phone_number" required="">
 							<hr>
-								 <button id="save" type="submit" class="btn btn-dark"><i class="fas fa-paper-plane"></i> Save</button>	
+								 <button id="save" type="submit" class="btn btn-dark"><i class="fas fa-paper-plane"></i> Save</button>
 						</div>
 					</div>
 				</div>

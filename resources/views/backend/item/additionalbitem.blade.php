@@ -33,7 +33,6 @@
 			$('#resultupdate').html(updateData);
 		});
 	});
-
 	$('.saveupdate').on('click', function() {
 		var values = $("#modal-update").serializeArray();
 		var postData = {
@@ -45,25 +44,20 @@
 			 deskripsi	: values[5].value,
 			 gambar			: values[6].value,
 		};
-
 		var updates = {};
 		updates['item/' + updateID] = postData;
-
 		firebase.database().ref().update(updates);
 		event.preventDefault()
 		$("#Modal-edit").modal('hide');
 	});
-	
 function toUSD(number) {
-    var number = number.toString(), 
-    dollars = number.split('.')[0], 
+    var number = number.toString(),
+    dollars = number.split('.')[0],
     cents = (number.split('.')[1] || '') +'00';
     dollars = dollars.split('').reverse().join('')
         .replace(/(\d{3}(?!$))/g, '$1,')
         .split('').reverse().join('');
     return '$ ' + dollars + '.' + cents.slice(0, 2);
 }
-
 	</script>
-
 @endsection
