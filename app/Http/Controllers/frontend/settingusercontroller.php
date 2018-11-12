@@ -16,7 +16,6 @@ class settingusercontroller extends Controller
 {
     public function update(Request $request)
     {
-        // dd($request);
         $user = User::find(Auth::id());
         $check = Hash::check($request->password, Auth::User()->password);
         if (!$check) {
@@ -27,17 +26,15 @@ class settingusercontroller extends Controller
             $user->save();
             return redirect()->route('setting')->with('success','Your Profile has been changed');
         }
-        
+
     }
     public function updatepass(Request $request)
     {
-        dd($request->oldpassword);
         $user = User::find(Auth::id());
-        dd($request->get('password'));
         $oldpassword = $user->password;
-        
+
         $user->password = $request->get('password');
-        
+
         $user->save();
         return redirect()->route('setting')->with('success','Your Profile has been changed');
     }
@@ -79,6 +76,6 @@ class settingusercontroller extends Controller
     }
     public function servicefeed()
     {
-        
+
     }
 }
