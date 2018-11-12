@@ -53,7 +53,6 @@ class settingusercontroller extends Controller
     }
     public function feedback(Request $request)
     {
-        //$data = $request->messages;
         $data = new channel_message;
         $data->channels = 'customer_service';
         $data->messages = $request->messages;

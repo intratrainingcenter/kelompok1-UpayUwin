@@ -13,8 +13,8 @@
 $( document ).ready(function(){
             //Perform Ajax request.
             fetch_data();
-            
-            
+
+
         });
         function fetch_data()
         {
@@ -26,11 +26,11 @@ $( document ).ready(function(){
                     var cart = '';
                     var total = '';
                     var minicart = '';
-                    
+
                     var count = '';
                     var json = data;
                         var count = json.cart.length;
-                    console.log(data)
+
                     $.each(data, function (key, items) {
                         $.each(items, function (key, datas) {
                             cart +="<tr>";
@@ -40,7 +40,7 @@ $( document ).ready(function(){
                             cart +=                  "<h3>"+ datas.type +"   "+ addCommas(datas.nominal) +"</h3>";
                             cart +=                  "<span>"+ datas.voucher_code +"</span>";
                             cart +=                  "<input type='hidden' name='voucher_code[]' value='"+datas.voucher_code+"'>";
-                            cart +=            "</div>";    
+                            cart +=            "</div>";
                             cart +=        "</td>";
                             cart +=        "<td>"+ addCommas(datas.nominal) +"</td>";
                             cart +=        "<td>";
@@ -52,7 +52,7 @@ $( document ).ready(function(){
                             cart +=        "<td>";
                             cart +=            "<button type='button' class='close' onclick='cancelorder("+ datas.id +")'><span>&times;</span><span class='sr-only'>Close</span></button>";
                             cart +=        "</td>";
-                            cart +=    "</tr>";   
+                            cart +=    "</tr>";
                         });
                     });
                     $.each(data, function (key, items) {
@@ -64,12 +64,12 @@ $( document ).ready(function(){
                             minicart +=                "<span>"+ datas.type +"</span>";
                             minicart +=                "<small>Quantities : "+ datas.qty +" x "+ datas.nominal +" = "+ addCommas(datas.qty * datas.nominal) +"</small>";
                             minicart +=            "</div>";
-                            minicart +=         "</li>";   
+                            minicart +=         "</li>";
                         });
                     });
                     total +=    "<li class='subtotal'>";
                     total +=            "<div class='overflow-h margin-bottom-10'>";
-                    total +=                
+                    total +=
                     total +=            "</div>";
                     total +=            "<div class='row'>";
                     total +=                "<div class='col-xs-6'>";
@@ -82,16 +82,16 @@ $( document ).ready(function(){
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                    // $('#content').html(errorMsg);
+
                   }
             });
         }
 
-        function deaddQty(id) 
+        function deaddQty(id)
         {
             id += ''
             var oldValue = $('#qty1'+id).val();
-            
+
             if (oldValue == 1) {
                alert('This is minimum of order Quantity');
             } else {
@@ -100,19 +100,18 @@ $( document ).ready(function(){
                     type : 'GET',
                     dataType : 'json',
                     success: function(data){
-                        
-                        console.log(data)
+
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                         var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                        // $('#content').html(errorMsg);
+
                       }
                 });
             }
             fetch_data();
-            //$('#qty1'+id).val(newVal)
+
            }
-        function addQty(id) 
+        function addQty(id)
         {
             id += ''
             var oldValue = $('#qty1'+id).val();
@@ -126,16 +125,16 @@ $( document ).ready(function(){
                 type : 'GET',
                 dataType : 'json',
                 success: function(data){
-                    
-                    console.log(data)
+
+
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                    // $('#content').html(errorMsg);
+
                   }
             });
             fetch_data();
-            //$('#qty1'+id).val(newVal)
+
         }
         function cancelorder(id)
         {
@@ -148,15 +147,14 @@ $( document ).ready(function(){
                     type : 'GET',
                     dataType : 'json',
                     success: function(data){
-                        console.log(data)
                         fetch_data();
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                         var errorMsg = 'Ajax request failed: ' + xhr.responseText;
-                        // $('#content').html(errorMsg);
+                        
                       }
                 });
-                
+
             } else {
                 fetch_data();
             }

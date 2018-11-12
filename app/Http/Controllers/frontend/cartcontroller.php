@@ -16,14 +16,12 @@ class cartcontroller extends Controller
      */
     public function index()
     {
-        // $data =  cart::where('id_user','=',Auth::id())->get();
         return view('interface_frontend.frontend.checkout');
     }
     public function showcart()
     {
         $data =  cart::where('id_user','=',Auth::id())->get();
         return response()->json(array('success' => true, 'cart' => $data));
-        // return view('interface_frontend.frontend.checkout', compact('data'));
     }
     public function deaddQty($id)
     {

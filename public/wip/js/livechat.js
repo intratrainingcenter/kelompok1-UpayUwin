@@ -14,7 +14,7 @@ var config = {
             console.log(items.key)
             $('#chatList').append("<li id='chatView' class='chat-item'><div class='chat-item-text-container'><span class='chat-item-user'>"+ items.key +"</div></li>")
         })
-  
+
 	// Click chat to go to its conversation view.
 	var t = '';
 	$('#chatList').on('click','.chat-item', function() {
@@ -29,11 +29,11 @@ var config = {
 			{
                 if (items.val().pembalas == 'admin') {
                     chat += "<div class='chat-bubble-containter'><p class='chat-bubble-left'>"+ items.val().message +"</p></div>";
-                } 
+                }
                    else {
                     chat += "<div class='chat-bubble-containter'><p class='chat-bubble-right'>"+ items.val().message +"</p></div>";
                 }
-                $('.chat-conversation-body').html(chat);	
+                $('.chat-conversation-body').html(chat);
 			});
             //Send Chat onKey Enter
             var send = document.getElementById('chat-input');
@@ -42,7 +42,6 @@ var config = {
             send.addEventListener("keyup",function(event){
                 event.preventDefault();
                 if (event.keyCode == 13) {
-                // console.log(date)
                 chatRef2.push({
                     message : this.value,
                     pembalas : "admin",

@@ -14,7 +14,7 @@ function toggleFab() {
   $('#prime').toggleClass('is-float');
   $('.chat').toggleClass('is-visible');
   $('.fab').toggleClass('is-visible');
-  
+
 }
 
   $('#chat_first_screen').click(function(e) {
@@ -43,11 +43,7 @@ function toggleFab() {
       $('.chat_header').toggleClass('chat_header2');
       $('.fab_field').toggleClass('fab_field2');
       $('.chat_converse').toggleClass('chat_converse2');
-      //$('#chat_converse').css('display', 'none');
-     // $('#chat_body').css('display', 'none');
-     // $('#chat_form').css('display', 'none');
-     // $('.chat_login').css('display', 'none');
-     // $('#chat_fullscreen').css('display', 'block');
+      
   });
 
 function hideChat(hide) {

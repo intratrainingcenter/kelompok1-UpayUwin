@@ -3,7 +3,7 @@
 <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
     <div class="auth-box bg-dark border-top border-secondary">
         <div>
-            <!-- Form -->
+
             <form class="form-horizontal m-t-20" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="row p-b-30">
@@ -19,7 +19,7 @@
                                 </span>
                             @endif
                         </div>
-                        <!-- email -->
+                        
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>

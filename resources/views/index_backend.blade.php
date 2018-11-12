@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="">
     <title class="tittle"></title>
     @include('master_backend.css_index_backend')
-    
+
     @yield('css')
 </head>
 
@@ -51,14 +51,14 @@
         _method: 'GET'
       },
     }).done(function (data) {
-      console.log(data);
+
       $(".tittle").text(data.tittle);
       $("meta[name='address']").attr("content", data.address);
       $("meta[name='phone']").attr("content", data.phone);
       $("#title").text(data.tittle);
       $("link[rel=icon]").attr("href","{{asset('backend/img')}}/"+ data.logo);
     }).fail(function (data) {
-      console.log(data);
+    
     })
   });
   </script>
