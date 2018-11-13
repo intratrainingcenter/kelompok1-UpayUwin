@@ -10,19 +10,19 @@
             </div>
             <div class="modal-body">
                     @csrf()
-                    <label class="labels">Code Category :</label>  
-                    <input type="text" id="code" name="code_category" class="form-control" placeholder="Insert Code of New Category here" required>
-                    
-                    <label class="labels">New Category :</label>  
+                    <label class="labels">Code Category :</label>
+                    <input type="number" id="code" name="code_category" class="form-control" placeholder="Insert Code of New Category here" required>
+
+                    <label class="labels">New Category :</label>
                     <input type="text" id="code" name="category" class="form-control" placeholder="Insert Name of New Category here" required>
-                    
-                    <label class="labels">Nama Kategori :</label>     
+
+                    <label class="labels">Nama Kategori :</label>
                     <input type="text" name="detail" class="form-control" placeholder="Category Name Here" value="">
-                    
+
                     <div id="label_danger" class="invalid-feedback">
                         Kode Voucher Sudah Ada
                     </div>
-                    
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
@@ -31,7 +31,7 @@
             </form>
         </div>
     </div>
-</div> 
+</div>
 @if ($errors->any())
  <div class="alert alert-danger" role="alert" style="margin-top: 20px;">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -42,4 +42,3 @@
       @endforeach
 </div>
 @endif
-
