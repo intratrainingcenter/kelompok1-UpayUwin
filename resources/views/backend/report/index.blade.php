@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($transaksi as $number => $data)
+                        @foreach($transaction as $number => $data)
                         <tr>
                             <td>{{$number + 1}}</td>
                             <td>{{$data->kode_transaksi}}</td>
@@ -34,7 +34,7 @@
                                 <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-view{{$data->id}}"><i class="fas fa-pencil-alt"></i></button>
                             </td>
                         </tr>
-                        @include('backend.laporan.view')
+                        @include('backend.report.view')
                         @endforeach
                     </tbody>
                 </table>

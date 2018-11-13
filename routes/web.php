@@ -72,7 +72,7 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	//   Category
 	Route::resource('category','backend\CategoryController');
 	// Laporan Transaksi
-	Route::get('laporantransaksi','backend\LaporanTransaksiController@index')->name('laporan');
+	Route::get('reporttransaksi','backend\ReportTransaksiController@index')->name('laporan');
 });
 
 //Route Untuk Frontend
