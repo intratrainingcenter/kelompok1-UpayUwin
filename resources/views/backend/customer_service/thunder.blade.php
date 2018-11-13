@@ -1,5 +1,5 @@
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('wip')}}/css/style.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,9 +12,9 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script> 
+	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
 </head>
-	
+
 	<div class="container">
 		<div class="chat-window-mask">
 			<div class="chat-window-box">
@@ -29,12 +29,7 @@
 					</header>
 					<section class="chat-list-body">
 						<ul class="chat-list-list" id="chatList">
-							<!-- <li id="chatView" class="chat-item">
-								<div class="chat-item-text-container">
-									<span class="chat-item-user">John Doe</span>
-									<span class="chat-item-last-message">How are you?</span>
-								</div>
-							</li> -->
+
 						</ul>
 					</section>
 				</section>
@@ -49,16 +44,11 @@
 							<span class="user-name" id="test2"></span>
 						</section>
 						<div class="chat-conversation-end">
-							
+
 						</div>
 					</header>
 					<section class="chat-conversation-body" id="your_div">
-						<!-- <div class="chat-bubble-containter">
-							<p class="chat-bubble-left">How are you?</p>
-						</div>
-						<div class="chat-bubble-containter">
-							<p class="chat-bubble-right">How are you?</p>
-						</div> -->
+						
 					</section>
 					<footer class="chat-conversation-action">
 						<input id="chat-input" type="text" value="" name="writeMessage" autofocus="autofocus" placeholder="Write A Reply" class="chat-conversation-write">

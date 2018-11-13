@@ -37,12 +37,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $this->validate($request, array(
             'code_category' => 'required',
             'category' => 'required',
         ));
-        //dd($request->code_category);
         $data = new kategori;
         $data->kode_kategori = $request->code_category;
         $data->nama_kategori = $request->category;
@@ -86,7 +85,7 @@ class CategoryController extends Controller
             'code_category' => 'required',
             'category' => 'required',
         ));
-        
+
         $data = kategori::find($id);
         $data->kode_kategori = $request->code_category;
         $data->nama_kategori = $request->category;

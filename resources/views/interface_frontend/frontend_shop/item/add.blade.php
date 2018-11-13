@@ -11,7 +11,7 @@
 
     const dbRefItem = firebase.database().ref().child('item').orderByChild("kategori").equalTo(category);
     dbRefItem.on('value', function(snapshot) {
-    console.log(snapshot.val());
+    
     let value = snapshot.val();
     let count = '';
     let htmls = [];
@@ -21,9 +21,9 @@
     if(value){
          $.each(value, function(index,value){
             count = snapshot.numChildren()+' result';
-            htmls.push(' <div class="col-md-3"> \
+            htmls.push(' <div class="col-md-3 col-sm-3 col-xs-3"> \
                 <div class="product-img product-img-brd">\
-                    <a href="{{url("/item")}}/'+category+'/'+index+'"><img class="full-width img-responsive" src="'+value.gambar+'" alt=""></a>\
+                    <a href="{{url("/item")}}/'+category+'/'+index+'"><img class="ms-brd" width="100%" height="200px" src="'+value.gambar+'" alt=""></a>\
                 </div>\
                 <div class="product-description product-description-brd">\
                     <div class="overflow-h ">\
@@ -42,14 +42,15 @@
         </center>\ ');
     }
 
-    $('#active').html(category);
+    $('#cat').html('{{url("/'category'")}}');
+    $('#cat').text(category);
     $('#load').html(htmls);
     $('#count').text(count);
 });
 
 function toUSD(number) {
-    var number = number.toString(), 
-    dollars = number.split('.')[0], 
+    var number = number.toString(),
+    dollars = number.split('.')[0],
     cents = (number.split('.')[1] || '') +'00';
     dollars = dollars.split('').reverse().join('')
         .replace(/(\d{3}(?!$))/g, '$1,')

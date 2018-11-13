@@ -20,7 +20,7 @@
         }).done(function (data_load) {
             $('#load').html(data_load);
         }).fail(function (data_load) {
-            console.log(data_load);
+            
         })
     });
 </script>

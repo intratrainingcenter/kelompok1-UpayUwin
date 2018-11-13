@@ -4,7 +4,7 @@
 <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
     <div class="auth-box bg-dark border-top border-secondary">
         <div id="loginform">
-                    <!-- Form -->
+                    
                     <form class="form-horizontal m-t-20" action="{{route('login')}}" method="POST">
                         @csrf
                         <div class="row p-b-30">

@@ -21,7 +21,7 @@ class productController extends Controller
     {
         $product = 'voucher';
         $count = kategori::count();
-        $categori = kategori::get();
+        $categori = kategori::all();
         return view('interface_frontend/frontend_shop/category/categori', compact('count','categori','product'));
     }
 
@@ -94,7 +94,7 @@ class productController extends Controller
     public function showVoucher($id)
     {
         $category = kategori::find($id);
-        $voucher = voucher_game::where('kode_kategori',$id)->get();
+        $voucher = voucher_game::where('status', 'aktif')->where('kode_kategori',$id)->get();
 
         return view('interface_frontend/frontend_shop/voucher/voucher', compact('voucher' , 'category'));
     }

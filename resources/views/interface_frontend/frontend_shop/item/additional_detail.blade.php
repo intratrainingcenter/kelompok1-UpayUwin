@@ -10,12 +10,12 @@
     let id = $('#load_data').attr('index');
     firebase.database().ref().child('item/' + id).on('value', function(snapshot) {
         var value = snapshot.val();
-        console.log(value);
+      
         var updateData = '\
             <div class="col-md-6 md-margin-bottom-50">\
                 <div class="ms-showcase2-template">\
                     <div class=" ms-skin-default" id="masterslider">\
-                        <img class="ms-brd" src="'+value.gambar+'" >\
+                        <img class="ms-brd" width="500px" src="'+value.gambar+'" >\
                     </div>\
                 </div>\
             </div>\
@@ -58,8 +58,8 @@ $('#form_order').submit(function(event) {
 });
 
 function toUSD(number) {
-    var number = number.toString(), 
-    dollars = number.split('.')[0], 
+    var number = number.toString(),
+    dollars = number.split('.')[0],
     cents = (number.split('.')[1] || '') +'00';
     dollars = dollars.split('').reverse().join('')
         .replace(/(\d{3}(?!$))/g, '$1,')

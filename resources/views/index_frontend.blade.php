@@ -46,7 +46,7 @@
 <script>
     jQuery(document).ready(function() {
 
-        console.log( "ready!" );
+
         App.init();
         App.initScrollBar();
         App.initParallaxBg();

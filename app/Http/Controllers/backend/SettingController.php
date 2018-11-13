@@ -19,7 +19,6 @@ class SettingController extends Controller
     public function index()
     {
         $data = setting::first();
-        // dd($data);
         return view('backend.setting.index',compact('data'));
     }
 
@@ -91,7 +90,6 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-      // dd($request->all());
       $update = setting::find($id);
       $file = $request->file('logo');
       $fileName   = $file->getClientOriginalName();

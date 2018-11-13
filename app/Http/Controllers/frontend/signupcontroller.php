@@ -12,11 +12,9 @@ class signupcontroller extends Controller
 {
     public function store(Request $request)
     {
-        
+
         $check = User::where('email','=',$request->get('Email'))->first();
-        //dd($check);
         if ($check = null ) {
-            dd('email telah terpakai');
             return redirect()->route('signup')->with('failed', 'Email telah terpakai');
         }
         else {
@@ -25,12 +23,12 @@ class signupcontroller extends Controller
                 'email' => $request->get('email'),
                 'password' => bcrypt($request->get('password')),
                 'level' => 'user',
-                'status' => 'logout',   
+                'status' => 'logout',
             ]);
             $data->save();
             Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-            return redirect()->route('index')->with('success', 'Data Telah Ditambahkan'); 
+            return redirect()->route('index')->with('success', 'Data Telah Ditambahkan');
         }
-        
+
     }
 }

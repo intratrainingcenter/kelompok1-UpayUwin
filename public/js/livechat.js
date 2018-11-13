@@ -19,20 +19,20 @@ $('#chatclick').on('click', '.chat__human', function() {
       {
                   if (items.val().pembalas == 'admin') {
                     chat += "<li class='conversation__msg cf'><span>"+ items.val().message +"</span></li>";
-                  } 
+                  }
                    else {
                     chat += "<li class='conversation__msg cf'><span class='right'>"+ items.val().message +"</span></li>";
                   }
           $('.conversation__wrap').html(chat);
       });
-      
+
       var send = document.getElementById('myInput');
       var sendtext = document.getElementById('myInput').value;
       var date = new Date().toLocaleString();
       send.addEventListener("keyup",function(event){
         event.preventDefault();
         if (event.keyCode == 13) {
-          // console.log(date)
+
           chatRef2.push({
             message : this.value,
             pembalas : "admin",
@@ -50,18 +50,6 @@ $('#chatclick').on('click', '.chat__human', function() {
       chatRef.on('child_added', function showData(items)
       {
         user +="<li class='chat__human'><img class='chat__avatar' src='' alt='' /><span class='chat__name' >"+items.val().username+"</span></li>";
-          // console.log(items.val().username)
+
           $('#chatclick').append("<li class='chat__human'><img class='chat__avatar' src='' alt='' /><span class='chat__name' >"+items.key+"</span></li>");
       })
-
-      // var send = document.getElementById('myInput');
-      // var sendtext = document.getElementById('myInput').value;
-      // send.addEventListener("keyup",function(event){
-      //   event.preventDefault();
-      //   if (event.keyCode == 13) {
-      //     console.log(this.value)
-         
-      //     this.value = "";
-      //   }
-      // })
-      
