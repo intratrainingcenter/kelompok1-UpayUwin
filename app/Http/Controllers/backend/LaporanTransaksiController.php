@@ -16,6 +16,7 @@ class LaporanTransaksiController extends Controller
 		$detail_transaksi = \Cache::remember('detail_transaksi', $minutes, function () {
 		    return DB::table('detail_transaksis')->get();
 		});
+//		dd($detail_transaksi);
 		return view('backend.laporan.index', compact('transaksi','detail_transaksi'));
     }
 }

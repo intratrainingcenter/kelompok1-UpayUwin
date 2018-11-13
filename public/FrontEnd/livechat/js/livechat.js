@@ -6,16 +6,53 @@ var config = {
     storageBucket: "ecommerce-upayuwin.appspot.com",
     messagingSenderId: "179852905701"
   };
+var th = '';
 var db = firebase.initializeApp(config).database();
 var chatRef = db.ref('livechat/users/');
 $(document).on('ready',function(){
 
-    fetch_data();
     chatRef.once('value', function(snapshot) {
         if (snapshot.hasChild(authed)) {
-          fetch_data();
+            var msg = '';
+            var chatRef2 = db.ref('livechat/users/'+authed);
+            chatRef2.on('child_added',function showData(items)
+                    {
+                        if (items.val().pembalas == 'user') {
+                            msg += "<div class='outgoing_msg'><div class='sent_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span> </div></div>";
+                        } 
+                            else {
+                            msg +="<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span></div></div></div>";
+                        }
+                        
+                        $('#sendreplyurl').val(authed);
+                        $('#chatroom').html(msg);
+                        scrolling();
+                    });
         } else {
-            alert('Your Account not yet started an customer service conversation')
+            alert('Your Account : '+ authed +' not yet started an customer service conversation');
+            var chatRef3 = db.ref('livechat/users/'+authed);
+            chatRef3.update({
+                1 : {
+                    message : "Halo!! Selamat datang di layanan customer kami. tanyakan sesuatu",
+                    pembalas : "admin",
+                    status : "unread",
+                    waktu : date ,
+                    }
+                })
+                var chatRef2 = db.ref('livechat/users/'+authed);
+            chatRef2.on('child_added',function showData(items)
+                    {
+                        if (items.val().pembalas == 'user') {
+                            msg += "<div class='outgoing_msg'><div class='sent_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span> </div></div>";
+                        } 
+                            else {
+                            msg +="<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span></div></div></div>";
+                        }
+                        
+                        $('#sendreplyurl').val(authed);
+                        $('#chatroom').html(msg);
+                        scrolling();
+                    });
         }
       });
 
@@ -27,21 +64,7 @@ function scrolling()
 }
 function fetch_data()
 {
-    var msg = '';
-    var chatRef2 = db.ref('livechat/users/'+authed);
-    chatRef2.on('child_added',function showData(items)
-              {
-                  if (items.val().pembalas == 'user') {
-                      msg += "<div class='outgoing_msg'><div class='sent_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span> </div></div>";
-                  } 
-                     else {
-                      msg +="<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span></div></div></div>";
-                  }
-                  
-                  $('#sendreplyurl').val(authed);
-                  $('#chatroom').html(msg);
-                  scrolling();
-              });
+    alert(authed);
 }
 function fetch_voucher()
         {
@@ -51,7 +74,7 @@ function fetch_voucher()
                 type : 'GET',
                 dataType : 'json',
                 success: function(data){
-
+                    console.log(data)
                     $.each(data['msg'], function(key,items){
                         if (items.from == 'admin') {
                             msg += "<div class='outgoing_msg'><div class='sent_msg'><p>"+ items.messages +"</p><span class='time_date'>"+ items.created_at +"</span> </div></div>";
@@ -59,7 +82,6 @@ function fetch_voucher()
                            else {
                             msg +="<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>"+ items.messages +"</p><span class='time_date'>"+ items.created_at +"</span></div></div></div>";
                         }
-
                     })
                     
                     $('#chatroom').html(msg);
@@ -78,19 +100,17 @@ function clickme(elem)
             for (i = 0; i < a.length; i++) {
                 // Remove the class 'active' if it exists
                 a[i].classList.remove('active_chat')
-                
             }
             // add 'active' classs to the element that was clicked
             elem.classList.add('active_chat');
             if ($('h5', elem).text() == 'Upay-Uwin') {
-                $('#sendreplyurl').val("")
                 $('#chat-input').prop("disabled", true);
                 $('#chat-input').val("")
-                fetch_voucher()
+                fetch_voucher();
             } if ($('h5', elem).text() == 'Customer Service') {
                 $('#chat-input').prop("disabled", false);
                 $('#sendreplyurl').val(authed);
-                fetch_data()
+                fetch_data();
             }          
 }
 
@@ -108,9 +128,7 @@ $('#sendreply').on('click',function(){
             })
             scrolling();
         $('#chat-input').val("")
-    }
-    
-        
+    }   
 })
 function sendMessage() {
     // Get text message from input.

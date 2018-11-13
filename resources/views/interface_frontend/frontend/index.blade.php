@@ -17,9 +17,7 @@
 
                 <!--=== Illustration v3 ===-->
                     @include('interface_frontend.master_frontend.element.illustration')
-                <!--=== End Illustration v3 ===-->
-
-                    
+                <!--=== End Illustration v3 ===-->            
     </div>
     <!--=== End Product Content ===-->
 

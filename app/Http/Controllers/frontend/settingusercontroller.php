@@ -72,14 +72,6 @@ class settingusercontroller extends Controller
     public function replyfeed(Request $request, $id)
     {
         $data = new channel_message;
-        // $data->channels = 'customer_service';
-        // $data->messages = $request->messages;
-        // $data->room = $id;
-        // $data->from = 'admin';
-        // $data->receive = 'receive';
-        // $data->created_at = Carbon::now()->setTime(23,59,59)->format('Y-m-d H:i:s');
-        // $data->updated_at = Carbon::now()->setTime(23,59,59)->format('Y-m-d H:i:s');
-        // //$data->save();
         return response()->json(array('success' => true, 'message' => $data));
     }
     public function servicefeed($id)

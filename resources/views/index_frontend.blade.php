@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/plugins/revolution-slider/rs-plugin/css/settings.css">
     <link rel="stylesheet" href="{{asset('FrontEnd')}}/assets/css/custom.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
 </head>
 
 <body class="header-fixed">
@@ -45,8 +46,6 @@
 <script src="{{asset('js/settingwebfrontend.js')}}"></script>
 <script>
     jQuery(document).ready(function() {
-
-
         App.init();
         App.initScrollBar();
         App.initParallaxBg();
@@ -54,6 +53,11 @@
         RevolutionSlider.initRSfullWidth();
 });
 </script>
+@if(Session::has("success"))
+<!-- <script>
+alert('Payment Success');
+</script> -->
+@endif
         <!--=== Footer v4 ===-->
         @include('interface_frontend.master_frontend.element.footer')
         <!--=== End Footer v4 ===-->

@@ -1,6 +1,9 @@
 @section('content')
 @extends('interface_frontend.index_checkout')
         <div class="container">
+        @if(Session::has("error"))
+            <p class="alert {{ Session::get("alert-class", "alert-danger") }}">{{ Session::get("error") }}</p>
+        @endif
             <form id="shopping-cart" class="shopping-cart" action="{{ route('paymentpaypal') }}" method="post">
                 @csrf
                 <div>
@@ -80,9 +83,7 @@
                                         <div class="total-result-in">
                                             <span id="GrandTotals"></span>
                                             <input type="hidden" id="countvalue">
-                                            @if(Session::has("error"))
-                                            <p class="alert {{ Session::get("alert-class", "alert-danger") }}">{{ Session::get("error") }}</p>
-                                            @endif
+                                            
                                         </div>
                                     </li>
                                 </ul>

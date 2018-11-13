@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="{{asset('backend/livechat')}}/css/style.css">
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
 <div class="container">
 <h3 class=" text-center">Customer Service</h3>
 <div class="messaging">

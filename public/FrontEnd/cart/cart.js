@@ -133,8 +133,6 @@ $( document ).ready(function(){
                 type : 'GET',
                 dataType : 'json',
                 success: function(data){
-
-
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;
