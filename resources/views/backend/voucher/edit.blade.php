@@ -11,16 +11,17 @@
             <div class="modal-body">
                     @csrf
                     @method('put')
-                    <label class="labels">Kode Voucher :</label>  
-                    <input type="text" name="code_voucher" class="form-control" placeholder="Kode Voucher Here" value="{{$data->kode_voucher}}">
-                    
                     <label class="labels">Nama Voucher :</label>     
                     <input type="text" name="name_voucher" class="form-control" placeholder="Nama Voucher Here" value="{{$data->nama_voucher}}">
                      
                     <label class="labels">Kategori :</label>
                      <select name="category" class="form-control" required>
                         @foreach($category as $value)
+                        @if($value->kode_kategori == $data->kode_kategori)
+                            <option value="{{$value->kode_kategori}}" selected>{{$value->nama_kategori}}</option>
+                        @else
                             <option value="{{$value->kode_kategori}}">{{$value->nama_kategori}}</option>
+                        @endif    
                         @endforeach
                     </select>
                      

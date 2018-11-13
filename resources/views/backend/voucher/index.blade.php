@@ -24,7 +24,6 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Kode Voucher</th>
                             <th>Nama Voucher</th>
                             <th>Kategori</th>
                             <th>Harga Voucher</th>
@@ -36,7 +35,6 @@
                     <tbody>
                         @foreach($data as $number => $data)
                         <tr>
-                            <td>{{$data->kode_voucher}}</td>
                             <td>{{$data->nama_voucher}}</td>
                             <td>{{$data->nama_kategori}}</td>
                             <td>$ {{number_format($data->harga_voucher,2)}}</td>
