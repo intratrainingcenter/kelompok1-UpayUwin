@@ -13,8 +13,6 @@
 $( document ).ready(function(){
             //Perform Ajax request.
             fetch_data();
-
-
         });
         function fetch_data()
         {
@@ -30,12 +28,11 @@ $( document ).ready(function(){
                     var count = '';
                     var json = data;
                         var count = json.cart.length;
-
                     $.each(data, function (key, items) {
                         $.each(items, function (key, datas) {
                             cart +="<tr>";
                             cart +=        "<td class='product-in-table'>";
-                            cart +=           " <img class='img-responsive' src='"+frontend+"/assets/img/thumb/08.jpg' alt=''>";
+                            cart +=           " <img class='img-responsive' src='"+frontend+"/UNIQUE.png' alt=''>";
                             cart +=            "<div class='product-it-in'>";
                             cart +=                  "<h3>"+ datas.type +"   "+ addCommas(datas.nominal) +"</h3>";
                             cart +=                  "<span>"+ datas.voucher_code +"</span>";
@@ -62,7 +59,7 @@ $( document ).ready(function(){
                     $.each(data, function (key, items) {
                         $.each(items, function (key, datas) {
                             minicart +=         "<li>";
-                            minicart +=            "<img class='img-responsive' src='"+frontend+"/assets/img/thumb/08.jpg' alt=''>";
+                            minicart +=            "<img class='img-responsive' src='"+frontend+"/UNIQUE.png' alt=''>";
                             minicart +=            "<button type='button' onclick='cancelorder("+ datas.id +")' class='close'>×</button>";
                             minicart +=            "<div class='overflow-h'>";
                             minicart +=                "<span>"+ datas.type +"</span>";
@@ -81,12 +78,13 @@ $( document ).ready(function(){
                     total +=            "</div>";
                     total +=            "</li>";
                     var sum = GrandTotals.reduce(add, 0);
+                    $('#countvalue').val(count);
                     $('#minicart').html(minicart+total);
                     $('#subtot').html('$'+sum);
                     $('#count_cart').html(count);
                     $('table tbody').html(cart);
-                    $('#Subtotals').html(sum);
-                    $('#GrandTotals').html(sum);
+                    $('#Subtotals').html('$'+sum);
+                    $('#GrandTotals').html('$'+sum);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     var errorMsg = 'Ajax request failed: ' + xhr.responseText;
