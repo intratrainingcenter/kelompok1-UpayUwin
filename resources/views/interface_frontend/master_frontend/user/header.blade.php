@@ -1,7 +1,7 @@
 <div class="header">
 			<div class="container">
 				<a class="logo" href="{{ route('index')}}">
-					<img src="{{asset('FrontEnd/log')}}/assets/img/logo1-default.png" alt="Logo">
+					<h1 class="nameecommerce"></h1>
 				</a>
 				<div class="topbar">
 					<ul class="loginbar pull-right">
