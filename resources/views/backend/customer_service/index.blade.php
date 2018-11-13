@@ -31,8 +31,7 @@
             </div>
           </div>
           <div class="inbox_chat" id="myDIV">
-            <!-- myDIVchat -->
-            
+
           </div>
         </div>
         <div class="mesgs">

@@ -30,7 +30,7 @@
                 <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
                 <ul class="breadcrumb-v4-in">
                     <li><a href="{{url('/')}}">Home</a></li>
-                    <li><a href="{{url('/item')}}">Item</a></li>
+                    <li><a href="" id="cat"></a></li>
                     <li class="active" id="active"></li>
                 </ul>
             </div>
@@ -52,6 +52,29 @@
 <script src="{{asset('FrontEnd')}}/assets/js/custom.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/shop.app.js"></script>
 <script src="{{asset('FrontEnd')}}/assets/js/plugins/mouse-wheel.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $.ajax({
+    type: 'GET',
+    url: '{{ URL::route("settingweb") }}',
+    data: {
+      _method: 'GET'
+    },
+  }).done(function (data) {
+
+    $(".tittle").text(data.tittle);
+    $("meta[name='address']").attr("content", data.address);
+    $("meta[name='phone']").attr("content", data.phone);
+    $(".address").text(data.address);
+    $(".phone").text(data.phone);
+    $("link[rel=icon]").html('{{asset("/backend/img/'data.logo'")}}');
+    $(".imageecommerce").html('{{asset("/backend/img/'data.logo'")}}');
+  }).fail(function (data) {
+    
+  })
+});
+</script>
+<!--=== Footer v4 ===-->
 @include('interface_frontend.master_frontend.element.footer')
 @yield('add_footer')
 </body>

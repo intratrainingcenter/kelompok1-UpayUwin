@@ -16,19 +16,16 @@ class cartcontroller extends Controller
      */
     public function index()
     {
-        // $data =  cart::where('id_user','=',Auth::id())->get();
         return view('interface_frontend.frontend.checkout');
     }
     public function showcart()
     {
         $data =  cart::where('id_user','=',Auth::id())->get();
         return response()->json(array('success' => true, 'cart' => $data));
-        // return view('interface_frontend.frontend.checkout', compact('data'));
     }
     public function deaddQty($id)
     {
         $data =  cart::where('id_user','=',Auth::id())->find($id);
-        //dd($data->qty);
         if ($data->qty == 1) {
             $data->qty = 1;
             $data->save();
@@ -41,7 +38,6 @@ class cartcontroller extends Controller
     public function addQty($id)
     {
         $data =  cart::where('id_user','=',Auth::id())->find($id);
-        //dd($data->qty);
         $data->qty = $data->qty + 1;
         $data->save();
         return response()->json(array('success' => true, 'cart' => $data));

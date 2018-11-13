@@ -11,9 +11,9 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 md-margin-bottom-50">
+                    <div class="col-md-6 col-sm-6 md-margin-bottom-50">
                         <div class="ms-showcase2-template">
-                            <!-- Master Slider -->
+                        
                             <div class=" ms-skin-default" id="masterslider">
                                 <div class="ms-slide">
                                     <img class="ms-brd" src="{{asset('img/voucher.jpg')}}" data-src="{{asset('img/voucher.jpg')}}">

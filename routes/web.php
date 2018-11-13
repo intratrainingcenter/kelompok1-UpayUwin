@@ -29,28 +29,23 @@ Route::get('/404', function () {
 Route::get('/', function () {
 	return view('interface_frontend.frontend.index');
 })->name('index');
+
+Route::get('/backend/login', function () {
+	return view('backend.User.login')->middleware('admin');
+});
+
+Route::get('/item', 'frontend\productController@indexItem')->name('item');
 Route::get('/voucher', 'frontend\productController@indexVoucher')->name('voucher');
+Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
+Route::get('/payment/status','PaymentController@getPaymentStatus')->name('payment.status');
 
 Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
-
-Route::get('/item', 'frontend\productController@indexItem');
 Route::get('/item/{id}', 'frontend\productController@showCategoryItem');
 Route::get('/item/{category}/{id}', 'frontend\productController@showItem');
 
-Route::get('/item', 'frontend\productController@indexItem')->name('item');
-Route::post('/item/store', 'frontend\productController@addto_cart_item');
-
 Route::post('/voucher/store', 'frontend\productController@store');
-Route::get('/voucher/{id}', 'frontend\productController@showVoucher');
-
-
-Route::post('/pay','PaymentController@payWithpaypal')->name('paymentpaypal');
-Route::get('/payment/status','PaymentController@getPaymentStatus')->name('payment.status');
-
-Route::get('/backend/login',function(){
-	return view('backend.User.login')->middleware('admin');
-});
-Route::get('/settingweb', 'backend\SettingController@setting_web')->name('settingweb');
+Route::post('/item/store', 'frontend\productController@addto_cart_item');
+Route::post('/pay', 'PaymentController@payWithpaypal')->name('paymentpaypal');
 
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
@@ -64,8 +59,8 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	})->name('customer');
 	//Route User
 	Route::resource('user','backend\UserController');
-  //Route item
-  Route::resource('item','backend\ItemController');
+  	//Route item
+  	Route::resource('item','backend\ItemController');
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
   	//Route setting
@@ -75,9 +70,6 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	// Laporan Transaksi
 	Route::get('laporantransaksi','backend\LaporanTransaksiController@index')->name('laporan');
 });
-
-
-
 
 //Route Untuk Frontend
 Route::prefix('frontend')->group(function () {
@@ -104,6 +96,7 @@ Route::prefix('frontend')->group(function () {
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
+	
 	Route::get('chat', function(){
 		return view('interface_frontend.frontend_user.chat');
 	})->name('chat');

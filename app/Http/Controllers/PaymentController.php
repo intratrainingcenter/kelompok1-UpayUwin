@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
-{	
+{
     public function __construct()
     {
     	/** PayPal api context **/
@@ -42,7 +42,7 @@ class PaymentController extends Controller
     }
 
     public function payWithpaypal(Request $request)
-    {	
+    {
     	//kode transaksi
     	$max_id = DB::table('transaksi_penjualans')->max('id');
 	    $for_code_1 = $max_id + 1;
@@ -66,10 +66,10 @@ class PaymentController extends Controller
 		foreach ($items as $key => $value) {
 
     		${'item_$key'.$key} = new Item();
-			${'item_$key'.$key}->setName($value->nama_voucher) 
+			${'item_$key'.$key}->setName($value->nama_voucher)
 				               ->setCurrency('USD')
 				               ->setQuantity($value->qty)
-				               ->setPrice($value->nominal); 
+				               ->setPrice($value->nominal);
 
 		 	//untuk detail transaksi
     		$bought_vouchers[]=[
@@ -85,7 +85,7 @@ class PaymentController extends Controller
     		$grand_total[] = $value->qty*$value->nominal;
     		$all_item[]=${'item_$key'.$key};
     	}
-    	Session::put('code_forDelete', $code_forDelete);	
+    	Session::put('code_forDelete', $code_forDelete);
     	Session::put('grand_total', array_sum($grand_total));
     	Session::put('bought_vouchers', $bought_vouchers);
 		$item_list = new ItemList();
@@ -109,7 +109,6 @@ class PaymentController extends Controller
 		            ->setPayer($payer)
 		            ->setRedirectUrls($redirect_urls)
 		            ->setTransactions(array($transaction));
-		        /** dd($payment->create($this->_api_context));exit; **/
 
 		try {
 			$payment->create($this->_api_context);
@@ -168,25 +167,25 @@ class PaymentController extends Controller
             $transaction = new transaksi_penjualan;
 			$transaction->kode_transaksi = Session::get('transaction_code');
             $transaction->id_user = Auth::id();
-			$transaction->tanggal_transaksi = date("Y-m-d");  
+			$transaction->tanggal_transaksi = date("Y-m-d");
 			$transaction->total = Session::get('grand_total');;
 			$transaction->save();
 			// save detail transaksi
-			detail_transaksi::insert(Session::get('bought_vouchers')); 
+			detail_transaksi::insert(Session::get('bought_vouchers'));
 			// delete
 			$cart = cart::where('id_user', Auth::id())
 					->whereIn('voucher_code', Session::get('code_forDelete'))->delete();
 
 			Session::forget('transaction_code');
 			Session::forget('grand_total');
-			Session::forget('bought_vouchers'); 
+			Session::forget('bought_vouchers');
 			Session::forget('code_forDelete');
             return Redirect::to('/');
         }
         \Session::put('error', 'Payment failed');
-        	
+
         return Redirect::to('/frontend/checkout');
-    	
+
     }
 
 }

@@ -12,7 +12,7 @@ function scrolling()
   var objDiv = document.getElementById("chatroom");
   objDiv.scrollTop = objDiv.scrollHeight;
 }
-           
+
 var db = firebase.initializeApp(config).database();
 function initialUser(){
     var chatRef = db.ref('livechat/users/');
@@ -53,7 +53,7 @@ function clickme(elem) {
 			{
                 if (items.val().pembalas == 'admin') {
                     msg += "<div class='outgoing_msg'><div class='sent_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span> </div></div>";
-                } 
+                }
                    else {
                     msg +="<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span></div></div></div>";
                 }
