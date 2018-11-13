@@ -15,8 +15,10 @@
         <div class="col-md-3">
             <div class="card card-hover">
                 <div class="box bg-cyan text-center">
-                    <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                    <h6 class="text-white">Dashboard</h6>
+                    <a href="{{url('/backend/dashboard')}}">
+                      <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
+                      <h6 class="text-white">Dashboard</h6>
+                    </a>
                 </div>
             </div>
         </div>
@@ -43,8 +45,10 @@
         <div class="col-md-4">
             <div class="card card-hover">
                 <div class="box bg-warning text-center">
-                    <h1 class="font-light text-white"><i class="fas fa-gamepad"></i></h1>
-                    <h6 class="text-white">Kategori</h6>
+                    <a href="{{url('/backend/category')}}">
+                      <h1 class="font-light text-white"><i class="fas fa-gamepad"></i></h1>
+                      <h6 class="text-white">Kategori</h6>
+                    </a>
                 </div>
             </div>
         </div>
@@ -61,8 +65,10 @@
         <div class="col-md-4">
             <div class="card card-hover">
                 <div class="box bg-info text-center">
-                    <h1 class="font-light text-white"><i class="fas fa-book"></i></h1>
-                    <h6 class="text-white">Laporan</h6>
+                    <a href="{{url('/backend/laporantransaksi')}}">
+                      <h1 class="font-light text-white"><i class="fas fa-book"></i></h1>
+                      <h6 class="text-white">Laporan</h6>
+                    </a>
                 </div>
             </div>
         </div>

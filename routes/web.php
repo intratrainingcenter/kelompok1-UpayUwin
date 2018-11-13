@@ -28,7 +28,7 @@ Route::get('/404', function () {
 });
 Route::get('/', function () {
 	return view('interface_frontend.frontend.index');
-})->name('index');
+})->name('index')->middleware('setup');
 
 Route::get('/backend/login', function () {
 	return view('backend.User.login')->middleware('admin');
@@ -100,7 +100,7 @@ Route::prefix('frontend')->group(function () {
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
-	
+
 	Route::get('chat', function(){
 		return view('interface_frontend.frontend_user.chat');
 	})->name('chat');
