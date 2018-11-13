@@ -39,8 +39,8 @@ class SettingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        
+    {
+
     }
 
     /**
@@ -104,7 +104,7 @@ class SettingController extends Controller
       return Response::json([ 'tittle' => $setting->nama_ecommerce, 'address' => $setting->alamat, 'phone' => $setting->telp,'logo' => $setting->logo,], 201);
     }
     public function storeSetup(request $request){
-        
+
         $this->validate($request, array(
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4048',
         ));
@@ -116,11 +116,11 @@ class SettingController extends Controller
         if($request->hasFile('image')){
           $image = $request->file('image');
           $filename = time() . '.' . $image->getClientOriginalExtension();
-          $image->move(public_path('/img'),$filename);
+          $image->move(public_path('backend/img'),$filename);
           $setting->logo = $filename;
           $setting->save();
         };
 
-        return redirect()->route('dashboard.index');
+        return redirect()->route('register.admin');
     }
 }
