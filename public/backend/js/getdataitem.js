@@ -1,3 +1,8 @@
+const formatnumber = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 1
+})
 var dataimage = '';
 //get data
 var lastIndex = 0;
@@ -12,7 +17,7 @@ dbRefItem.on('value', function(snapshot) {
           <td>'+ value.kode +'</td>\
           <td>'+ value.nama +'</td>\
           <td>'+value.kategori+'</td>\
-          <td>'+ value.harga +'</td>\
+          <td>'+ formatnumber.format(value.harga) +'</td>\
           <td>'+ value.deskripsi +'</td>\
           <td>'+ value.stok +'</td>\
           <td><img src="'+value.gambar+'" height="100" width="100"/></td>\
