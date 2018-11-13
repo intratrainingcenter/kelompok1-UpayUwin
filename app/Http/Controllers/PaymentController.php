@@ -52,10 +52,9 @@ class PaymentController extends Controller
 	    Session::put('transaction_code', $transaction_code);
 
     	$items = cart::whereIn('voucher_code', $request->voucher_code)
-    					->join('voucher_games','voucher_games.kode_voucher','=','cart.voucher_code')
-    					->select('cart.*','voucher_games.nama_voucher')
-    					->get();
-
+						->where('cart.id_user',$user_id)
+						->get();
+						
 		$payer = new Payer();
 		        $payer->setPaymentMethod('paypal');
 
@@ -66,7 +65,7 @@ class PaymentController extends Controller
 		foreach ($items as $key => $value) {
 
     		${'item_$key'.$key} = new Item();
-			${'item_$key'.$key}->setName($value->nama_voucher)
+			${'item_$key'.$key}->setName($value->type)
 				               ->setCurrency('USD')
 				               ->setQuantity($value->qty)
 				               ->setPrice($value->nominal);
@@ -84,7 +83,8 @@ class PaymentController extends Controller
 			];
     		$grand_total[] = $value->qty*$value->nominal;
     		$all_item[]=${'item_$key'.$key};
-    	}
+		}
+		
     	Session::put('code_forDelete', $code_forDelete);
     	Session::put('grand_total', array_sum($grand_total));
     	Session::put('bought_vouchers', $bought_vouchers);
