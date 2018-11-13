@@ -30,7 +30,7 @@
                             <td>{{$data->tanggal_transaksi}}</td>
                             <td>{{$data->total}}</td>
                             <td>
-                                <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#Modal-view{{$data->kode_transaksi}}"><i class="fas fa-pencil-alt"></i></button>
+                                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#Modal-view{{$data->kode_transaksi}}"><i class="fas fa-search"></i></button>
                             </td>
                         </tr>
                         @endforeach
