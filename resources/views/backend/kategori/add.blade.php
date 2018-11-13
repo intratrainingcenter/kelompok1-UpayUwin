@@ -11,7 +11,7 @@
             <div class="modal-body">
                     @csrf()
                     <label class="labels">Code Category :</label>  
-                    <input type="text" id="code" name="code_category" class="form-control" placeholder="Insert Code of New Category here" required>
+                    <input type="number" id="code" name="code_category" class="form-control" placeholder="Insert Code of New Category here" required>
                     
                     <label class="labels">New Category :</label>  
                     <input type="text" id="code" name="category" class="form-control" placeholder="Insert Name of New Category here" required>
