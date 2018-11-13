@@ -19,7 +19,6 @@ function initialUser(){
     var users = "";
     chatRef.on('child_added', function showData(items)
     {
-        console.log(items.key)
         var chatRef3 = db.ref('livechat/users/'+items.key);
         chatRef3.orderByValue().limitToLast(1).on('child_added',function showData(items)
         {
@@ -27,9 +26,8 @@ function initialUser(){
             lastseen = items.val().waktu;
         });
         users +=       "<div class='chat_list' onclick='clickme(this)'><div class='chat_people'><div class='chat_img'><img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'></div><div class='chat_ib'><h5>"+items.key+"</h5><h4><span class='chat_date'>"+lastseen+"</span></h4><p id='lastmsg"+items.key+"'>"+lastmsguser+"</p></div></div></div>";
-        //console.log(lastmsguser);
         $('#myDIV').html(users);
-        
+
     })
 }
 
@@ -57,8 +55,8 @@ function clickme(elem) {
                    else {
                     msg +="<div class='incoming_msg'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>"+ items.val().message +"</p><span class='time_date'>"+ items.val().waktu +"</span></div></div></div>";
                 }
-                
-                $('#chatroom').html(msg);	
+
+                $('#chatroom').html(msg);
             });
             var replyurl = Title;
             $('#sendreplyurl').val(replyurl)

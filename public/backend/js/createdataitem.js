@@ -1,4 +1,4 @@
-//upload image add
+//upload image add and create data item
 var uploader = document.getElementById("uploader");
 var fileButton = document.getElementById("fileButton");
 fileButton.addEventListener('change', function(e){
@@ -35,6 +35,7 @@ var storageRef = firebase.storage().ref('item/' + rename);
               });
               event.preventDefault()
               $('#Modal-add').modal('hide');
+              location.reload();
           });
 
         });

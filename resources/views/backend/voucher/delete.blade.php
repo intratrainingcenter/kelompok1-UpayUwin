@@ -13,8 +13,8 @@
                     @method('delete')
                     <center>
                         <h3>Konfirmasi Hapus Voucher</h3>
-                        <p>Apakah Anda ingin Menghapus Voucher Dengan Kode</p> 
-                        <p>{{$data->kode_voucher}}</p>     
+                        <p>Apakah Anda ingin Menghapus Voucher Dengan Nama</p> 
+                        <p>{{$data->nama_voucher}}</p>     
                     </center>
             </div>
             <div class="modal-footer">
