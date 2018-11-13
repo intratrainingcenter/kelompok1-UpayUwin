@@ -3,14 +3,13 @@
 	<div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Kategori</h4>
+                        <h4 class="page-title">Laporan Transaksi</h4>
                     </div>
                 </div>
             </div>
             <div class="container-fluid">
              <div class="card">
                <div class="card-body">
-                 <button type="button" class="btn btn-outline-info add-button" data-toggle="modal" data-target="#Modal-add"><i class="fas fa-credit-card"></i> Add Kategori</button>
                 <table class="table">
                     <thead>
                         <tr>
