@@ -33,6 +33,9 @@ Route::get('/', function () {
 Route::get('/backend/login', function () {
 	return view('backend.User.login')->middleware('admin');
 });
+route::get('/setup',function(){
+	return view('backend.setting.setup');
+});
 
 Route::get('/item', 'frontend\productController@indexItem')->name('item');
 Route::get('/voucher', 'frontend\productController@indexVoucher')->name('voucher');
@@ -47,6 +50,7 @@ Route::post('/voucher/store', 'frontend\productController@store');
 Route::post('/item/store', 'frontend\productController@addto_cart_item');
 Route::post('/pay', 'PaymentController@payWithpaypal')->name('paymentpaypal');
 
+Route::post('/storesetup', 'backend\SettingController@storeSetup')->name('store.setup');
 //Route Untuk Backend
 Route::prefix('backend')->middleware('admin')->group(function () {
 	Route::resource('dashboard','backend\DashboardController');
@@ -64,7 +68,7 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	//Route setting
 	Route::resource('setting2','backend\SettingController');
   	//Route setting
-	  Route::resource('setting','backend\SettingController');
+	Route::resource('setting','backend\SettingController');
 	//   Category
 	Route::resource('category','backend\CategoryController');
 	// Laporan Transaksi

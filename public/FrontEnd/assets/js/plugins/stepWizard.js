@@ -30,7 +30,11 @@ var StepWizard = function () {
                         return form.valid();
                     },
                     onFinished: function (event, currentIndex) {
-                       $('#shopping-cart').submit();
+                        if ($('#countvalue').val() != 0) {
+                           $('#shopping-cart').submit();   
+                        } else {
+                            alert('Your Cart is Empty, Buy Something First!!');
+                        }
                     }
                 });
         }, 

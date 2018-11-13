@@ -79,6 +79,10 @@
                                         <h4>Total:</h4>
                                         <div class="total-result-in">
                                             <span id="GrandTotals"></span>
+                                            <input type="hidden" id="countvalue">
+                                            @if(Session::has("error"))
+                                            <p class="alert {{ Session::get("alert-class", "alert-danger") }}">{{ Session::get("error") }}</p>
+                                            @endif
                                         </div>
                                     </li>
                                 </ul>

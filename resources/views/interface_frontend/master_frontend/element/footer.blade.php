@@ -41,5 +41,5 @@
     </div>
 <!-- Cart Ajax -->
 <script src="{{asset('FrontEnd')}}/cart/cart.js"></script>
-<script> var frontend = "{{asset('FrontEnd')}}"; var checkout = "{{ route('checkout') }}"; </script>
+<script> var frontend = "{{asset('images')}}"; var checkout = "{{ route('checkout') }}"; </script>
 <script src="{{asset('js/settingwebfrontend.js')}}"></script>

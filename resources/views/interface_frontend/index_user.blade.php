@@ -42,9 +42,6 @@
 						<li class="list-group-item {{ Request::is('frontend/history') ? 'active' : '' }}">
 							<a href="{{route('history')}}"><i class="fa fa-history"></i> History</a>
 						</li>
-						<li class="list-group-item">
-							<a href="page_profile_history.html"><i class="fa fa-power-off"></i> Logout</a>
-						</li>
 					</ul>
 					<hr>
 					<div class="margin-bottom-50"></div>

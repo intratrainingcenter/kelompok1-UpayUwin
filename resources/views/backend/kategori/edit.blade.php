@@ -12,7 +12,7 @@
                     @csrf
                     @method('put')
                     <label class="labels">Kode Kategori :</label>  
-                    <input type="text" name="code_category" class="form-control" placeholder="Kode Category Here" value="{{$data->kode_kategori}}">
+                    <input type="number" name="code_category" class="form-control" placeholder="Kode Category Here" value="{{$data->kode_kategori}}">
                     
                     <label class="labels">Nama Kategori :</label>     
                     <input type="text" name="category" class="form-control" placeholder="Category Name Here" value="{{$data->nama_kategori}}">
