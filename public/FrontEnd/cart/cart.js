@@ -28,9 +28,6 @@ $( document ).ready(function(){
                     var count = '';
                     var json = data;
                         var count = json.cart.length;
-                    if (count == 0) {
-                        alert('Cart is Empty')
-                    }
                     $.each(data, function (key, items) {
                         $.each(items, function (key, datas) {
                             cart +="<tr>";
