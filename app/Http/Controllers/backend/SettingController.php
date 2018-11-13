@@ -39,24 +39,8 @@ class SettingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $this->validate($request, array(
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4048',
-        ));
-
-        $setting = new setting;
-        $setting->nama_ecommerce = $request->web_name;
-        $setting->alamat = $request->company_address;
-        $setting->telp = $request->phone_number;
-        if($request->hasFile('image')){
-          $image = $request->file('image');
-          $filename = time() . '.' . $image->getClientOriginalExtension();
-          $image->move(public_path('/img'),$filename);
-          $setting->logo = $filename;
-          $setting->save();
-        };
-
-        return redirect()->route('dashboard.index');
+    {   
+        
     }
 
     /**
@@ -118,5 +102,25 @@ class SettingController extends Controller
     {
       $setting = setting::first();
       return Response::json([ 'tittle' => $setting->nama_ecommerce, 'address' => $setting->alamat, 'phone' => $setting->telp,'logo' => $setting->logo,], 201);
+    }
+    public function storeSetup(request $request){
+        
+        $this->validate($request, array(
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+        ));
+
+        $setting = new setting;
+        $setting->nama_ecommerce = $request->web_name;
+        $setting->alamat = $request->company_address;
+        $setting->telp = $request->phone_number;
+        if($request->hasFile('image')){
+          $image = $request->file('image');
+          $filename = time() . '.' . $image->getClientOriginalExtension();
+          $image->move(public_path('/img'),$filename);
+          $setting->logo = $filename;
+          $setting->save();
+        };
+
+        return redirect()->route('dashboard.index');
     }
 }
