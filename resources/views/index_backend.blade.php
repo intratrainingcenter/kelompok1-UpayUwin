@@ -55,10 +55,10 @@
       $(".tittle").text(data.tittle);
       $("meta[name='address']").attr("content", data.address);
       $("meta[name='phone']").attr("content", data.phone);
-      $("#title").text(data.tittle);
+      $("#logo-backend").attr("src","{{asset('backend/img')}}/"+ data.logo);
       $("link[rel=icon]").attr("href","{{asset('backend/img')}}/"+ data.logo);
     }).fail(function (data) {
-    
+
     })
   });
   </script>

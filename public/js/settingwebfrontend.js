@@ -11,9 +11,8 @@ $(document).ready(function () {
     $("meta[name='phone']").attr("content", data.phone);
     $(".address").text(data.address);
     $(".phone").text(data.phone);
-    $("link[rel=icon]").attr("href","backend/img/"+ data.logo);
-    $(".imageecommerce").attr("src","backend/img/"+ data.logo);
+    $(".nameecommerce").text(data.tittle);
   }).fail(function (data) {
-  
+
   })
 });

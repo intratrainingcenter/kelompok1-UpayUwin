@@ -42,7 +42,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img id="logo-header" style="width:60px; height:60px;" class="imageecommerce" src="" alt="Logo">
+                  <h1 class="nameecommerce"></h1>
                 </a>
             </div>
             <div class="collapse navbar-collapse navbar-responsive-collapse">
@@ -95,7 +95,7 @@
                                     </div>
                                 </li>
                             </ul>
-                        </li>  
+                        </li>
                     </ul>
             </div>
         </div>
