@@ -23,7 +23,7 @@
 			<div class="col-md-6 col-sm-6 form-block equal-height-column">
 				<div class="reg-block">
 					<a href="#">
-						<img src="{{asset('FrontEnd/log')}}/assets/img/themes/logo1-default.png" alt="">
+						<h1 class="nameecommerce"></h1>
 					</a>
 					<h2 class="margin-bottom-30">Create new account</h2>
 					<form action="{{route('regis')}}" method="post">

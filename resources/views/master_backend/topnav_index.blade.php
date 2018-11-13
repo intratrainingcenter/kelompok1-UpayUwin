@@ -7,9 +7,6 @@
 
         </ul>
         <ul class="navbar-nav float-right">
-            @include('master_backend.topnav_notifikasi')
-            @include('master_backend.topnav_message')
-
             @include('master_backend.topnav_user')
 
         </ul>

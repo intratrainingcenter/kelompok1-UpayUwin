@@ -28,7 +28,7 @@ Route::get('/404', function () {
 });
 Route::get('/', function () {
 	return view('interface_frontend.frontend.index');
-})->name('index');
+})->name('index')->middleware('setup');
 
 Route::get('/backend/login', function () {
 	return view('backend.User.login')->middleware('admin');
@@ -72,7 +72,7 @@ Route::prefix('backend')->middleware('admin')->group(function () {
 	//   Category
 	Route::resource('category','backend\CategoryController');
 	// Laporan Transaksi
-	Route::get('laporantransaksi','backend\LaporanTransaksiController@index')->name('laporan');
+	Route::get('reporttransaksi','backend\ReportTransaksiController@index')->name('laporan');
 });
 
 //Route Untuk Frontend
@@ -100,7 +100,7 @@ Route::prefix('frontend')->group(function () {
 	Route::get('topup', function(){
 		return view('frontend.topup');
 	})->name('topup');
-	
+
 	Route::get('chat', function(){
 		return view('interface_frontend.frontend_user.chat');
 	})->name('chat');
