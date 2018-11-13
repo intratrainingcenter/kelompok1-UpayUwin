@@ -7,7 +7,6 @@
 								<li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
 								<li><a data-toggle="tab" href="#edit">Edit Profile</a></li>
 								<li><a data-toggle="tab" href="#passwordTab">Change Password</a></li>
-								<li><a data-toggle="tab" href="#verifypassword">Account Status</a></li>
 							</ul>
 							<div class="tab-content">
 							@if (Auth::check())

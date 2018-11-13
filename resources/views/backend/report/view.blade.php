@@ -19,7 +19,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($detail_transaksi as $numb => $detail)
+                    @foreach($detail_transaction as $numb => $detail)
                         <tr>
                             <td>{{$detail->kode_transaksi}}</td>
                             <td>{{$detail->jumlah}}</td>
